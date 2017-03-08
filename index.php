@@ -89,7 +89,7 @@ function checkCookie() {
     <footer>
         <div class="container">
           <div class="row">
-            <div class="span6">Copyright &copy 2015-2016 <a href="http://sourceforge.net/projects/idiomind">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="http://idiomind.sourceforge.net" target="_new">Website</a>
+            <div class="span6">Copyright &copy 2015-2017 <a href="http://sourceforge.net/projects/idiomind">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="http://idiomind.sourceforge.net" target="_new">Website</a>
             </div>
           </div>
         </div>

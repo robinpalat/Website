@@ -8,23 +8,13 @@
     <meta name="keywords" content="ESL, EFL, pronunciation, grammar, vocabulary, tests, lessons, quiz, quizzes, resources, lesson, vocabulary, questions, answers"/>
     <meta name="description" content="Learn foreign vocabulary"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="/images/en.ico?v=2" />
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="image_src" href="http://idiomind.net/images/logo.png" / ><!--formatted-->
     <title>Idiomind's library</title>
     <link href="/css/lg.css" rel="stylesheet" type="text/css" />
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" language="javascript" src="/js/gfeedfetcher.js"></script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-63037434-3', 'auto');
-      ga('send', 'pageview');
-    </script>
+    <?php include 'fetchfeed.php';?>
 
     <?php
     function mobileDevice()
@@ -67,64 +57,113 @@
                 });
             });
     </script>
+    
+    <script>
+		
+	function underc(){
+		alert('This website is under construction');
+	}
+	
+	function hideshow(which){
+		if (!document.getElementById)
+		return
+		if (which.style.display=="block")
+		which.style.display="none"
+		else
+		which.style.display="block"
+	}
+	var info = `
+	<div class="plus">
+		<table width="90%" height="auto" border="0" align="center">
+			<tr><td align="right"><a href="javascript:hideshow(document.getElementById('plus'))">X</a></td></tr>
+			<tr><td align="left"><h1>ho Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1> sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dLorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolo</td></tr>
+			<tr>
+			</tr>
+		</table>
+		<table width="90%" height="auto" border="0" align="center">
+			<td align="left"> <h2>level 1</h2><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utali</small></td>
+			<td> </td>
+			<td align="right"><img src="/images/l3.png"></td>
+		</table>	
+		<table width="90%" height="auto" border="0" align="center">
+			<td align="left"><h2>level 2</h2><small>Lorem ipsu dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utali</small> </td>
+			<td align="center"><img src="/images/l2.png"></td>
+			<td align="left"> <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed exercitation ullamco laboris nisi utali</small></td>
+		</table>
+		<table width="90%" height="auto" border="0" align="center">
+			<td align="left"><img src="/images/l1.png"></td>
+			<td align="left"><h2>level 3</h2><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utali</small></td>
+			<td> </td>
+		</table>
+	</div>
+	<br>
+	`;
+	$(document).ready(function(){
+		$("#show").click(function(){
+			document.getElementById('plus').innerHTML = info;
+			document.getElementById('plus').style.display="block"
+		});
+	});
+	</script>
+	
 </head>
-
+	
 <body onload="setCookie()">
     
     <?php
+    
+    include_once("analyticstracking.php");
+    
 	if(!isset($_COOKIE['iuser'])) {
 		$use = "Login";
-		$class_btn_user = "numberCircle";
+		$class_btn_user = "userbutton";
 
 	} else {
 		  $use = $_COOKIE['iuser'];
 		  $use =  ucfirst($use);
-		  $class_btn_user = "numberCircle";
+		  $class_btn_user = "userbutton";
 		}
     ?>
     
     <main id="content" class="group" role="main">
     <div class="main">
-	<div class="container">
-    <div class="header">
 
-    <table width="100%" height="60px" border="0" align="center" class="top" style="border-spacing: 4px 4px;">
+    <table width="100%" height="70px" border="0" align="center" class="top" style="border-spacing: 4px 4px;">
         <td align="left" class="langtitle">
-            <font></font><?=$uplangdir?><font></font><br>
+            <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=$uplangdir?></a><br>
         </td>
+
+         <td style="background:#8CBAE9;color:#FFFFFF;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#FFFFFF">Plus</a></td>
+         <td style="background:#A89CC8;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
+         <td style="background:#83BBDE;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="underc();">Downloads</td>
+         <td style="background:#83C7DC;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="underc();">Under Construction</td>
+
         <td align="right">
             <a class=<?=$class_btn_user?> style="text-decoration: none;color:#FFFFFF;" href="../community/"><small><?= $use ?></small></a>
         </td>
     </table>
 
-
-    <table style="width:100%;padding:3px;font-size:14px;">
-	        <td style="background:rgba(109,148,182,0.8);color: #FFFFFF;">Plus</td><td style="background:rgba(118,161,107,0.8);color: #FFFFFF;"><a href="#categories" style="color: #FFFFFF">Topics by Category</a></td><td style="background:rgba(206,148,88,0.8);color: #FFFFFF;">Downloads</td><td style="background:rgba(151,107,140,0.8);color: #FFFFFF;">Under Construction</td>
-	</table>
-	<br>
-
-    <div class="sentenceweek">
-		<div class="sentencew-content"><h1 style="color:#82685A;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1> consectetur adipisicing elit, sed doeiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enimad<br> minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat.<br> Duis aute irure dolor inreprehenderit<br> in voluptate velit esse cillum dolore eu fugiat <br>nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est <br>laborum.Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit, se</div></div>
-
 	<br>
 	
-        <div id="rssfeed-wrap" class="rss-content" >
- 
-       <h1><a href="http://feeds.feedburner.com/p/<?=$langdir?>"></a><a href="javascript:newsfeed.init()" style="text-decoration: none;">Latest shared and published topics</a></h1>
+	<div id="plus"></div>
 
-        <script type="text/javascript">
-        var newsfeed=new gfeedfetcher("rssfeeds", "rssfeedsclass", "_new")
-        newsfeed.addFeed("Published", "http://idiomind.net/rss.php/?trgt=<?=$langdir?>");
-        newsfeed.addFeednull(" ", "http://idiomind.xyz/rss.php");
-        newsfeed.displayoptions("label datetime snippet");
-        newsfeed.setentrycontainer("p");
-        newsfeed.filterfeed(9, "date");
-        newsfeed.init();
-        </script>
-        </div>
-    
+    <div class="sentenceweek">
+		<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1> consectetur adipisicing elit, sed doeiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enimad<br> minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat.<br> Duis aute irure dolor inreprehenderit<br> in voluptate velit esse cillum dolore eu fugiat <br>nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est <br>laborum.Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit, se
+	</div>
+		
+	</div>
+
+	<br>
+        <div class="feed-lists">
+		   <h1>Latest shared and published topics</h1>
+		<?php
+		//output_rss_feed("rss.php/?trgt=".$langdir, 5, true, true, 200);
+		?>
+		</div>
+        
     <br>
-		<div id="categories" style="background:#F0F2F5;">
+    
+		<div id="categories">
 		<?php
 		$files = scandir('./');
 		foreach($files as $cate) {
@@ -143,13 +182,12 @@
 		}
 		?>
 	</div>
+
   </div>
-  </div>
-  </div>
-    <br>
+  <br>
   </main>
       <footer class="footer">
-        <br><div> &copy 2015-2016 <a href="http://sourceforge.net/projects/idiomind">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
+        <br><div> &copy 2015-2017 <a href="http://sourceforge.net/projects/idiomind">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
         </div><br>
     </footer>
   

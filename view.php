@@ -38,6 +38,8 @@
     </head>
     <body>
         <?php
+        include_once("analyticstracking.php");
+        
         $lang = htmlspecialchars($_GET["l"]);
         $catg = htmlspecialchars($_GET["c"]);
         $set = htmlspecialchars($_GET["set"]);
@@ -66,7 +68,7 @@
         </tr>
         <tr>
           <td>
-			  <div style="text-align:left;color:#436C2B;"id="autr"><font></font></div>
+			  <div style="text-align:left;"id="autr"><font></font></div>
           </td>
         </tr>
       </table>
@@ -79,21 +81,29 @@
         <a href="##" onClick="toggleFullScreen(); return false; "><img src='/images/fulls.png'></a>
 -->
         <br>
-        <div id="trgt">
-            <h1 style="color:#3F3C3C"></h1>
-        </div>
-        <br>
-        <div id="srce">
-            <h2 style="color:#4A783C;"></h2>
-        </div>
-        <div id="dots">
-            <h2 style="color:#3F3C3C"></h2>
-        </div>
-        <br>
-        <div class="exmp" id="exmp">
-            <font></font>
-        </div>
-        
+     
+        <table style="width:80%;margin:20;vertical-align:top;align:center;padding:20">
+			<tr>
+				<div id="trgt">
+					<h1 style="color:#4A4A4A"></h1>
+				</div>
+			</tr>
+			<tr>
+				<br />
+				<div id="srce">
+					<h2 style="color:#71806D;"></h2>
+				</div>
+				<div id="dots">
+					<h2 style="color:#3F3C3C"></h2>
+				</div>
+			</tr>
+			<tr>
+				<div class="exmp" id="exmp">
+					<font></font>
+				</div>
+			</tr>
+        </table>
+
 <!--
         <div class="iconss">
 			<a onclick="page2(); return false" style="text-decoration:none;" class="cursor"><img src="/images/nextv.png"></a>
