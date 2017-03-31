@@ -63,7 +63,10 @@
         $temp = explode('.', $name);
         $ext  = array_pop($temp);
         $namee = implode('.', $temp);
-        $name = substr($namee, 4);
+        //$name = substr($namee, 4);
+        $name = substr($namee, 0, -4);
+        
+        
         $namehref=$dirArray[$index];
 
         echo"<tr>
