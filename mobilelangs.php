@@ -7,23 +7,14 @@
 <meta name="keywords" content="ESL, EFL, pronunciation, grammar, vocabulary, tests, lessons, quiz, quizzes, resources, lesson, vocabulary, questions, answers"/>
 <meta name="description" content="Learn foreign vocabulary"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="/community/favicon.ico?v=2" />
+<link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 <link rel="image_src" href="http://idiomind.net/images/logo.png" / ><!--formatted-->
 <title>Idiomind's library</title>
 <link href="/css/lgmobi.css" rel="stylesheet" type="text/css" />
 <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" language="javascript" src="/js/gfeedfetcher.js"></script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-63037434-3', 'auto');
-  ga('send', 'pageview');
-</script>
+<?php include 'fetchfeed.php';?>
 
 <script>
 function setCookie() {
@@ -61,25 +52,26 @@ function setCookie() {
 <body onload="setCookie()">
     
     <?php
+    
+    include_once("analyticstracking.php");
+    
 	if(!isset($_COOKIE['iuser'])) {
 		$use = "My account";
-		$class_btn_user = "acountShape";
+		$class_btn_user = "userbutton";
 
 	} else {
 		  $use = $_COOKIE['iuser'];
 		  $use =  ucfirst($use);
-		  $class_btn_user = "acountShape";
+		  $class_btn_user = "userbutton";
 		}
     ?>
     
     <main id="content" class="group" role="main">
     <div class="main">
-	<div class="container">
-	<div class="header">
 
     <table width="100%" height="30px" border="0" align="center" class="top">
         <td align="left" class="langtitle">
-            <?=$uplangdir?><br>
+            <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=$uplangdir?><br></a>
         </td>
         <td align="right">
             <a class=<?=$class_btn_user?> style="text-decoration: none; color: #FFFFFF" href="../community/"><small><?= $use ?></small></a>
@@ -87,28 +79,24 @@ function setCookie() {
     </table>
 
     <table style="width:100%;padding:3px;font-size:14px;">
-	<tr style="color:#FEFFFF"><td style="background:#6D94B6;">Plus</td><td style="background:#76A16B;"><a href="#folders" style="color: #FFFFFF">Topics by category</a></td><td style="background:#CE9458;">Downloads</td><td style="background:#6D94B6;">Donate</td></tr>
+	<tr style="color:#FEFFFF"><td style="background:#9BACDE;">Plus</td><td style="background:#A89CC8;"><a href="#folders" style="color: #FFFFFF">Topics by category</a></td><td style="background:#9BB2E1;">Downloads</td><td style="background:#8CC9F0;">Donate</td></tr>
 	</table>
-
-    <div class="sentenceweek"> <h1 style="background-color:#D9E0EA;"> Sentence of week <i align="right" class="fa fa-rss-square" aria-hidden="true"></i></h1> consectetur adipisicing elit, sed doeiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enimad<br> minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat.<br> Duis aute irure dolor inreprehenderit<br> in voluptate velit esse cillum dolore eu fugiat <br>nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est <br>laborum.Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit, se</div>
+	<div class="sentenceweek">
+		<div class="sentencew-content"> <h1 style="background-color:#D9E0EA;"> Sentence of week <i align="right" class="fa fa-rss-square" aria-hidden="true"></i></h1> consectetur adipisicing elit, sed doeiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enimad<br> minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat.<br> Duis aute irure dolor inreprehenderit<br> in voluptate velit esse cillum dolore eu fugiat <br>nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est <br>laborum.Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit, se
+		</div>
+    </div>
     
     <table width="94%" border="0" align="center" class="rss">
         <tr>
         <td align="left" valign="top">
-        <div id="rssfeed-wrap">
- 
-        <h1><a href="http://feeds.feedburner.com/p/<?=$langdir?>"></a><a href="javascript:newsfeed.init()" style="text-decoration: none; color: #666;">latest shared and published topics</a></h1>
-
-        <script type="text/javascript">
-        var newsfeed=new gfeedfetcher("rssfeeds", "rssfeedsclass", "_new")
-        newsfeed.addFeed("Published", "http://idiomind.net/rss.php/?trgt=<?=$langdir?>");
-        newsfeed.addFeednull(" ", "http://idiomind.xyz/rss.php");
-        newsfeed.displayoptions("label datetime snippet");
-        newsfeed.setentrycontainer("p");
-        newsfeed.filterfeed(10, "date");
-        newsfeed.init();
-        </script>
+			
+        <div class="feed-lists">
+			<h1><a href="http://feeds.feedburner.com/p/<?=$langdir?>"></a>latest shared and published topics</h1>
+				<?php
+				output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 5, true, true, 200);
+				?>
         </div>
+        
         </td>
         </tr>
     </table>
@@ -134,11 +122,9 @@ function setCookie() {
 	</div>
   <br>
   </div>
-  </div>
-  </div>
   </main>
       <footer class="footer">
-        <br><div>&copy 2015-2016 <a href="http://sourceforge.net/projects/idiomind">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
+        <br><div>&copy 2015-2017 <a href="http://idiomind.sourceforge.net">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
         </div><br>
     </footer>
 </body>

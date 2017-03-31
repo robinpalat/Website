@@ -39,7 +39,8 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
                     $date_info = lstat($topic_path);
                     $pre_name = basename($topic_path);
                     $title = substr($pre_name, 0, strpos($pre_name, '.idmnd'));
-                    $name = substr($title, 4);
+                    //$name = substr($title, 4);
+                    $name = substr($title, 0, -4);
                     $category = basename(dirname($topic_path));
 echo "
 <item>
