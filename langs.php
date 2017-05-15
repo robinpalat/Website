@@ -9,7 +9,8 @@
     <meta name="description" content="Learn foreign vocabulary"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <link rel="image_src" href="http://idiomind.net/images/logo.png" / ><!--formatted-->
     <title>Idiomind's library</title>
     <link href="/css/lg.css" rel="stylesheet" type="text/css" />
@@ -128,15 +129,15 @@
     <main id="content" class="group" role="main">
     <div class="main">
 
-    <table width="100%" height="70px" border="0" align="center" class="top" style="border-spacing: 4px 4px;">
+    <table width="100%" height="55px" border="0" align="center" class="top" style="border-spacing: 4px 4px;">
         <td align="left" class="langtitle">
             <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=$uplangdir?></a><br>
         </td>
-
-         <td style="background:#8CBAE9;color:#FFFFFF;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#FFFFFF">Plus</a></td>
-         <td style="background:#A89CC8;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
-         <td style="background:#83BBDE;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="underc();">Downloads</td>
-         <td style="background:#83C7DC;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="underc();">Under Construction</td>
+ 
+         <td style="border-radius:5px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#978786">Plus</a></td>
+         <td style="border-radius:5px;background:#EB9486;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
+         <td style="border-radius:5px;background:#6981A1;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Downloads</td>
+         <td style="border-radius:5px;background:#7E7F9A;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Under Construction</td>
 
         <td align="right">
             <a class=<?=$class_btn_user?> style="text-decoration: none;color:#FFFFFF;" href="../community/"><small><?= $use ?></small></a>
@@ -155,9 +156,10 @@
 
 	<br>
         <div class="feed-lists">
-		   <h1>Latest shared and published topics</h1>
+		   <h1>Latest Published Topics</h1>
 		<?php
-		//output_rss_feed("rss.php/?trgt=".$langdir, 5, true, true, 200);
+		output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 8, true, true, 200);
+		//output_rss_feed("http://tmp.site50.net/rss/", 5, false, false, 200);
 		?>
 		</div>
         
@@ -187,7 +189,7 @@
   <br>
   </main>
       <footer class="footer">
-        <br><div> &copy 2015-2017 <a href="http://sourceforge.net/projects/idiomind">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
+        <br><div> &copy 2015-2017 <a href="http://idiomind.sourceforge.net">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
         </div><br>
     </footer>
   

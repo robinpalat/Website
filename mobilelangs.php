@@ -91,7 +91,7 @@ function setCookie() {
         <td align="left" valign="top">
 			
         <div class="feed-lists">
-			<h1><a href="http://feeds.feedburner.com/p/<?=$langdir?>"></a>latest shared and published topics</h1>
+			<h1><a href="http://feeds.feedburner.com/p/<?=$langdir?>"></a>Latest Published Topics</h1>
 				<?php
 				output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 5, true, true, 200);
 				?>

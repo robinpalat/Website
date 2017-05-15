@@ -8,7 +8,7 @@
     $max_words: max number of words (not real words, HTML words)
     if <= 0: no limitation, if > 0 display at most $max_words words
  */
-function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $show_description = true, $max_words = 0, $cache_timeout = 7200, $cache_prefix = "/tmp/cacherss2html-")
+function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $show_description = true, $max_words = 0, $cache_timeout = 7200, $cache_prefix = "/home/u281842180/public_html/cache/cacherss2html-")
 {
     $result = "";
     // get feeds and parse items
@@ -52,7 +52,7 @@ function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $
         $result .= ' <span class="feed-title"><a href="'.$link.'" title="'.$title.'">'.$title.'</a></span> ';
         if ($show_date) {
             $date = date('F d, Y', strtotime($feed[$x]['date']));
-            $result .= ' <small><font color="#22AD46">Published </font><font color="#626262">'.$date.'</font></small> ';
+            $result .= ' <small><font color="#1FAF12">Published </font><font color="#626262">'.$date.'</font></small> ';
         }
         if ($show_description) {
             $description = $feed[$x]['desc'];

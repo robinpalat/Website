@@ -25,10 +25,10 @@ body {
 	-webkit-box-shadow: 0 3px 2px rgba(63,57,97,0.3);
 	box-shadow: 0 3px 2px rgba(63,57,97,0.3);
 	
-    background: -moz-linear-gradient(top,  #869EBF 30%,#6981A1 90%); 
-    background: -webkit-linear-gradient(top,  #869EBF 30%,#6981A1 90%);
-    background: linear-gradient(to bottom,  #869EBF 30%,#6981A1 90%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#869EBF', endColorstr='#6981A1',GradientType=0 ); 
+    background: -moz-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
+    background: -webkit-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
+    background: linear-gradient(to bottom,  #6E6767 30%,#4F4A4A 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6E6767', endColorstr='#4F4A4A',GradientType=0 );
 }
 
 
@@ -278,7 +278,7 @@ nav ul{
 	width: 90%;
 	padding:0px 0px 25px 30px;
 	color:"#E30000";
-	line-height:1.9em;
+	line-height:1.6em;
 	font: Verdana, Arial, Helvetica, sans-serif;
 }
 
@@ -308,7 +308,7 @@ img.expand {
 
 .langtitle {
     font-size: 29px;
-	text-shadow: 0px 0px 18px #7E96D8;
+	text-shadow: 0px 0px 15px #A1A8BB;
 }
 
 
