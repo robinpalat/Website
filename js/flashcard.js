@@ -1,9 +1,12 @@
 
+var scoreOk = 0
+var scoreNo = 0
+
 var Cards = (function() {
     
     var render_page = function (data) {
-        //var subjectElement = document.querySelector("#name").children[0]
-        //subjectElement.innerHTML = data.name
+        var subjectElement = document.querySelector("#name").children[0]
+        subjectElement.innerHTML = data.name
         var subjectElement = document.querySelector("#autr").children[0]
         subjectElement.innerHTML = 'Create by ' + data.autr
         var subjectElement = document.querySelector("#nwrd").children[0]
@@ -16,10 +19,10 @@ var Cards = (function() {
         subjectElement.innerHTML = 'Audio ' + data.naud
         var first = Object.keys(data.items)[0]
     
-        render_card(first, data.items[first])
+        render_card(first, data.items[first], scoreOk, scoreNo)
     }
     
-    var render_card = function (trgt, dat) {
+    var render_card = function (trgt, dat, scoreOk, scoreNo) {
         
         arr = []
         for(var event in dat){
@@ -78,28 +81,64 @@ var Cards = (function() {
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
         var exmpElement = document.querySelector("#exmp").children[0]
+        var scoreOkElement = document.querySelector("#score_ok").children[0]
+        var scoreNoElement = document.querySelector("#score_no").children[0]
         
+        srceElement.hidden = true
+        dotsElement.hidden = false
+
         trgtElement.innerHTML = trgt
         srceElement.innerHTML = srce
         dotsElement.innerHTML = '......'
         exmpElement.innerHTML = exmp
-
-        srceElement.hidden = true
-        dotsElement.hidden = false
+        scoreNoElement.innerHTML = scoreNo
+        scoreOkElement.innerHTML = scoreOk
+       
     }
-    var next_card = function () {
+    
+	var next_card_ok = function () {
         var trgt = document.querySelector("#trgt").children[0].innerHTML
+        var scoreOk = document.querySelector("#score_ok").children[0].innerHTML
+        var scoreOk = Number(scoreOk)
+        var scoreNo = document.querySelector("#score_no").children[0].innerHTML
+        var scoreNo = Number(scoreNo)
+
         var keys = Object.keys(data.items)
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
-
+        var scoreOk = scoreOk+1
+        
         if (nextIndex == keys.length) {
             nextIndex = 0
         }
 
         var next = keys[nextIndex]
-        render_card(next, data.items[next])
+        render_card(next, data.items[next], scoreOk, scoreNo)
     }
+    
+    
+	var next_card_no = function () {
+        var trgt = document.querySelector("#trgt").children[0].innerHTML
+        var trgt = document.querySelector("#trgt").children[0].innerHTML
+        var scoreOk = document.querySelector("#score_ok").children[0].innerHTML
+        var scoreOk = Number(scoreOk)
+        var scoreNo = document.querySelector("#score_no").children[0].innerHTML
+        var scoreNo = Number(scoreNo)
+
+        var keys = Object.keys(data.items)
+        var current = keys.indexOf(trgt)
+        var nextIndex = current+1
+        var scoreNo = scoreNo+1
+        
+        if (nextIndex == keys.length) {
+            nextIndex = 0
+        }
+
+        var next = keys[nextIndex]
+        render_card(next, data.items[next], scoreOk, scoreNo)
+    }
+    
+    
     var load_data = function(file) {
         var xmlhttp = new XMLHttpRequest()
     
@@ -121,24 +160,21 @@ var Cards = (function() {
     return {
         renderCard: render_card,
         renderPage: render_page,
-        nextCard: next_card,
+        nextCardOk: next_card_ok,
+        nextCardNo: next_card_no,
         loadData: load_data
     }
 })()
 
 window.addEventListener('load', function () {
-
-    var derp = function () {
+	
+	document.getElementById("Wrong").onclick = function () { Cards.nextCardNo(); };
+	document.getElementById("Right").onclick = function () { Cards.nextCardOk(); };
+	
+	document.getElementById("Show").onclick = function () {  
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
-        if (srceElement.hidden) {
-            srceElement.hidden = false
-            dotsElement.hidden = true
-        } else {
-            Cards.nextCard()
-        }
+        srceElement.hidden = false
+        dotsElement.hidden = true
     }
-    window.addEventListener('click', derp) 
-    window.addEventListener('keypress', derp) 
-    window.addEventListener('touchend', derp) 
 })

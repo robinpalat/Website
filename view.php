@@ -58,19 +58,23 @@
 	<tr>
     <td>
 		<table class="tainfo">
+		<tr>
+          <td>
+			  <span style="font-weight: bold;text-align:left;"id="name"><font></font></span>
+			  <span style="text-align:left;"id="autr"><font></font></span>
+          </td>
+        </tr>
         <tr>
           <td class="tdinfo">
               <span id="nwrd"><font></font></span>
 			  <span id="nsnt"><font></font></span>
 			  <span id="naud"><font></font></span>
 			  <span id="nimg"><font></font></span>
+			  <span id="score_ok"><font color="green"></font></span>
+			  <span id="score_no"><font color="red"></font></span>
           </td>
         </tr>
-        <tr>
-          <td>
-			  <div style="text-align:left;"id="autr"><font></font></div>
-          </td>
-        </tr>
+
       </table>
     <td class="floating-box-right"><div><a href="##" onClick="goBack(); return false; "><img src='/images/close.png'></a></div></td>
     </tr>
@@ -103,6 +107,13 @@
 				</div>
 			</tr>
         </table>
+        
+        <input id="Wrong" type="button" value="Wrong" onclick="doFunction();" />
+        
+        <input id="Show" type="button" value="Show" onclick="doFunction();" />
+        
+        <input id="Right" type="button" value="Right" onclick="doFunction();" />
+        
 
 <!--
         <div class="iconss">
