@@ -71,10 +71,13 @@ div {
 }
 
 .iconss {
-   text-align: center;
-   position:absolute;
-   bottom:8%;
-}
+	   text-align: center;
+	   position:absolute;
+	   width:100%;
+	   position:fixed;
+	   vertical-align:bottom;
+	   
+	}
 	
 @media all and (max-device-width: 720px){
 
@@ -155,6 +158,12 @@ div {
 	   text-align: center;
 	   position:absolute;
 	   bottom:5px;
+	   width:100%;
+	   position:fixed;
+	   bottom:0px;
+	   vertical-align:bottom;
+	   padding:20;
+		left: 50%;
 	   
 	}
 
@@ -166,3 +175,108 @@ div {
 }
 
 a.cursor {cursor:hand;}
+
+
+#Wrong {
+    position: fixed;
+    bottom: 15px;
+    left: 4%; 
+}
+
+#Show {
+    position: fixed;
+    bottom: 35px;
+    right: 36%;
+    left: 36%;
+}
+
+#Right {
+    position: fixed;
+    bottom: 15px;
+    right: 4%;
+}
+
+.btnShow {
+  font-size: 10px;
+  width: 98%;
+  font-size: 0.95vw;
+  text-align: center;
+  color: #816F42;
+  background: #F0EAB3;
+  width: 28%;
+  height: 30px;
+  border: 0px;
+  vertical-align:top;
+  cursor:hand;
+}
+
+.btnShow:hover {
+  font-size: 10px;
+  font-size: 0.95vw;
+  text-align: center;
+  color: #4D4D4D;
+  width: 28%;
+  height: 30px;
+  border: 0px solid #436C2B;
+  vertical-align:top;
+  cursor:hand;
+}
+
+.btnOk {
+  font-size: 15px;
+  font-size: 1.95vw;
+  text-align: center;
+  font-weight: bold;
+  color: #E6E6FA;
+  background: #82B359;
+  width: 28%;
+  height: 50px;
+  border: 0px solid #436C2B;
+  border-radius: 8px;
+  background: -moz-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
+  background: -webkit-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
+  background: linear-gradient(to bottom,  #6E6767 30%,#4F4A4A 90%);
+}
+
+.btnOk:hover {
+  font-size: 15px;
+  font-size: 1.95vw;
+  text-align: center;
+  color: #E6E6FA;
+  background: #649935;
+  font-weight: bold;
+  width: 28%;
+  height: 50px;
+  border: 0px;
+  border-radius: 8px;
+}
+
+.btnNo {
+  font-size: 15px;
+  font-size: 1.95vw;
+  text-align: center;
+  font-weight: bold;
+  color: #E6E6FA;
+  background: #B35975;
+  width: 28%;
+  height: 50px;
+  border-radius: 8px;
+  border: 0px solid #436C2B;
+  background: -moz-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
+  background: -webkit-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
+  background: linear-gradient(to bottom,  #6E6767 30%,#4F4A4A 90%);
+}
+
+.btnNo:hover {
+  font-size: 15px;
+  font-size: 1.95vw;
+  text-align: center;
+  color: #E6E6FA;
+  background: #AF5751;
+  font-weight: bold;
+  width: 28%;
+  height: 50px;
+  border: 0px;
+  border-radius: 8px;
+}
+

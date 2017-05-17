@@ -83,6 +83,7 @@ var Cards = (function() {
         var exmpElement = document.querySelector("#exmp").children[0]
         var scoreOkElement = document.querySelector("#score_ok").children[0]
         var scoreNoElement = document.querySelector("#score_no").children[0]
+        document.getElementById("Show").style = "DISPLAY: true;";
         
         srceElement.hidden = true
         dotsElement.hidden = false
@@ -168,13 +169,16 @@ var Cards = (function() {
 
 window.addEventListener('load', function () {
 	
+	
 	document.getElementById("Wrong").onclick = function () { Cards.nextCardNo(); };
 	document.getElementById("Right").onclick = function () { Cards.nextCardOk(); };
 	
+
 	document.getElementById("Show").onclick = function () {  
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
         srceElement.hidden = false
         dotsElement.hidden = true
+        document.getElementById("Show").style = "DISPLAY: none;";
     }
 })

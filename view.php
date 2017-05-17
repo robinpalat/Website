@@ -69,9 +69,10 @@
               <span id="nwrd"><font></font></span>
 			  <span id="nsnt"><font></font></span>
 			  <span id="naud"><font></font></span>
-			  <span id="nimg"><font></font></span>
-			  <span id="score_ok"><font color="green"></font></span>
-			  <span id="score_no"><font color="red"></font></span>
+			  <span id="nimg"><font></font></span> | 
+			  
+			  <span id="score_no"> No Sabia <font color="red"></font></span> /
+			  <span id="score_ok">Lo Sabia <font color="green"></font></span>
           </td>
         </tr>
 
@@ -79,8 +80,7 @@
     <td class="floating-box-right"><div><a href="##" onClick="goBack(); return false; "><img src='/images/close.png'></a></div></td>
     </tr>
 	</table>
-<!--
--->
+
 <!--
         <a href="##" onClick="toggleFullScreen(); return false; "><img src='/images/fulls.png'></a>
 -->
@@ -108,18 +108,17 @@
 			</tr>
         </table>
         
-        <input id="Wrong" type="button" value="Wrong" onclick="doFunction();" />
-        
-        <input id="Show" type="button" value="Show" onclick="doFunction();" />
-        
-        <input id="Right" type="button" value="Right" onclick="doFunction();" />
-        
+        <div class="iconss">
+			
+				<input class="btnNo" id="Wrong" type="button" value="Wrong" onclick="doFunction();" />
+				<input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Show Translation" onclick="doFunction();" />
+				<input class="btnOk" id="Right" type="button" value="Right" onclick="doFunction();" />
 
 <!--
-        <div class="iconss">
 			<a onclick="page2(); return false" style="text-decoration:none;" class="cursor"><img src="/images/nextv.png"></a>
-		</div>
 -->
+
+		</div>
 		
     </body>
     <script src="/js/flashcard.js"></script>
