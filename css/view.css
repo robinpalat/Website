@@ -214,7 +214,7 @@ a.cursor {cursor:hand;}
   font-size: 10px;
   font-size: 0.95vw;
   text-align: center;
-  color: #4D4D4D;
+  color: #6B5724;
   width: 28%;
   height: 30px;
   border: 0px solid #436C2B;
@@ -228,14 +228,11 @@ a.cursor {cursor:hand;}
   text-align: center;
   font-weight: bold;
   color: #E6E6FA;
-  background: #82B359;
+  background: #A2D07D;
   width: 28%;
   height: 50px;
   border: 0px solid #436C2B;
   border-radius: 8px;
-  background: -moz-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
-  background: -webkit-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
-  background: linear-gradient(to bottom,  #6E6767 30%,#4F4A4A 90%);
 }
 
 .btnOk:hover {
@@ -243,7 +240,7 @@ a.cursor {cursor:hand;}
   font-size: 1.95vw;
   text-align: center;
   color: #E6E6FA;
-  background: #649935;
+  background: #66A42F;
   font-weight: bold;
   width: 28%;
   height: 50px;
@@ -257,14 +254,11 @@ a.cursor {cursor:hand;}
   text-align: center;
   font-weight: bold;
   color: #E6E6FA;
-  background: #B35975;
+  background: #DE939A;
   width: 28%;
   height: 50px;
   border-radius: 8px;
   border: 0px solid #436C2B;
-  background: -moz-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
-  background: -webkit-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
-  background: linear-gradient(to bottom,  #6E6767 30%,#4F4A4A 90%);
 }
 
 .btnNo:hover {
@@ -272,7 +266,7 @@ a.cursor {cursor:hand;}
   font-size: 1.95vw;
   text-align: center;
   color: #E6E6FA;
-  background: #AF5751;
+  background: #C55171;
   font-weight: bold;
   width: 28%;
   height: 50px;
