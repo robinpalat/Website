@@ -180,7 +180,7 @@ a.cursor {cursor:hand;}
 #Wrong {
     position: fixed;
     bottom: 15px;
-    left: 4%; 
+    left: 5%; 
 }
 
 #Show {
@@ -193,13 +193,19 @@ a.cursor {cursor:hand;}
 #Right {
     position: fixed;
     bottom: 15px;
-    right: 4%;
+    right: 5%;
+}
+
+
+body > button {
+    background: #428BCA;
+    transition: all 0.3s ease 0s;
 }
 
 .btnShow {
-  font-size: 10px;
+  font-size: 12px;
   width: 98%;
-  font-size: 0.95vw;
+  font-size: 1.25vw;
   text-align: center;
   color: #816F42;
   background: #F0EAB3;
@@ -211,8 +217,8 @@ a.cursor {cursor:hand;}
 }
 
 .btnShow:hover {
-  font-size: 10px;
-  font-size: 0.95vw;
+  font-size: 12px;
+  font-size: 1.25vw;
   text-align: center;
   color: #6B5724;
   width: 28%;
@@ -233,6 +239,7 @@ a.cursor {cursor:hand;}
   height: 50px;
   border: 0px solid #436C2B;
   border-radius: 8px;
+  transition: all 0.2s ease 0s;
 }
 
 .btnOk:hover {
@@ -246,6 +253,7 @@ a.cursor {cursor:hand;}
   height: 50px;
   border: 0px;
   border-radius: 8px;
+  transition: all 0.4s ease 0s;
 }
 
 .btnNo {
@@ -259,6 +267,7 @@ a.cursor {cursor:hand;}
   height: 50px;
   border-radius: 8px;
   border: 0px solid #436C2B;
+  transition: all 0.2s ease 0s;
 }
 
 .btnNo:hover {
@@ -272,5 +281,8 @@ a.cursor {cursor:hand;}
   height: 50px;
   border: 0px;
   border-radius: 8px;
+  transition: all 0.4s ease 0s;
 }
+
+
 

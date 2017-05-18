@@ -84,6 +84,8 @@ var Cards = (function() {
         var scoreOkElement = document.querySelector("#score_ok").children[0]
         var scoreNoElement = document.querySelector("#score_no").children[0]
         document.getElementById("Show").style = "DISPLAY: true;";
+        document.getElementById('Right').style.right = "5%";
+        document.getElementById('Wrong').style.left = "5%";
         
         srceElement.hidden = true
         dotsElement.hidden = false
@@ -180,5 +182,7 @@ window.addEventListener('load', function () {
         srceElement.hidden = false
         dotsElement.hidden = true
         document.getElementById("Show").style = "DISPLAY: none;";
+        document.getElementById('Right').style.right = "21%";
+        document.getElementById('Wrong').style.left = "21%";
     }
 })
