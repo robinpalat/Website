@@ -1,12 +1,21 @@
 
 var scoreOk = 0
 var scoreNo = 0
+var imported = document.createElement('script');
+imported.src = '/js/sweetalert.min.js';
+document.head.appendChild(imported);
+
+function percentage(num, per)
+{
+  return (num*100)/per;
+}
+
 
 var Cards = (function() {
     
     var render_page = function (data) {
-        var subjectElement = document.querySelector("#name").children[0]
-        subjectElement.innerHTML = data.name
+        //var subjectElement = document.querySelector("#name").children[0]
+        //subjectElement.innerHTML = data.name
         var subjectElement = document.querySelector("#autr").children[0]
         subjectElement.innerHTML = 'Create by ' + data.autr
         var subjectElement = document.querySelector("#nwrd").children[0]
@@ -111,8 +120,26 @@ var Cards = (function() {
         var nextIndex = current+1
         var scoreOk = scoreOk+1
         
+        
+        
         if (nextIndex == keys.length) {
-            nextIndex = 0
+			
+			var por = percentage(scoreOk, keys.length);
+			var por = por.toFixed();
+			
+			if (scoreOk == keys.length) {
+			  swal("Congratulations, you made a passing score!", 'Your score is: '+por+'%', "success");
+			} else if (scoreOk > scoreNo) {
+			  swal("Good job!", 'Your score is: '+por+'%', "success");
+			} else if (scoreOk < scoreNo) {
+			  swal("You've not passed", 'Your score is: '+por+'%', "error");
+			} else if (scoreOk == scoreNo) {
+			  swal("Good job!", 'Your score is: '+por+'%', "warning");
+			}
+			
+            var scoreOk = 0;
+            var scoreNo = 0;
+            var nextIndex = 0;
         }
 
         var next = keys[nextIndex]
@@ -134,7 +161,24 @@ var Cards = (function() {
         var scoreNo = scoreNo+1
         
         if (nextIndex == keys.length) {
-            nextIndex = 0
+            
+			var por = percentage(scoreOk, keys.length);
+			var por = por.toFixed();
+			
+			if (scoreOk == keys.length) {
+			  swal("Congratulations, you made a passing score!", 'Your score is: '+por+'%', "success");
+			} else if (scoreOk > scoreNo) {
+			  swal("Good job!", 'Your score is: '+por+'%', "success");
+			} else if (scoreOk < scoreNo) {
+			  swal("You've not passed", 'Your score is: '+por+'%', "error");
+			} else if (scoreOk == scoreNo) {
+			  swal("Good job!", 'Your score is: '+por+'%', "warning");
+			}
+			
+            
+            var scoreOk = 0;
+            var scoreNo = 0;
+            var nextIndex = 0;
         }
 
         var next = keys[nextIndex]

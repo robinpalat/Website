@@ -207,25 +207,27 @@ body > button {
   width: 98%;
   font-size: 1.25vw;
   text-align: center;
-  color: #816F42;
-  background: #F0EAB3;
+  color: #4F634B;
+  background: #E5F9CC;
   width: 28%;
   height: 30px;
   border: 0px;
   vertical-align:top;
   cursor:hand;
+  border-radius: 6px;
 }
 
 .btnShow:hover {
   font-size: 12px;
   font-size: 1.25vw;
   text-align: center;
-  color: #6B5724;
+  color: #3D8134;
   width: 28%;
   height: 30px;
   border: 0px solid #436C2B;
   vertical-align:top;
   cursor:hand;
+  border-radius: 6px;
 }
 
 .btnOk {

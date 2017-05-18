@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/css/fa/css/font-awesome.css">
         <link rel="image_src" href="http://idiomind.net/images/zwlogo.png" / ><!--formatted-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/sweetalert.css">
         <script>
         function goBack() {
             window.history.back();
@@ -59,20 +60,18 @@
     <td>
 		<table class="tainfo">
 		<tr>
-          <td>
-			  <span style="font-weight: bold;text-align:left;"id="name"><font></font></span>
-			  <span style="text-align:left;"id="autr"><font></font></span>
-          </td>
-        </tr>
-        <tr>
-          <td class="tdinfo">
+           <td class="tdinfo">
               <span id="nwrd"><font></font></span>
 			  <span id="nsnt"><font></font></span>
 			  <span id="naud"><font></font></span>
 			  <span id="nimg"><font></font></span> | 
-			  
 			  <span id="score_no"> No Sabia <font color="red"></font></span> /
 			  <span id="score_ok">Lo Sabia <font color="green"></font></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+			  <span style="text-align:left;"id="autr"><font></font></span>
           </td>
         </tr>
 
