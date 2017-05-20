@@ -42,7 +42,7 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
                     $dir = basename($dir);
                     $name = substr($title, 0, -4);
                     $category = basename(dirname($topic_path));
-                    $linkview = '/viewapp.php?l='.$dir.'&amp;c='.$category.'&amp;set='.$title;
+                    $linkview = '/view.php?l='.$dir.'&amp;c='.$category.'&amp;set='.$title;
 echo "
 <item>
 <title>".$name."</title>

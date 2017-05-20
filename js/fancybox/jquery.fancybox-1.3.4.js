@@ -1119,7 +1119,7 @@
 		overlayOpacity : 0.7,
 		overlayColor : '#777',
 
-		titleShow : true,
+		titleShow : false,
 		titlePosition : 'float', // 'float', 'outside', 'inside' or 'over'
 		titleFormat : null,
 		titleFromAlt : false,

@@ -71,7 +71,7 @@
 
         echo"<tr>
             <td style=\"width:5%\"><a href=\"/viewapp.php?l=".$language."&c=".$category."&set=".$namee."\"><img class='expand' src='/images/idmnd.png'></a></td>
-            <td style=\"width:90%;line-height:16px;font-size:13px\"><a href=\"/viewapp.php?l=".$language."&c=".$category."&set=".$namee."\">{$name}</a></td>
+            <td style=\"width:90%;line-height:16px;font-size:13px\"><a title=".$namee." href=\"/viewapp.php?l=".$language."&c=".$category."&set=".$namee."\">{$name}</a></td>
         </tr>";
        }
     }

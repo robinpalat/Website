@@ -48,8 +48,10 @@ function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $
     for ($x=0;$x<$max_item_cnt;$x++) {
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
-
-        $result .= ' <span class="feed-title"><a href="'.$link.'" title="'.$title.'">'.$title.'</a></span> ';
+        $description = $feed[$x]['desc'];
+		$descriptione = strtoupper($description);
+		$descriptione = trim($descriptione,'[]');
+        $result .= ' <span class="feed-title"><a class="box" href="'.$link.'" title="'.$descriptione.'">'.$title.'</a></span> ';
         if ($show_date) {
             $date = date('F d, Y', strtotime($feed[$x]['date']));
             $result .= ' <small><font color="#1FAF12">Published </font><font color="#626262">'.$date.'</font></small> ';
@@ -82,7 +84,7 @@ function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $
                 $description = '<img class="feed-item-image" src="' . $image['src'] . '" />' . $description;
             }
             $result .= ' <span class="feed-description"><font color="#626262">' . $description;
-            $result .= ' </font><a href="'.$link.'" title="'.$title.'"></a>'.'</span><br>';
+            $result .= ' </font><a class="box" href="'.$link.'" title="'.$title.'"></a>'.'</span><br>';
         }
 
     }

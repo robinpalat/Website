@@ -36,6 +36,7 @@
         d.setTime(d.getTime() + (30*24*60*60*1000));
         var expires = "expires=" + d.toGMTString();
         document.cookie="language=<?=$langdir?>; expires=" + expires + "; path=/";
+        
     }
     </script>
     
@@ -44,6 +45,7 @@
     <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 
     <script type="text/javascript">
+			$('.titleHidden').removeAttr('title');
             $(document).ready(function() {
                 $(".box").fancybox({
                     'width'         : '75%',
@@ -176,9 +178,12 @@
 				if ($files){
 					$filecount = count($files);
 				}
+				
 				if ($filecount>0){
 					$upcate = ucfirst($cate);
-					echo "<div class=\"floating-box\"><a href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box tooltip1\" label=\"".$filecount." Items in ".$upcate."\"><img class=\"expand\" src=\"/images/".$cate.".png\" /></a></div>";
+					$catee = strtoupper($cate);
+					echo "<div class=\"floating-box\"><a title=\"".$catee."\" href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\" class=\"titleHidden\"><img class=\"expand\" src=\"/images/".$cate.".png\" /></a><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div>";
+					
 				}
 			}
 		}
