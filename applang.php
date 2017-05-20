@@ -69,12 +69,12 @@ function setCookie() {
     <main id="content" class="group" role="main">
     <div class="main">
 
-    <table width="100%" height="30px" border="0" align="center" class="top">
-        <td align="left" class="langtitle">
-            <a style="color:#FFFFFF" href="/<?=$langdir?>">My <?=$uplangdir?><br></a>
+    <table width="100%" height="40px" border="0" align="center" class="top">
+        <td align="left" >
+            <a class="langtitle" style="vertical-align:top;font-size:17px;color:#FFFFFF" href="/<?=$langdir?>/app.php">My <?=$uplangdir?></a><br><a style="font-size:12px;padding-left:45px;text-decoration: none; color: #B1B1B1" href="../community/"><?= $use ?></a>
         </td>
         <td align="right">
-            <a class=<?=$class_btn_user?> style="text-decoration: none; color: #FFFFFF" href="../community/"><small><?= $use ?></small></a>
+            <img height="32" width="32" src="/images/logo.svg">
         </td>
     </table>
 <br>
@@ -99,17 +99,14 @@ function setCookie() {
         <td align="left" valign="top">
 			
         <div class="feed-lists">
-			<h1><a href="http://feeds.feedburner.com/p/<?=$langdir?>"></a>Latest Published Topics</h1>
-				<?php
-				output_rss_feed("http://idiomind.com/rss.php/?trgt=".$langdir, 5, true, true, 200);
-				?>
+		
         </div>
         
         </td>
         </tr>
     </table>
 -->
-	<div id="folders">
+	<div class="folders">
     <?php
     
 	$files = scandir('./');
@@ -123,7 +120,7 @@ function setCookie() {
 			}
 			if ($filecount>0){
 				$upcate = ucfirst($cate);
-				echo "<div class=\"floating-box\"><a href=\"/boxapp.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /></a><span class=\"circle-count\">".$filecount." <font size=1>items</font></span></div>";
+				echo "<div class=\"floating-box\"><a href=\"/boxapp.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /></a><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div>";
 			}
 		}
 	}

@@ -10,7 +10,6 @@ function percentage(num, per)
   return (num*100)/per;
 }
 
-
 var Cards = (function() {
     
     var render_page = function (data) {
@@ -146,7 +145,6 @@ var Cards = (function() {
         render_card(next, data.items[next], scoreOk, scoreNo)
     }
     
-    
 	var next_card_no = function () {
         var trgt = document.querySelector("#trgt").children[0].innerHTML
         var trgt = document.querySelector("#trgt").children[0].innerHTML
@@ -175,7 +173,6 @@ var Cards = (function() {
 			  swal("Good job!", 'Your score is: '+por+'%', "warning");
 			}
 			
-            
             var scoreOk = 0;
             var scoreNo = 0;
             var nextIndex = 0;
@@ -215,10 +212,8 @@ var Cards = (function() {
 
 window.addEventListener('load', function () {
 	
-	
 	document.getElementById("Wrong").onclick = function () { Cards.nextCardNo(); };
 	document.getElementById("Right").onclick = function () { Cards.nextCardOk(); };
-	
 
 	document.getElementById("Show").onclick = function () {  
         var srceElement = document.querySelector("#srce").children[0]

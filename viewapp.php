@@ -113,9 +113,9 @@
         
         <div class="iconss">
 			
-				<input class="btnNo" id="Wrong" type="button" value="No" onclick="doFunction();" />
+				<input class="btnNo" id="Wrong" type="button" value="NO" onclick="doFunction();" />
 				<input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Translation" onclick="doFunction();" />
-				<input class="btnOk" id="Right" type="button" value="Ok" onclick="doFunction();" />
+				<input class="btnOk" id="Right" type="button" value="OK" onclick="doFunction();" />
 
 <!--
 			<a onclick="page2(); return false" style="text-decoration:none;" class="cursor"><img src="/images/nextv.png"></a>
