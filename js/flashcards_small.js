@@ -51,35 +51,35 @@ var Cards = (function() {
         
         var chars = trgt.length;
 		if ((chars >= 1) && (chars < 20)) {
-		  var fs = 68; var vw = 5.75
+		  var fs = 30;
 		} else if ((chars >= 20) && (chars < 40)) {
-		  var fs = 50; var vw = 4.75
+		  var fs = 26; 
 		} else if ((chars >= 40) && (chars < 80)) {
-		  var fs = 55; var vw = 3.75
+		  var fs = 24;
 		} else if ((chars >= 80) && (chars < 100)) {
-		  var fs = 45; var vw = 2.75
+		  var fs = 22;
 		} else {
-		  var fs = 35; var vw = 2.75
+		  var fs = 20;
 		}
 		
 		var chars = srce.length;
 		if ((chars >= 1) && (chars < 20)) {
-		  var sfs = 40; var svw = 4.75
+		  var sfs = 28;
 		} else if ((chars >= 20) && (chars < 40)) {
-		  var sfs = 38; var svw = 3.75
+		  var sfs = 22;
 		} else if ((chars >= 40) && (chars < 80)) {
-		  var sfs = 32; var svw = 2.75
+		  var sfs = 18;
 		} else if ((chars >= 80) && (chars < 100)) {
-		  var sfs = 28; var svw = 2.10
+		  var sfs = 16;
 		} else {
-		  var sfs = 25; var svw = 2.10
+		  var sfs = 16;
 		}
-		var mvw = 6; var msvw = 5
-		var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
-		'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
+
+		var lcss = 'h1 { font-size:'+fs+'} '+
+		'h2 { font-size:'+sfs+'}'+
 		'@media all and (max-device-width: 320px){'+
-		'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
-		'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}}',
+		'h1 { font-size:'+fs+';}'+
+		'h2 { font-size:'+sfs+';}}',
 		head = document.head || document.getElementsByTagName('head')[0],
 		style = document.createElement('style');
 		style.type = 'text/css';
@@ -101,7 +101,7 @@ var Cards = (function() {
 
         trgtElement.innerHTML = trgt
         srceElement.innerHTML = srce
-        dotsElement.innerHTML = '......'
+        dotsElement.innerHTML = '<img src="/images/eyelash.svg"</img>'
         exmpElement.innerHTML = exmp
         scoreNoElement.innerHTML = scoreNo
         scoreOkElement.innerHTML = scoreOk

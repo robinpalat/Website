@@ -155,7 +155,7 @@
 	</div>
 
 	<br>
-        <div class="feed-lists">
+        <div class="feed-lists" class="box">
 		   <h1>Latest Published Topics</h1>
 		<?php
 		output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 8, true, true, 200);

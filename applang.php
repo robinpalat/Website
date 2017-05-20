@@ -77,21 +77,23 @@ function setCookie() {
             <a class=<?=$class_btn_user?> style="text-decoration: none; color: #FFFFFF" href="../community/"><small><?= $use ?></small></a>
         </td>
     </table>
-
-    <table style="height:15px;width:100%;padding:4px;font-size:11px;">
-	<tr style="color:#FEFFFF"><td>
-	 <td style="border-radius:4px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#978786">Plus</a></td>
-         <td style="border-radius:4px;background:#EB9486;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
-         <td style="border-radius:4px;background:#6981A1;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Downloads</td>
-         <td style="border-radius:4px;background:#7E7F9A;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Under Construction</td>
-	
-	</tr>
+<br>
+<!--
+    <table style="width:100%;padding:3px;font-size:14px;">
+	         <td style="border-radius:5px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#978786">Plus</a></td>
+         <td style="border-radius:5px;background:#EB9486;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
+         <td style="border-radius:5px;background:#6981A1;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Downloads</td>
+         <td style="border-radius:5px;background:#7E7F9A;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Under Construction</td>
 	</table>
+-->
+<!--
 	<div class="sentenceweek">
 		<div class="sentencew-content"> <h1 style="background-color:#D9E0EA;"> Sentence of week <i align="right" class="fa fa-rss-square" aria-hidden="true"></i></h1> consectetur adipisicing elit, sed doeiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enimad<br> minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat.<br> Duis aute irure dolor inreprehenderit<br> in voluptate velit esse cillum dolore eu fugiat <br>nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est <br>laborum.Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit, se
 		</div>
     </div>
+-->
     
+<!--
     <table width="94%" border="0" align="center" class="rss">
         <tr>
         <td align="left" valign="top">
@@ -99,19 +101,20 @@ function setCookie() {
         <div class="feed-lists">
 			<h1><a href="http://feeds.feedburner.com/p/<?=$langdir?>"></a>Latest Published Topics</h1>
 				<?php
-				output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 5, true, true, 200);
+				output_rss_feed("http://idiomind.com/rss.php/?trgt=".$langdir, 5, true, true, 200);
 				?>
         </div>
         
         </td>
         </tr>
     </table>
+-->
 	<div id="folders">
     <?php
     
 	$files = scandir('./');
 	foreach($files as $cate) {
-		if($cate!=".htaccess" AND $cate!="." AND $cate!=".." AND $cate!="index.php" AND $cate!="boxmobile.php" AND $cate!="mobile.php"){
+		if($cate!=".htaccess" AND $cate!="." AND $cate!=".." AND $cate!="index.php" AND $cate!="boxapp.php" AND $cate!="mobile.php"){
 			$catedir = "./".$cate."/";
 			$filecount = 0;
 			$files = glob($catedir . "*.idmnd");
@@ -120,18 +123,21 @@ function setCookie() {
 			}
 			if ($filecount>0){
 				$upcate = ucfirst($cate);
-				echo "<div class=\"floating-box\"><a href=\"/boxmobile.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /></a><span class=\"circle-count\">".$filecount." <font size=1>items</font></span></div>";
+				echo "<div class=\"floating-box\"><a href=\"/boxapp.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /></a><span class=\"circle-count\">".$filecount." <font size=1>items</font></span></div>";
 			}
 		}
 	}
 	?>
+	
+	
+	
+	
 	</div>
   <br>
   </div>
   </main>
       <footer class="footer">
-        <br><div>&copy 2015-2017 <a href="http://idiomind.sourceforge.net">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
-        </div><br>
+        <br><div>&copy 2015-2017 idiomind Project</div><br>
     </footer>
 </body>
 </html>

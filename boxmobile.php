@@ -70,11 +70,8 @@
         $namehref=$dirArray[$index];
 
         echo"<tr>
-            <td style=\"width:5%\"><a href=\"/view.php?l=".$language."&c=".$category."&set=".$namee."\"><img class='expand' src='/images/idmnd.png'></a></td>
-            <td style=\"width:90%\"><a href=\"/view.php?l=".$language."&c=".$category."&set=".$namee."\">{$name}</a></td>
-            <td style=\"width:5%\"><a href=\"".$place.$namehref."\"><img src='/images/dl.png'></a></td>
-            
-            
+            <td style=\"width:5%\"><a href=\"/viewmobile.php?l=".$language."&c=".$category."&set=".$namee."\"><img class='expand' src='/images/idmnd.png'></a></td>
+            <td style=\"width:90%\"><a href=\"/viewmobile.php?l=".$language."&c=".$category."&set=".$namee."\">{$name}</a></td>
         </tr>";
        }
     }

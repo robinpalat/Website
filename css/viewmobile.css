@@ -1,6 +1,12 @@
-h1,h2,p { 
+h1 { 
     font-family: 'verdana', sans-serif; 
-    font-weight: 100; 
+    font-weight: bold;
+    color: #3D4F31;
+}
+
+h2,p { 
+    font-family: 'verdana', sans-serif; 
+    font-weight: 300; 
 }
 
 body {
@@ -20,26 +26,26 @@ div {
 
 .exmp {
     font-family: 'verdana'; 
-    font-size: 18px;
-    font-size: 2.75vw;
+    font-size: 20px;
+    font-size: 4.50vw;
     color: #393939;
     padding-left: 20px;
     padding-right: 20px;
 }
 
 #trgt {
-    margin: 10 auto;
-    width: 80%;
-    font-size: 16px;
-    font-size: 2.25vw;
-    text-shadow: 0 0 50px #DDF7CA, 0 0 50px #DDF7CA;
+    margin: 5 auto;
+    width: 95%;
+    font-size: 20px;
+    font-size: 4.25vw;
+    text-shadow: 0 0 20px #DCFFBE, 0 0 20px #EDEEB1;
 }
 
 #srce {
-    margin: 10 auto;
-    width: 80%;
+    margin: 5 auto;
+    width: 95%;
     font-size: 14px;
-    font-size: 1.75vw;
+    font-size: 2.75vw;
 }
 
 #dots {
@@ -50,8 +56,8 @@ div {
 
 
 .tainfo {
-    font-size: 10px;
-    color: #436C2B;
+    font-size: 8px;
+    color: #435937;
     font-family: 'verdana', 'roboto'; 
     border-collapse: collapse;
 }
@@ -79,13 +85,14 @@ div {
 	   
 	}
 	
+/*
 @media all and (max-device-width: 720px){
 
     #trgt {
         margin: 0 auto;
         width: 80%;
         font-size: 40px;
-        font-size: 4.75vw;
+        font-size: 8.75vw;
     }
     
     #srce {
@@ -173,6 +180,7 @@ div {
 		padding-right: 10px;
 	}
 }
+*/
 
 a.cursor {cursor:hand;}
 
@@ -197,17 +205,12 @@ a.cursor {cursor:hand;}
 }
 
 
-body > button {
-    background: #428BCA;
-    transition: all 0.3s ease 0s;
-}
-
 .btnShow {
-  font-size: 12px;
+  font-size: 14px;
   width: 98%;
-  font-size: 1.55vw;
+  font-size: 3.65vw;
   text-align: center;
-  color: #4F634B;
+  color: #436D3A;
   background: #E5F9CC;
   width: 28%;
   height: 50px;
@@ -220,8 +223,8 @@ body > button {
 }
 
 .btnShow:hover {
-  font-size: 12px;
-  font-size: 1.55vw;
+  font-size: 14px;
+  font-size: 3.65vw;
   text-align: center;
   color: #3D8134;
   width: 28%;
@@ -236,58 +239,58 @@ body > button {
 
 .btnOk {
   font-size: 15px;
-  font-size: 1.95vw;
+  font-size: 4.95vw;
   text-align: center;
   font-weight: bold;
-  color: #E6E6FA;
-  background: #A2D07D;
+  color: #FFFFFF;
+  background: #9BCA73;
   width: 28%;
   height: 50px;
   border: 0px solid #436C2B;
   border-radius: 8px;
-  transition: all 0.2s ease 0s;
+
 }
 
 .btnOk:hover {
   font-size: 15px;
-  font-size: 1.95vw;
+  font-size: 4.95vw;
   text-align: center;
-  color: #E6E6FA;
-  background: #66A42F;
+  color: #FFFFFF;
+  background: #88C74F;
   font-weight: bold;
   width: 28%;
   height: 50px;
   border: 0px;
   border-radius: 8px;
-  transition: all 0.4s ease 0s;
+
 }
 
 .btnNo {
   font-size: 15px;
-  font-size: 1.95vw;
+  font-size: 4.95vw;
   text-align: center;
   font-weight: bold;
-  color: #E6E6FA;
-  background: #DE939A;
+  color: #FFFFFF;
+  background: #D49DA3;
   width: 28%;
   height: 50px;
   border-radius: 8px;
   border: 0px solid #436C2B;
-  transition: all 0.2s ease 0s;
+
 }
 
 .btnNo:hover {
   font-size: 15px;
-  font-size: 1.95vw;
+  font-size: 4.95vw;
   text-align: center;
-  color: #E6E6FA;
-  background: #C55171;
+  color: #FFFFFF;
+  background: #D77C95;
   font-weight: bold;
   width: 28%;
   height: 50px;
   border: 0px;
   border-radius: 8px;
-  transition: all 0.4s ease 0s;
+
 }
 
 
