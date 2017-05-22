@@ -26,7 +26,7 @@ var Cards = (function() {
         var subjectElement = document.querySelector("#naud").children[0]
         subjectElement.innerHTML = 'Audio ' + data.naud
         var first = Object.keys(data.items)[0]
-        
+    
         render_card(first, data.items[first], scoreOk, scoreNo)
     }
     
@@ -42,12 +42,12 @@ var Cards = (function() {
         }
         var srce = JSON.stringify(arr[0])
         var srce = JSON.parse(srce)
-        var exmp = JSON.stringify(arr[11])
         var grmr = JSON.stringify(arr[15])
         var grmr = JSON.stringify(arr[15])
         var grmr = JSON.parse(grmr)
         var type = JSON.stringify(arr[20])
         var type = JSON.parse(type)
+        var exmp = JSON.stringify(arr[11])
         var exmp = JSON.parse(exmp)
         var itle = trgt.toLowerCase();
         var exmp = exmp.replace(itle, "<b>"+itle+"</b>")
@@ -55,35 +55,35 @@ var Cards = (function() {
         
         var chars = trgt.length;
 		if ((chars >= 1) && (chars < 20)) {
-		  var fs = 68; var vw = 5.75
+		  var fs = 30;
 		} else if ((chars >= 20) && (chars < 40)) {
-		  var fs = 50; var vw = 4.75
+		  var fs = 26; 
 		} else if ((chars >= 40) && (chars < 80)) {
-		  var fs = 55; var vw = 3.75
+		  var fs = 24;
 		} else if ((chars >= 80) && (chars < 100)) {
-		  var fs = 45; var vw = 2.75
+		  var fs = 22;
 		} else {
-		  var fs = 35; var vw = 2.75
+		  var fs = 20;
 		}
 		
 		var chars = srce.length;
 		if ((chars >= 1) && (chars < 20)) {
-		  var sfs = 40; var svw = 4.75
+		  var sfs = 28;
 		} else if ((chars >= 20) && (chars < 40)) {
-		  var sfs = 38; var svw = 3.75
+		  var sfs = 22;
 		} else if ((chars >= 40) && (chars < 80)) {
-		  var sfs = 32; var svw = 2.75
+		  var sfs = 18;
 		} else if ((chars >= 80) && (chars < 100)) {
-		  var sfs = 28; var svw = 2.10
+		  var sfs = 16;
 		} else {
-		  var sfs = 25; var svw = 2.10
+		  var sfs = 16;
 		}
-		var mvw = 6; var msvw = 5
-		var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
-		'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
+
+		var lcss = 'h1 { font-size:'+fs+'} '+
+		'h2 { font-size:'+sfs+'}'+
 		'@media all and (max-device-width: 320px){'+
-		'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
-		'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}}',
+		'h1 { font-size:'+fs+';}'+
+		'h2 { font-size:'+sfs+';}}',
 		head = document.head || document.getElementsByTagName('head')[0],
 		style = document.createElement('style');
 		style.type = 'text/css';
@@ -93,8 +93,8 @@ var Cards = (function() {
         var trgtElement = document.querySelector("#trgt").children[0]
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
-        var imgsElement = document.querySelector("#imgs").children[0]
         var exmpElement = document.querySelector("#exmp").children[0]
+        var imgsElement = document.querySelector("#imgs").children[0]
         var scoreOkElement = document.querySelector("#score_ok").children[0]
         var scoreNoElement = document.querySelector("#score_no").children[0]
         document.getElementById("Show").style = "DISPLAY: true;";
@@ -114,11 +114,7 @@ var Cards = (function() {
         exmpElement.innerHTML = exmp
         scoreNoElement.innerHTML = scoreNo
         scoreOkElement.innerHTML = scoreOk
-        
-        var imge = document.querySelector("#imgs").children[0].innerHTML
-		imge.onerror = function () { 
-			document.getElementById("imgs").style.display = "none";
-		}
+       
     }
     
 	var next_card_ok = function () {
@@ -132,7 +128,9 @@ var Cards = (function() {
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
         var scoreOk = scoreOk+1
-
+        
+        
+        
         if (nextIndex == keys.length) {
 			
 			var por = percentage(scoreOk, keys.length);
@@ -156,7 +154,6 @@ var Cards = (function() {
         var next = keys[nextIndex]
         render_card(next, data.items[next], scoreOk, scoreNo)
     }
-    
     
 	var next_card_no = function () {
         var trgt = document.querySelector("#trgt").children[0].innerHTML
@@ -186,7 +183,9 @@ var Cards = (function() {
 			  swal("Good job!", 'Your score is: '+por+'%', "warning");
 			}
 			
-            var scoreOk = 0; var scoreNo = 0; var nextIndex = 0;
+            var scoreOk = 0;
+            var scoreNo = 0;
+            var nextIndex = 0;
         }
 
         var next = keys[nextIndex]
@@ -222,8 +221,10 @@ var Cards = (function() {
 })()
 
 window.addEventListener('load', function () {
+	
 	document.getElementById("Wrong").onclick = function () { Cards.nextCardNo(); };
 	document.getElementById("Right").onclick = function () { Cards.nextCardOk(); };
+
 	document.getElementById("Show").onclick = function () {  
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]

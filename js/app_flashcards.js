@@ -42,6 +42,11 @@ var Cards = (function() {
         }
         var srce = JSON.stringify(arr[0])
         var srce = JSON.parse(srce)
+        var grmr = JSON.stringify(arr[15])
+        var grmr = JSON.stringify(arr[15])
+        var grmr = JSON.parse(grmr)
+        var type = JSON.stringify(arr[20])
+        var type = JSON.parse(type)
         var exmp = JSON.stringify(arr[11])
         var exmp = JSON.parse(exmp)
         var itle = trgt.toLowerCase();
@@ -89,6 +94,7 @@ var Cards = (function() {
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
         var exmpElement = document.querySelector("#exmp").children[0]
+        var imgsElement = document.querySelector("#imgs").children[0]
         var scoreOkElement = document.querySelector("#score_ok").children[0]
         var scoreNoElement = document.querySelector("#score_no").children[0]
         document.getElementById("Show").style = "DISPLAY: true;";
@@ -99,6 +105,10 @@ var Cards = (function() {
         dotsElement.hidden = false
 
         trgtElement.innerHTML = trgt
+        if (type == '1') {
+			trgtximg = trgt.toLowerCase()
+			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-0.jpg"</img>'
+        }
         srceElement.innerHTML = srce
         dotsElement.innerHTML = '<img src="/images/eyelash.svg"</img>'
         exmpElement.innerHTML = exmp

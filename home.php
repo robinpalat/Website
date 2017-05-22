@@ -13,7 +13,7 @@
 	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <link rel="image_src" href="http://idiomind.net/images/logo.png" / ><!--formatted-->
     <title>Idiomind's library</title>
-    <link href="/css/lg.css" rel="stylesheet" type="text/css" />
+    <link href="/css/home.css" rel="stylesheet" type="text/css" />
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <?php include 'fetchfeed.php';?>
 
@@ -182,7 +182,7 @@
 				if ($filecount>0){
 					$upcate = ucfirst($cate);
 					$catee = strtoupper($cate);
-					echo "<div class=\"floating-box\"><a title=\"".$catee."\" href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\" class=\"titleHidden\"><img class=\"expand\" src=\"/images/".$cate.".png\" /></a><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div>";
+					echo "<a title=\"".$catee."\" href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\" class=\"titleHidden\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
 					
 				}
 			}

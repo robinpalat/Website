@@ -24,6 +24,12 @@ div {
     text-align: center;
 }
 
+.WordImage { 
+	width: 40%; height: auto;
+	border-radius: 5%;
+	border:3px solid white;
+}
+
 .exmp {
     font-family: 'verdana'; 
     font-size: 20px;

@@ -36,6 +36,13 @@
             }
         </script>
         
+        <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+		   document.querySelectorAll('img').forEach(function(img){
+			img.onerror = function(){this.style.display='none';};
+		   })
+		});
+        </script>
     </head>
     <body>
         <?php
@@ -85,27 +92,28 @@
 -->
         <br>
      
-        <table style="width:80%;margin:20;vertical-align:top;align:center;padding:20">
-			<tr>
-				<div id="trgt">
+  
+<div>
+			    <span id="imgs">
+					<h2></h2>
+				</span>
+
+				<span id="trgt">
 					<h1 style="color:#4A4A4A"></h1>
-				</div>
-			</tr>
-			<tr>
-			
+				</span>
+
+</div>
 				<div id="srce">
 					<h2 style="color:#71806D;"></h2>
 				</div>
 				<div id="dots">
 					<h2 style="color:#3F3C3C"></h2>
 				</div>
-			</tr>
-			<tr>
+
 				<div class="exmp" id="exmp">
 					<font></font>
 				</div>
-			</tr>
-        </table>
+  
         
         <div class="iconss">
 			

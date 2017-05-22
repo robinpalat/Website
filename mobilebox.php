@@ -5,7 +5,7 @@
    <link rel="shortcut icon" href="/favicon.ico">
    <title>Topics</title>
 
-   <link rel="stylesheet" href="/css/boxstyle.css">
+   <link rel="stylesheet" href="/css/mobilebox.css">
    <script src="/js/sorttablee.js"></script>
 </head>
 
@@ -70,8 +70,8 @@
         $namehref=$dirArray[$index];
 
         echo"<tr>
-            <td style=\"width:5%\"><a href=\"/viewmobile.php?l=".$language."&c=".$category."&set=".$namee."\"><img class='expand' src='/images/idmnd.png'></a></td>
-            <td style=\"width:90%\"><a href=\"/viewmobile.php?l=".$language."&c=".$category."&set=".$namee."\">{$name}</a></td>
+            <td style=\"width:5%\"><a href=\"/mobileview.php?l=".$language."&c=".$category."&set=".$namee."\"><img class='expand' src='/images/idmnd.png'></a></td>
+            <td style=\"width:90%\"><a href=\"/mobileview.php?l=".$language."&c=".$category."&set=".$namee."\">{$name}</a></td>
         </tr>";
        }
     }

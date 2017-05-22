@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <title>Study</title>
         <meta name="description" content="Flashcards">
-        <link rel="stylesheet" href="/css/viewmobile.css">
+        <link rel="stylesheet" href="/css/appview.css">
         <link rel="stylesheet" href="/css/fa/css/font-awesome.css">
         <link rel="image_src" href="http://idiomind.net/images/zwlogo.png" / ><!--formatted-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,6 +91,9 @@
      
         <table style="width:100%;margin:5;vertical-align:top;align:center;padding:5">
 			<tr>
+				 <div id="imgs">
+					<h2></h2>
+				</div>
 				<div id="trgt">
 					<h1></h1>
 				</div>
@@ -124,7 +127,7 @@
 		</div>
 		
     </body>
-    <script src="/js/flashcards_small.js"></script>
+    <script src="/js/app_flashcards.js"></script>
     <script>
         var div = document.getElementById("dom-target");
         var myData = div.textContent;
