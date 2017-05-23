@@ -12,12 +12,10 @@ h2,p {
 body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cdeeb1+26,d5fbbd+77,ddf7ca+97 */
     background: #cdeeb1; /* Old browsers */
-/*
     background: -moz-linear-gradient(top,#cdeeb1 16%,#d5fbbd 67%,#ddf7ca 87%); 
     background: -webkit-linear-gradient(top,#cdeeb1 16%,#d5fbbd 67%,#ddf7ca 87%); 
     background: linear-gradient(to bottom,#cdeeb1 16%,#d5fbbd 67%,#ddf7ca 87%); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeeb1', endColorstr='#ddf7ca',GradientType=0 );
-*/
 }
 
 div {
@@ -25,7 +23,7 @@ div {
 }
 
 .WordImage { 
-	width: 40%; height: auto;
+	width: 40%; height: 15%;
 	border-radius: 5%;
 	border:3px solid white;
 }

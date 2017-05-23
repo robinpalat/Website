@@ -5,7 +5,7 @@
    <link rel="shortcut icon" href="/favicon.ico">
    <title>Topics</title>
 
-   <link rel="stylesheet" href="/css/boxstyle.css">
+   <link rel="stylesheet" href="/css/box.css">
    <script src="/js/sorttablee.js"></script>
 </head>
 
@@ -69,12 +69,11 @@
         
         $namehref=$dirArray[$index];
 
-        echo"<tr>
+        echo"<tr id=\"box\">
             <td style=\"width:5%\"><a  href=\"/view.php?l=".$language."&c=".$category."&set=".$namee."\"><img class='expand' src='/images/idmnd.png'></a></td>
             <td style=\"width:90%\"><a href=\"/view.php?l=".$language."&c=".$category."&set=".$namee."\">{$name}</a></td>
             <td style=\"width:5%\"><a href=\"".$place.$namehref."\"><img src='/images/dl.png'></a></td>
-            
-            
+
         </tr>";
        }
     }

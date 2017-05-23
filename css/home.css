@@ -120,7 +120,7 @@ a:hover, a:active, a:focus {
 
 
 .content ul div, .content ol { 
-    padding: 0 55px 15px 40px;
+    padding: 0 55px 15px 30px;
 }
 
 
@@ -255,9 +255,10 @@ nav ul{
 }
 
 
-#categories a:active, #categories a:focus{
+#categories a:active , #categories a:focus{
 	position: relative;
-	top: 1px;
+	top: 3px;
+	display: block;
 }
 
 .group:after {
@@ -278,7 +279,7 @@ nav ul{
 
 
 .circle-count {
-    text-shadow: 1px 1px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 	position: relative;
 	vertical-align: middle;
     left: -15px;
@@ -290,6 +291,8 @@ nav ul{
     color: rgba(215,215,215,0.9);
     font-style: italic;
 }
+
+
 
 .feed-lists {
 	font-size: 14px;

@@ -108,6 +108,8 @@ var Cards = (function() {
         if (type == '1') {
 			trgtximg = trgt.toLowerCase()
 			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-0.jpg"</img>'
+        	} else {
+			imgsElement.innerHTML = '<br>'
         }
         srceElement.innerHTML = srce
         dotsElement.innerHTML = '<img src="/images/eyelash.svg"</img>'

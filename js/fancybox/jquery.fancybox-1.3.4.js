@@ -446,7 +446,7 @@
 			}
 
 			if (currentOpts.titlePosition == 'inside' && titleHeight > 0) {	
-				title.show();	
+				title.hide();	
 			}
 
 			content
@@ -493,12 +493,13 @@
 				title.hide();
 				return;
 			}
-
+			title.hide();
+			
 			title
 				.addClass('fancybox-title-' + currentOpts.titlePosition)
 				.html( titleStr )
 				.appendTo( 'body' )
-				.show();
+				.hide();
 
 			switch (currentOpts.titlePosition) {
 				case 'inside':
@@ -588,7 +589,7 @@
 			wrap.css('height', 'auto');
 
 			if (titleStr && titleStr.length) {
-				title.show();
+				title.hide();
 			}
 
 			if (currentOpts.showCloseButton) {

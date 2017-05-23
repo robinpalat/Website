@@ -43,6 +43,17 @@
 		   })
 		});
         </script>
+        
+         <script>
+		function imgError(image) {
+			image.onerror = "";
+			image.style="display: none;";
+			var s = document.getElementById("imgs");
+            s.value = "<br>";
+			return true;
+		}
+         </script>
+        
     </head>
     <body>
         <?php
@@ -58,73 +69,119 @@
             print $set
             ?>
         </div>
-<!--
-        <input type="button" value="Toggle fullscreen" onclick="toggleFullScreen()">
--->     
 
-	<table style="width:100%;margin:0;vertical-align:top;">
-	<tr>
-    <td>
-		<table class="tainfo">
+	<span id="headA">
+		<table style="width:100%;margin:0;vertical-align:top;">
 		<tr>
-           <td class="tdinfo">
-              <span id="nwrd"><font></font></span>
-			  <span id="nsnt"><font></font></span>
-			  <span id="naud"><font></font></span>
-			  <span id="nimg"><font></font></span> | 
-			  <span id="score_no"> No Sabia <font color="red"></font></span> /
-			  <span id="score_ok">Lo Sabia <font color="green"></font></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-			  <span style="text-align:left;"id="autr"><font></font></span>
-          </td>
-        </tr>
+		<td>
+			<table class="tainfo">
+			<tr>
+			   <td class="tdinfo">
+				   
+				   <span id="name">
+						<h2 style="color:#4A4A4A"></h2>
+					</span>
+					  <span id="nwrd"><font></font></span>
+					  <span id="nsnt"><font></font></span>
+					  <span id="naud"><font></font></span>
+					  <span id="nimg"><font></font></span>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					  <span style="text-align:left;"id="autr"><font></font></span>
+				  </td>
+				</tr>
 
-      </table>
-    <td class="floating-box-right"><div><a href="##" onClick="goBack(); return false; "><img src='/images/close.png'></a></div></td>
-    </tr>
-	</table>
+			</table>
+			<td class="floating-box-right"><div><a href="##" onClick="goBack(); return false; "><img src='/images/close.png'></a></div></td>
+			</tr>
+		</table>
+	</span>
+		
+		
+		
+	<span id="headB" style="visibility:hidden;">
+		<table style="width:100%;margin:0;vertical-align:top;">
+		<tr>
+		<td>
+			<table class="tainfo">
+			<tr>
+			   <td class="tdinfo">
+					  <span id="nwrdB"><font></font></span>
+					  <span id="nsntB"><font></font></span> | 
+					  <span id="score_no"> I did not know it <font color="#C01B4C"></font></span> /
+					  <span id="score_ok">I knew it <font color="green"></font></span>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					  <span style="text-align:left;"id="autrB"><font></font></span>
+				  </td>
+				</tr>
 
+			</table>
+			<td>
 <!--
-        <a href="##" onClick="toggleFullScreen(); return false; "><img src='/images/fulls.png'></a>
+				<div class="help-tip">
+					<p>This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+				</div>
 -->
-        <br>
-     
-  
-<div>
-			    <span id="imgs">
-					<h2></h2>
-				</span>
+			</td>
+			<td class="floating-box-right"><div><a href="##" id="ToHome"><img src='/images/close.png'></a></div></td>
+			</tr>
+		</table>
+	</span>
 
-				<span id="trgt">
-					<h1 style="color:#4A4A4A"></h1>
-				</span>
+	    <span id="TopicLanding">
+			<table border=0 style="width:90%;padding:10px;vertical-align:top;">
+				<tr><td>
+					  <div class="note" id="info">
+						<p style="color:#4A4A4A"></p>
+					  </div>
+					 </td>
+				</tr>
+				<hr>
+				<input class="flashimg" id="flashimg" type="button" value="Flashcards with images" onclick="doFunction();" />
+				<input class="flashdef" id="flashdef" type="button" value="Flashcards" onclick="doFunction();" />
+			</table>
+		</span>
 
-</div>
+		
+			<div id="fscreen">
+				
+				<div id="imgs">
+					<p></p>
+				</div>
+				
+				<a href="##" id="tts" style="text-decoration:none;" onclick="doFunction();">
+				
+					<div class="trgt pronounce" id="trgt">
+						<h1 style="color:#4A4A4A"></h1>
+					</div>
+			
+				</a>
+				</div>
+				
 				<div id="srce">
-					<h2 style="color:#71806D;"></h2>
+					<h2 style="color:#778773;"></h2>
 				</div>
 				<div id="dots">
-					<h2 style="color:#3F3C3C"></h2>
+					<h2 style="color:#5D725C"></h2>
 				</div>
-
+				
+				
 				<div class="exmp" id="exmp">
 					<font></font>
 				</div>
-  
+				
+			</div>
+		
         
-        <div class="iconss">
-			
+        <div id="FlashcardButtoms" class="FlashcardButtoms" style="visibility:hidden;">
 				<input class="btnNo" id="Wrong" type="button" value="Wrong" onclick="doFunction();" />
 				<input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Show Translation" onclick="doFunction();" />
 				<input class="btnOk" id="Right" type="button" value="Right" onclick="doFunction();" />
-
-<!--
-			<a onclick="page2(); return false" style="text-decoration:none;" class="cursor"><img src="/images/nextv.png"></a>
--->
-
 		</div>
 		
     </body>
@@ -132,7 +189,7 @@
     <script>
         var div = document.getElementById("dom-target");
         var myData = div.textContent;
-        Cards.loadData(myData)
+        Topic.loadData(myData);
     </script>
 
 </html>

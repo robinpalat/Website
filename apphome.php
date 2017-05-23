@@ -43,7 +43,7 @@ function setCookie() {
                 'overlayOpacity'    : 0,
                 'scrolling'     : 'yes',
                 'type'          : 'iframe',
-                'titlePosition': 'over'
+                'titlePosition': 'inside'
             });
         });
 </script>
@@ -74,14 +74,14 @@ function setCookie() {
             <a class="langtitle" style="vertical-align:top;font-size:17px;color:#FFFFFF" href="/<?=$langdir?>/app.php">My <?=$uplangdir?></a>
         </td>
         <td style="width:40%;" align="right">
-			<a style="text-align:middle;font-size:12px;text-decoration:none;color:#B1B1B1" href="../community/"><?= $use ?></a>
+			<a style="text-align:middle;font-size:12px;text-decoration:none;color:#CCCCCC" href="../community/"><?= $use ?></a>
         </td>
            <td style="width:2%;" align="right">
             <img height="32" width="32" src="/images/logo.svg">
         </td>
     </table>
 <br>
-	<div class="folders">
+	<div id="categories">
     <?php
 	$files = scandir('./');
 	foreach($files as $cate) {

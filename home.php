@@ -131,7 +131,7 @@
     <main id="content" class="group" role="main">
     <div class="main">
 
-    <table width="100%" height="55px" border="0" align="center" class="top" style="border-spacing: 4px 4px;">
+    <table width="100%" height="60px" border="0" align="center" class="top" style="border-spacing: 4px 4px;">
         <td align="left" class="langtitle">
             <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=$uplangdir?></a><br>
         </td>
@@ -182,7 +182,8 @@
 				if ($filecount>0){
 					$upcate = ucfirst($cate);
 					$catee = strtoupper($cate);
-					echo "<a title=\"".$catee."\" href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\" class=\"titleHidden\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
+					//title=\"".$catee."\" 
+					echo "<a href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\" class=\"titleHidden\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
 					
 				}
 			}

@@ -4,17 +4,36 @@ var scoreNo = 0
 var imported = document.createElement('script');
 imported.src = '/js/sweetalert.min.js';
 document.head.appendChild(imported);
+var imported = document.createElement('script');
+imported.src = '/js/voicerss-tts.min.js';
+document.head.appendChild(imported);
+
+var speechtrgt = function (trgt) {
+		VoiceRSS.speech({
+		key: 'b7a621583d034658bf22c3d829de5fcf',
+		src: trgt,
+		hl: 'en-us',
+		r: 1, 
+		c: 'mp3',
+		f: '44khz_16bit_stereo',
+		ssml: false
+	});
+}
+
 
 function percentage(num, per)
 {
   return (num*100)/per;
 }
 
-var Cards = (function() {
+
+var Topic = (function() {
     
     var render_page = function (data) {
-        //var subjectElement = document.querySelector("#name").children[0]
-        //subjectElement.innerHTML = data.name
+        var subjectElement = document.querySelector("#name").children[0]
+        subjectElement.innerHTML = data.name
+        var subjectElement = document.querySelector("#info").children[0]
+        subjectElement.innerHTML = data.info
         var subjectElement = document.querySelector("#autr").children[0]
         subjectElement.innerHTML = 'Create by ' + data.autr
         var subjectElement = document.querySelector("#nwrd").children[0]
@@ -27,7 +46,59 @@ var Cards = (function() {
         subjectElement.innerHTML = 'Audio ' + data.naud
         var first = Object.keys(data.items)[0]
         
+        render_topic(first, data.items[first])
+    }
+    
+    var render_topic = function (trgt, dat) {
+        document.body.style.backgroundColor = "#F0ECEB";
+        document.getElementById("headA").style = "DISPLAY: true;";
+        document.getElementById("headB").style = "DISPLAY: none;";
+        document.getElementById("TopicLanding").style = "DISPLAY: true;";
+        document.getElementById("fscreen").style = "DISPLAY: none;";
+        document.getElementById("FlashcardButtoms").style = "DISPLAY: none;";
+    }
+    
+    
+    
+    var load_data = function(file) {
+        var xmlhttp = new XMLHttpRequest()
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                data = JSON.parse(xmlhttp.responseText)
+                Topic.renderPage(data)
+            } else if (xmlhttp.readyState==4 && xmlhttp.status==404) {
+                swal("This file is not yet on Server, try again later.", ' ', "error");
+                document.write('<br><br><div align="center"><big>Exiting...</big></div>')
+                goBack();
+            }
+        }
+
+        xmlhttp.open("GET", file, true)
+        xmlhttp.send()
+
+    }
+    return {
+        renderTopic: render_topic,
+        renderPage: render_page,
+        loadData: load_data
+    }
+})()
+
+
+var Notes = (function() {
+    
+    var render_page = function (data) {
+        var subjectElement = document.querySelector("#autrB").children[0]
+        subjectElement.innerHTML = 'Create by ' + data.autr
+        var subjectElement = document.querySelector("#nwrdB").children[0]
+        subjectElement.innerHTML = 'Words ' + data.nwrd
+        var subjectElement = document.querySelector("#nsntB").children[0]
+        subjectElement.innerHTML = 'Sentences ' + data.nsnt
+        var first = Object.keys(data.items)[0]
+        var first = Object.keys(data.items)[0]
+        
         render_card(first, data.items[first], scoreOk, scoreNo)
+
     }
     
     var render_card = function (trgt, dat, scoreOk, scoreNo) {
@@ -55,41 +126,47 @@ var Cards = (function() {
         
         var chars = trgt.length;
 		if ((chars >= 1) && (chars < 20)) {
-		  var fs = 68; var vw = 5.75
+		  var fs = 68; var vw = 4.75
 		} else if ((chars >= 20) && (chars < 40)) {
-		  var fs = 50; var vw = 4.75
+		  var fs = 50; var vw = 4.55
 		} else if ((chars >= 40) && (chars < 80)) {
-		  var fs = 55; var vw = 3.75
+		  var fs = 55; var vw = 4.25
 		} else if ((chars >= 80) && (chars < 100)) {
-		  var fs = 45; var vw = 2.75
+		  var fs = 45; var vw = 3.75
 		} else {
-		  var fs = 35; var vw = 2.75
+		  var fs = 35; var vw = 3.55
 		}
 		
 		var chars = srce.length;
 		if ((chars >= 1) && (chars < 20)) {
-		  var sfs = 40; var svw = 4.75
+		  var sfs = 40; var svw = 4.00
 		} else if ((chars >= 20) && (chars < 40)) {
 		  var sfs = 38; var svw = 3.75
 		} else if ((chars >= 40) && (chars < 80)) {
-		  var sfs = 32; var svw = 2.75
+		  var sfs = 32; var svw = 3.55
 		} else if ((chars >= 80) && (chars < 100)) {
-		  var sfs = 28; var svw = 2.10
+		  var sfs = 28; var svw = 3.25
 		} else {
-		  var sfs = 25; var svw = 2.10
+		  var sfs = 25; var svw = 2.75
 		}
 		var mvw = 6; var msvw = 5
 		var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
 		'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
+		'.pronounce {width:90%}'+
 		'@media all and (max-device-width: 320px){'+
 		'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
-		'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}}',
+		'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
+		'.pronounce {width:95%}}',
 		head = document.head || document.getElementsByTagName('head')[0],
 		style = document.createElement('style');
 		style.type = 'text/css';
 		style.appendChild(document.createTextNode(lcss));
 		head.appendChild(style);
 		
+		window.pronounce = function () {
+			speechtrgt(trgt);
+		}
+
         var trgtElement = document.querySelector("#trgt").children[0]
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
@@ -103,22 +180,26 @@ var Cards = (function() {
         
         srceElement.hidden = true
         dotsElement.hidden = false
+        
+        document.body.style.backgroundColor = "#cdeeb1";
+        document.getElementById("headA").style = "DISPLAY: none;";
+        document.getElementById("headB").style = "DISPLAY: true;";
+        document.getElementById("TopicLanding").style = "DISPLAY: none;";
+        document.getElementById("fscreen").style = "DISPLAY: true;";
+        document.getElementById("FlashcardButtoms").style = "DISPLAY: true;";
 
         trgtElement.innerHTML = trgt
         if (type == '1') {
 			trgtximg = trgt.toLowerCase()
-			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-0.jpg"</img>'
+			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-0.jpg" onerror="imgError(this);"</img>'
+		} else {
+			imgsElement.innerHTML = '<br>'
         }
         srceElement.innerHTML = srce
         dotsElement.innerHTML = '<img src="/images/eyelash.svg"</img>'
         exmpElement.innerHTML = exmp
         scoreNoElement.innerHTML = scoreNo
         scoreOkElement.innerHTML = scoreOk
-        
-        var imge = document.querySelector("#imgs").children[0].innerHTML
-		imge.onerror = function () { 
-			document.getElementById("imgs").style.display = "none";
-		}
     }
     
 	var next_card_ok = function () {
@@ -155,6 +236,12 @@ var Cards = (function() {
 
         var next = keys[nextIndex]
         render_card(next, data.items[next], scoreOk, scoreNo)
+        
+        var imge = document.querySelector("#imgs").children[0].innerHTML
+		imge.error = function () { 
+			document.getElementById("imgs").style.display = "none";
+		}
+		
     }
     
     
@@ -172,6 +259,8 @@ var Cards = (function() {
         var scoreNo = scoreNo+1
         
         if (nextIndex == keys.length) {
+            
+            Topic.loadData(myData);
             
 			var por = percentage(scoreOk, keys.length);
 			var por = por.toFixed();
@@ -196,22 +285,16 @@ var Cards = (function() {
     
     var load_data = function(file) {
         var xmlhttp = new XMLHttpRequest()
-    
+
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                data = JSON.parse(xmlhttp.responseText)
-                Cards.renderPage(data)
-            } else if (xmlhttp.readyState==4 && xmlhttp.status==404) {
-                alert('This file is not yet on Server, try again later.')
-                document.write('<br><br><div align="center"><b>Exiting...</b></div>')
-                goBack();
-            }
+           data = JSON.parse(xmlhttp.responseText)
+           Notes.renderPage(data)
         }
 
         xmlhttp.open("GET", file, true)
         xmlhttp.send()
-
     }
+
     return {
         renderCard: render_card,
         renderPage: render_page,
@@ -221,9 +304,22 @@ var Cards = (function() {
     }
 })()
 
+
+
 window.addEventListener('load', function () {
-	document.getElementById("Wrong").onclick = function () { Cards.nextCardNo(); };
-	document.getElementById("Right").onclick = function () { Cards.nextCardOk(); };
+	document.getElementById("Wrong").onclick = function () { Notes.nextCardNo(); };
+	document.getElementById("Right").onclick = function () { Notes.nextCardOk(); };
+	
+
+	document.getElementById("tts").onclick = function () { window.pronounce(); };
+	
+	var div = document.getElementById("dom-target");
+    var myData = div.textContent;
+    document.getElementById("ToHome").onclick = function () { Topic.loadData(myData); };
+	document.getElementById("flashimg").onclick = function () { Notes.loadData(myData); };
+	document.getElementById("flashdef").onclick = function () { Notes.loadData(myData); };
+	
+	
 	document.getElementById("Show").onclick = function () {  
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]

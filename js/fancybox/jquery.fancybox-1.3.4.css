@@ -255,16 +255,22 @@
 
 #fancybox-title {
 	font-family: Helvetica;
-	font-size: 12px;
+	font-size: 11px;
 	z-index: 1102;
+	font-weight: 600;
 }
 
 .fancybox-title-inside {
-	padding-bottom: 10px;
+	position: absolute;
 	text-align: center;
-	color: #333;
+	color: #878482;
 	background: #fff;
-	position: relative;
+	bottom: 0;
+	height:12px;
+
+	padding-bottom: 1px;
+	padding-top: 1px;
+	
 }
 
 .fancybox-title-outside {
@@ -274,16 +280,19 @@
 
 .fancybox-title-over {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	color: #FFF;
 	text-align: left;
+	height:20px;
+	padding-top: 10px;
 }
 
 #fancybox-title-over {
 	padding: 10px;
 	background-image: url('fancy_title_over.png');
 	display: block;
+	height:20px;
 }
 
 .fancybox-title-float {

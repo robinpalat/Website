@@ -87,7 +87,6 @@
 <!--
         <a href="##" onClick="toggleFullScreen(); return false; "><img src='/images/fulls.png'></a>
 -->
-</br>
      
         <table style="width:100%;margin:5;vertical-align:top;align:center;padding:5">
 			<tr>
