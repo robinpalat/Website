@@ -183,7 +183,7 @@
 					$upcate = ucfirst($cate);
 					$catee = strtoupper($cate);
 					//title=\"".$catee."\" 
-					echo "<a href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\" class=\"titleHidden\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
+					echo "<a href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
 					
 				}
 			}

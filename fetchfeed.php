@@ -51,7 +51,7 @@ function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $
         $description = $feed[$x]['desc'];
 		$descriptione = strtoupper($description);
 		$descriptione = trim($descriptione,'[]');
-        $result .= ' <span class="feed-title"><a class="box" href="'.$link.'" title="'.$descriptione.'">'.$title.'</a></span> ';
+        $result .= ' <span class="feed-title"><a class="box" href="'.$link.'">'.$title.'</a></span> ';
         if ($show_date) {
             $date = date('F d, Y', strtotime($feed[$x]['date']));
             $result .= ' <small><font color="#1FAF12">Published </font><font color="#626262">'.$date.'</font></small> ';
