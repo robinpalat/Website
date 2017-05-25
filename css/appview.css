@@ -89,6 +89,17 @@ div {
 	   
 	}
 	
+.pronounce {
+    text-decoration: none;
+	}
+	
+#fscreen a:hover {
+	background-image: url(/images/listen.png);
+	background-repeat: no-repeat;
+	background-position: 100% 10%;
+	display: block;
+}
+	
 /*
 @media all and (max-device-width: 720px){
 

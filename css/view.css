@@ -1,20 +1,30 @@
+
+#page {
+    display: none;
+    position: relative;
+}
+
+#loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: #cdeeb1;
+    background-image: url("/images/loading.gif");
+    background-repeat: no-repeat;
+}
+
+
 h1,h2,p { 
     font-family: 'verdana', sans-serif; 
     font-weight: 100; 
 }
 
 body {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cdeeb1+26,d5fbbd+77,ddf7ca+97 */
-/*
-    background: #cdeeb1; /* Old browsers */
-*/
     background: #F0ECEB; /* Old browsers */
-/*
-    background: -moz-linear-gradient(top,#ddf7ca 16%,#d5fbbd 30%,#cdeeb1 100%); 
-    background: -webkit-linear-gradient(top,#ddf7ca 16%,#d5fbbd 30%,#cdeeb1 100%); 
-    background: linear-gradient(to bottom,#ddf7ca 16%,#d5fbbd 30%,#cdeeb1 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddf7ca', endColorstr='#cdeeb1',GradientType=0 );
-*/
 }
 
 div { 
@@ -22,7 +32,18 @@ div {
 }
 
 .note{ 
-text-align: left;
+	font-size: 12px;
+	text-align: left;
+	width: 80%;
+	padding-left: 5%;
+}
+
+.topicName{ 
+	font-size: 20px;
+	font-weight: 100; 
+	text-align: left;
+	width: 100%;
+	color:#4D5C48;
 }
 
 .WordImage { 
@@ -37,12 +58,11 @@ text-align: left;
 	animation: fadeIn 0.2s ease-in-out;
 }
 
-
 .exmp {
     font-family: 'verdana'; 
-    font-size: 16px;
-    font-size: 2.15vw;
-    color: #393939;
+    font-size: 15px;
+    font-size: 2.00vw;
+    color: #44513F;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -96,49 +116,34 @@ text-align: left;
 	   width:100%;
 	   position:fixed;
 	   vertical-align:bottom;
-	   
+	}
+
+.TestStartBtn {
+	   text-align: left;
+	   margin:10px;
+	   position:absolute;
+	   vertical-align:top;
 	}
 	
 .pronounce {
     text-decoration: none;
 	}
 	
-/*
-a>div { display: none; }
-a:hover>div { display: block; }
-*/
-
-	
-/*
-.pronounce h1:hover{
+#fscreen a:hover {
 	background-image: url(/images/listen.png);
 	background-repeat: no-repeat;
-	background-position: 100% -15%;
-    z-index: 1;
+	background-position: 100% 10%;
+	display: block;
 }
 
-.pronounce h1{
-   display: block;
-}
-	
-*/
 
+/*
 #fscreen a:active {
 	position: relative;
-	top: 2px;
-	display: block;
-	background-image: url(/images/listen.png);
 	background-repeat: no-repeat;
-	background-position: 100% -15%;
-    z-index: 1;
+	background-position: 100% 10%;
 }
-
-#fscreen a:focus {
-	background: "#8AB365";
-
-}
-
-
+*/
 
 	
 /*
@@ -355,8 +360,6 @@ body > button {
 }
 
 
-
-
 .help-tip{
 	position: absolute;
 	top: 18px;
@@ -439,17 +442,3 @@ body > button {
 	0% { opacity:0; }
 	100% { opacity:100%; }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

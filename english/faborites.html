@@ -1,0 +1,135 @@
+<html lang="en">
+    <head>
+
+<script language="javascript"> 
+
+    function crearCookie(sNombre, sValor, iDiasCaducidad, sDireccion, bSeguro){ 
+         
+        var sCadena = sNombre + "=" + sValor + "; "; 
+         
+        iDiasCaducidad = parseInt(iDiasCaducidad); 
+         
+        if (iDiasCaducidad > 0) 
+        { 
+         
+            var fFecha = new Date(); 
+             
+            fFecha.setTime(fFecha.getTime() + (iDiasCaducidad * 86400000)); 
+             
+            sCadena += "expires=" + fFecha.toGMTString() + "; "; 
+             
+        } 
+         
+        if (sDireccion) 
+            sCadena += "path=" + sDireccion; 
+        else 
+            sCadena += "path=/"; 
+             
+        if (bSeguro) 
+            sCadena += "; secure"; 
+             
+         
+        document.cookie = sCadena; 
+         
+    } 
+     
+    function sVerTodasCookie(){ 
+         
+        return document.cookie; 
+         
+    } 
+     
+    function sValorCookie(sNombre){ 
+         
+        aCookies = document.cookie.split("; "); 
+         
+        for (var iCont = 0 ; iCont < aCookies.length ; iCont ++) 
+            if (aCookies[iCont].indexOf(sNombre + "=", 0) == 0) 
+                return aCookies[iCont].substring(sNombre.length + 1); 
+                 
+        return false; 
+         
+         
+    } 
+     
+    function eliminarCookie(sNombre, sDireccion) 
+    { 
+        crearCookie(sNombre, "", -1, sDireccion); 
+    } 
+     
+//-->     
+</script>
+
+</head>
+    <body>
+
+
+
+<table><tr> 
+    <td> 
+        <table cellspacing="0" cellpadding="3" bgcolor="#eeeeee" bordercolor="#c4d8f2" border="0"> 
+            <tr> 
+                <td bgcolor='#c4d8f2' align='center'>Nombre</td> 
+                <td bgcolor='#c4d8f2' align='center'>Valor</td> 
+                <td bgcolor='#c4d8f2' align='center'>Dias para Caducidad</td> 
+                <td bgcolor='#c4d8f2' align='center'>URL</td> 
+                <td bgcolor='#c4d8f2' align='center'>Cifrado seguro</td> 
+            </tr> 
+            <tr> 
+                <td><input type="text" name="nombre" id="nombre"></td> 
+                <td><input type="text" name="valor" id="valor"></td> 
+                <td><input type="text" name="diascaducidad" id="diascaducidad"></td> 
+                <td><input type="text" name="url" id="url"></td> 
+                <td align="center"><input type="checkbox" name="seguro" id="seguro"></td> 
+            </tr> 
+        </table> 
+    </td> 
+    <td> 
+        <input type="button" value="Crear Cookie" onclick="crearCookie(document.getElementById('nombre').value, document.getElementById('valor').value, document.getElementById('diascaducidad').value, document.getElementById('url').value, document.getElementById('seguro').checked);"> 
+    </td> 
+</tr></table> 
+
+<br /><br /> 
+
+<a href="javascript:alert(sVerTodasCookie())">Ver todas las cookies</a> 
+
+<br /><br /> 
+
+Nombre variable: 
+<td><input type="text" name="nombre2" id="nombre2"></td> 
+<input type="button" value="Ver valor de Cookie" onclick="alert(sValorCookie(document.getElementById('nombre2').value));"> 
+
+<br /><br /><br /> 
+
+<table><tr> 
+    <td> 
+        <table cellspacing="0" cellpadding="3" bgcolor="#eeeeee" bordercolor="#c4d8f2" border="0"> 
+            <tr> 
+                <td bgcolor='#c4d8f2' align='center'>Nombre</td> 
+                <td bgcolor='#c4d8f2' align='center'>URL</td> 
+            </tr> 
+            <tr> 
+                <td><input type="text" name="nombre3" id="nombre3"></td> 
+                <td><input type="text" name="url3" id="url3"></td> 
+            </tr> 
+        </table> 
+    </td> 
+    <td> 
+        <input type="button" value="Eliminar Cookie" onclick="eliminarCookie(document.getElementById('nombre3').value, document.getElementById('url3').value);"> 
+    </td> 
+</tr></table>
+
+
+      </body>
+    
+
+
+</html>
+  
+    
+
+
+
+
+
+

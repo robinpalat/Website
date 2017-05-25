@@ -1,17 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"/>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <meta name="keywords" content="ESL, EFL, pronunciation, grammar, vocabulary, tests, lessons, quiz, quizzes, resources, lesson, vocabulary, questions, answers"/>
     <meta name="description" content="Learn foreign vocabulary"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
 	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-    <link rel="image_src" href="http://idiomind.net/images/logo.png" / ><!--formatted-->
+    <link rel="image_src" href="http://idiomind.net/images/logo.png" /><!--formatted-->
     <title>Idiomind's library</title>
     <link href="/css/home.css" rel="stylesheet" type="text/css" />
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
@@ -126,14 +126,22 @@
 		  $use =  ucfirst($use);
 		  $class_btn_user = "userbutton";
 		}
+		
+	if(!isset($_COOKIE['Topics_fav'])) {
+		$favs = "";
+	} else {
+		  $favs = $_COOKIE['Topics_fav'];
+		  $favs =  ucfirst($favs);
+		}
+
     ?>
     
     <main id="content" class="group" role="main">
     <div class="main">
 
     <table width="100%" height="60px" border="0" align="center" class="top" style="border-spacing: 4px 4px;">
-        <td align="left" class="langtitle">
-            <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=$uplangdir?></a><br>
+        <td vertical-align="middle" align="left" class="langtitle">
+            <img height="48" width="48" src="/images/logo.svg"><a style="color:#FFFFFF" href="/<?=$langdir?>"><?=$langdir?></a>
         </td>
  
          <td style="border-radius:5px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#978786">Plus</a></td>
@@ -169,6 +177,11 @@
     
 		<div id="categories">
 		<?php
+		
+		if (!empty($favs)){
+		echo "<a href=\"/favs.php?lang=english\" \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/favorites.png\" /><span class=\"circle-count\"> <font size=1>topics</font></span></div></a>";
+		}
+
 		$files = scandir('./');
 		foreach($files as $cate) {
 			if($cate!=".htaccess" AND $cate!="." AND $cate!=".." AND $cate!="index.php" AND $cate!="box.php" AND $cate!="mobile.php"){
@@ -178,7 +191,7 @@
 				if ($files){
 					$filecount = count($files);
 				}
-				
+
 				if ($filecount>0){
 					$upcate = ucfirst($cate);
 					$catee = strtoupper($cate);

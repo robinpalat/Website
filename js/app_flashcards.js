@@ -5,6 +5,22 @@ var imported = document.createElement('script');
 imported.src = '/js/sweetalert.min.js';
 document.head.appendChild(imported);
 
+var imported = document.createElement('script');
+imported.src = '/js/voicerss-tts.min.js';
+document.head.appendChild(imported);
+
+var speechtrgt = function (trgt) {
+		VoiceRSS.speech({
+		key: 'b7a621583d034658bf22c3d829de5fcf',
+		src: trgt,
+		hl: 'en-us',
+		r: 1, 
+		c: 'ogg',
+		f: '44khz_16bit_stereo',
+		ssml: false
+	});
+}
+
 function percentage(num, per)
 {
   return (num*100)/per;
@@ -45,7 +61,7 @@ var Cards = (function() {
         var grmr = JSON.stringify(arr[15])
         var grmr = JSON.stringify(arr[15])
         var grmr = JSON.parse(grmr)
-        var type = JSON.stringify(arr[20])
+        var type = JSON.stringify(arr[22])
         var type = JSON.parse(type)
         var exmp = JSON.stringify(arr[11])
         var exmp = JSON.parse(exmp)
@@ -90,6 +106,10 @@ var Cards = (function() {
 		style.appendChild(document.createTextNode(lcss));
 		head.appendChild(style);
 		
+		window.pronounce = function () {
+			speechtrgt(trgt);
+		}
+		
         var trgtElement = document.querySelector("#trgt").children[0]
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
@@ -107,7 +127,7 @@ var Cards = (function() {
         trgtElement.innerHTML = trgt
         if (type == '1') {
 			trgtximg = trgt.toLowerCase()
-			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-0.jpg"</img>'
+			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-1.jpg"</img>'
         	} else {
 			imgsElement.innerHTML = '<br>'
         }
@@ -226,6 +246,8 @@ window.addEventListener('load', function () {
 	
 	document.getElementById("Wrong").onclick = function () { Cards.nextCardNo(); };
 	document.getElementById("Right").onclick = function () { Cards.nextCardOk(); };
+	
+	document.getElementById("tts").onclick = function () { window.pronounce(); };
 
 	document.getElementById("Show").onclick = function () {  
         var srceElement = document.querySelector("#srce").children[0]

@@ -88,30 +88,29 @@
         <a href="##" onClick="toggleFullScreen(); return false; "><img src='/images/fulls.png'></a>
 -->
      
-        <table style="width:100%;margin:5;vertical-align:top;align:center;padding:5">
-			<tr>
+        <div id="fscreen">
+		
 				 <div id="imgs">
 					<h2></h2>
 				</div>
+				<a href="##" id="tts" style="text-decoration:none;" onclick="doFunction();">
 				<div id="trgt">
 					<h1></h1>
 				</div>
-			</tr>
-			<tr>
-			
+				</a>
+
 				<div id="srce">
 					<h2 style="color:#71806D;"></h2>
 				</div>
 				<div id="dots">
 					<h2 style="color:#3F3C3C"></h2>
 				</div>
-			</tr>
-			<tr>
+
 				<div class="exmp" id="exmp">
 					<font></font>
 				</div>
-			</tr>
-        </table>
+
+        </div>
         
         <div class="iconss">
 			

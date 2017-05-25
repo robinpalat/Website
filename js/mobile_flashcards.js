@@ -45,7 +45,7 @@ var Cards = (function() {
         var grmr = JSON.stringify(arr[15])
         var grmr = JSON.stringify(arr[15])
         var grmr = JSON.parse(grmr)
-        var type = JSON.stringify(arr[20])
+        var type = JSON.stringify(arr[22])
         var type = JSON.parse(type)
         var exmp = JSON.stringify(arr[11])
         var exmp = JSON.parse(exmp)
@@ -107,7 +107,7 @@ var Cards = (function() {
         trgtElement.innerHTML = trgt
         if (type == '1') {
 			trgtximg = trgt.toLowerCase()
-			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-0.jpg"</img>'
+			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-1.jpg"</img>'
         	} else {
 			imgsElement.innerHTML = '<br>'
         }

@@ -13,19 +13,17 @@ var speechtrgt = function (trgt) {
 		key: 'b7a621583d034658bf22c3d829de5fcf',
 		src: trgt,
 		hl: 'en-us',
-		r: 1, 
-		c: 'mp3',
+		r: 0, 
+		c: 'ogg',
 		f: '44khz_16bit_stereo',
 		ssml: false
 	});
 }
 
-
 function percentage(num, per)
 {
   return (num*100)/per;
 }
-
 
 var Topic = (function() {
     
@@ -44,13 +42,13 @@ var Topic = (function() {
         subjectElement.innerHTML = 'Images ' + data.nimg
         var subjectElement = document.querySelector("#naud").children[0]
         subjectElement.innerHTML = 'Audio ' + data.naud
-        var first = Object.keys(data.items)[0]
         
+        var first = Object.keys(data.items)[0]
         render_topic(first, data.items[first])
     }
     
     var render_topic = function (trgt, dat) {
-        document.body.style.backgroundColor = "#F0ECEB";
+        document.body.style.backgroundColor = "#cdeeb1";
         document.getElementById("headA").style = "DISPLAY: true;";
         document.getElementById("headB").style = "DISPLAY: none;";
         document.getElementById("TopicLanding").style = "DISPLAY: true;";
@@ -58,6 +56,32 @@ var Topic = (function() {
         document.getElementById("FlashcardButtoms").style = "DISPLAY: none;";
     }
     
+    //window.Faborite = function () {
+
+			//function getCookie(cname) {
+			//var name = cname + "=";
+			//var decodedCookie = decodeURIComponent(document.cookie);
+			//var ca = decodedCookie.split(';');
+			//for(var i = 0; i <ca.length; i++) {
+				//var c = ca[i];
+				//while (c.charAt(0) == ' ') {
+					//c = c.substring(1);
+				//}
+				//if (c.indexOf(name) == 0) {
+					//return c.substring(name.length, c.length);
+				//}
+			//}
+			//return "";
+			//}
+			
+			//var faves = getCookie('Topics_fav');
+			
+			//var d = new Date();
+			//d.setTime(d.getTime() + (30*24*60*60*1000));
+			//var expires = "expires=" + d.toGMTString();
+			//document.cookie="Topics_fav="+data.name+"; expires=" + expires + "; path=/english/";
+			//alert(data.name+', '+faves);
+		//}
     
     
     var load_data = function(file) {
@@ -94,9 +118,8 @@ var Notes = (function() {
         subjectElement.innerHTML = 'Words ' + data.nwrd
         var subjectElement = document.querySelector("#nsntB").children[0]
         subjectElement.innerHTML = 'Sentences ' + data.nsnt
-        var first = Object.keys(data.items)[0]
-        var first = Object.keys(data.items)[0]
         
+        var first = Object.keys(data.items)[0]
         render_card(first, data.items[first], scoreOk, scoreNo)
 
     }
@@ -113,13 +136,19 @@ var Notes = (function() {
         }
         var srce = JSON.stringify(arr[0])
         var srce = JSON.parse(srce)
+        
         var exmp = JSON.stringify(arr[11])
-        var grmr = JSON.stringify(arr[15])
+        var exmp = JSON.parse(exmp)
+        
         var grmr = JSON.stringify(arr[15])
         var grmr = JSON.parse(grmr)
-        var type = JSON.stringify(arr[20])
+        
+        var imag = JSON.stringify(arr[19])
+        var imag = JSON.parse(imag)
+        
+        var type = JSON.stringify(arr[22])
         var type = JSON.parse(type)
-        var exmp = JSON.parse(exmp)
+
         var itle = trgt.toLowerCase();
         var exmp = exmp.replace(itle, "<b>"+itle+"</b>")
         var exmp = exmp.replace(trgt, "<b>"+trgt+"</b>")
@@ -139,15 +168,15 @@ var Notes = (function() {
 		
 		var chars = srce.length;
 		if ((chars >= 1) && (chars < 20)) {
-		  var sfs = 40; var svw = 4.00
+		  var sfs = 35; var svw = 3.25
 		} else if ((chars >= 20) && (chars < 40)) {
-		  var sfs = 38; var svw = 3.75
+		  var sfs = 32; var svw = 3.00
 		} else if ((chars >= 40) && (chars < 80)) {
-		  var sfs = 32; var svw = 3.55
+		  var sfs = 28; var svw = 2.75
 		} else if ((chars >= 80) && (chars < 100)) {
-		  var sfs = 28; var svw = 3.25
+		  var sfs = 25; var svw = 2.55
 		} else {
-		  var sfs = 25; var svw = 2.75
+		  var sfs = 25; var svw = 2.25
 		}
 		var mvw = 6; var msvw = 5
 		var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
@@ -189,9 +218,9 @@ var Notes = (function() {
         document.getElementById("FlashcardButtoms").style = "DISPLAY: true;";
 
         trgtElement.innerHTML = trgt
-        if (type == '1') {
+        if ((type == '1') && (imag != '0')) {
 			trgtximg = trgt.toLowerCase()
-			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-0.jpg" onerror="imgError(this);"</img>'
+			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
 		} else {
 			imgsElement.innerHTML = '<br>'
         }
@@ -318,6 +347,7 @@ window.addEventListener('load', function () {
     document.getElementById("ToHome").onclick = function () { Topic.loadData(myData); };
 	document.getElementById("flashimg").onclick = function () { Notes.loadData(myData); };
 	document.getElementById("flashdef").onclick = function () { Notes.loadData(myData); };
+	
 	
 	
 	document.getElementById("Show").onclick = function () {  
