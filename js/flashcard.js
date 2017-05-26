@@ -55,35 +55,7 @@ var Topic = (function() {
         document.getElementById("fscreen").style = "DISPLAY: none;";
         document.getElementById("FlashcardButtoms").style = "DISPLAY: none;";
     }
-    
-    //window.Faborite = function () {
 
-			//function getCookie(cname) {
-			//var name = cname + "=";
-			//var decodedCookie = decodeURIComponent(document.cookie);
-			//var ca = decodedCookie.split(';');
-			//for(var i = 0; i <ca.length; i++) {
-				//var c = ca[i];
-				//while (c.charAt(0) == ' ') {
-					//c = c.substring(1);
-				//}
-				//if (c.indexOf(name) == 0) {
-					//return c.substring(name.length, c.length);
-				//}
-			//}
-			//return "";
-			//}
-			
-			//var faves = getCookie('Topics_fav');
-			
-			//var d = new Date();
-			//d.setTime(d.getTime() + (30*24*60*60*1000));
-			//var expires = "expires=" + d.toGMTString();
-			//document.cookie="Topics_fav="+data.name+"; expires=" + expires + "; path=/english/";
-			//alert(data.name+', '+faves);
-		//}
-    
-    
     var load_data = function(file) {
         var xmlhttp = new XMLHttpRequest()
         xmlhttp.onreadystatechange = function () {
@@ -338,8 +310,6 @@ var Notes = (function() {
 window.addEventListener('load', function () {
 	document.getElementById("Wrong").onclick = function () { Notes.nextCardNo(); };
 	document.getElementById("Right").onclick = function () { Notes.nextCardOk(); };
-	
-
 	document.getElementById("tts").onclick = function () { window.pronounce(); };
 	
 	var div = document.getElementById("dom-target");
@@ -347,9 +317,7 @@ window.addEventListener('load', function () {
     document.getElementById("ToHome").onclick = function () { Topic.loadData(myData); };
 	document.getElementById("flashimg").onclick = function () { Notes.loadData(myData); };
 	document.getElementById("flashdef").onclick = function () { Notes.loadData(myData); };
-	
-	
-	
+
 	document.getElementById("Show").onclick = function () {  
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]

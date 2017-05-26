@@ -158,6 +158,29 @@
 	
 	<div id="plus"></div>
 
+
+
+
+
+
+   <form action="/search.php" method="post">
+    <input name="my_html_input_tag"  value=""/>
+
+    <input type="submit" name="my_form_submit_button" 
+           value="Click here for nothing"/>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
     <div class="sentenceweek">
 		<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1> consectetur adipisicing elit, sed doeiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enimad<br> minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat.<br> Duis aute irure dolor inreprehenderit<br> in voluptate velit esse cillum dolore eu fugiat <br>nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est <br>laborum.Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit, se
 	</div>
@@ -172,14 +195,13 @@
 		//output_rss_feed("http://tmp.site50.net/rss/", 5, false, false, 200);
 		?>
 		</div>
-        
     <br>
     
 		<div id="categories">
 		<?php
 		
 		if (!empty($favs)){
-		echo "<a href=\"/favs.php?lang=english\" \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/favorites.png\" /><span class=\"circle-count\"> <font size=1>topics</font></span></div></a>";
+		echo "<a href=\"/favs.php?lang=".$langdir."\" \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/favorites.png\" /><span class=\"circle-count\"> <font size=1></font></span></div></a>";
 		}
 
 		$files = scandir('./');

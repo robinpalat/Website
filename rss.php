@@ -40,9 +40,9 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
                     $pre_name = basename($topic_path);
                     $title = substr($pre_name, 0, strpos($pre_name, '.idmnd'));
                     $dir = basename($dir);
-                    $name = substr($title, 0, -4);
+                    $name = $title;
                     $category = basename(dirname($topic_path));
-                    $linkview = '/view.php?l='.$dir.'&amp;c='.$category.'&amp;set='.$title;
+                    $linkview = '/view.php?l='.$dir.'&amp;c='.$category.'&amp;set='.$name;
 echo "
 <item>
 <title>".$name."</title>
@@ -63,14 +63,3 @@ $newrss = new autorss();
 $newrss->show("Content-type:text/xml","http://idiomind.net/".$trgt."/", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Content shared by users - Idiomind ","http://idiomind.net/".$trgt."/","Latest Published","en-us","Sun, 31 May 2009 09:41:01 GMT","rss.php","Latest Published","false","./".$trgt."/");
 
 ?>
-
-
-
-<!--
-http://idiomind.com/viewapp.php?l=english/?c=music?set=Beach%20House%20%E2%80%93%20Teen%20Dream
-http://idiomind.com/viewapp.php?l=english/?c=music?set=Beach%20House%20%E2%80%93%20Teen%20Dream_4ac
-http://idiomind.com/viewapp.php?l=english&c=music&set=Beach%20House%20%E2%80%93%20Teen%20Dream_4ac
-http://idiomind.com/viewapp.php?l=english?c=music?set=Beach%20House%20%E2%80%93%20Teen%20Dream_4ac
-http://idiomind.com/viewapp.php?l=english?c=music?set=Beach%20House%20%E2%80%93%20Teen%20Dream_4ac
--->
-

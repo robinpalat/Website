@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="/css/sweetalert.css">
 
-        <script>
+        <script> /* Loading */
 			function onReady(callback) {
 				var intervalID = window.setInterval(checkReady, 1000);
 
@@ -30,7 +30,7 @@
 			});
         </script>
         
-         <script>
+         <script> /* Image fix */
 			function imgError(image) {
 				image.onerror = "";
 				image.style="display: none;";
@@ -40,7 +40,7 @@
 			}
          </script>
          
-         <script>
+         <script> /* Get cookie val */
 			function getCookie(cname) {
 				var name = cname + "=";
 				var decodedCookie = decodeURIComponent(document.cookie);
@@ -58,7 +58,7 @@
 			}
          </script>
          
-        <script>
+        <script> /* Button fav at laoding*/
 		function setBtnFav() {
 			var el = document.getElementById("FavBtn")
 			var faves = getCookie('Topics_fav');
@@ -76,7 +76,7 @@
 		}
          </script>
          
-         <script>
+         <script> /* Toggle Button fav */
 			function Favesjs(el) {
 
 				var faves = getCookie('Topics_fav');
@@ -111,14 +111,30 @@
         <?php
         include_once("analyticstracking.php");
         $lang = htmlspecialchars($_GET["l"]);
-        $catg = htmlspecialchars($_GET["c"]);
+        $precatg = htmlspecialchars($_GET["c"]);
         $set = htmlspecialchars($_GET["set"]);
+        if ($precatg == 'fav') {
+			$data = file_get_contents ('./share/data/topics.json');
+			$json = json_decode($data, true);
+			foreach ($json['Categories'] as $field => $value) {
+				foreach ($value as $key => $val) {
+						if( strpos( $val, $set ) !== false ) {
+							$catg = $field;
+							$backcatg = 'fav';
+						}
+					}
+			}
+			   
+		} else {
+			$catg = $precatg;
+			$backcatg = $precatg;
+		}
+		
+		$ViewThisTopic = "/".$lang."/".$catg."/".$set.".idmnd";
         ?>
+        
         <div id="dom-target" style="display: none;">
-            <?php
-            $set = "/".$lang."/".$catg."/".$set.".idmnd";
-            print $set
-            ?>
+            <?php print $ViewThisTopic ?>
         </div>
         
  <div id="page">
@@ -132,7 +148,7 @@
 			   <td class="tdinfo">
 				   
 				   <div id="name" class="topicName">
-						<p style="font-weight:bold;font-family:bookman;"></p>
+						<p style="font-weight:bold;font-family:Verdana;"></p>
 					</div>
 					  <span id="nwrd"><font></font></span>
 					  <span id="nsnt"><font></font></span>
@@ -147,7 +163,7 @@
 				</tr>
 
 			</table>
-			<td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$catg?>" return false;><img src='/images/close.png'></a></div></td>
+			<td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img src='/images/close.png'></a></div></td>
 			</tr>
 		</table>
 	</span>
@@ -186,7 +202,7 @@
 				<input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" id="flashdef" onclick="doFunction();" />
 			</div>
 			<br><br><br><br>
-				<hr>
+				
 			<div class="note" id="info">
 				<p style="color:#4A4A4A"></p>
 			</div>
