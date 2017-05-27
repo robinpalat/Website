@@ -27,6 +27,8 @@ body {
     background: #F0ECEB; /* Old browsers */
 }
 
+
+
 div { 
     text-align: center;
 }
@@ -43,7 +45,8 @@ div {
 	font-weight: 100; 
 	text-align: left;
 	width: 100%;
-	color:#4D5C48;
+	color:#565A6E;
+	
 }
 
 .WordImage { 
@@ -89,15 +92,29 @@ div {
 }
 
 
-.tainfo {
+.topic_info {
+    font-size: 13px;
+    color: #494342;
+    font-family: 'verdana', 'roboto'; 
+    border-collapse: collapse;
+	font-family: "verdana";
+}
+
+.topic_info a {
+	text-decoration: none;
+	color: #3E4B61;
+	background-color: #E3E8F0;
+	font-size: 11px;
+	padding-bottom: 8px;
+}
+
+.flascards_info {
     font-size: 10px;
-    color: #436C2B;
+    color: #2B6C43;
     font-family: 'verdana', 'roboto'; 
     border-collapse: collapse;
 }
 
-.tdinfo {
-}
 
 .floating-box-right {
     float: right;

@@ -1,21 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"/>
 
+<!DOCTYPE html>
+<html lang="es" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <meta name="keywords" content="ESL, EFL, pronunciation, grammar, vocabulary, tests, lessons, quiz, quizzes, resources, lesson, vocabulary, questions, answers"/>
-    <meta name="description" content="Learn foreign vocabulary"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
-	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-    <link rel="image_src" href="http://idiomind.net/images/logo.png" /><!--formatted-->
-    <title>Idiomind's library</title>
-    <link href="/css/home.css" rel="stylesheet" type="text/css" />
-    <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
-    <?php include 'fetchfeed.php';?>
+  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<meta about="/community/users/duende#me" typeof="foaf:Person" rel="foaf:account" resource="/community/users/duende" />
+<meta about="/community/users/duende" property="foaf:name" content="Duende" />
+  <title>Duende | idiomind.net</title>
+   <link type="text/css" rel="stylesheet" href="/css/home_dark.css" media="all" />
+  <link type="text/css" rel="stylesheet" href="http://idiomind.net/community/sites/default/files/css/css_hmebhQnD3L7F8yYfAVIJxBY8Z_01qvV0i4huz13dSmg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootswatch/3.3.5/slate/bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://idiomind.net/community/sites/default/files/css/css_lmA7Iidr1LTBAVLsV8enDAUiuFa74PBGyrZrnekkLqg.css" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+
+
+
+ <?php include 'fetchfeed.php';?>
 
     <?php
     function mobileDevice()
@@ -108,12 +113,22 @@
 		});
 	});
 	</script>
-	
+
+
+
+
+
+
+
+
+
+
 </head>
+<body onload="setCookie()" class="html not-front logged-in no-sidebars page-user page-user- page-user-2 i18n-es">
 	
-<body onload="setCookie()">
-    
-    <?php
+	
+	
+	    <?php
     
     include_once("analyticstracking.php");
     
@@ -135,50 +150,87 @@
 		}
 
     ?>
-    
-    <main id="content" class="group" role="main">
-    <div class="main">
-
-    <table width="100%" height="30px" border="0" align="center" class="navbar-header" style="border-spacing: 4px 4px;">
-        <td vertical-align="middle" align="left" class="langtitle">
-            <a style="color:#FFFFFF" href="/<?=$langdir?>">My <?=$langdir?></a>
-        </td>
- 
-         <td><div style="color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks"><a id="show" href="#" style="color:#FFFFFF">Plus</div></a></td>
-         <td style="color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" ><a onclick="location.href='#categories'">Topics by Category</a></td>
-         <td style="color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks"><a onclick="underc();">Downloads</a></td>
-         <td style="color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks"><a onclick="underc();">Under Construction</a></td>
-         <td id="topLinks"><a style="color:#FFFFFF;cursor:pointer;font-weight:normal" href="../community/"><?= $use ?></a></td>
-
-        <td align="right">
-     
-        </td>
-    </table>
-
-	<br>
 	
-	<div id="plus"></div>
-
-
+	
+	
+	
+	
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Pasar al contenido principal</a>
+  </div>
+    <header id="navbar" role="banner" class="navbar container navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+              <a class="logo navbar-btn pull-left" href="/community/" title="Inicio">
 <!--
-   <form action="/search.php" method="post">
-    <input name="my_html_input_tag"  value=""/>
+          <img src="http://idiomind.net/community/sites/default/files/library_icon.svg__1_3.png" alt="Inicio" />
+-->
+        </a>
+      
+              <a class="name navbar-brand" href="/community/" title="Inicio">idiomind.net</a>
+      
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          </div>
 
-    <input type="submit" name="my_form_submit_button" 
-           value="Click here for nothing"/>
+          <div class="navbar-collapse collapse" id="navbar-collapse">
+        <nav role="navigation">
+                                <ul class="menu nav navbar-nav secondary"><li class="first leaf"><a href="/community/user">Duende</a></li>
+<li class="leaf"><a href="http://idiomind.net/library.php" title="">Topics Library</a></li>
+<li class="last leaf"><a href="/community/user/logout">Cerrar sesión</a></li>
+</ul>                            </nav>
+      </div>
+      </div>
+</header>
 
-    </form>
+<div class="main-container container">
+
+  <header role="banner" id="page-header">
+    
+      </header> <!-- /#page-header -->
+
+  <div class="row">
+
+    
+    <section class="col-sm-12">
+                  <a id="main-content"></a>
+                    <h1 class="page-header">Duende</h1>
+                                <h2 class="element-invisible">Primary tabs</h2><ul class="tabs--primary nav nav-tabs"><li class="active"><a href="/community/users/duende" class="active">Ver<span class="element-invisible">(solapa activa)</span></a></li>
+<li><a href="/community/user/2/courses">Cursos</a></li>
+<li><a href="/community/user/2/edit">Editar</a></li>
+<li><a href="/community/user/2/quiz-results">Mis resultados</a></li>
+<li><a href="/community/user/2/track">Mis temas</a></li>
+<li><a href="/community/user/2/orders">Pedidos</a></li>
+<li><a href="/community/user/2/signups">Inscripciones</a></li>
+</ul>                          <div class="region region-content">
+    <section id="block-system-main" class="block block-system clearfix">
+
+      
+  <div class="profile" typeof="sioc:UserAccount" about="/community/users/duende">
+  
+<!--
+<dl>
+  <dt>Blog</dt>
+<dd><a href="/community/blogs/duende" title="Read Duende&#039;s latest topics.">View recent entries</a></dd>
+<dt>Pedidos</dt>
+<dd><a href="/community/user/2/orders">Click here to view your order history.</a></dd>
+<dt>Member for</dt>
+<dd>3 meses 1 semana</dd>
+</dl>
 -->
 
-<!--
+
     <div class="sentenceweek">
 		<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1> consectetur adipisicing elit, sed doeiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enimad<br> minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat.<br> Duis aute irure dolor inreprehenderit<br> in voluptate velit esse cillum dolore eu fugiat <br>nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est <br>laborum.Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit, se
 	</div>
--->
 		
 	</div>
 
-	<br><br><br>
+	<br>
 
         <div class="feed-lists" class="box">
 		   <h1>Latest Published Topics</h1>
@@ -221,11 +273,30 @@
 
   </div>
   <br>
-  </main>
-      <footer class="footer">
+
+
+</div>
+
+</section>
+  </div>
+    </section>
+
+    
+  </div>
+</div>
+
+  <footer class="footer container">
+      <div class="region region-footer">
+    <section id="block-system-powered-by" class="block block-system clearfix">
+
+      
+
         <br><div> &copy 2015-2017 <a href="http://idiomind.sourceforge.net">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
         </div><br>
-    </footer>
-  
+
+</section>
+  </div>
+  </footer>
+  <script src="http://idiomind.net/community/sites/default/files/js/js_OTdL_00eEtQq3wzsUAHLDYwgtcHpzbgUFYeJRcQf8f8.js"></script>
 </body>
 </html>

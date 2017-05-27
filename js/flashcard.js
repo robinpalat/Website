@@ -33,15 +33,29 @@ var Topic = (function() {
         var subjectElement = document.querySelector("#info").children[0]
         subjectElement.innerHTML = data.info
         var subjectElement = document.querySelector("#autr").children[0]
-        subjectElement.innerHTML = 'Create by ' + data.autr
+        subjectElement.innerHTML = data.autr
         var subjectElement = document.querySelector("#nwrd").children[0]
-        subjectElement.innerHTML = 'Words ' + data.nwrd
+        subjectElement.innerHTML =  data.nwrd + ' words,'
         var subjectElement = document.querySelector("#nsnt").children[0]
-        subjectElement.innerHTML = 'Sentences ' + data.nsnt
+        subjectElement.innerHTML = data.nsnt + ' sentences,'
         var subjectElement = document.querySelector("#nimg").children[0]
-        subjectElement.innerHTML = 'Images ' + data.nimg
+        subjectElement.innerHTML = data.nimg + ' images.'
         var subjectElement = document.querySelector("#naud").children[0]
-        subjectElement.innerHTML = 'Audio ' + data.naud
+        subjectElement.innerHTML = data.naud + ' audio files and'
+        var subjectElement = document.querySelector("#dteu").children[0]
+        subjectElement.innerHTML = data.dteu
+        var subjectElement = document.querySelector("#slng").children[0]
+        subjectElement.innerHTML = data.slng
+        var subjectElement = document.querySelector("#levl").children[0]
+        var plevl
+        if (data.levl == 1) {
+		  plevl = 'beginner'
+		} else if (data.levl == 2) {
+		  plevl = 'intermediate'
+		} else if (data.levl == 3) {
+		  plevl = 'advance'
+		}
+        subjectElement.innerHTML = plevl
         
         var first = Object.keys(data.items)[0]
         render_topic(first, data.items[first])
@@ -84,8 +98,6 @@ var Topic = (function() {
 var Notes = (function() {
     
     var render_page = function (data) {
-        var subjectElement = document.querySelector("#autrB").children[0]
-        subjectElement.innerHTML = 'Create by ' + data.autr
         var subjectElement = document.querySelector("#nwrdB").children[0]
         subjectElement.innerHTML = 'Words ' + data.nwrd
         var subjectElement = document.querySelector("#nsntB").children[0]
@@ -194,10 +206,10 @@ var Notes = (function() {
 			trgtximg = trgt.toLowerCase()
 			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
 		} else {
-			imgsElement.innerHTML = '<br>'
+			imgsElement.innerHTML = ''
         }
         srceElement.innerHTML = srce
-        dotsElement.innerHTML = '<img src="/images/eyelash.svg"</img>'
+        dotsElement.innerHTML = '<img src="/images/eyelashes.svg"</img>'
         exmpElement.innerHTML = exmp
         scoreNoElement.innerHTML = scoreNo
         scoreOkElement.innerHTML = scoreOk
@@ -209,11 +221,13 @@ var Notes = (function() {
         var scoreOk = Number(scoreOk)
         var scoreNo = document.querySelector("#score_no").children[0].innerHTML
         var scoreNo = Number(scoreNo)
+        
 
         var keys = Object.keys(data.items)
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
         var scoreOk = scoreOk+1
+        document.getElementById("Right").setAttribute("value", "Right ("+scoreOk+")");
 
         if (nextIndex == keys.length) {
 			
@@ -230,9 +244,9 @@ var Notes = (function() {
 			  swal("Good job!", 'Your score is: '+por+'%', "warning");
 			}
 			
-            var scoreOk = 0;
-            var scoreNo = 0;
-            var nextIndex = 0;
+            var scoreOk = 0; var scoreNo = 0; var nextIndex = 0;
+            document.getElementById("Right").setAttribute("value", "Right");
+            document.getElementById("Wrong").setAttribute("value", "Wrong");
         }
 
         var next = keys[nextIndex]
@@ -258,6 +272,7 @@ var Notes = (function() {
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
         var scoreNo = scoreNo+1
+        document.getElementById("Wrong").setAttribute("value", "Wrong ("+scoreNo+")");
         
         if (nextIndex == keys.length) {
             
@@ -277,6 +292,8 @@ var Notes = (function() {
 			}
 			
             var scoreOk = 0; var scoreNo = 0; var nextIndex = 0;
+            document.getElementById("Right").setAttribute("value", "Right");
+            document.getElementById("Wrong").setAttribute("value", "Wrong");
         }
 
         var next = keys[nextIndex]

@@ -147,22 +147,25 @@
 		<table style="width:100%;margin:0;vertical-align:top;">
 		<tr>
 		<td>
-			<table class="tainfo">
+			<table class="topic_info">
 			<tr>
-			   <td class="tdinfo">
-				   
+			   <td>
 				   <div id="name" class="topicName">
 						<p style="font-weight:bold;font-family:Verdana;"></p>
 					</div>
+					  <span id="levl">This topic is intended for <font></font> students.</span><br>
+					  <span>Contains: </span>
 					  <span id="nwrd"><font></font></span>
 					  <span id="nsnt"><font></font></span>
 					  <span id="naud"><font></font></span>
 					  <span id="nimg"><font></font></span>
 				  </td>
 				</tr>
+				
 				<tr>
-				  <td>
-					  <span style="text-align:left;"id="autr"><font></font></span>
+				  <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span>. <a href="box.php?">Translate it into your language</a><br>
+					  It was updated on <span style="text-align:left;"id="dteu"><font></font>. </span> 
+					  <span style="text-align:left;"id="autr">Uploaded by <font ></font></span>
 				  </td>
 				</tr>
 
@@ -176,18 +179,18 @@
 		<table style="width:100%;margin:0;vertical-align:top;">
 		<tr>
 		<td>
-			<table class="tainfo">
+			<table class="flascards_info">
 			<tr>
-			   <td class="tdinfo">
-					  <span id="nwrdB"><font></font></span>
-					  <span id="nsntB"><font></font></span> | 
+			   <td>
+					  <span id="nwrdB"> <font></font></span>
+					  <span id="nsntB"> <font></font></span> | 
 					  <span id="score_no"> I did not know it <font color="#C01B4C"></font></span> /
 					  <span id="score_ok">I knew it <font color="green"></font></span>
 				  </td>
 				</tr>
 				<tr>
 				  <td>
-					  <span style="text-align:left;"id="autrB"><font></font></span>
+					  <span style="text-align:left;"><font></font></span>
 				  </td>
 				</tr>
 
