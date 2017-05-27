@@ -62,16 +62,15 @@
         $name=$dirArray[$index];
         $temp = explode('.', $name);
         $ext  = array_pop($temp);
-        $namee = implode('.', $temp);
-        //$name = substr($namee, 4);
-        $name = substr($namee, 0, -4);
+        $name = implode('.', $temp);
+
         
         
         $namehref=$dirArray[$index];
 
         echo"<tr>
-            <td style=\"width:5%\"><a href=\"/appview.php?l=".$language."&c=".$category."&set=".$namee."\"><img class='expand' src='/images/idmnd.png'></a></td>
-            <td style=\"width:90%;line-height:16px;font-size:13px\"><a title=".$namee." href=\"/appview.php?l=".$language."&c=".$category."&set=".$namee."\">{$name}</a></td>
+            <td style=\"width:5%\"><a href=\"/appview.php?l=".$language."&c=".$category."&set=".$name."\"><img class='expand' src='/images/idmnd.png'></a></td>
+            <td style=\"width:90%;line-height:16px;font-size:13px\"><a href=\"/appview.php?l=".$language."&c=".$category."&set=".$name."\">{$name}</a></td>
         </tr>";
        }
     }

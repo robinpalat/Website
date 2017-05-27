@@ -1,12 +1,11 @@
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8"/>
         <title>Study</title>
-        <meta name="description" content="Flashcards">
-        <link rel="stylesheet" href="/css/view.css">
-        <link rel="stylesheet" href="/css/fa/css/font-awesome.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="/css/sweetalert.css">
+        <meta name="description" content="Flashcards"/>
+        <link rel="stylesheet" href="/css/view.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="/css/sweetalert.css"/>
 
         <script> /* Loading */
 			function onReady(callback) {
@@ -60,15 +59,19 @@
          
         <script> /* Button fav at laoding*/
 		function setBtnFav() {
+			var div = document.getElementById("data-name");
+			var tpc = div.textContent;
+			tpc = tpc.replace(/(^[ \t]*\n)/gm, '').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+
 			var el = document.getElementById("FavBtn")
 			var faves = getCookie('Topics_fav');
-			var bol = faves.includes(data.name);
-			if(bol==false)
+			var bol = faves.includes(tpc);
+			if(bol == false)
 			{
 				el.src='/images/fav.png';
 				el.className="fav";
 			}
-			if(bol==true)
+			else
 			{
 				el.src='/images/unfav.png';
 				el.className="unfav";
@@ -82,7 +85,7 @@
 				var faves = getCookie('Topics_fav');
 				var bol = faves.includes(data.name);
 		
-				if(bol==true)
+				if(bol == true)
 				{
 					var SetFavs_value = faves.replace(data.name+'|','');
 					var expiration_date = new Date();
@@ -92,8 +95,7 @@
 					el.src='/images/fav.png';
 					el.className="fav";
 				}
-				
-				if(bol==false)
+				else
 				{
 					SetFavs_value = data.name+'|'+faves
 					var expiration_date = new Date();
@@ -132,8 +134,10 @@
 		
 		$ViewThisTopic = "/".$lang."/".$catg."/".$set.".idmnd";
         ?>
-        
-        <div id="dom-target" style="display: none;">
+         <div id="data-name" style="display:none;">
+            <?php print $set ?>
+        </div>
+        <div id="dom-target" style="display:none;">
             <?php print $ViewThisTopic ?>
         </div>
         

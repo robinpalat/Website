@@ -48,7 +48,7 @@ var Topic = (function() {
     }
     
     var render_topic = function (trgt, dat) {
-        document.body.style.backgroundColor = "#cdeeb1";
+        document.body.style.backgroundColor = "#F0ECEB";
         document.getElementById("headA").style = "DISPLAY: true;";
         document.getElementById("headB").style = "DISPLAY: none;";
         document.getElementById("TopicLanding").style = "DISPLAY: true;";

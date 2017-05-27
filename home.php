@@ -141,7 +141,7 @@
 
     <table width="100%" height="60px" border="0" align="center" class="top" style="border-spacing: 4px 4px;">
         <td vertical-align="middle" align="left" class="langtitle">
-            <img height="48" width="48" src="/images/logo.svg"><a style="color:#FFFFFF" href="/<?=$langdir?>"><?=$langdir?></a>
+            <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=$langdir?></a>
         </td>
  
          <td style="border-radius:5px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#978786">Plus</a></td>
@@ -163,6 +163,7 @@
 
 
 
+<!--
    <form action="/search.php" method="post">
     <input name="my_html_input_tag"  value=""/>
 
@@ -170,6 +171,7 @@
            value="Click here for nothing"/>
 
     </form>
+-->
 
 
 
