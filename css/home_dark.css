@@ -1,11 +1,5 @@
 @charset "utf-8";
 
-
-
-
-
-
-
 .plus {
 	background: #E0F3DD;
 	border: 1px solid #91E37C;
@@ -14,8 +8,6 @@
     color: #496940;
 */
 }
-
-
 
 
 a img {
@@ -28,10 +20,6 @@ img.expand {
 	-webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
 }
-
-
-
-
 
 
 .content {
@@ -67,16 +55,12 @@ img.expand {
 }
 
 
-
-
 .rss {
     padding: 10px 0;
     position: relative;
     clear: both;
     font-size: 8px;
 }
-
-
 
 
 .langlabel{ 

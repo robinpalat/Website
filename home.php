@@ -16,20 +16,20 @@
     <link href="/css/home.css" rel="stylesheet" type="text/css" />
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <?php include 'fetchfeed.php';?>
+    
 
     <?php
-    function mobileDevice()
-    {
-    $type = $_SERVER['HTTP_USER_AGENT'];
-    if(strpos((string)$type, "Windows Phone") != false || strpos((string)$type, "iPhone") != false || strpos((string)$type, "Android") != false)
-    return true;
-    else
-    return false;
-    }
-    if(mobileDevice() == true)
-    header('Location: mobile.php');
+		function mobileDevice()
+		{
+		$type = $_SERVER['HTTP_USER_AGENT'];
+		if(strpos((string)$type, "Windows Phone") != false || strpos((string)$type, "iPhone") != false || strpos((string)$type, "Android") != false)
+		return true;
+		else
+		return false;
+		}
+		if(mobileDevice() == true)
+		header('Location: mobile.php');
     ?>
-	
     <script>
     function setCookie() {
         var d = new Date();
@@ -39,7 +39,6 @@
         
     }
     </script>
-    
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
@@ -139,19 +138,18 @@
     <main id="content" class="group" role="main">
     <div class="main">
 
-    <table width="100%" height="30px" border="0" align="center" class="navbar-header" style="border-spacing: 4px 4px;">
+    <table width="100%" height="60px" border="0" align="center" class="navbar-header" style="border-spacing: 4px 4px;">
         <td vertical-align="middle" align="left" class="langtitle">
             <a style="color:#FFFFFF" href="/<?=$langdir?>">My <?=$langdir?></a>
         </td>
  
-         <td><div style="color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks"><a id="show" href="#" style="color:#FFFFFF">Plus</div></a></td>
-         <td style="color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" ><a onclick="location.href='#categories'">Topics by Category</a></td>
-         <td style="color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks"><a onclick="underc();">Downloads</a></td>
-         <td style="color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks"><a onclick="underc();">Under Construction</a></td>
-         <td id="topLinks"><a style="color:#FFFFFF;cursor:pointer;font-weight:normal" href="../community/"><?= $use ?></a></td>
+         <td style="border-radius:5px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#978786">Plus</a></td>
+         <td style="border-radius:5px;background:#EB9486;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
+         <td style="border-radius:5px;background:#6981A1;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Downloads</td>
+         <td style="border-radius:5px;background:#7E7F9A;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Under Construction</td>
 
         <td align="right">
-     
+            <a class=<?=$class_btn_user?> style="text-decoration: none;color:#FFFFFF;" href="../community/"><small><?= $use ?></small></a>
         </td>
     </table>
 
@@ -170,24 +168,23 @@
     </form>
 -->
 
-<!--
+
+
     <div class="sentenceweek">
-		<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1> consectetur adipisicing elit, sed doeiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enimad<br> minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat.<br> Duis aute irure dolor inreprehenderit<br> in voluptate velit esse cillum dolore eu fugiat <br>nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est <br>laborum.Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit, se
+		<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1>
+		<div class="comment more"><br></div>
 	</div>
--->
 		
 	</div>
 
-	<br><br><br>
-
+	<br>
         <div class="feed-lists" class="box">
 		   <h1>Latest Published Topics</h1>
 		<?php
 		output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 8, true, true, 200);
-		//output_rss_feed("http://tmp.site50.net/rss/", 5, false, false, 200);
+		//output_rss_feed("http://tmp.site50.net/rss/", 5, true, true, 200);
 		?>
 		</div>
-
     <br>
     
 		<div id="categories">
@@ -206,13 +203,11 @@
 				if ($files){
 					$filecount = count($files);
 				}
-
 				if ($filecount>0){
 					$upcate = ucfirst($cate);
 					$catee = strtoupper($cate);
 					//title=\"".$catee."\" 
 					echo "<a href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
-					
 				}
 			}
 		}
@@ -228,4 +223,114 @@
     </footer>
   
 </body>
+ <script>
+$(document).ready(function() {
+	
+		function getCookie(cname) {
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for(var i = 0; i <ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+	
+	var lessonChk = getCookie('topic_study');
+	var myData = './at home/'+lessonChk+'.idmnd'
+	
+	var Topic = (function() {
+		
+		var render_page = function (data) {
+			    var first = Object.keys(data.items)[0]
+				render_topic(first, data.items[first])
+
+		}
+		
+		var render_topic = function (trgt, dat) {
+		
+			arr = []
+			for(var event in dat){
+				var dataCopy = dat[event]
+				for(key in dataCopy){
+					dataCopy[key] = new Date(dataCopy[key])
+				}
+				arr.push(dataCopy)
+			}
+			var srce = JSON.stringify(arr[0])
+			srce = JSON.parse(srce)
+			var exmp = JSON.stringify(arr[11])
+			exmp = JSON.parse(exmp)
+			var grmr = JSON.stringify(arr[15])
+			grmr = JSON.parse(grmr)
+			var imag = JSON.stringify(arr[19])
+			imag = JSON.parse(imag)
+			var type = JSON.stringify(arr[22])
+			type = JSON.parse(type)
+			var itle = trgt.toLowerCase();
+			var exmp = exmp.replace(itle, "<b>"+itle+"</b>")
+			exmp = exmp.replace(trgt, "<b>"+trgt+"</b>")
+		}
+
+		var load_data = function(file) {
+			var xmlhttp = new XMLHttpRequest()
+			xmlhttp.onreadystatechange = function () {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+					data = JSON.parse(xmlhttp.responseText)
+					Topic.renderPage(data)
+				} else if (xmlhttp.readyState==4 && xmlhttp.status==404) {
+					//document.write('<br><br><div align="center"><big>Exiting...</big></div>')
+				}
+			}
+			xmlhttp.open("GET", file, true)
+			xmlhttp.send()
+
+		}
+		return {
+			renderTopic: render_topic,
+			renderPage: render_page,
+			loadData: load_data
+		}
+	})()
+	
+	Topic.loadData(myData)
+	
+	var showChar = 500;
+	var ellipsestext = "...";
+	var moretext = "more";
+	var lesstext = "less";
+	$('.more').each(function() {
+		var content = lessonChk + "	Lorem ipsum dolor sit amet, <div id=\"name\"></div>consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus. Maecenas lobortis odio id sapien facilisis elementum. Curabitur et magna justo, et gravida augue.n Sed tristique pellentesque arcu quis tempor. consectetur adipiscing elit. Proin blandit nunc sed sem dictum id feugiat quam blandit. Donec nec sem sed arcu interdum commodo ac ac diam. Donec consequat semper rutrum. Vestibulum et mauris elit. Vestibulum mauris lacus, ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus. Maecenas lobortis odio id sapien facilisis elementum. Curabitur et magna justo, et gravida augue.n Sed tristique pellentesque arcu quis tempor. consectetur adipiscing elit. Proin blandit nunc sed sem dictum id feugiat quam blandit. Donec nec sem sed arcu interdum commodo ac ac diam. Donec consequat semper rutrum. Vestibulum et mauris elit. Vestibulum mauris lacus, ultricies.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus. Maecenas lobortis odio id sapien facilisis elementum. Curabitur et magna justo, et gravida augue.n Sed tristique pellentesque arcu quis tempor. consectetur adipiscing elit. Proin blandit nunc sed sem dictum id feugiat quam blandit. Donec nec sem sed arcu interdum commodo ac ac diam. Donec consequat semper rutrum. Vestibulum et mauris elit."
+		
+		if(content.length > showChar) {
+			var c = content.substr(0, showChar);
+			var h = content.substr(showChar-1, content.length - showChar);
+			var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+			$(this).html(html);
+		}
+	});
+
+	$(".morelink").click(function(){
+		if($(this).hasClass("less")) {
+			$(this).removeClass("less");
+			$(this).html(moretext);
+			
+		} else {
+			$(this).addClass("less");
+			$(this).html(lesstext);
+		}
+		$(this).parent().prev().toggle();
+		$(this).prev().toggle();
+		return false;
+	});
+});
+
+ </script>
 </html>
+

@@ -128,15 +128,14 @@ var Cards = (function() {
         if (type == '1') {
 			trgtximg = trgt.toLowerCase()
 			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-1.jpg"</img>'
-        	} else {
-			imgsElement.innerHTML = '<br>'
+		} else {
+			imgsElement.innerHTML = '<font "size=0"></font>'
         }
         srceElement.innerHTML = srce
         dotsElement.innerHTML = '<img src="/images/eyelash.svg"</img>'
         exmpElement.innerHTML = exmp
         scoreNoElement.innerHTML = scoreNo
         scoreOkElement.innerHTML = scoreOk
-       
     }
     
 	var next_card_ok = function () {
@@ -145,14 +144,12 @@ var Cards = (function() {
         var scoreOk = Number(scoreOk)
         var scoreNo = document.querySelector("#score_no").children[0].innerHTML
         var scoreNo = Number(scoreNo)
-
         var keys = Object.keys(data.items)
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
         var scoreOk = scoreOk+1
         
-        
-        
+
         if (nextIndex == keys.length) {
 			
 			var por = percentage(scoreOk, keys.length);
@@ -231,7 +228,6 @@ var Cards = (function() {
 
         xmlhttp.open("GET", file, true)
         xmlhttp.send()
-
     }
     return {
         renderCard: render_card,

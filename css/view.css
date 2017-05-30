@@ -34,10 +34,11 @@ div {
 }
 
 .note{ 
-	font-size: 12px;
+	font-size: 13px;
 	text-align: left;
 	width: 80%;
-	padding-left: 5%;
+	padding-left: 10%;
+	padding-left: 10%;
 }
 
 .topicName{ 
@@ -94,7 +95,7 @@ div {
 
 .topic_info {
     font-size: 13px;
-    color: #494342;
+    color: #575757;
     font-family: 'verdana', 'roboto'; 
     border-collapse: collapse;
 	font-family: "verdana";
@@ -105,7 +106,6 @@ div {
 	color: #3E4B61;
 	background-color: #E3E8F0;
 	font-size: 11px;
-	padding-bottom: 8px;
 }
 
 .flascards_info {
@@ -117,9 +117,13 @@ div {
 
 
 .floating-box-right {
+	font-family: 'verdana', 'roboto'; 
+	font-size: 12px;
+    color: #575757;
     float: right;
     width: auto;
     margin-right: 5px; 
+    vertical-align: middle; 
 }
 
 .fontsize {
@@ -298,9 +302,6 @@ body > button {
   width: 28%;
   height: 50px;
   border: 0px;
-/*
-  vertical-align:top;
-*/
   cursor:hand;
   border-radius: 6px;
 }
@@ -313,9 +314,6 @@ body > button {
   width: 28%;
   height: 50px;
   border: 0px solid #436C2B;
-/*
-  vertical-align:top;
-*/
   cursor:hand;
   border-radius: 6px;
 }
@@ -400,7 +398,6 @@ body > button {
 .help-tip:hover p{
 	display:block;
 	transform-origin: 100% 0%;
-
 	-webkit-animation: fadeIn 0.3s ease-in-out;
 	animation: fadeIn 0.3s ease-in-out;
 

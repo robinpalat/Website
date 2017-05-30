@@ -11,7 +11,7 @@ function dir2json($dir)
     {
         while (($content = readdir($handler)) !== FALSE)
         {
-            if ($content != "." && $content != ".." && $content != ".htaccess" && $content != "index.php" && $content != "app.php" && $content != "mobile.php")
+            if ($content != "." && $content != ".." && $content != ".htaccess" && $content != "index.php" && $content != "app.php" && $content != "mobile.php" && $content != ".gitignore")
             {
                 if(is_file($dir."/".$content)) $a[] = $content;
 				else if(is_dir($dir."/".$content)) $a[$content] = dir2json($dir."/".$content);

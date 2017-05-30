@@ -45,7 +45,6 @@
     $indexCount=count($dirArray);
     sort($dirArray);
     
-    $category = "./".$category."/";
     $files = glob($category . "*.idmnd");
     
     for($index=0; $index < $indexCount; $index++) {
@@ -61,7 +60,7 @@
         $namehref=$dirArray[$index];
 
         echo"<tr id=\"box\">
-            <td style=\"width:5%\"><a  href=\"/view.php?l=".$language."&c=".$category."&set=".$name."\"><img class='expand' src='/images/idmnd.png'></a></td>
+            <td style=\"width:5%\"><a href=\"/view.php?l=".$language."&c=".$category."&set=".$name."\"><img class='expand' src='/images/idmnd.png'></a></td>
             <td style=\"width:90%\"><a href=\"/view.php?l=".$language."&c=".$category."&set=".$name."\">{$name}</a></td>
             <td style=\"width:5%\"><a href=\"".$place.$namehref."\"><img src='/images/dl.png'></a></td>
 

@@ -7,6 +7,10 @@ document.head.appendChild(imported);
 var imported = document.createElement('script');
 imported.src = '/js/voicerss-tts.min.js';
 document.head.appendChild(imported);
+//var imported = document.createElement('script');
+//imported.src = '/js/speakClient.js';
+//document.head.appendChild(imported);
+
 
 var speechtrgt = function (trgt) {
 		VoiceRSS.speech({
@@ -48,11 +52,11 @@ var Topic = (function() {
         subjectElement.innerHTML = data.slng
         var subjectElement = document.querySelector("#levl").children[0]
         var plevl
-        if (data.levl == 1) {
+        if (data.levl == 0) {
 		  plevl = 'beginner'
-		} else if (data.levl == 2) {
+		} else if (data.levl == 1) {
 		  plevl = 'intermediate'
-		} else if (data.levl == 3) {
+		} else if (data.levl == 2) {
 		  plevl = 'advance'
 		}
         subjectElement.innerHTML = plevl
@@ -119,23 +123,18 @@ var Notes = (function() {
             arr.push(dataCopy)
         }
         var srce = JSON.stringify(arr[0])
-        var srce = JSON.parse(srce)
-        
+        srce = JSON.parse(srce)
         var exmp = JSON.stringify(arr[11])
-        var exmp = JSON.parse(exmp)
-        
+        exmp = JSON.parse(exmp)
         var grmr = JSON.stringify(arr[15])
-        var grmr = JSON.parse(grmr)
-        
+        grmr = JSON.parse(grmr)
         var imag = JSON.stringify(arr[19])
-        var imag = JSON.parse(imag)
-        
+        imag = JSON.parse(imag)
         var type = JSON.stringify(arr[22])
-        var type = JSON.parse(type)
-
+        type = JSON.parse(type)
         var itle = trgt.toLowerCase();
         var exmp = exmp.replace(itle, "<b>"+itle+"</b>")
-        var exmp = exmp.replace(trgt, "<b>"+trgt+"</b>")
+        exmp = exmp.replace(trgt, "<b>"+trgt+"</b>")
         
         var chars = trgt.length;
 		if ((chars >= 1) && (chars < 20)) {
@@ -178,8 +177,10 @@ var Notes = (function() {
 		
 		window.pronounce = function () {
 			speechtrgt(trgt);
+			//speak(trgt);
 		}
-
+		
+		
         var trgtElement = document.querySelector("#trgt").children[0]
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
@@ -206,7 +207,7 @@ var Notes = (function() {
 			trgtximg = trgt.toLowerCase()
 			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
 		} else {
-			imgsElement.innerHTML = ''
+			imgsElement.innerHTML = '<font "size=0"></font>'
         }
         srceElement.innerHTML = srce
         dotsElement.innerHTML = '<img src="/images/eyelashes.svg"</img>'
@@ -221,13 +222,12 @@ var Notes = (function() {
         var scoreOk = Number(scoreOk)
         var scoreNo = document.querySelector("#score_no").children[0].innerHTML
         var scoreNo = Number(scoreNo)
-        
-
         var keys = Object.keys(data.items)
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
         var scoreOk = scoreOk+1
-        document.getElementById("Right").setAttribute("value", "Right ("+scoreOk+")");
+        document.getElementById("Right").setAttribute("value", "Right "+scoreOk);
+       
 
         if (nextIndex == keys.length) {
 			
@@ -267,12 +267,12 @@ var Notes = (function() {
         var scoreOk = Number(scoreOk)
         var scoreNo = document.querySelector("#score_no").children[0].innerHTML
         var scoreNo = Number(scoreNo)
-
         var keys = Object.keys(data.items)
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
         var scoreNo = scoreNo+1
-        document.getElementById("Wrong").setAttribute("value", "Wrong ("+scoreNo+")");
+        document.getElementById("Wrong").setAttribute("value", "Wrong "+scoreNo);
+        
         
         if (nextIndex == keys.length) {
             

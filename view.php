@@ -6,8 +6,9 @@
         <link rel="stylesheet" href="/css/view.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="/css/sweetalert.css"/>
+		
 
-        <script> /* Loading */
+        <script> /* Loading gif*/
 			function onReady(callback) {
 				var intervalID = window.setInterval(checkReady, 1000);
 
@@ -39,7 +40,7 @@
 			}
          </script>
          
-         <script> /* Get cookie val */
+         <script> /* Get X cookie value  */
 			function getCookie(cname) {
 				var name = cname + "=";
 				var decodedCookie = decodeURIComponent(document.cookie);
@@ -57,25 +58,24 @@
 			}
          </script>
          
-        <script> /* Button fav at laoding*/
+        <script> /* Buttons fav & lesson at loading */
 		function setBtnFav() {
 			var div = document.getElementById("data-name");
 			var tpc = div.textContent;
 			tpc = tpc.replace(/(^[ \t]*\n)/gm, '').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-
+			/* Favorite */
 			var el = document.getElementById("FavBtn")
 			var faves = getCookie('Topics_fav');
 			var bol = faves.includes(tpc);
-			if(bol == false)
-			{
-				el.src='/images/fav.png';
-				el.className="fav";
-			}
-			else
-			{
-				el.src='/images/unfav.png';
-				el.className="unfav";
-			}
+			if(bol == false) { el.src='/images/fav.png'; }
+			else { el.src='/images/unfav.png'; }
+			/* Lesson */
+			var el = document.getElementById("studySet")
+			var lessonChk = getCookie('topic_study');
+			if(lessonChk !== tpc) { el.src='/images/pin.png'; }
+			else { el.src='/images/unpin.png'; }
+			
+			
 		}
          </script>
          
@@ -93,7 +93,6 @@
 					var expires = "expires=" + expiration_date.toGMTString();
 					document.cookie="Topics_fav="+SetFavs_value+"; expires=" + expires + "; path=/";
 					el.src='/images/fav.png';
-					el.className="fav";
 				}
 				else
 				{
@@ -103,18 +102,49 @@
 					var expires = "expires=" + expiration_date.toGMTString();
 					document.cookie="Topics_fav="+SetFavs_value+"; expires=" + expires + "; path=/";
 					el.src='/images/unfav.png';
-					el.className="unfav";
 				}
 			}
          </script>
          
+         
+         
+        <script> /* Toggle Button fav */
+			function StudySet(el) {
+
+				var lessonChk = getCookie('topic_study');
+		
+				if(data.name == lessonChk)
+				{
+					var expiration_date = new Date();
+					expiration_date.setFullYear(expiration_date.getFullYear() + 1);
+					var expires = "expires=" + expiration_date.toGMTString();
+					document.cookie="topic_study="+SetFavs_value+"; expires=" + expires + "; path=/";
+					el.src='/images/pin.png';
+				}
+				else
+				{
+					SetFavs_value = data.name
+					var expiration_date = new Date();
+					expiration_date.setFullYear(expiration_date.getFullYear() + 1);
+					var expires = "expires=" + expiration_date.toGMTString();
+					document.cookie="topic_study="+SetFavs_value+"; expires=" + expires + "; path=/";
+					el.src='/images/unpin.png';
+				}
+			}
+         </script>
+         
+         
+         
+         
     </head>
     <body onload="setBtnFav()">
+		<div id="audio"></div>
         <?php
         include_once("analyticstracking.php");
         $lang = htmlspecialchars($_GET["l"]);
         $precatg = htmlspecialchars($_GET["c"]);
         $set = htmlspecialchars($_GET["set"]);
+        //Get category of topic from remote json file (if came empty from favorites)
         if ($precatg == 'fav') {
 			$data = file_get_contents ('./share/data/topics.json');
 			$json = json_decode($data, true);
@@ -153,7 +183,7 @@
 				   <div id="name" class="topicName">
 						<p style="font-weight:bold;font-family:Verdana;"></p>
 					</div>
-					  <span id="levl">This topic is intended for <font></font> students.</span><br>
+					  <span id="levl">This topic is intended for <b><font></font></b> students.</span><br>
 					  <span>Contains: </span>
 					  <span id="nwrd"><font></font></span>
 					  <span id="nsnt"><font></font></span>
@@ -170,7 +200,7 @@
 				</tr>
 
 			</table>
-			<td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img src='/images/close.png'></a></div></td>
+			<td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/close.png'></a></div></td>
 			</tr>
 		</table>
 	</span>
@@ -204,9 +234,12 @@
 <br>
 	<span id="TopicLanding">
 			<div class="TestStartBtn">
-				<input type="image" src="/images/fav.png" class="fav" id="FavBtn" onclick="Favesjs(this);" />
-				<input title="Flascards" type="image" src="/images/flashc1.png" class="flashimg" id="flashimg" onclick="doFunction();" />
-				<input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" id="flashdef" onclick="doFunction();" />
+				<input type="image" class="fav" id="FavBtn" onclick="Favesjs(this);" />
+<!--
+				<input title="Pin" type="image" class="flashdef" id="studySet" onclick="StudySet(this);" />
+-->
+				<input title="Flascards" type="image" src="/images/lesson.png" class="flashimg" id="flashimg" onclick="doFunction();" />
+				<input title="Flascards" type="image" src="/images/flashc1.png" class="flashimg" id="flashdef" onclick="doFunction();" />
 			</div>
 			<br><br><br><br>
 				
