@@ -234,7 +234,7 @@
 <br>
 	<span id="TopicLanding">
 			<div class="TestStartBtn">
-				<input type="image" class="fav" id="FavBtn" onclick="Favesjs(this);" />
+				<input type="image" src="/images/fav.png" class="fav" id="FavBtn" onclick="Favesjs(this);" />
 <!--
 				<input title="Pin" type="image" class="flashdef" id="studySet" onclick="StudySet(this);" />
 -->
@@ -261,10 +261,10 @@
 			</a>
 			
 			<div id="srce">
-				<h2 style="color:#7C8C77;"></h2>
+				<h2 style="color:#677862;"></h2>
 			</div>
 			<div id="dots">
-				<h2 style="color:#7C8C77"></h2>
+				<h2 style="color:#677862"></h2>
 			</div>
 			
 			

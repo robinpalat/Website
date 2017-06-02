@@ -8,12 +8,22 @@
     $max_words: max number of words (not real words, HTML words)
     if <= 0: no limitation, if > 0 display at most $max_words words
  */
+
+
 function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $show_description = true, $max_words = 0, $cache_timeout = 7200, $cache_prefix = "/home/u281842180/public_html/cache/cacherss2html-")
 {
     $result = "";
     // get feeds and parse items
     $rss = new DOMDocument();
     $cache_file = $cache_prefix . md5($feed_url);
+    
+    
+    if (filesize($cache_file) < 30) 
+	{
+	   unlink($cache_file);
+	}
+
+    
     // load from file or load content
     if ($cache_timeout > 0 &&
         is_file($cache_file) &&

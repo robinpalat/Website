@@ -17,7 +17,6 @@
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <?php include 'fetchfeed.php';?>
     
-
     <?php
 		function mobileDevice()
 		{
@@ -170,10 +169,10 @@
 
 
 
-    <div class="sentenceweek">
-		<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1>
-		<div class="comment more"><br></div>
-	</div>
+		<div class="sentenceweek">
+			<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1>
+			<div class="comment more"><br></div><table id="excelDataTable" border="0"></table>
+		</div>
 		
 	</div>
 
@@ -182,7 +181,6 @@
 		   <h1>Latest Published Topics</h1>
 		<?php
 		output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 8, true, true, 200);
-		//output_rss_feed("http://tmp.site50.net/rss/", 5, true, true, 200);
 		?>
 		</div>
     <br>
@@ -250,6 +248,57 @@ $(document).ready(function() {
 		var render_page = function (data) {
 			    var first = Object.keys(data.items)[0]
 				render_topic(first, data.items[first])
+				
+				
+				//////////////////////////////////////////////////
+				var myList = data.items
+				var myList = Object.keys(data.items)
+	
+
+				// Builds the HTML Table out of myList.
+				function buildHtmlTable(selector) {
+				  var columns = addAllColumnHeaders(myList, selector);
+
+				  for (var i = 0; i < myList.length; i++) {
+					var row$ = $('<tr/>');
+					for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+					  var cellValue = myList[i][columns[colIndex]];
+					  if (cellValue == null) cellValue = "";
+					  row$.append($('<td/>').html(cellValue));
+					}
+					$(selector).append(row$);
+				  }
+				}
+
+				// Adds a header row to the table and returns the set of columns.
+				// Need to do union of keys from all records as some records may not contain
+				// all records.
+				function addAllColumnHeaders(myList, selector) {
+				  var columnSet = [];
+				  var headerTr$ = $('<tr/>');
+
+				  for (var i = 0; i < myList.length; i++) {
+					var rowHash = myList[i];
+					for (var key in rowHash) {
+					  if ($.inArray(key, columnSet) == -1) {
+						columnSet.push(key);
+						headerTr$.append($('<th/>').html());
+					  }
+					}
+				  }
+				  $(selector).append(headerTr$);
+
+				  return columnSet;
+				}
+		
+
+
+			buildHtmlTable('#excelDataTable')
+				
+				
+			//////////////////////////////////////////////////
+				
+				
 
 		}
 		
@@ -301,12 +350,12 @@ $(document).ready(function() {
 	
 	Topic.loadData(myData)
 	
-	var showChar = 500;
+	var showChar = 100;
 	var ellipsestext = "...";
 	var moretext = "more";
 	var lesstext = "less";
 	$('.more').each(function() {
-		var content = lessonChk + "	Lorem ipsum dolor sit amet, <div id=\"name\"></div>consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus. Maecenas lobortis odio id sapien facilisis elementum. Curabitur et magna justo, et gravida augue.n Sed tristique pellentesque arcu quis tempor. consectetur adipiscing elit. Proin blandit nunc sed sem dictum id feugiat quam blandit. Donec nec sem sed arcu interdum commodo ac ac diam. Donec consequat semper rutrum. Vestibulum et mauris elit. Vestibulum mauris lacus, ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus. Maecenas lobortis odio id sapien facilisis elementum. Curabitur et magna justo, et gravida augue.n Sed tristique pellentesque arcu quis tempor. consectetur adipiscing elit. Proin blandit nunc sed sem dictum id feugiat quam blandit. Donec nec sem sed arcu interdum commodo ac ac diam. Donec consequat semper rutrum. Vestibulum et mauris elit. Vestibulum mauris lacus, ultricies.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus. Maecenas lobortis odio id sapien facilisis elementum. Curabitur et magna justo, et gravida augue.n Sed tristique pellentesque arcu quis tempor. consectetur adipiscing elit. Proin blandit nunc sed sem dictum id feugiat quam blandit. Donec nec sem sed arcu interdum commodo ac ac diam. Donec consequat semper rutrum. Vestibulum et mauris elit."
+		var content = lessonChk + "<div id=\"name\"></div>consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus."
 		
 		if(content.length > showChar) {
 			var c = content.substr(0, showChar);
