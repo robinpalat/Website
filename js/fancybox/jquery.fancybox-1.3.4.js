@@ -131,6 +131,7 @@
 				_error();
 				return;
 			}
+			$("body").css({'overflow-y':'hidden'});
 
 			if (type == 'inline') {
 				obj	= href.substr(href.indexOf("#"));
@@ -602,9 +603,9 @@
 				content.bind('click', $.fancybox.close);
 			}
 
-			if (currentOpts.hideOnOverlayClick)	{
-				overlay.bind('click', $.fancybox.close);
-			}
+			//if (currentOpts.hideOnOverlayClick)	{
+				//overlay.bind('click', $.fancybox.close);
+			//}
 
 			$(window).bind("resize.fb", $.fancybox.resize);
 
@@ -864,6 +865,7 @@
 		}
 
 		_start();
+		
 	};
 
 	$.fancybox.showActivity = function() {
@@ -928,6 +930,8 @@
 			return;
 		}
 
+		$("body").css({'overflow-y':'visible'});
+
 		busy = true;
 
 		if (currentOpts && false === currentOpts.onCleanup(currentArray, currentIndex, currentOpts)) {
@@ -959,7 +963,7 @@
 			wrap.hide();
 
 			$.event.trigger('fancybox-cleanup');
-
+			
 			content.empty();
 
 			currentOpts.onClosed(currentArray, currentIndex, currentOpts);
@@ -1034,6 +1038,7 @@
 	};
 
 	$.fancybox.init = function() {
+		
 		if ($("#fancybox-wrap").length) {
 			return;
 		}
@@ -1072,6 +1077,7 @@
 		});
 
 		if ($.fn.mousewheel) {
+			
 			wrap.bind('mousewheel.fb', function(e, delta) {
 				if (busy) {
 					e.preventDefault();
@@ -1112,7 +1118,7 @@
 
 		ajax : {},
 		swf : { wmode: 'transparent' },
-
+		
 		hideOnOverlayClick : true,
 		hideOnContentClick : false,
 

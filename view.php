@@ -6,9 +6,31 @@
         <link rel="stylesheet" href="/css/view.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="/css/sweetalert.css"/>
+<!--
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+-->
 		
+        <script type="text/javascript">
 
-        <script> /* Loading gif*/
+		 //$('#trgt').bind('mousewheel DOMMouseScroll',function(e){
+			  //// determines direction of scroll
+			  //var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail; 
+			  //var curSize = parseInt($(this).css('font-size'),10);
+				//console.log(e);
+			  //// scroll down
+			  //if(delta>0){
+				//curSize -= 1;
+			  //}else{ //scroll up
+				//curSize += 1;
+			  //}
+			  //$(this).css({"font-size" : curSize+"px"});
+			//});
+
+        //</script>
+
+
+
+        <script type="text/javascript"> /* Loading gif*/
 			function onReady(callback) {
 				var intervalID = window.setInterval(checkReady, 1000);
 
@@ -30,7 +52,7 @@
 			});
         </script>
         
-         <script> /* Image fix */
+         <script type="text/javascript"> /* Image fix */
 			function imgError(image) {
 				image.onerror = "";
 				image.style="display: none;";
@@ -40,7 +62,7 @@
 			}
          </script>
          
-         <script> /* Get X cookie value  */
+         <script type="text/javascript"> /* Get X cookie value  */
 			function getCookie(cname) {
 				var name = cname + "=";
 				var decodedCookie = decodeURIComponent(document.cookie);
@@ -58,7 +80,7 @@
 			}
          </script>
          
-        <script> /* Buttons fav & lesson at loading */
+        <script type="text/javascript"> /* Buttons fav & lesson at loading */
 		function setBtnFav() {
 			var div = document.getElementById("data-name");
 			var tpc = div.textContent;
@@ -79,7 +101,7 @@
 		}
          </script>
          
-         <script> /* Toggle Button fav */
+         <script type="text/javascript"> /* Toggle Button fav */
 			function Favesjs(el) {
 
 				var faves = getCookie('Topics_fav');
@@ -108,7 +130,7 @@
          
          
          
-        <script> /* Toggle Button fav */
+        <script type="text/javascript"> /* Toggle Button fav */
 			function StudySet(el) {
 
 				var lessonChk = getCookie('topic_study');
@@ -235,9 +257,9 @@
 	<span id="TopicLanding">
 			<div class="TestStartBtn">
 				<input type="image" src="/images/fav.png" class="fav" id="FavBtn" onclick="Favesjs(this);" />
-<!--
-				<input title="Pin" type="image" class="flashdef" id="studySet" onclick="StudySet(this);" />
--->
+
+				<input title="Pin" src="/images/pin.png" type="image" class="flashdef" id="studySet" onclick="StudySet(this);" />
+
 				<input title="Flascards" type="image" src="/images/lesson.png" class="flashimg" id="flashimg" onclick="doFunction();" />
 				<input title="Flascards" type="image" src="/images/flashc1.png" class="flashimg" id="flashdef" onclick="doFunction();" />
 			</div>
@@ -286,7 +308,7 @@
 	
 </body>
     
-<script src="/js/flashcard.js"></script>
+<script type="text/javascript" src="/js/flashcard.js"></script>
 <script>
 	var div = document.getElementById("dom-target");
 	var myData = div.textContent;

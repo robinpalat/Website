@@ -39,11 +39,10 @@
     }
     </script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.js"></script>
     <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 
     <script type="text/javascript">
-			$('.titleHidden').removeAttr('title');
             $(document).ready(function() {
                 $(".box").fancybox({
                     'width'         : '75%',
@@ -54,8 +53,11 @@
                     'overlayColor'      : '#000',
                     'overlayOpacity'    : 0,
                     'scrolling'     : 'yes',
-                    'type'          : 'iframe'
+                    'type'          : 'iframe',
                 });
+                
+                
+
             });
     </script>
     
@@ -293,7 +295,7 @@ $(document).ready(function() {
 		
 
 
-			buildHtmlTable('#excelDataTable')
+			//buildHtmlTable('#excelDataTable')
 				
 				
 			//////////////////////////////////////////////////
