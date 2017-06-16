@@ -47,6 +47,53 @@ body {
 }
 
 
+
+/* Style the tab */
+
+
+
+div.tab {
+    overflow: hidden;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 15px;
+    color: #565656;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    position: relative;
+	margin-left:70px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    color: #373737;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    color: #373737;
+    
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 0px;
+    border-top: none;
+}
+
+
+
 ul, ol, dl {
     padding: 0;
     margin: 0;
@@ -295,6 +342,19 @@ nav ul{
 
 
 .feed-lists {
+	font-size: 14px;
+	position: relative;
+	text-align: left;
+	margin-left:50px;
+	float: left;
+	width: 90%;
+	padding:0px 0px 25px 30px;
+	color:"#E30000";
+	line-height:1.6em;
+	font: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.fav-lists {
 	font-size: 14px;
 	position: relative;
 	text-align: left;

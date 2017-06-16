@@ -38,6 +38,7 @@
         
     }
     </script>
+   
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.js"></script>
     <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
@@ -109,6 +110,11 @@
 	});
 	</script>
 	
+	
+	
+
+
+	
 </head>
 	
 <body onload="setCookie()">
@@ -171,29 +177,68 @@
 
 
 
-		<div class="sentenceweek">
-			<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> Sentence of the week</h1>
+	<div class="sentenceweek">
+			<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> -- Under construction --</h1>
 			<div class="comment more"><br></div><table id="excelDataTable" border="0"></table>
 		</div>
 		
 	</div>
 
 	<br>
-        <div class="feed-lists" class="box">
-		   <h1>Latest Published Topics</h1>
-		<?php
-		output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 8, true, true, 200);
-		?>
-		</div>
+	
+	<div class="tab">
+	  <button class="tablinks" onclick="openCity(event, 'Latest')">Latest Published Topics</button>
+	  <button class="tablinks" onclick="openCity(event, 'Favorites')">Favorites</button>
+	</div>
+	
+	<table>
+		<tr>
+			<td>
+			<div class="feed-lists tabcontent tabinit box" id="Latest">
+			<?php
+			echo" ";
+			output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 8, true, true, 200);
+			?>
+			</div>
+			</td>
+			
+			<td>
+				<div class="fav-lists tabcontent" id="Favorites">
+				<?php
+				echo" ";
+				if(!isset($_COOKIE['Topics_fav'])) {
+					$topics_favs = "";
+					
+				} else {
+					  $topics_favs = $_COOKIE['Topics_fav'];
+					  $topics_favs =  ucfirst($topics_favs);
+				}
+			
+				if (!empty($topics_favs)){
+					
+					$topics_favs = explode('|', $topics_favs);
+					foreach($topics_favs as $fav) {
+							
+							if($fav!="|" AND $fav!=""){
+								 echo"<a class=\"box\" href=\"/view.php?l=".$langdir."&c=fav&set=".$fav."\">{$fav}</a><br>";
+						}
+					}
+				}
+			?>
+			</div>
+			
+			
+			</td>
+		</tr>
+		
+	</table>
+		
+		
+		
     <br>
     
 		<div id="categories">
 		<?php
-		
-		if (!empty($favs)){
-		echo "<a href=\"/favs.php?lang=".$langdir."\" \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/favorites.png\" /><span class=\"circle-count\"> <font size=1></font></span></div></a>";
-		}
-
 		$files = scandir('./');
 		foreach($files as $cate) {
 			if($cate!=".htaccess" AND $cate!="." AND $cate!=".." AND $cate!="index.php" AND $cate!="box.php" AND $cate!="mobile.php"){
@@ -224,164 +269,166 @@
   
 </body>
  <script>
-$(document).ready(function() {
-	
-		function getCookie(cname) {
-			var name = cname + "=";
-			var decodedCookie = decodeURIComponent(document.cookie);
-			var ca = decodedCookie.split(';');
-			for(var i = 0; i <ca.length; i++) {
-				var c = ca[i];
-				while (c.charAt(0) == ' ') {
-					c = c.substring(1);
-				}
-				if (c.indexOf(name) == 0) {
-					return c.substring(name.length, c.length);
-				}
-			}
-			return "";
-		}
-	
-	var lessonChk = getCookie('topic_study');
-	var myData = './at home/'+lessonChk+'.idmnd'
-	
-	var Topic = (function() {
+	$(document).ready(function() {
 		
-		var render_page = function (data) {
-			    var first = Object.keys(data.items)[0]
-				render_topic(first, data.items[first])
-				
-				
-				//////////////////////////////////////////////////
-				var myList = data.items
-				var myList = Object.keys(data.items)
-	
-
-				// Builds the HTML Table out of myList.
-				function buildHtmlTable(selector) {
-				  var columns = addAllColumnHeaders(myList, selector);
-
-				  for (var i = 0; i < myList.length; i++) {
-					var row$ = $('<tr/>');
-					for (var colIndex = 0; colIndex < columns.length; colIndex++) {
-					  var cellValue = myList[i][columns[colIndex]];
-					  if (cellValue == null) cellValue = "";
-					  row$.append($('<td/>').html(cellValue));
+			function getCookie(cname) {
+				var name = cname + "=";
+				var decodedCookie = decodeURIComponent(document.cookie);
+				var ca = decodedCookie.split(';');
+				for(var i = 0; i <ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
 					}
-					$(selector).append(row$);
-				  }
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
 				}
+				return "";
+			}
+		
+		var lessonChk = getCookie('topic_study');
+		var myData = './at home/'+lessonChk+'.idmnd'
+		
+		var Topic = (function() {
+			
+			var render_page = function (data) {
+					var first = Object.keys(data.items)[0]
+					render_topic(first, data.items[first])
+					
+					
+					//////////////////////////////////////////////////
+					var myList = data.items
+					var myList = Object.keys(data.items)
+		
 
-				// Adds a header row to the table and returns the set of columns.
-				// Need to do union of keys from all records as some records may not contain
-				// all records.
-				function addAllColumnHeaders(myList, selector) {
-				  var columnSet = [];
-				  var headerTr$ = $('<tr/>');
+					// Builds the HTML Table out of myList.
+					function buildHtmlTable(selector) {
+					  var columns = addAllColumnHeaders(myList, selector);
 
-				  for (var i = 0; i < myList.length; i++) {
-					var rowHash = myList[i];
-					for (var key in rowHash) {
-					  if ($.inArray(key, columnSet) == -1) {
-						columnSet.push(key);
-						headerTr$.append($('<th/>').html());
+					  for (var i = 0; i < myList.length; i++) {
+						var row$ = $('<tr/>');
+						for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+						  var cellValue = myList[i][columns[colIndex]];
+						  if (cellValue == null) cellValue = "";
+						  row$.append($('<td/>').html(cellValue));
+						}
+						$(selector).append(row$);
 					  }
 					}
-				  }
-				  $(selector).append(headerTr$);
 
-				  return columnSet;
-				}
-		
+					// Adds a header row to the table and returns the set of columns.
+					// Need to do union of keys from all records as some records may not contain
+					// all records.
+					function addAllColumnHeaders(myList, selector) {
+					  var columnSet = [];
+					  var headerTr$ = $('<tr/>');
 
+					  for (var i = 0; i < myList.length; i++) {
+						var rowHash = myList[i];
+						for (var key in rowHash) {
+						  if ($.inArray(key, columnSet) == -1) {
+							columnSet.push(key);
+							headerTr$.append($('<th/>').html());
+						  }
+						}
+					  }
+					  $(selector).append(headerTr$);
 
-			//buildHtmlTable('#excelDataTable')
-				
-				
-			//////////////////////////////////////////////////
-				
-				
-
-		}
-		
-		var render_topic = function (trgt, dat) {
-		
-			arr = []
-			for(var event in dat){
-				var dataCopy = dat[event]
-				for(key in dataCopy){
-					dataCopy[key] = new Date(dataCopy[key])
-				}
-				arr.push(dataCopy)
-			}
-			var srce = JSON.stringify(arr[0])
-			srce = JSON.parse(srce)
-			var exmp = JSON.stringify(arr[11])
-			exmp = JSON.parse(exmp)
-			var grmr = JSON.stringify(arr[15])
-			grmr = JSON.parse(grmr)
-			var imag = JSON.stringify(arr[19])
-			imag = JSON.parse(imag)
-			var type = JSON.stringify(arr[22])
-			type = JSON.parse(type)
-			var itle = trgt.toLowerCase();
-			var exmp = exmp.replace(itle, "<b>"+itle+"</b>")
-			exmp = exmp.replace(trgt, "<b>"+trgt+"</b>")
-		}
-
-		var load_data = function(file) {
-			var xmlhttp = new XMLHttpRequest()
-			xmlhttp.onreadystatechange = function () {
-				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-					data = JSON.parse(xmlhttp.responseText)
-					Topic.renderPage(data)
-				} else if (xmlhttp.readyState==4 && xmlhttp.status==404) {
-					//document.write('<br><br><div align="center"><big>Exiting...</big></div>')
-				}
-			}
-			xmlhttp.open("GET", file, true)
-			xmlhttp.send()
-
-		}
-		return {
-			renderTopic: render_topic,
-			renderPage: render_page,
-			loadData: load_data
-		}
-	})()
-	
-	Topic.loadData(myData)
-	
-	var showChar = 100;
-	var ellipsestext = "...";
-	var moretext = "more";
-	var lesstext = "less";
-	$('.more').each(function() {
-		var content = lessonChk + "<div id=\"name\"></div>consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus."
-		
-		if(content.length > showChar) {
-			var c = content.substr(0, showChar);
-			var h = content.substr(showChar-1, content.length - showChar);
-			var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
-			$(this).html(html);
-		}
-	});
-
-	$(".morelink").click(function(){
-		if($(this).hasClass("less")) {
-			$(this).removeClass("less");
-			$(this).html(moretext);
+					  return columnSet;
+					}
 			
-		} else {
-			$(this).addClass("less");
-			$(this).html(lesstext);
-		}
-		$(this).parent().prev().toggle();
-		$(this).prev().toggle();
-		return false;
+
+
+				//buildHtmlTable('#excelDataTable')
+					
+					
+				//////////////////////////////////////////////////
+					
+					
+
+			}
+			
+			var render_topic = function (trgt, dat) {
+			
+				arr = []
+				for(var event in dat){
+					var dataCopy = dat[event]
+					for(key in dataCopy){
+						dataCopy[key] = new Date(dataCopy[key])
+					}
+					arr.push(dataCopy)
+				}
+				var srce = JSON.stringify(arr[0])
+				srce = JSON.parse(srce)
+				var exmp = JSON.stringify(arr[11])
+				exmp = JSON.parse(exmp)
+				var grmr = JSON.stringify(arr[15])
+				grmr = JSON.parse(grmr)
+				var imag = JSON.stringify(arr[19])
+				imag = JSON.parse(imag)
+				var type = JSON.stringify(arr[22])
+				type = JSON.parse(type)
+				var itle = trgt.toLowerCase();
+				var exmp = exmp.replace(itle, "<b>"+itle+"</b>")
+				exmp = exmp.replace(trgt, "<b>"+trgt+"</b>")
+			}
+
+			var load_data = function(file) {
+				var xmlhttp = new XMLHttpRequest()
+				xmlhttp.onreadystatechange = function () {
+					if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+						data = JSON.parse(xmlhttp.responseText)
+						Topic.renderPage(data)
+					} else if (xmlhttp.readyState==4 && xmlhttp.status==404) {
+						//document.write('<br><br><div align="center"><big>Exiting...</big></div>')
+					}
+				}
+				xmlhttp.open("GET", file, true)
+				xmlhttp.send()
+
+			}
+			return {
+				renderTopic: render_topic,
+				renderPage: render_page,
+				loadData: load_data
+			}
+		})()
+		
+		Topic.loadData(myData)
+		
+		var showChar = 100;
+		var ellipsestext = "...";
+		var moretext = "more";
+		var lesstext = "less";
+		$('.more').each(function() {
+			var content = lessonChk + "<div id=\"name\"></div>consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus."
+			
+			if(content.length > showChar) {
+				var c = content.substr(0, showChar);
+				var h = content.substr(showChar-1, content.length - showChar);
+				var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+				$(this).html(html);
+			}
+		});
+
+		$(".morelink").click(function(){
+			if($(this).hasClass("less")) {
+				$(this).removeClass("less");
+				$(this).html(moretext);
+				
+			} else {
+				$(this).addClass("less");
+				$(this).html(lesstext);
+			}
+			$(this).parent().prev().toggle();
+			$(this).prev().toggle();
+			return false;
+		});
 	});
-});
 
  </script>
+<script type="text/javascript" src="/js/tabs.js"></script>
+
 </html>
 

@@ -258,7 +258,9 @@
 			<div class="TestStartBtn">
 				<input type="image" src="/images/fav.png" class="fav" id="FavBtn" onclick="Favesjs(this);" />
 
+<!--
 				<input title="Pin" src="/images/pin.png" type="image" class="flashdef" id="studySet" onclick="StudySet(this);" />
+-->
 
 				<input title="Flascards" type="image" src="/images/lesson.png" class="flashimg" id="flashimg" onclick="doFunction();" />
 				<input title="Flascards" type="image" src="/images/flashc1.png" class="flashimg" id="flashdef" onclick="doFunction();" />
