@@ -9,28 +9,8 @@
 <!--
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 -->
-		
-        <script type="text/javascript">
 
-		 //$('#trgt').bind('mousewheel DOMMouseScroll',function(e){
-			  //// determines direction of scroll
-			  //var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail; 
-			  //var curSize = parseInt($(this).css('font-size'),10);
-				//console.log(e);
-			  //// scroll down
-			  //if(delta>0){
-				//curSize -= 1;
-			  //}else{ //scroll up
-				//curSize += 1;
-			  //}
-			  //$(this).css({"font-size" : curSize+"px"});
-			//});
-
-        //</script>
-
-
-
-        <script type="text/javascript"> /* Loading gif*/
+        <script type="text/javascript"> //  Loading gif
 			function onReady(callback) {
 				var intervalID = window.setInterval(checkReady, 1000);
 
@@ -52,7 +32,7 @@
 			});
         </script>
         
-         <script type="text/javascript"> /* Image fix */
+         <script type="text/javascript"> // Image fix 
 			function imgError(image) {
 				image.onerror = "";
 				image.style="display: none;";
@@ -62,7 +42,7 @@
 			}
          </script>
          
-         <script type="text/javascript"> /* Get X cookie value  */
+         <script type="text/javascript"> // Get X cookie value 
 			function getCookie(cname) {
 				var name = cname + "=";
 				var decodedCookie = decodeURIComponent(document.cookie);
@@ -80,7 +60,7 @@
 			}
          </script>
          
-        <script type="text/javascript"> /* Buttons fav & lesson at loading */
+        <script type="text/javascript"> //  Buttons fav & lesson at loading
 		function setBtnFav() {
 			var div = document.getElementById("data-name");
 			var tpc = div.textContent;
@@ -101,7 +81,7 @@
 		}
          </script>
          
-         <script type="text/javascript"> /* Toggle Button fav */
+         <script type="text/javascript"> //  Toggle Button fav
 			function Favesjs(el) {
 
 				var faves = getCookie('Topics_fav');
@@ -127,10 +107,8 @@
 				}
 			}
          </script>
-         
-         
-         
-        <script type="text/javascript"> /* Toggle Button fav */
+
+        <script type="text/javascript"> //  Toggle Button fav 
 			function StudySet(el) {
 
 				var lessonChk = getCookie('topic_study');
@@ -154,10 +132,7 @@
 				}
 			}
          </script>
-         
-         
-         
-         
+
     </head>
     <body onload="setBtnFav()">
 		<div id="audio"></div>

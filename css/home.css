@@ -10,7 +10,6 @@ body {
     color: #3D3D3D;
 }
 
-
 .navbar-header {
     position: relative;
     clear: both;
@@ -24,18 +23,15 @@ body {
 	-moz-box-shadow: 0 3px 2px rgba(63,57,97,0.3);
 	-webkit-box-shadow: 0 3px 2px rgba(63,57,97,0.3);
 	box-shadow: 0 3px 2px rgba(63,57,97,0.3);
-	
     background: -moz-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
     background: -webkit-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
     background: linear-gradient(to bottom,  #6E6767 30%,#4F4A4A 90%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6E6767', endColorstr='#4F4A4A',GradientType=0 );
 }
 
-
 #topLinks:hover {
 	border-bottom: 6px solid rgba(255,255,255,0.6);
 }
-
 
 .plus {
 	background: #E0F3DD;
@@ -47,58 +43,10 @@ body {
 }
 
 
-
-/* Style the tab */
-
-
-
-div.tab {
-    overflow: hidden;
-}
-
-/* Style the buttons inside the tab */
-div.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 15px;
-    color: #565656;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    position: relative;
-	margin-left:70px;
-}
-
-/* Change background color of buttons on hover */
-div.tab button:hover {
-    color: #373737;
-}
-
-/* Create an active/current tablink class */
-div.tab button.active {
-    color: #373737;
-    
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 0px;
-    border-top: none;
-}
-
-
-
 ul, ol, dl {
     padding: 0;
     margin: 0;
 }
-
 
 h1, h2, h3, h4, h5, h6, p {
     margin-top: 0;
@@ -108,35 +56,29 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: left;
 }
 
-
 a img {
     border: none;
     vertical-align:middle;
 }
-
 
 img.expand { 
 	-webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
 }
 
-
 a:link {
     color:#414958;
     text-decoration: none;
 }
-
 
 a:visited {
     color: #4E5869;
     text-decoration: normal;
 }
 
-
 a:hover, a:active, a:focus {
     text-decoration: none;
 }
-
 
 .content {
     padding: 10px 0;
@@ -147,7 +89,6 @@ a:hover, a:active, a:focus {
     font-weight: bold;
     font-size: 10px;
 }
-
 
 #content[role="main"]{
 	border-top: 0px;
@@ -165,11 +106,9 @@ a:hover, a:active, a:focus {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D8E2EB', endColorstr='#F0F2F5',GradientType=0 );
 }
 
-
 .content ul div, .content ol { 
     padding: 0 55px 15px 30px;
 }
-
 
 ul.nav {
     list-style: none;
@@ -187,7 +126,6 @@ ul.nav li {
     border-bottom: 1px solid #ECEEF1;
 }
 
-
 ul.nav a, ul.nav a:visited {
     padding: 5px 5px 5px 15px;
     display: block;
@@ -195,11 +133,9 @@ ul.nav a, ul.nav a:visited {
     color: #000;
 }
 
-
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     color: #ECEEF1;
 }
-
 
 .rss {
     padding: 10px 0;
@@ -208,12 +144,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     font-size: 8px;
 }
 
-
 #pagebody ol {
     margin-left: 22px;
     list-style: roman;
 }
-
 
 .langlabel{ 
 	color:#929292; text-decoration: none;font-size: 90%;font-weight: normal;
@@ -238,13 +172,11 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 	margin-bottom: 4px;
 }
 
-
 .tooltip1, .tooltip2{
     display: inline;
     position: relative;
     border-radius: 5px;
 }
-
 
 .tooltip1:hover:after, .tooltip2:hover:after{
     background: rgba(250,254,255,0.7);
@@ -260,11 +192,9 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     font-style: italic;
 }
 
-
 .tooltip1:hover:after{
     content: attr(label);
 }
-
 
 .tooltip2:hover:after{
     content: attr(tooltip);
@@ -281,7 +211,6 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     text-shadow: 0px 0px 2px #FFFFFF;
 }
 
-
 html,body,div,span,center,img,a,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
   margin:0;
   padding:0;
@@ -291,16 +220,13 @@ html,body,div,span,center,img,a,footer,header,hgroup,menu,nav,section,summary,ti
   
 }
 
-
 article,footer,header,hgroup,main,menu,nav,section{
   display:block;
 }
 
-
 nav ul{
   list-style:none;
 }
-
 
 #categories a:active , #categories a:focus{
 	position: relative;
@@ -316,20 +242,17 @@ nav ul{
 	clear: both;
 }
 
-
 #content{
 	-moz-box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 	-webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 	box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-
-
 .circle-count {
     text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 	position: relative;
 	vertical-align: middle;
-    left: -15px;
+    left: 15px;
     top: -35px;
     z-index: 1000;
     text-align: center;
@@ -339,32 +262,32 @@ nav ul{
     font-style: italic;
 }
 
-
-
 .feed-lists {
-	font-size: 14px;
+	font-size: 13px;
 	position: relative;
 	text-align: left;
-	margin-left:50px;
+	margin-left:10px;
 	float: left;
-	width: 90%;
+	width: 100%;
 	padding:0px 0px 25px 30px;
 	color:"#E30000";
 	line-height:1.6em;
 	font: Verdana, Arial, Helvetica, sans-serif;
+	vertical-align:top;
 }
 
 .fav-lists {
-	font-size: 14px;
+	font-size: 13px;
 	position: relative;
-	text-align: left;
-	margin-left:50px;
-	float: left;
-	width: 90%;
+	text-align: right;
+	margin-right:40px;
+	float: right;
+	width: 100%;
 	padding:0px 0px 25px 30px;
 	color:"#E30000";
 	line-height:1.6em;
 	font: Verdana, Arial, Helvetica, sans-serif;
+	vertical-align:top;
 }
 
 .floating-box {
@@ -378,13 +301,11 @@ nav ul{
     text-align: center;
 }
 
-
 img.expand { 
 	width: 110px; height: 110px;
 	-webkit-filter: drop-shadow(2px 3px 3px rgba(0,0,0,0.3));
     filter: drop-shadow(2px 3px 3px rgba(0,0,0,0.3));
 }
-
 
 .floating-box img {
     display: block;
@@ -395,7 +316,6 @@ img.expand {
     font-size: 29px;
 	text-shadow: 0px 0px 15px #A1A8BB;
 }
-
 
 .sentenceweek {
     position: relative;
@@ -409,7 +329,6 @@ img.expand {
     overflow: hidden;
     border: 1px dashed #9AB2E1;
     border-radius: 10px;
-   
 }
 
 #sentenceweek {
@@ -421,7 +340,6 @@ img.expand {
 	text-align: left;
 	padding:20px 20px 20px 25px;
 }
-
 
 .footer {
     padding: 5px 2;

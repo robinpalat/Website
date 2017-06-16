@@ -110,11 +110,7 @@
 	});
 	</script>
 	
-	
-	
 
-
-	
 </head>
 	
 <body onload="setCookie()">
@@ -186,15 +182,13 @@
 
 	<br>
 	
-	<div class="tab">
-	  <button class="tablinks" onclick="openCity(event, 'Latest')">Latest Published Topics</button>
-	  <button class="tablinks" onclick="openCity(event, 'Favorites')">Favorites</button>
-	</div>
+
 	
-	<table>
+	<table width='100%'>
 		<tr>
-			<td>
-			<div class="feed-lists tabcontent tabinit box" id="Latest">
+			<td valign="top">
+			<div class="feed-lists" class="box">
+				<h1>Latest Published Topics</h1>
 			<?php
 			echo" ";
 			output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 8, true, true, 200);
@@ -202,30 +196,32 @@
 			</div>
 			</td>
 			
-			<td>
-				<div class="fav-lists tabcontent" id="Favorites">
-				<?php
-				echo" ";
-				if(!isset($_COOKIE['Topics_fav'])) {
-					$topics_favs = "";
-					
-				} else {
-					  $topics_favs = $_COOKIE['Topics_fav'];
-					  $topics_favs =  ucfirst($topics_favs);
-				}
+
 			
-				if (!empty($topics_favs)){
+			<td valign="top">
+				<div class="fav-lists" >
+				<?php
 					
-					$topics_favs = explode('|', $topics_favs);
-					foreach($topics_favs as $fav) {
-							
-							if($fav!="|" AND $fav!=""){
-								 echo"<a class=\"box\" href=\"/view.php?l=".$langdir."&c=fav&set=".$fav."\">{$fav}</a><br>";
+					if(!isset($_COOKIE['Topics_fav'])) {
+						$topics_favs = "";
+						
+					} else {
+						  $topics_favs = $_COOKIE['Topics_fav'];
+						  $topics_favs =  ucfirst($topics_favs);
+					}
+				
+					if (!empty($topics_favs)){
+						echo"<h1 style='text-align:right'>Favorites</h1>";
+						$topics_favs = explode('|', $topics_favs);
+						foreach($topics_favs as $fav) {
+								
+								if($fav!="|" AND $fav!=""){
+									 echo"<a class=\"box\" href=\"/view.php?l=".$langdir."&c=fav&set=".$fav."\">{$fav}</a><br>";
+							}
 						}
 					}
-				}
-			?>
-			</div>
+				?>
+				</div>
 			
 			
 			</td>
@@ -428,7 +424,6 @@
 	});
 
  </script>
-<script type="text/javascript" src="/js/tabs.js"></script>
 
 </html>
 
