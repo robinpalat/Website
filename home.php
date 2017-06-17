@@ -15,6 +15,7 @@
     <title>Idiomind's library</title>
     <link href="/css/home.css" rel="stylesheet" type="text/css" />
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
     <?php include 'fetchfeed.php';?>
     
     <?php
@@ -29,7 +30,7 @@
 		if(mobileDevice() == true)
 		header('Location: mobile.php');
     ?>
-    <script>
+    <script type="text/javascript">
     function setCookie() {
         var d = new Date();
         d.setTime(d.getTime() + (30*24*60*60*1000));
@@ -38,12 +39,45 @@
         
     }
     </script>
+    
+    <script type="text/javascript">
+	function getCookie(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+		
+	function ListFavs() {
+		var fav;
+		var faves = getCookie('Topics_fav');
+		faves = faves.split('|');
+		var fdiv = document.getElementById("favlists");
+		if(faves !== "")
+		{
+			var div = document.getElementById('favlists');
+			div.innerHTML = "<h1 style='text-align:right'>Favorites</h1>";
+			for (fav of faves) {
+				div.innerHTML = div.innerHTML + '<a class="box" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
+			}
+		}
+	}
+	</script>
    
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.js"></script>
-    <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 
     <script type="text/javascript">
+		function jqueryfancybox() {
             $(document).ready(function() {
                 $(".box").fancybox({
                     'width'         : '75%',
@@ -56,13 +90,13 @@
                     'scrolling'     : 'yes',
                     'type'          : 'iframe',
                 });
-                
-                
-
             });
+            
+		}
+		jqueryfancybox();
     </script>
     
-    <script>
+    <script type="text/javascript">
 		
 	function underc(){
 		alert('This website is under construction');
@@ -78,8 +112,9 @@
 	}
 	var info = `
 	<div class="plus">
+		<div style="width:99%;margin-top:5px;align:right;text-align:right"><a href="javascript:hideshow(document.getElementById('plus'))"><img src=/images/close.png></img></a></div>
 		<table width="90%" height="auto" border="0" align="center">
-			<tr><td align="right"><a href="javascript:hideshow(document.getElementById('plus'))">X</a></td></tr>
+
 			<tr><td align="left"><h1>ho Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1> sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dLorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolo</td></tr>
 			<tr>
 			</tr>
@@ -95,8 +130,8 @@
 			<td align="left"> <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed exercitation ullamco laboris nisi utali</small></td>
 		</table>
 		<table width="90%" height="auto" border="0" align="center">
-			<td align="left"><img src="/images/l1.png"></td>
-			<td align="left"><h2>level 3</h2><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utali</small></td>
+			<td align="left"><a href="javascript:hideshow(document.getElementById('plus'))"><img src="/images/l1.png"></a></td>
+			<td align="left"><h2>level 3</h2><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utali</small><br><br></td>
 			<td> </td>
 		</table>
 	</div>
@@ -110,7 +145,36 @@
 	});
 	</script>
 	
+    <script type="text/javascript">
+		
+	function hideshowSearchbox(which){
+		if (!document.getElementById)
+		return
+		if (which.style.display=="block")
+		which.style.display="none"
+		else
+		which.style.display="block"
+	}
+	var searchBox = `
+	<div class="SearchDiv">
+		<div style="width:99%;margin-top:5px;align:right;text-align:right"><a href="javascript:hideshow(document.getElementById('searchBox'))"><img src=/images/close.png></img></a></div>
+		   <form action="/search.php" method="post">
+			<input name="my_html_input_tag"  value=""/>
+			<input type="submit" name="my_form_submit_button" 
+				   value="Search"/>
+			</form>
+	</div>
+	<br>
+	`;
+	$(document).ready(function(){
+		$("#showSearch").click(function(){
+			document.getElementById('searchBox').innerHTML = searchBox;
+			document.getElementById('searchBox').style.display="block"
+		});
+	});
+	</script>
 
+	
 </head>
 	
 <body onload="setCookie()">
@@ -146,10 +210,10 @@
             <a style="color:#FFFFFF" href="/<?=$langdir?>">My <?=$langdir?></a>
         </td>
  
-         <td style="border-radius:5px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#978786">Plus</a></td>
-         <td style="border-radius:5px;background:#EB9486;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
-         <td style="border-radius:5px;background:#6981A1;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Downloads</td>
-         <td style="border-radius:5px;background:#7E7F9A;color:#FFFFFF;cursor:pointer;font-weight:normal" id="topLinks" onclick="underc();">Under Construction</td>
+         <td style="border-radius:5px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#736F64">Plus</a></td>
+         <td style="border-radius:5px;background:#EB9486;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
+         <td style="border-radius:5px;background:#6981A1;color:#FF0000;cursor:pointer" id="topLinks"><a id="showSearch" href="#" style="color:#FFFFFF">Search</a></td>
+         <td style="border-radius:5px;background:#7E7F9A;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="underc();">Under Construction</td>
 
         <td align="right">
             <a class=<?=$class_btn_user?> style="text-decoration: none;color:#FFFFFF;" href="../community/"><small><?= $use ?></small></a>
@@ -159,18 +223,7 @@
 	<br>
 	
 	<div id="plus"></div>
-
-
-<!--
-   <form action="/search.php" method="post">
-    <input name="my_html_input_tag"  value=""/>
-
-    <input type="submit" name="my_form_submit_button" 
-           value="Click here for nothing"/>
-
-    </form>
--->
-
+	<div id="searchBox"></div>
 
 
 	<div class="sentenceweek">
@@ -179,15 +232,12 @@
 		</div>
 		
 	</div>
-
 	<br>
-	
-
 	
 	<table width='100%'>
 		<tr>
 			<td valign="top">
-			<div class="feed-lists" class="box">
+			<div class="feed-lists">
 				<h1>Latest Published Topics</h1>
 			<?php
 			echo" ";
@@ -196,41 +246,14 @@
 			</div>
 			</td>
 			
-
-			
 			<td valign="top">
-				<div class="fav-lists" >
-				<?php
-					
-					if(!isset($_COOKIE['Topics_fav'])) {
-						$topics_favs = "";
-						
-					} else {
-						  $topics_favs = $_COOKIE['Topics_fav'];
-						  $topics_favs =  ucfirst($topics_favs);
-					}
 				
-					if (!empty($topics_favs)){
-						echo"<h1 style='text-align:right'>Favorites</h1>";
-						$topics_favs = explode('|', $topics_favs);
-						foreach($topics_favs as $fav) {
-								
-								if($fav!="|" AND $fav!=""){
-									 echo"<a class=\"box\" href=\"/view.php?l=".$langdir."&c=fav&set=".$fav."\">{$fav}</a><br>";
-							}
-						}
-					}
-				?>
-				</div>
-			
-			
+				<div class="fav-lists" id="favlists"></div>
+
 			</td>
 		</tr>
 		
 	</table>
-		
-		
-		
     <br>
     
 		<div id="categories">
@@ -264,7 +287,7 @@
     </footer>
   
 </body>
- <script>
+ <script type="text/javascript">
 	$(document).ready(function() {
 		
 			function getCookie(cname) {
@@ -291,12 +314,10 @@
 			var render_page = function (data) {
 					var first = Object.keys(data.items)[0]
 					render_topic(first, data.items[first])
-					
-					
+
 					//////////////////////////////////////////////////
 					var myList = data.items
 					var myList = Object.keys(data.items)
-		
 
 					// Builds the HTML Table out of myList.
 					function buildHtmlTable(selector) {
@@ -334,15 +355,8 @@
 					  return columnSet;
 					}
 			
-
-
 				//buildHtmlTable('#excelDataTable')
-					
-					
 				//////////////////////////////////////////////////
-					
-					
-
 			}
 			
 			var render_topic = function (trgt, dat) {
@@ -424,6 +438,8 @@
 	});
 
  </script>
+ 
+  <script type="text/javascript">ListFavs();</script>
 
 </html>
 

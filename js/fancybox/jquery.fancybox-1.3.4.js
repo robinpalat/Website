@@ -931,6 +931,13 @@
 		}
 
 		$("body").css({'overflow-y':'visible'});
+		
+		
+		$(document).ready(function() {
+			ListFavs();
+			jqueryfancybox();
+			
+		});
 
 		busy = true;
 

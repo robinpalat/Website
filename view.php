@@ -72,10 +72,10 @@
 			if(bol == false) { el.src='/images/fav.png'; }
 			else { el.src='/images/unfav.png'; }
 			/* Lesson */
-			var el = document.getElementById("studySet")
-			var lessonChk = getCookie('topic_study');
-			if(lessonChk !== tpc) { el.src='/images/pin.png'; }
-			else { el.src='/images/unpin.png'; }
+			//var el = document.getElementById("studySet")
+			//var lessonChk = getCookie('topic_study');
+			//if(lessonChk !== tpc) { el.src='/images/pin.png'; }
+			//else { el.src='/images/unpin.png'; }
 			
 			
 		}
@@ -108,7 +108,7 @@
 			}
          </script>
 
-        <script type="text/javascript"> //  Toggle Button fav 
+        <script type="text/javascript"> //  Toggle Button study 
 			function StudySet(el) {
 
 				var lessonChk = getCookie('topic_study');
