@@ -115,7 +115,7 @@
 		<div style="width:99%;margin-top:5px;align:right;text-align:right"><a href="javascript:hideshow(document.getElementById('plus'))"><img src=/images/close.png></img></a></div>
 		<table width="90%" height="auto" border="0" align="center">
 
-			<tr><td align="left"><h1>ho Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1> sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dLorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolo</td></tr>
+			<tr><td valign="top" height="180px" align="left"><h1>ho Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1> sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dLorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolo</td></tr>
 			<tr>
 			</tr>
 		</table>
@@ -180,43 +180,38 @@
 <body onload="setCookie()">
     
     <?php
-    
     include_once("analyticstracking.php");
     
 	if(!isset($_COOKIE['iuser'])) {
 		$use = "Login";
-		$class_btn_user = "userbutton";
 
 	} else {
 		  $use = $_COOKIE['iuser'];
 		  $use =  ucfirst($use);
-		  $class_btn_user = "userbutton";
-		}
+	}
 		
 	if(!isset($_COOKIE['Topics_fav'])) {
 		$favs = "";
 	} else {
 		  $favs = $_COOKIE['Topics_fav'];
 		  $favs =  ucfirst($favs);
-		}
+	}
 
     ?>
     
     <main id="content" class="group" role="main">
     <div class="main">
 
-    <table width="100%" height="60px" border="0" align="center" class="navbar-header" style="border-spacing: 4px 4px;">
+    <table width="100%" height="55px" border="0" align="center" class="navbar-header" style="border-spacing:4px 4px;">
         <td vertical-align="middle" align="left" class="langtitle">
-            <a style="color:#FFFFFF" href="/<?=$langdir?>">My <?=$langdir?></a>
+            <a style="color:#FFFFFF" href="/<?=$langdir?>">my <?=ucfirst($langdir)?></a>
         </td>
- 
-         <td style="border-radius:5px;background:#EBDA86;color:#FF0000;cursor:pointer" id="topLinks"><a id="show" href="#" style="color:#736F64">Plus</a></td>
-         <td style="border-radius:5px;background:#EB9486;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="location.href='#categories'">Topics by Category</td>
-         <td style="border-radius:5px;background:#6981A1;color:#FF0000;cursor:pointer" id="topLinks"><a id="showSearch" href="#" style="color:#FFFFFF">Search</a></td>
-         <td style="border-radius:5px;background:#7E7F9A;color:#FFFFFF;cursor:pointer" id="topLinks" onclick="underc();">Under Construction</td>
-
+         <td style="border-radius:6px;background:#EBDA86;cursor:pointer;color:#736F64" class="topLinks" id="show" href="#">Plus</td>
+         <td style="border-radius:6px;background:#EB9486;color:#FFFFFF;cursor:pointer" class="topLinks" onclick="location.href='#categories'">Topics by Category</td>
+         <td style="border-radius:6px;background:#6981A1;cursor:pointer;color:#FFFFFF" class="topLinks" id="showSearch" href="#">Search</td>
+         <td style="border-radius:6px;background:#7E7F9A;color:#FFFFFF;cursor:pointer" class="topLinks" onclick="underc();">Under Construction</td>
         <td align="right">
-            <a class=<?=$class_btn_user?> style="text-decoration: none;color:#FFFFFF;" href="../community/"><small><?= $use ?></small></a>
+            <a style="color:#FFFFFF;" class="userbutton" href="../community/"><?= $use ?></a>
         </td>
     </table>
 
@@ -225,9 +220,8 @@
 	<div id="plus"></div>
 	<div id="searchBox"></div>
 
-
 	<div class="sentenceweek">
-			<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-rss-square" aria-hidden="true"></i> -- Under construction --</h1>
+			<div class="sentencew-content"><h1 style="color:#6B6664;"><i class="fa fa-thumb-tack" aria-hidden="true"></i> -- Under construction --</h1>
 			<div class="comment more"><br></div><table id="excelDataTable" border="0"></table>
 		</div>
 		
