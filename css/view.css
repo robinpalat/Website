@@ -439,6 +439,11 @@ body > button {
 	left:0;
 }
 
+#sco {
+    color: blue;
+}
+
+
 /* CSS animation */
 
 @-webkit-keyframes fadeIn {
