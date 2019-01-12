@@ -10,7 +10,7 @@
 <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
 <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-<link rel="image_src" href="http://idiomind.net/images/logo.png" / ><!--formatted-->
+<link rel="image_src" href="https://idiomind.sourceforge.io/images/logo.png" / ><!--formatted-->
 <title>Idiomind's library</title>
 <link href="/css/apphome.css" rel="stylesheet" type="text/css" />
 <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />

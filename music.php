@@ -9,7 +9,8 @@
     
     <style type="text/css" rel="stylesheet">
     body {
-      background: #D2E0DF;
+      background: #332639;
+      color: #BCBCBC;
     }
     .content{
         width: 60%;
@@ -20,7 +21,7 @@
         margin: 0;
         padding: 0;
         text-decoration: none;
-        color: black;
+        color: #89BAE2;
     }
     h1 {
       font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
@@ -32,10 +33,10 @@
       font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      color: black;
+      color: #D8E6F9;
     }
     .post{
-        border: 1px solid gray;
+        border: 0px solid gray;
         padding: 5px;
         border-radius: 3px;
         margin-top: 15px;
@@ -84,28 +85,13 @@
     }
     </style>
     <?php
-        $lang = htmlspecialchars($_GET["lang"]);
-
+        $lang = "msc";
         if($lang == "fe"):
             $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_mot=17&id_rubrique=2&mot2=28&mot3=17&mot4=20&mot5=27&tri=date&lang=en";
         elseif($lang == "en"):
             $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_rubrique=2";
-        elseif($lang == "fr"):
-            $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_rubrique=1";
-        elseif($lang == "it"):
-            $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_rubrique=6";
-        elseif($lang == "pt"):
-            $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_rubrique=8";
-        elseif($lang == "de"):
-            $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_rubrique=3";
-        elseif($lang == "es"):
-            $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_rubrique=4";
-        elseif($lang == "ru"):
-            $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_rubrique=7";
-        elseif($lang == "ch"):
-            $url = "https://www.audio-lingua.eu/spip.php?page=backend&id_rubrique=9";
         else:
-            $url = "https://www.audio-lingua.eu/spip.php?page=backend-favoris&id_auteur=4674";
+            $url = "https://www.inoreader.com/stream/user/1006062930/tag/Music";
         endif;
         
         $invalidurl = false;
@@ -115,7 +101,7 @@
             $invalidurl = true;
             echo "<h2>Invalid RSS feed URL.</h2>";
         }
-
+ 
         $my_file = './listening/'.$lang.'.m3u';
         $handle = fopen($my_file, 'w') or die("Unable to open file!");
         fwrite($handle, "#EXTM3U\n");
@@ -136,7 +122,7 @@
                 //$description = $item->description['p'];
                 $postDate = $item->pubDate;
                 $pubDate = date('D, d M Y',strtotime($postDate));
-                file_put_contents('./listening/'.$lang.'.m3u', "\n#EXTINF:".$i.",".$title."".$description."\n".$enclosure, FILE_APPEND);
+                file_put_contents('./listening/'.$lang.'.m3u', "\n#EXTINF:".$i.",".$title."\n".$enclosure, FILE_APPEND);
                 
 
                 if($i>=20) break;
@@ -145,8 +131,14 @@
                 <div class="post">
                     <div class="post-head">
                         <h2><a class="feed_title" href="<?php echo $link; ?>"><?php echo $title; ?></a></h2>
+                        
+                        <audio controls><br>
+                        <source src="<?php echo $enclosure; ?>" type="audio/mpeg">
+                        </audio>
+
                         <span><?php echo $pubDate; ?></span>
                     </div>
+                <br><br>
                 </div>
                 
                 <?php

@@ -2,6 +2,7 @@
 var scoreOk = 0
 var scoreNo = 0
 var imported = document.createElement('script');
+//imported.src = '/js/sweetalert.min.js';
 imported.src = '/js/sweetalert.min.js';
 document.head.appendChild(imported);
 var imported = document.createElement('script');
