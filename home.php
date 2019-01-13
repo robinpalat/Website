@@ -202,14 +202,14 @@
     <main id="content" class="group" role="main">
     <div class="main">
 
-    <table width="100%" height="55px" border="0" align="center" class="navbar-header" style="border-spacing:4px 4px;">
+    <table width="100%" height="25px" border="0" align="center" class="navbar-header" style="border-spacing:4px 4px;">
         <td vertical-align="middle" align="left" class="langtitle">
             <a style="color:#FFFFFF" href="/<?=$langdir?>">my <?=ucfirst($langdir)?></a>
         </td>
          <td style="border-radius:6px;background:#EBDA86;cursor:pointer;color:#736F64" class="topLinks" id="show" href="#">Plus</td>
-         <td style="border-radius:6px;background:#EB9486;color:#FFFFFF;cursor:pointer" class="topLinks" onclick="location.href='#categories'">Topics by Category</td>
-         <td style="border-radius:6px;background:#6981A1;cursor:pointer;color:#FFFFFF" class="topLinks" id="showSearch" href="#">Search</td>
-         <td style="border-radius:6px;background:#7E7F9A;color:#FFFFFF;cursor:pointer" class="topLinks" onclick="underc();">Under Construction</td>
+         <td style="border-radius:6px;background:#EBA486;color:#736F64;cursor:pointer" class="topLinks" onclick="location.href='#categories'">Topics by Category</td>
+         <td style="border-radius:6px;background:#86C6EB;cursor:pointer;color:#736F64" class="topLinks" id="showSearch" href="#">Search</td>
+         <td style="border-radius:6px;background:#97EB86;color:#736F64;cursor:pointer" class="topLinks" onclick="underc();">Under Construction</td>
         <td align="right">
             <a style="color:#FFFFFF;" class="userbutton" href="../community/"><?= $use ?></a>
         </td>
@@ -276,7 +276,7 @@
   <br>
   </main>
       <footer class="footer">
-        <br><div> &copy 2015-2017 <a href="http://idiomind.sourceforge.net">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
+        <br><div> &copy 2015-2019 <a href="http://idiomind.sourceforge.net">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
         </div><br>
     </footer>
   
