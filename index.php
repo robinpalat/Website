@@ -59,9 +59,9 @@
         <div class="header_bar">
             <div class="navigation_bar" align="left">
                 <a class="current_category" href="index.php" onfocus="this.blur();">Introduction</a>
-                <a class="category" href="library.html" onfocus="this.blur();">Library</a>
-                <a class="category" href="help.html" onfocus="this.blur();">Help</a>
+                <a class="category" href="help.html" onfocus="this.blur();">Getting started</a>
                 <a class="category" href="contact.html" onfocus="this.blur();">Contact</a>
+                <a class="category" href="library.html" onfocus="this.blur();">Library</a>
                 <a class="category" href="donate.html" onfocus="this.blur();">Donate</a>
             </div>
         </div>
@@ -69,13 +69,9 @@
         <div class="content_wrapper">
             
             <div class="content">
-                
-                <h2>
-                    About
-                </h2>
 
                 <p>
-                    Language learners are constantly finding new words, ideas, expressions, ect. Idiomind can help you learn by save and practice words and phrases you discover every day
+                    Language learners are constantly finding new words, phrases, Idiomind can help you learn by save and practice words and phrases you discover every day
                 </p>
                 
                 <h3>
@@ -84,14 +80,13 @@
                 
                 <p>
                     <ul>
-                    <li>Take notes on the go!</li>
+                    <li>Take notes on the go</li>
                     <li>Pronunciation of words and phrases</li>
                     <li>Automatic Translation via Google Translate</li>
-                    <li>5 types of workouts</li>
+                    <li>Practices</li>
                     <li>Tracking reviews in order to assimilate what you learned</li>
                     <li>Setting up to 10 languages to learn</li>
-                    <li>Uses Zenity's fork Yad for graphical interface</li>
-                    <li>Language support: English, Spanish, Portuguese, French, Italian</li>
+                    <li>Interface languages: English, Spanish, Portuguese, French, Italian</li>
                     </ul>
                 </p>
 
@@ -105,17 +100,21 @@
                 <br>
                 
                 <h2>
-                    Idiomind PPA / Download
+                    Install / Download
                 </h2>
                 
-                <p>It can be installed through the terminal (recommended method) using the commands:<br>
+                <p>It can be installed through the terminal using the commands:<br></p>
+                    <p>
                 <code>add-apt-repository ppa:robinpalat/idiomind<br>
                 apt-get update<br>
                 apt-get install idiomind</code>
                 <br><br>
+                </p>
                 <p>
                     It is also possible to download and install the latest version.
                 </p>
+                
+                [![Download Idiomind](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/idiomind/files/0.2.9/idiomind_0.2.9_all.deb/download)
                 
                 <div>
                     <p>
@@ -124,6 +123,26 @@
                         ?>
                     </p>
                 </div>
+                
+                
+                <br>
+                <h2>
+                    About / History
+                </h2>
+                <p><img src="/images/me.png" alt="Robin Palatnik" height="92" width="92" align="left" hspace="10" vspace="0"></img>
+                    I'm Robin Palatnik from Argentina. Back in 2012 I used Ubuntu Lucid on my PC, I needed to memorize words and I was looking for some program for that, I wanted something simple, that went straight to the point. Then I decided to write a Bash script that did the job of showing dialog boxes with Zenity. To more possibilities that the programming offered, more details and features was implemented, thus the number of scripts, functions, ect. was growing.<br>Then I stumbled upon YAD, a very enhanced zenity fork, so I began to organize the code and write it more readable way; Since then, Idiomind had raised its level ;)
+                </p>
+                <p>
+                <small>
+                       <a href="https://www.ubuntu.com">https://www.ubuntu.com</a><br>
+                       <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">https://en.wikipedia.org/wiki/Bash_(Unix_shell)</a><br>
+                       <a href="https://help.gnome.org/users/zenity/3.24/">https://help.gnome.org/users/zenity/3.24/</a><br>
+                       <a href="https://github.com/robinpalat/idiomind">https://github.com/robinpalat/idiomind</a><br>
+                       <a href="https://sourceforge.net/projects/yad-dialog">https://sourceforge.net/projects/yad-dialog</a><br>
+                 </small>
+                    
+                    
+                </p>
                 
             </div>
             <br>

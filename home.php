@@ -16,6 +16,13 @@
     <link href="/css/home.css" rel="stylesheet" type="text/css" />
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+    
+<!--
+       <link type="text/css" rel="stylesheet" href="/css/home_dark.css" media="all" />
+-->
+
+<link type="text/css" rel="stylesheet" href="/css/bootstrap_slate.min.css" media="all" />
+    
     <?php include 'fetchfeed.php';?>
     
     <?php
@@ -41,39 +48,39 @@
     </script>
     
     <script type="text/javascript">
-	function getCookie(cname) {
-		var name = cname + "=";
-		var decodedCookie = decodeURIComponent(document.cookie);
-		var ca = decodedCookie.split(';');
-		for(var i = 0; i <ca.length; i++) {
-			var c = ca[i];
-			while (c.charAt(0) == ' ') {
-				c = c.substring(1);
-			}
-			if (c.indexOf(name) == 0) {
-				return c.substring(name.length, c.length);
-			}
-		}
-		return "";
-	}
-		
-	function ListFavs() {
-		var fav;
-		var faves = getCookie('Topics_fav');
-		faves = faves.split('|');
-		var fdiv = document.getElementById("favlists");
-		if(faves !== "")
-		{
-			var div = document.getElementById('favlists');
-			div.innerHTML = "<h1 style='text-align:right'>Favorites</h1>";
-			for (fav of faves) {
-				div.innerHTML = div.innerHTML + '<a class="box" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
-			}
-		}
-	}
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+            
+        function ListFavs() {
+            var fav;
+            var faves = getCookie('Topics_fav');
+            faves = faves.split('|');
+            var fdiv = document.getElementById("favlists");
+            if(faves !== "")
+            {
+                var div = document.getElementById('favlists');
+                div.innerHTML = "<h1 style='text-align:right'>Favorites</h1>";
+                for (fav of faves) {
+                    div.innerHTML = div.innerHTML + '<a class="box" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
+                }
+            }
+        }
 	</script>
    
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.js"></script>
 
     <script type="text/javascript">
@@ -201,6 +208,42 @@
     
     <main id="content" class="group" role="main">
     <div class="main">
+        
+        
+        <header id="navbar" role="banner" class="navbar container navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                      <a class="logo navbar-btn pull-left" href="/community/" title="Inicio">
+        <!--
+                  <img src="http://idiomind.net/community/sites/default/files/library_icon.svg__1_3.png" alt="Inicio" />
+        -->
+                    </a>
+              
+                      <a class="name navbar-brand" href="/community/" title="Inicio">idiomind.net</a>
+              
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                  </div>
+
+                  <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <nav role="navigation">
+                        <ul class="menu nav navbar-nav secondary">
+                            <li class="first leaf"><a href="/community/user">Duende</a></li>
+                            <li class="leaf"><a href="http://idiomind.net/library.php" title="">Topics Library</a></li>
+                            <li class="last leaf"><a href="/community/user/logout">Cerrar sesión</a></li>
+                        </ul>                            
+                    </nav>
+              </div>
+          </div>
+        </header>
+        
+        
+        
+        
 
     <table width="100%" height="25px" border="0" align="center" class="navbar-header" style="border-spacing:4px 4px;">
         <td vertical-align="middle" align="left" class="langtitle">
@@ -276,7 +319,7 @@
   <br>
   </main>
       <footer class="footer">
-        <br><div> &copy 2015-2019 <a href="http://idiomind.sourceforge.net">idiomind</a> Project | <a href="http://idiomind.sourceforge.net/contact">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
+        <br><div> &copy 2015-2019 <a href="https://idiomind.sourceforge.io">idiomind</a> Project | <a href="http://idiomind.sourceforge.io/contact.html">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
         </div><br>
     </footer>
   

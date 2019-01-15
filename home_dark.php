@@ -10,9 +10,9 @@
 <meta about="/community/users/duende" property="foaf:name" content="Duende" />
   <title>Duende | idiomind.net</title>
    <link type="text/css" rel="stylesheet" href="/css/home_dark.css" media="all" />
-  <link type="text/css" rel="stylesheet" href="http://idiomind.net/community/sites/default/files/css/css_hmebhQnD3L7F8yYfAVIJxBY8Z_01qvV0i4huz13dSmg.css" media="all" />
-<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootswatch/3.3.5/slate/bootstrap.min.css" media="all" />
-<link type="text/css" rel="stylesheet" href="http://idiomind.net/community/sites/default/files/css/css_lmA7Iidr1LTBAVLsV8enDAUiuFa74PBGyrZrnekkLqg.css" media="all" />
+
+<link type="text/css" rel="stylesheet" href="/css/bootstrap_slate.min.css" media="all" />
+
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
