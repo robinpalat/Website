@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<!-- saved from url=(0062)http://idiomind.sourceforge.net/index.php?category=impressum -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <meta charset="utf-8">
     <title>Idiomind</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +15,6 @@
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>
     <link rel="image_src" href="/images/logo.png"/><!--formatted-->
     
-    <style type="text/css">:root topadblock, :root td[valign="top"] > .mainmenu[style="padding:10px 0 0 0 !important;"], { display: none !important; }
-    </style>
-
     <?php
 		function mobileDevice()
 		{
@@ -30,8 +27,7 @@
 		if(mobileDevice() == true)
 		header('Location: mobile.php');
     ?>
-
-
+    
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -52,7 +48,7 @@
             <img class="wrapped_logo" src="/images/logo.png" height="58px" align="left">
             <h1>Idiomind</h1>
             <p>
-            Idiomind is a small program to learn a foreign language
+            Idiomind is a small program to learn foreign language
             </p>
         </div>
         
@@ -71,7 +67,7 @@
             <div class="content">
 
                 <p>
-                    Language learners are constantly finding new words, phrases, Idiomind can help you learn by save and practice words and phrases you discover every day
+                    Language learners are constantly finding new words and phrases. Idiomind can help you learn by save and practice words and phrases you discover every day
                 </p>
                 
                 <h3>
@@ -113,9 +109,7 @@
                 <p>
                     It is also possible to download and install the latest version.
                 </p>
-                
-                [![Download Idiomind](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/idiomind/files/0.2.9/idiomind_0.2.9_all.deb/download)
-                
+                                
                 <div>
                     <p>
                         <?php
@@ -124,13 +118,13 @@
                     </p>
                 </div>
                 
-                
                 <br>
                 <h2>
-                    About / History
+                    About
                 </h2>
                 <p><img src="/images/me.png" alt="Robin Palatnik" height="92" width="92" align="left" hspace="10" vspace="0"></img>
-                    I'm Robin Palatnik from Argentina. Back in 2012 I used Ubuntu Lucid on my PC, I needed to memorize words and I was looking for some program for that, I wanted something simple, that went straight to the point. Then I decided to write a Bash script that did the job of showing dialog boxes with Zenity. To more possibilities that the programming offered, more details and features was implemented, thus the number of scripts, functions, ect. was growing.<br>Then I stumbled upon YAD, a very enhanced zenity fork, so I began to organize the code and write it more readable way; Since then, Idiomind had raised its level ;)
+                    <small>My name is Robin Palatnik, I live in Argentina. I'm huge admirer of free software culture. Back in 2012, I remember I had running Ubuntu 10.04 on my computer and I needed to memorize some words, I was looking for some program to help me with that matter, I wanted something very simple and easy to access. Then I decided to write a Bash script that did the job of display words through dialog boxes of Zenity. As more possibilities the programming offered, more features where implemented, thus the number of Bash scripts where growing.<br>
+                    Then I stumbled upon YAD, a very enhanced Zenity fork, so I began to organize all the code and write it in a more readable way. That's all :)</small>
                 </p>
                 <p>
                 <small>
@@ -140,7 +134,6 @@
                        <a href="https://github.com/robinpalat/idiomind">https://github.com/robinpalat/idiomind</a><br>
                        <a href="https://sourceforge.net/projects/yad-dialog">https://sourceforge.net/projects/yad-dialog</a><br>
                  </small>
-                    
                     
                 </p>
                 

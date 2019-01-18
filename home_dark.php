@@ -9,6 +9,7 @@
 <meta about="/community/users/duende#me" typeof="foaf:Person" rel="foaf:account" resource="/community/users/duende" />
 <meta about="/community/users/duende" property="foaf:name" content="Duende" />
   <title>Duende | idiomind.net</title>
+  
    <link type="text/css" rel="stylesheet" href="/css/home_dark.css" media="all" />
 
 <link type="text/css" rel="stylesheet" href="/css/bootstrap_slate.min.css" media="all" />
@@ -235,20 +236,15 @@
         <div class="feed-lists" class="box">
 		   <h1>Latest Published Topics</h1>
 		<?php
-		output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 8, true, true, 200);
+		output_rss_feed("http://idiomind.sourceforge.io/rss.php/?trgt=".$langdir, 8, true, true, 200);
 		//output_rss_feed("http://tmp.site50.net/rss/", 5, false, false, 200);
 		?>
 		</div>
 
-    <br>
+        <br>
     
 		<div id="categories">
 		<?php
-		
-		if (!empty($favs)){
-		echo "<a href=\"/favs.php?lang=".$langdir."\" \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/favorites.png\" /><span class=\"circle-count\"> <font size=1></font></span></div></a>";
-		}
-
 		$files = scandir('./');
 		foreach($files as $cate) {
 			if($cate!=".htaccess" AND $cate!="." AND $cate!=".." AND $cate!="index.php" AND $cate!="box.php" AND $cate!="mobile.php"){
@@ -258,18 +254,19 @@
 				if ($files){
 					$filecount = count($files);
 				}
-
 				if ($filecount>0){
 					$upcate = ucfirst($cate);
 					$catee = strtoupper($cate);
 					//title=\"".$catee."\" 
 					echo "<a href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
-					
 				}
 			}
 		}
 		?>
 	</div>
+    
+    
+    
 
   </div>
   <br>
