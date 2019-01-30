@@ -216,7 +216,7 @@
                 <td ></td>
                 <td ></td>
                 <td align="right">
-                    <i class="fa fa-user-o" aria-hidden="true"></i> <a style="color:#FFFFFF;" class="userbutton" href="../community/"><?= $use ?></a>
+                    <i class="fa fa-user-o" aria-hidden="true"></i> <a style="color:#FFFFFF;" class="userbutton" href="#"><?= $use ?></a>
                 </td>
             </table>
 
@@ -228,7 +228,7 @@
             sentenceweek
 -->
             <div class="sentenceweek">
-                <div class="sentencew-content"><h1 style="color:#6B6664;"> Navegation</h1>
+                <div class="sentencew-content"><h1 style="color:#6B6664;"> Please note: </h1>
                     <div class="comment more"><br></div><table id="excelDataTable" border="0"></table>
                 </div>
             </div>
@@ -411,7 +411,7 @@
         var moretext = "more";
         var lesstext = "less";
         $('.more').each(function() {
-            var content = lessonChk + "<div id=\"name\"></div>consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Duis nisl nibh, egestas at fermentum at, viverra et purus."
+            var content = lessonChk + "<div id=\"name\"></div>This web site is a work in progress, still with holes and place holders. Not all sections are complete - many have not even been started yet. Not all links work.  If you've arrived on this site, feel free to enjoy what's here, and check back for further additions if you wish, knowing it will take some time before the site is finished."
             
             if(content.length > showChar) {
                 var c = content.substr(0, showChar);

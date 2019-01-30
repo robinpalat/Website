@@ -39,17 +39,30 @@
     </script>
     
     <?php include 'rss_releases.php';?>
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     
 </head>
 
 <body>
+    
+    
     <div class="wrapper">
+        
         <div class="logo_bar">
             <img class="wrapped_logo" src="/images/logo.png" height="58px" align="left">
             <h1>Idiomind</h1>
             <p>
-            Idiomind is a small program to learn foreign language
+            Idiomind is a small program to learn foreign language <div id="google_translate_element"></div>
             </p>
+            
         </div>
         
         <div class="header_bar">
@@ -63,6 +76,7 @@
         </div>
         
         <div class="content_wrapper">
+           
             
             <div class="content">
 
@@ -119,6 +133,7 @@
                 </div>
                 
                 <br>
+<!--
                 <h2>
                     About
                 </h2>
@@ -136,6 +151,7 @@
                  </small>
                     
                 </p>
+-->
                 
             </div>
             <br>
@@ -146,9 +162,8 @@
             
     <div class="footer">
         <p><small>Copyright &copy; 2015-2019 <a href="http://sourceforge.net/projects/idiomind">Idiomind Project </a>
-        All the code under license GPL 3.</small><p>
+        All the code under license GPL 3.</small><p> 
     </div>
-
 </body>
 
 </html>
