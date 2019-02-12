@@ -9,8 +9,8 @@
     <meta name="description" content="Learn foreign vocabulary"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
     <link rel="image_src" href="https://idiomind.sourceforge.io/images/logo.png" /><!--formatted-->
     <title>Idiomind's library</title>
     <link href="/css/home.css" rel="stylesheet" type="text/css" />
@@ -66,7 +66,7 @@
         if(faves.length > 1)
         {
             var div = document.getElementById('favlists');
-            div.innerHTML = "<h1 style='text-align:right'>Pinned Topics <i class='fa fa-heart' aria-hidden='true'></i></h1>";
+            div.innerHTML = "<h1 style='text-align:right'>Pinned Topics <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
             for (fav of faves) {
                 div.innerHTML = div.innerHTML + '<a class="box" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
             }
@@ -157,7 +157,7 @@
     }
     var searchBox = `
     <div class="SearchDiv">
-        <div style="width:99%;margin-top:5px;align:right;text-align:right"><a href="javascript:hideshow(document.getElementById('searchBox'))"><img src=/images/close.png></img></a></div>
+        <div style="width:99%;margin-top:5px;align:right;text-align:right"><a href="javascript:hideshow(document.getElementById('searchBox'))"><img src=\"/images/close.png\"></img></a></div>
            <form action="/search.php" method="post">
             <input name="my_html_input_tag"  value=""/>
             <input type="submit" name="my_form_submit_button" 
@@ -207,7 +207,7 @@
                 <td vertical-align="middle" width="120px" align="left" class="langtitle">
                     <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=ucfirst($langdir)?></a>
                 </td>
-                 <td style="border-radius:8px;background:#F5E65F;color:#736F64;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show" href="#"> Plus </td>
+                 <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show" href="#">Plus</td>
 <!--
                  <td style="border-radius:6px;background:#737293;color:#FFFFFF;cursor:pointer" class="topLinks" onclick="location.href='#categories'">Topics by Category</td>
                  <td style="border-radius:6px;background:#679DA1;color:#FFFFFF;cursor:pointer" class="topLinks" id="showSearch" href="#">Search</td>
@@ -216,7 +216,7 @@
                 <td ></td>
                 <td ></td>
                 <td align="right">
-                    <i class="fa fa-user-o" aria-hidden="true"></i> <a style="color:#FFFFFF;" class="userbutton" href="#"><?= $use ?></a>
+                    <i class="fa fa-user-o" aria-hidden="true"></i> <a style="color:#FFFFFF;" class="userbutton" onclick="underc();"><?= $use ?></a>
                 </td>
             </table>
 
@@ -228,7 +228,7 @@
             sentenceweek
 -->
             <div class="sentenceweek">
-                <div class="sentencew-content"><h1 style="color:#6B6664;"> Please note: </h1>
+                <div class="sentencew-content"><h3 style="color:#6B6664;">Please note</h3>
                     <div class="comment more"><br></div><table id="excelDataTable" border="0"></table>
                 </div>
             </div>
@@ -305,7 +305,8 @@
                 return "";
             }
         
-        var lessonChk = getCookie('topic_study');
+        //var lessonChk = getCookie('topic_study');
+        var lessonChk = 'Computer problems';
         var myData = './at home/'+lessonChk+'.idmnd'
         
         var Topic = (function() {
@@ -390,7 +391,7 @@
                         data = JSON.parse(xmlhttp.responseText)
                         Topic.renderPage(data)
                     } else if (xmlhttp.readyState==4 && xmlhttp.status==404) {
-                        //document.write('<br><br><div align="center"><big>Exiting...</big></div>')
+                        document.write('<br><br><div align="center"><big>Exiting...</big></div>')
                     }
                 }
                 xmlhttp.open("GET", file, true)
@@ -405,13 +406,13 @@
         })()
         
         Topic.loadData(myData)
-        
+        //<div id=\"name\"></div> / lessonChk
         var showChar = 100;
         var ellipsestext = "...";
         var moretext = "more";
-        var lesstext = "less";
+        var lesstext = ""; // less
         $('.more').each(function() {
-            var content = lessonChk + "<div id=\"name\"></div>This web site is a work in progress, still with holes and place holders. Not all sections are complete - many have not even been started yet. Not all links work.  If you've arrived on this site, feel free to enjoy what's here, and check back for further additions if you wish, knowing it will take some time before the site is finished."
+            var content = "This web site is a work in progress, still with holes and place holders. Not all sections are complete - many have not even been started yet. Not all links work.  If you've arrived on this site, feel free to enjoy what's here, and check back for further additions if you wish, knowing it will take some time before the site is finished."
             
             if(content.length > showChar) {
                 var c = content.substr(0, showChar);

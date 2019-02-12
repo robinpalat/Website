@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>
     <link rel="image_src" href="/images/logo.png"/><!--formatted-->
     
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
     <link href="./css/css" rel="stylesheet" type="text/css">
     
     <script>
@@ -26,32 +26,31 @@
         ga('send', 'pageview');
     </script>
     
-    <?php include 'rss_releases.php';?>
-    
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="span6">
-                <h2>Idiomind</h2>
-                <p>Idiomind is a small program to learn foreign language</p>
-
-                <h2>About</h2>
-                <p>Language learners are constantly finding new words, phrases, expressions, ect.
-                Idiomind can help you learn by save and practice words and phrases you discover every day</p>
-
-                <h2>Some features</h2>
-                <ul>
+                <h1>Idiomind</h1>
+                <p>Idiomind is a small program based in Bash scripts to learn foreign languages</p>
+                <p>
+                    Language learners are constantly finding new words and phrases. This program can help you learn by save and practice words and phrases you discover every day.
+                </p>
+                <h2>
+                    Features
+                </h2>
+                <p>
+                    <ul>
                     <li>Take notes on the go</li>
-                    <li>Pronunciation of words and phrases</li>
+                    <li>Words and phrases Pronunciation</li>
                     <li>Automatic Translation via Google Translate</li>
-                    <li>5 types of workouts</li>
-                    <li>Tracking reviews in order to assimilate what you learned</li>
+                    <li>Practices</li>
+                    <li>Tracking reviews in order to assimilate what you learn</li>
                     <li>Setting up to 10 languages to learn</li>
                     <li>Interface languages: English, Spanish, Portuguese, French, Italian</li>
-                </ul>
-                <br>
+                    </ul>
+                </p>
                 <p>Taking note of words and sentences from a PDF document:</p>
                 <iframe width="285" height="160" src="https://www.youtube.com/embed/HFvcQjlVHcA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 
@@ -63,36 +62,20 @@
                 apt-get install idiomind</code>
                 <br>
                 </p>
-                <p>It is also possible to download and install the latest version.</p>
-                <div>
-                    <?php
-                    output_rss_feed("https://sourceforge.net/projects/idiomind/rss", 3, false, false, 200);
-                    ?>
-                </div>
+                <p>It is also possible to download from sourceforge.net</p>
+                <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
                 <br>
-                <h2>
-                    History
-                </h2>
-                <p>
-                    Back in 2012 I used Ubuntu Lucid on my PC, I needed to memorize words and I was looking for some program for that, I wanted something simple, that went straight to the point and easy access. Then I decided to write some bash scripts that did the job of showing dialog boxes with Zenity. To more possibilities that the programming offered, more details and features was implemented, thus the number of scripts, functions, ect. was growing.<br>Then I stumbled upon YAD, a very enhanced zenity fork, so I began to organize the code and write it more readable; Idiomind had raised its level ;)
-                </p>
-                <p>
-                <small>
-                    <a href="https://www.ubuntu.com">https://www.ubuntu.com</a><br>
-                    <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">https://en.wikipedia.org/wiki/Bash_(Unix_shell)</a><br>
-                    <a href="https://sourceforge.net/projects/yad-dialog">https://sourceforge.net/projects/yad-dialog</a><br>
-                 </small>
-
-                </p>
-                <br>
+                
                 <h2>Support or contact</h2>
-                <p><a href="http://idiomind.sourceforge.io/contact.html">Send a message</a> and we’ll help you sort it out.</p>
-
+                <p><a href="/helpm.html">Getting started with idiomind</a></p>
+                <p><a href="/librarym.html">Topic Library</a></p>
+                <p><a href="/contactm.html">Send a message</a></p>
+                <p><a href="#">Support</a></p>
+                <br>
                 <footer>
-                Copyright &copy; 2015-2019 <a href="http://sourceforge.net/projects/idiomind">Idiomind Project </a>
+                &copy; 2019 <a href="https://idiomind.sourceforge.io">Idiomind Project </a>
                 <small>All the code under license GPL 3.</small>
                 </footer>
-
             </div>
         </div>
     </div>

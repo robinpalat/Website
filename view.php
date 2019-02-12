@@ -197,7 +197,7 @@
 				</tr>
 
 			</table>
-			<td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/close.png'></a></div></td>
+			<td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/back.png'></a></div></td>
 			</tr>
 		</table>
 	</span>
@@ -224,10 +224,40 @@
 			</table>
 			<td>
 			</td>
-			<td class="floating-box-right"><div><a href="##" id="ToHome"><img src='/images/close.png'></a></div></td>
+			<td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/back.png'></a></div></td>
 			</tr>
 		</table>
 	</span>
+    
+    <span id="headC" style="visibility:hidden">
+		<table style="width:100%;margin:0;vertical-align:top;">
+		<tr>
+		<td>
+			<table class="viewer_info">
+			<tr>
+			   <td>
+					  <span id="nwrdC"> <font></font></span>
+					  <span id="nsntC"> <font></font></span> | 
+					  <span id="total"> total <font color="#1B5EC0"></font></span> /
+					  <span id="item"><font color="#464B5F"></font></span>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					  <span style="text-align:left;"><font></font></span>
+				  </td>
+				</tr>
+
+			</table>
+			<td>
+			</td>
+			<td class="floating-box-right"><div><a href="##" id="ToHomeC"><img src='/images/back.png'></a></div></td>
+			</tr>
+		</table>
+	</span>
+    
+    
+    
 <br>
 	<span id="TopicLanding">
 			<div class="TestStartBtn">
@@ -237,8 +267,8 @@
 				<input title="Pin" src="/images/pin.png" type="image" class="flashdef" id="studySet" onclick="StudySet(this);" />
 -->
 
-				<input title="Flascards" type="image" src="/images/lesson.png" class="flashimg" id="flashimg" onclick="doFunction();" />
-				<input title="Flascards" type="image" src="/images/flashc1.png" class="flashimg" id="flashdef" onclick="doFunction();" />
+				<input title="Studys" type="image" src="/images/lesson.png" class="flashimg" id="flashimg" onclick="doFunction();" />
+				<input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" id="flashdef" onclick="doFunction();" />
 			</div>
 			<br><br><br><br>
 				
@@ -277,6 +307,14 @@
 				<input class="btnNo" id="Wrong" type="button" value="Wrong" onclick="doFunction();" />
 				<input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Show Translation" onclick="doFunction();" />
 				<input class="btnOk" id="Right" type="button" value="Right" onclick="doFunction();" />
+
+		</div>
+        
+        <div id="ViewerButtons" class="ViewerButton" style="visibility:hidden;">
+	
+                <input class="btnNext" id="Next" type="button" value=">" onclick="doFunction();" />
+                
+                <input class="btnBack" id="Back" type="button" value="<" onclick="doFunction();" />
 		</div>
 		
 </div>

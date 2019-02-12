@@ -53,14 +53,13 @@
 
 <body>
     
-    
     <div class="wrapper">
         
         <div class="logo_bar">
-            <img class="wrapped_logo" src="/images/logo.png" height="58px" align="left">
+            <img class="wrapped_logo" src="/images/logo_trans.png" height="58px" align="left">
             <h1>Idiomind</h1>
             <p>
-            Idiomind is a small program to learn foreign language <div id="google_translate_element"></div>
+            Idiomind is a program based in Bash scripts to learn foreign languages
             </p>
             
         </div>
@@ -71,7 +70,7 @@
                 <a class="category" href="help.html" onfocus="this.blur();">Getting started</a>
                 <a class="category" href="contact.html" onfocus="this.blur();">Contact</a>
                 <a class="category" href="library.html" onfocus="this.blur();">Library</a>
-                <a class="category" href="donate.html" onfocus="this.blur();">Donate</a>
+                <a class="category" href="news.html" onfocus="this.blur();">News</a>
             </div>
         </div>
         
@@ -81,20 +80,20 @@
             <div class="content">
 
                 <p>
-                    Language learners are constantly finding new words and phrases. Idiomind can help you learn by save and practice words and phrases you discover every day
+                    Language learners are constantly finding new words and phrases. This program can help you learn by save and practice words and phrases you discover every day.
                 </p>
-                
-                <h3>
-                    Here are some features it has:
-                </h3>
+                <br>
+                <h2>
+                    Here are some features it has
+                </h2>
                 
                 <p>
                     <ul>
                     <li>Take notes on the go</li>
-                    <li>Pronunciation of words and phrases</li>
+                    <li>Words and phrases Pronunciation</li>
                     <li>Automatic Translation via Google Translate</li>
                     <li>Practices</li>
-                    <li>Tracking reviews in order to assimilate what you learned</li>
+                    <li>Tracking reviews in order to assimilate what you learn</li>
                     <li>Setting up to 10 languages to learn</li>
                     <li>Interface languages: English, Spanish, Portuguese, French, Italian</li>
                     </ul>
@@ -107,63 +106,38 @@
                 <p>
                     <iframe width="285" height="160" src="https://www.youtube.com/embed/HFvcQjlVHcA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </p>
+               
                 <br>
-                
                 <h2>
                     Install / Download
                 </h2>
                 
                 <p>It can be installed through the terminal using the commands:<br></p>
-                    <p>
-                <code>add-apt-repository ppa:robinpalat/idiomind<br>
+                <p><code>add-apt-repository ppa:robinpalat/idiomind<br>
                 apt-get update<br>
                 apt-get install idiomind</code>
-                <br><br>
                 </p>
+             <br>
                 <p>
-                    It is also possible to download and install the latest version.
-                </p>
-                                
-                <div>
-                    <p>
-                        <?php
-                        output_rss_feed("https://sourceforge.net/projects/idiomind/rss", 3, false, false, 200);
-                        ?>
-                    </p>
-                </div>
-                
+                    It is also possible to download from sourceforge.net </p>
+                    <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
                 <br>
-<!--
-                <h2>
-                    About
-                </h2>
-                <p><img src="/images/me.png" alt="Robin Palatnik" height="92" width="92" align="left" hspace="10" vspace="0"></img>
-                    <small>My name is Robin Palatnik, I live in Argentina. I'm huge admirer of free software culture. Back in 2012, I remember I had running Ubuntu 10.04 on my computer and I needed to memorize some words, I was looking for some program to help me with that matter, I wanted something very simple and easy to access. Then I decided to write a Bash script that did the job of display words through dialog boxes of Zenity. As more possibilities the programming offered, more features where implemented, thus the number of Bash scripts where growing.<br>
-                    Then I stumbled upon YAD, a very enhanced Zenity fork, so I began to organize all the code and write it in a more readable way. That's all :)</small>
-                </p>
-                <p>
-                <small>
-                       <a href="https://www.ubuntu.com">https://www.ubuntu.com</a><br>
-                       <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">https://en.wikipedia.org/wiki/Bash_(Unix_shell)</a><br>
-                       <a href="https://help.gnome.org/users/zenity/3.24/">https://help.gnome.org/users/zenity/3.24/</a><br>
-                       <a href="https://github.com/robinpalat/idiomind">https://github.com/robinpalat/idiomind</a><br>
-                       <a href="https://sourceforge.net/projects/yad-dialog">https://sourceforge.net/projects/yad-dialog</a><br>
-                 </small>
-                    
-                </p>
--->
-                
+ 
             </div>
-            <br>
-            
         </div>
-
     </div>
-            
     <div class="footer">
-        <p><small>Copyright &copy; 2015-2019 <a href="http://sourceforge.net/projects/idiomind">Idiomind Project </a>
-        All the code under license GPL 3.</small><p> 
-    </div>
+        <div>
+            <p>
+            <small>&copy; 2019 <a href="https://idiomind.sourceforge.io">Idiomind Project </a>
+            All the code under license GPL 3.<br><br>
+<!--
+            Translate this page: <span id="google_translate_element"></span>
+-->
+            </small>
+            </p>
+        </div>
+    </div>    
 </body>
 
 </html>

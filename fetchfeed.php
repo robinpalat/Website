@@ -10,7 +10,7 @@
  */
 
 
-function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $show_description = true, $max_words = 0, $cache_timeout = 7200, $cache_prefix = "/home/u281842180/public_html/cache/cacherss2html-")
+function get_rss_feed_as_html($feed_url, $max_item_cnt = 5, $show_date = true, $show_description = true, $max_words = 0, $cache_timeout = 7200, $cache_prefix = "/tmp/cacherss2html-")
 {
     $result = "";
     // get feeds and parse items

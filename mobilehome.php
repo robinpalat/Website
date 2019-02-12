@@ -25,7 +25,7 @@ function setCookie() {
 }
 </script>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 
@@ -97,9 +97,9 @@ function setCookie() {
         <td align="left" valign="top">
 			
         <div class="feed-lists">
-			<h1><a href="http://feeds.feedburner.com/p/<?=$langdir?>"></a>Latest Published Topics</h1>
+			<h1><a href="https://feeds.feedburner.com/p/<?=$langdir?>"></a>Latest Published Topics</h1>
 				<?php
-				output_rss_feed("http://idiomind.net/rss.php/?trgt=".$langdir, 5, true, true, 200);
+				output_rss_feed("http://idiomind.sourceforge.io/rss.php/?trgt=".$langdir, 5, true, true, 200);
 				?>
         </div>
         

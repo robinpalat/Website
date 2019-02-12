@@ -116,6 +116,12 @@ div {
     border-collapse: collapse;
 }
 
+.viewer_info {
+    font-size: 10px;
+    color: #2A558F;
+    font-family: 'verdana', 'roboto'; 
+    border-collapse: collapse;
+}
 
 .floating-box-right {
 	font-family: 'verdana', 'roboto'; 
@@ -140,6 +146,14 @@ div {
 	   vertical-align:bottom;
 	}
 
+.ViewerButtons {
+	   text-align: center;
+	   position:absolute;
+	   width:100%;
+	   position:fixed;
+	   vertical-align:bottom;
+	}
+    
 .TestStartBtn {
 	   text-align: left;
 	   margin:10px;
@@ -287,6 +301,17 @@ a.cursor {cursor:hand;}
     right: 5%;
 }
 
+#Next {
+    position: fixed;
+    bottom: 15px;
+    right: 5%;
+}
+
+#Back {
+    position: fixed;
+    bottom: 15px;
+    left: 5%;
+}
 
 body > button {
     background: #428BCA;
@@ -319,6 +344,7 @@ body > button {
   border-radius: 6px;
 }
 
+
 .btnOk {
   font-size: 15px;
   font-size: 1.95vw;
@@ -347,6 +373,7 @@ body > button {
   transition: all 0.4s ease 0s;
 }
 
+
 .btnNo {
   font-size: 15px;
   font-size: 1.95vw;
@@ -374,6 +401,64 @@ body > button {
   border-radius: 8px;
   transition: all 0.4s ease 0s;
 }
+
+.btnNext {
+  font-size: 15px;
+  font-size: 1.95vw;
+  text-align: center;
+  font-weight: bold;
+  color: #E6E6FA;
+  background: #92D0FF;
+  width: 28%;
+  height: 50px;
+  border-radius: 8px;
+  border: 0px solid #436C2B;
+  transition: all 0.2s ease 0s;
+}
+
+.btnNext:hover {
+  font-size: 15px;
+  font-size: 1.95vw;
+  text-align: center;
+  color: #E6E6FA;
+  background: #92D0FF;
+  font-weight: bold;
+  width: 28%;
+  height: 50px;
+  border: 0px;
+  border-radius: 8px;
+  transition: all 0.4s ease 0s;
+}
+
+
+.btnBack {
+  font-size: 15px;
+  font-size: 1.95vw;
+  text-align: center;
+  font-weight: bold;
+  color: #E6E6FA;
+  background: #92D0FF;
+  width: 28%;
+  height: 50px;
+  border: 0px solid #436C2B;
+  border-radius: 8px;
+  transition: all 0.2s ease 0s;
+}
+
+.btnBack:hover {
+  font-size: 15px;
+  font-size: 1.95vw;
+  text-align: center;
+  color: #E6E6FA;
+  background: #92D0FF;
+  font-weight: bold;
+  width: 28%;
+  height: 50px;
+  border: 0px;
+  border-radius: 8px;
+  transition: all 0.4s ease 0s;
+}
+
 
 
 .help-tip{
