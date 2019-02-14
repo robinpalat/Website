@@ -80,6 +80,14 @@ div {
     text-shadow: 0 0 50px #E2FDCF, 0 0 50px #DDF7CA;
 }
 
+#grmr {
+    margin: 10 auto;
+    width: 90%;
+    font-size: 16px;
+    font-size: 2.25vw;
+    text-shadow: 0 0 50px #E2FDCF, 0 0 50px #DDF7CA;
+}
+
 #srce {
     margin: 10 auto;
     width: 90%;
@@ -307,6 +315,14 @@ a.cursor {cursor:hand;}
     right: 5%;
 }
 
+#Play {
+    position: fixed;
+    bottom: 25px;
+    right: 50%;
+    left: 50%;
+    
+}
+
 #Back {
     position: fixed;
     bottom: 15px;
@@ -408,7 +424,7 @@ body > button {
   text-align: center;
   font-weight: bold;
   color: #E6E6FA;
-  background: #92D0FF;
+  background: #98ccfd;
   width: 28%;
   height: 50px;
   border-radius: 8px;
@@ -421,13 +437,19 @@ body > button {
   font-size: 1.95vw;
   text-align: center;
   color: #E6E6FA;
-  background: #92D0FF;
+  background: #98ccfd;
   font-weight: bold;
   width: 28%;
   height: 50px;
   border: 0px;
   border-radius: 8px;
   transition: all 0.4s ease 0s;
+}
+
+.btnPlay {
+  text-align: right;
+  vertical-align: top;
+  border-radius: 6px;
 }
 
 
@@ -437,7 +459,7 @@ body > button {
   text-align: center;
   font-weight: bold;
   color: #E6E6FA;
-  background: #92D0FF;
+  background: #98ccfd;
   width: 28%;
   height: 50px;
   border: 0px solid #436C2B;
@@ -450,7 +472,7 @@ body > button {
   font-size: 1.95vw;
   text-align: center;
   color: #E6E6FA;
-  background: #92D0FF;
+  background: #98ccfd;
   font-weight: bold;
   width: 28%;
   height: 50px;

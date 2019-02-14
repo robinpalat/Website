@@ -14,16 +14,19 @@ document.head.appendChild(imported);
 
 
 var speechtrgt = function (trgt) {
-		VoiceRSS.speech({
-		key: 'b7a621583d034658bf22c3d829de5fcf',
-		src: trgt,
-		hl: 'en-us',
-		r: 0, 
-		c: 'ogg',
-		f: '44khz_16bit_stereo',
-		ssml: false
-	});
+        VoiceRSS.speech({
+        key: 'b7a621583d034658bf22c3d829de5fcf',
+        src: trgt,
+        hl: 'en-us',
+        r: 0, 
+        c: 'ogg',
+        f: '44khz_16bit_stereo',
+        ssml: false
+    });
 }
+
+var play_stts = 0;
+var myTimer;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -61,18 +64,18 @@ var Topic = (function() {
         var subjectElement = document.querySelector("#levl").children[0]
         var plevl
         if (data.levl == 0) {
-		  plevl = 'beginner'
-		} else if (data.levl == 1) {
-		  plevl = 'intermediate'
-		} else if (data.levl == 2) {
-		  plevl = 'advance'
-		}
+          plevl = 'beginner'
+        } else if (data.levl == 1) {
+          plevl = 'intermediate'
+        } else if (data.levl == 2) {
+          plevl = 'advance'
+        }
         subjectElement.innerHTML = plevl
         
         var first = Object.keys(data.items)[0]
         render_topic(first, data.items[first])
     }
-    
+
     var render_topic = function (trgt, dat) {
         document.body.style.backgroundColor = "#F0ECEB";
         document.getElementById("headA").style = "DISPLAY: true;";
@@ -99,7 +102,6 @@ var Topic = (function() {
 
         xmlhttp.open("GET", file, true)
         xmlhttp.send()
-
     }
     return {
         renderTopic: render_topic,
@@ -108,13 +110,15 @@ var Topic = (function() {
     }
 })()
 
-
 var Viewer = (function() {
     
     document.getElementById("Next").onclick = function () { Viewer.nextCard(); };
-	//document.getElementById("Back").onclick = function () { Viewer.psplayer(data); };
+    document.getElementById("Play").onclick = function () { Viewer.psplayer(data); };
     document.getElementById("Back").onclick = function () { Viewer.backCard(); };
-
+    
+    document.getElementById("FlashcardButtoms").style = "DISPLAY: none;";
+    document.getElementById("ViewerButtons").style = "DISPLAY: true;";
+        
     var viewer_render_page = function (data) {
         var subjectElement = document.querySelector("#nwrdC").children[0]
         subjectElement.innerHTML = 'Words ' + data.nwrd
@@ -154,53 +158,54 @@ var Viewer = (function() {
         exmp = exmp.replace(trgt, "<b>"+trgt+"</b>")
         
         var chars = trgt.length;
-		if ((chars >= 1) && (chars < 20)) {
-		  var fs = 68; var vw = 4.75
-		} else if ((chars >= 20) && (chars < 40)) {
-		  var fs = 50; var vw = 4.55
-		} else if ((chars >= 40) && (chars < 80)) {
-		  var fs = 55; var vw = 4.25
-		} else if ((chars >= 80) && (chars < 100)) {
-		  var fs = 45; var vw = 3.75
-		} else {
-		  var fs = 35; var vw = 3.55
-		}
-		
-		var chars = srce.length;
-		if ((chars >= 1) && (chars < 20)) {
-		  var sfs = 35; var svw = 3.25
-		} else if ((chars >= 20) && (chars < 40)) {
-		  var sfs = 32; var svw = 3.00
-		} else if ((chars >= 40) && (chars < 80)) {
-		  var sfs = 28; var svw = 2.75
-		} else if ((chars >= 80) && (chars < 100)) {
-		  var sfs = 25; var svw = 2.55
-		} else {
-		  var sfs = 25; var svw = 2.25
-		}
-		var mvw = 6; var msvw = 5
-		var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
-		'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
-		'.pronounce {width:90%}'+
-		'@media all and (max-device-width: 320px){'+
-		'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
-		'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
-		'.pronounce {width:95%}}',
-		head = document.head || document.getElementsByTagName('head')[0],
-		style = document.createElement('style');
-		style.type = 'text/css';
-		style.appendChild(document.createTextNode(lcss));
-		head.appendChild(style);
-		
-		window.pronounce = function () {
-			speechtrgt(trgt);
-			//speak(trgt);
-		}
-		
+        if ((chars >= 1) && (chars < 20)) {
+          var fs = 68; var vw = 4.75
+        } else if ((chars >= 20) && (chars < 40)) {
+          var fs = 50; var vw = 4.55
+        } else if ((chars >= 40) && (chars < 80)) {
+          var fs = 55; var vw = 4.25
+        } else if ((chars >= 80) && (chars < 100)) {
+          var fs = 45; var vw = 3.75
+        } else {
+          var fs = 35; var vw = 3.55
+        }
+        
+        var chars = srce.length;
+        if ((chars >= 1) && (chars < 20)) {
+          var sfs = 35; var svw = 3.25
+        } else if ((chars >= 20) && (chars < 40)) {
+          var sfs = 32; var svw = 3.00
+        } else if ((chars >= 40) && (chars < 80)) {
+          var sfs = 28; var svw = 2.75
+        } else if ((chars >= 80) && (chars < 100)) {
+          var sfs = 25; var svw = 2.55
+        } else {
+          var sfs = 25; var svw = 2.25
+        }
+        var mvw = 6; var msvw = 5
+        var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
+        'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
+        '.pronounce {width:90%}'+
+        '@media all and (max-device-width: 320px){'+
+        'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
+        'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
+        '.pronounce {width:95%}}',
+        head = document.head || document.getElementsByTagName('head')[0],
+        style = document.createElement('style');
+        style.type = 'text/css';
+        style.appendChild(document.createTextNode(lcss));
+        head.appendChild(style);
+        
+        window.pronounce = function () {
+            speechtrgt(trgt);
+            //speak(trgt);
+        }
+        
         var trgtElement = document.querySelector("#trgt").children[0]
-        var srceElement = document.querySelector("#srce").children[0]
-        var imgsElement = document.querySelector("#imgs").children[0]
-        var exmpElement = document.querySelector("#exmp").children[0]
+        var grmrElement = document.querySelector("#grmr").children[0]
+        var srceElement = document.querySelector("#v_srce").children[0]
+        var imgsElement = document.querySelector("#v_imgs").children[0]
+        var exmpElement = document.querySelector("#v_exmp").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
     
         srceElement.hidden = false
@@ -215,49 +220,68 @@ var Viewer = (function() {
         document.getElementById("fscreen").style = "DISPLAY: true;";
         document.getElementById("FlashcardButtoms").style = "DISPLAY: none;";
         document.getElementById("ViewerButtons").style = "DISPLAY: true;";
+        
+        document.getElementById("fscreen").style = "DISPLAY: none;";
+        document.getElementById("vscreen").style = "DISPLAY: true;";
 
         trgtElement.innerHTML = trgt
+        
+        grmr = grmr.replace(/<span/g, "<font")
+        grmr = grmr.replace(/<\/span>/g, "</font>")
+
+        grmrElement.innerHTML = grmr
+        
         if ((type == '1') && (imag != '0')) {
-			trgtximg = trgt.toLowerCase()
-			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
-		} else {
-			imgsElement.innerHTML = '<font "size=0"></font>'
+            trgtximg = trgt.toLowerCase()
+            imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
+        } else {
+            imgsElement.innerHTML = '<font "size=0"></font>'
         }
         
         var subjectElement = document.querySelector("#item").children[0]
-        subjectElement.innerHTML = shaft
+        subjectElement.innerHTML = shaft+1
         
         var subjectElement = document.querySelector("#total").children[0]
         subjectElement.innerHTML = count
 
         srceElement.innerHTML = srce
         exmpElement.innerHTML = exmp
-
     }
     
-
     var viewer_player = function (data) {
-
-        var keys = Object.keys(data.items)
-
-        var stop = function (cnt) { 
-            if (cnt > keys.length) {
-                clearInterval(myTimer)
-                Viewer.loadData();
-            }
-        }
         
-        var i = 0;
-        var myTimer = setInterval(function() {
-            Viewer.nextCard();
-            i++;
-            stop(i);
-        }, 1 * 1000);
+        if (play_stts == 0 ) {
+            play_stts = 1
+            document.getElementById("Play").src="/images/stop.png"
 
+            trgt = document.querySelector("#trgt").children[0].innerHTML
+            items = Object.keys(data.items)
+            count = items.length
+            shaft = items.indexOf(trgt)
+            shaft = shaft+1
+
+            var stop = function (cnt) { 
+                if (cnt == count) {
+                    clearInterval(myTimer)
+                    document.getElementById("Play").src="/images/play.png"
+                }
+            }
+            
+            myTimer = setInterval(function() {
+                stop(shaft);
+                Viewer.nextCard();
+                shaft++;
+            }, 1 * 1500);
+            
+        } else {
+            
+            play_stts = 0
+            clearInterval(myTimer)
+            document.getElementById("Play").src="/images/play.png"
+        }
     }
     
-
-	var viewer_next_card = function () {
+    var viewer_next_card = function () {
         var trgt = document.querySelector("#trgt").children[0].innerHTML
         var items = Object.keys(data.items)
         var count = items.length
@@ -265,8 +289,8 @@ var Viewer = (function() {
         shaft = shaft+1
 
         if (shaft == count) {
-			var por = percentage(shaft, count);
-			var por = por.toFixed();
+            var por = percentage(shaft, count);
+            var por = por.toFixed();
             var shaft = 0;
         }
 
@@ -274,13 +298,12 @@ var Viewer = (function() {
         viewer_render_card(next, data.items[next], count, shaft)
         
         var imge = document.querySelector("#imgs").children[0].innerHTML
-		imge.error = function () { 
-			document.getElementById("imgs").style.display = "none";
-		}
-		
+        imge.error = function () { 
+            document.getElementById("imgs").style.display = "none";
+        }
     }
     
-	var viewer_back_card = function () {
+    var viewer_back_card = function () {
         var trgt = document.querySelector("#trgt").children[0].innerHTML
         var items = Object.keys(data.items)
         var count = items.length
@@ -289,15 +312,14 @@ var Viewer = (function() {
 
         if (shaft == count) {
             Topic.loadData(myData);
-			var por = percentage(shaft, count);
-			var por = por.toFixed();
+            var por = percentage(shaft, count);
+            var por = por.toFixed();
             var shaft = 0;
         }
 
         var next = items[shaft]
         viewer_render_card(next, data.items[next], count, shaft)
     }
-    
     
     var load_data = function(file) {
         var xmlhttp = new XMLHttpRequest()
@@ -311,7 +333,6 @@ var Viewer = (function() {
         xmlhttp.send()
     }
     
-
     return {
         renderCard: viewer_render_card,
         renderPage: viewer_render_page,
@@ -322,14 +343,11 @@ var Viewer = (function() {
     }
 })()
 
-
-
 var Quiz = (function() {
     
     document.getElementById("Wrong").onclick = function () { Quiz.nextCardNo(); };
-	document.getElementById("Right").onclick = function () { Quiz.nextCardOk(); };
-    
-    
+    document.getElementById("Right").onclick = function () { Quiz.nextCardOk(); };
+
     var Quiz_render_page = function (data) {
         var subjectElement = document.querySelector("#nwrdB").children[0]
         subjectElement.innerHTML = 'Words ' + data.nwrd
@@ -338,7 +356,6 @@ var Quiz = (function() {
         
         var first = Object.keys(data.items)[0]
         Quiz_render_card(first, data.items[first], scoreOk, scoreNo)
-
     }
     
     var Quiz_render_card = function (trgt, dat, scoreOk, scoreNo) {
@@ -366,50 +383,49 @@ var Quiz = (function() {
         exmp = exmp.replace(trgt, "<b>"+trgt+"</b>")
         
         var chars = trgt.length;
-		if ((chars >= 1) && (chars < 20)) {
-		  var fs = 68; var vw = 4.75
-		} else if ((chars >= 20) && (chars < 40)) {
-		  var fs = 50; var vw = 4.55
-		} else if ((chars >= 40) && (chars < 80)) {
-		  var fs = 55; var vw = 4.25
-		} else if ((chars >= 80) && (chars < 100)) {
-		  var fs = 45; var vw = 3.75
-		} else {
-		  var fs = 35; var vw = 3.55
-		}
-		
-		var chars = srce.length;
-		if ((chars >= 1) && (chars < 20)) {
-		  var sfs = 35; var svw = 3.25
-		} else if ((chars >= 20) && (chars < 40)) {
-		  var sfs = 32; var svw = 3.00
-		} else if ((chars >= 40) && (chars < 80)) {
-		  var sfs = 28; var svw = 2.75
-		} else if ((chars >= 80) && (chars < 100)) {
-		  var sfs = 25; var svw = 2.55
-		} else {
-		  var sfs = 25; var svw = 2.25
-		}
-		var mvw = 6; var msvw = 5
-		var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
-		'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
-		'.pronounce {width:90%}'+
-		'@media all and (max-device-width: 320px){'+
-		'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
-		'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
-		'.pronounce {width:95%}}',
-		head = document.head || document.getElementsByTagName('head')[0],
-		style = document.createElement('style');
-		style.type = 'text/css';
-		style.appendChild(document.createTextNode(lcss));
-		head.appendChild(style);
-		
-		window.pronounce = function () {
-			speechtrgt(trgt);
-			//speak(trgt);
-		}
-		
-		
+        if ((chars >= 1) && (chars < 20)) {
+          var fs = 68; var vw = 4.75
+        } else if ((chars >= 20) && (chars < 40)) {
+          var fs = 50; var vw = 4.55
+        } else if ((chars >= 40) && (chars < 80)) {
+          var fs = 55; var vw = 4.25
+        } else if ((chars >= 80) && (chars < 100)) {
+          var fs = 45; var vw = 3.75
+        } else {
+          var fs = 35; var vw = 3.55
+        }
+        
+        var chars = srce.length;
+        if ((chars >= 1) && (chars < 20)) {
+          var sfs = 35; var svw = 3.25
+        } else if ((chars >= 20) && (chars < 40)) {
+          var sfs = 32; var svw = 3.00
+        } else if ((chars >= 40) && (chars < 80)) {
+          var sfs = 28; var svw = 2.75
+        } else if ((chars >= 80) && (chars < 100)) {
+          var sfs = 25; var svw = 2.55
+        } else {
+          var sfs = 25; var svw = 2.25
+        }
+        var mvw = 6; var msvw = 5
+        var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
+        'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
+        '.pronounce {width:90%}'+
+        '@media all and (max-device-width: 320px){'+
+        'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
+        'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
+        '.pronounce {width:95%}}',
+        head = document.head || document.getElementsByTagName('head')[0],
+        style = document.createElement('style');
+        style.type = 'text/css';
+        style.appendChild(document.createTextNode(lcss));
+        head.appendChild(style);
+        
+        window.pronounce = function () {
+            speechtrgt(trgt);
+            //speak(trgt);
+        }
+        
         var trgtElement = document.querySelector("#trgt").children[0]
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
@@ -433,13 +449,16 @@ var Quiz = (function() {
         document.getElementById("fscreen").style = "DISPLAY: true;";
         document.getElementById("FlashcardButtoms").style = "DISPLAY: true;";
         //document.getElementById("ViewerdButtons").style = "DISPLAY: none;";
+        
+        document.getElementById("fscreen").style = "DISPLAY: true;";
+        document.getElementById("vscreen").style = "DISPLAY: none;";
 
         trgtElement.innerHTML = trgt
         if ((type == '1') && (imag != '0')) {
-			trgtximg = trgt.toLowerCase()
-			imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
-		} else {
-			imgsElement.innerHTML = '<font "size=0"></font>'
+            trgtximg = trgt.toLowerCase()
+            imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
+        } else {
+            imgsElement.innerHTML = '<font "size=0"></font>'
         }
         srceElement.innerHTML = srce
         dotsElement.innerHTML = '<img src="/images/eyelashes.svg"</img>'
@@ -448,7 +467,7 @@ var Quiz = (function() {
         scoreOkElement.innerHTML = scoreOk
     }
     
-	var Quiz_next_card_ok = function () {
+    var Quiz_next_card_ok = function () {
         var trgt = document.querySelector("#trgt").children[0].innerHTML
         var scoreOk = document.querySelector("#score_ok").children[0].innerHTML
         var scoreOk = Number(scoreOk)
@@ -462,20 +481,20 @@ var Quiz = (function() {
        
 
         if (nextIndex == keys.length) {
-			
-			var por = percentage(scoreOk, keys.length);
-			var por = por.toFixed();
-			
-			if (scoreOk == keys.length) {
-			  swal("Congratulations, you made a passing score!", 'Your score is: '+por+'%', "success");
-			} else if (scoreOk > scoreNo) {
-			  swal("Good job!", 'Your score is: '+por+'%', "success");
-			} else if (scoreOk < scoreNo) {
-			  swal("You've not passed", 'Your score is: '+por+'%', "error");
-			} else if (scoreOk == scoreNo) {
-			  swal("Good job!", 'Your score is: '+por+'%', "warning");
-			}
-			
+            
+            var por = percentage(scoreOk, keys.length);
+            var por = por.toFixed();
+            
+            if (scoreOk == keys.length) {
+              swal("Congratulations, you made a passing score!", 'Your score is: '+por+'%', "success");
+            } else if (scoreOk > scoreNo) {
+              swal("Good job!", 'Your score is: '+por+'%', "success");
+            } else if (scoreOk < scoreNo) {
+              swal("You've not passed", 'Your score is: '+por+'%', "error");
+            } else if (scoreOk == scoreNo) {
+              swal("Good job!", 'Your score is: '+por+'%', "warning");
+            }
+            
             var scoreOk = 0; var scoreNo = 0; var nextIndex = 0;
             document.getElementById("Right").setAttribute("value", "Right");
             document.getElementById("Wrong").setAttribute("value", "Wrong");
@@ -485,14 +504,12 @@ var Quiz = (function() {
         Quiz_render_card(next, data.items[next], scoreOk, scoreNo)
         
         var imge = document.querySelector("#imgs").children[0].innerHTML
-		imge.error = function () { 
-			document.getElementById("imgs").style.display = "none";
-		}
-		
+        imge.error = function () { 
+            document.getElementById("imgs").style.display = "none";
+        }
     }
     
-    
-	var Quiz_next_card_no = function () {
+    var Quiz_next_card_no = function () {
         var trgt = document.querySelector("#trgt").children[0].innerHTML
         var trgt = document.querySelector("#trgt").children[0].innerHTML
         var scoreOk = document.querySelector("#score_ok").children[0].innerHTML
@@ -505,24 +522,23 @@ var Quiz = (function() {
         var scoreNo = scoreNo+1
         document.getElementById("Wrong").setAttribute("value", "Wrong "+scoreNo);
         
-        
         if (nextIndex == keys.length) {
             
             Topic.loadData(myData);
             
-			var por = percentage(scoreOk, keys.length);
-			var por = por.toFixed();
-			
-			if (scoreOk == keys.length) {
-			  swal("Congratulations, you made a passing score!", 'Your score is: '+por+'%', "success");
-			} else if (scoreOk > scoreNo) {
-			  swal("Good job!", 'Your score is: '+por+'%', "success");
-			} else if (scoreOk < scoreNo) {
-			  swal("You've not passed", 'Your score is: '+por+'%', "error");
-			} else if (scoreOk == scoreNo) {
-			  swal("Good job!", 'Your score is: '+por+'%', "warning");
-			}
-			
+            var por = percentage(scoreOk, keys.length);
+            var por = por.toFixed();
+            
+            if (scoreOk == keys.length) {
+              swal("Congratulations, you made a passing score!", 'Your score is: '+por+'%', "success");
+            } else if (scoreOk > scoreNo) {
+              swal("Good job!", 'Your score is: '+por+'%', "success");
+            } else if (scoreOk < scoreNo) {
+              swal("You've not passed", 'Your score is: '+por+'%', "error");
+            } else if (scoreOk == scoreNo) {
+              swal("Good job!", 'Your score is: '+por+'%', "warning");
+            }
+            
             var scoreOk = 0; var scoreNo = 0; var nextIndex = 0;
             document.getElementById("Right").setAttribute("value", "Right");
             document.getElementById("Wrong").setAttribute("value", "Wrong");
@@ -531,7 +547,6 @@ var Quiz = (function() {
         var next = keys[nextIndex]
         Quiz_render_card(next, data.items[next], scoreOk, scoreNo)
     }
-    
     
     var load_data = function(file) {
         var xmlhttp = new XMLHttpRequest()
@@ -556,17 +571,17 @@ var Quiz = (function() {
 
 
 window.addEventListener('load', function () {
-	
-	document.getElementById("tts").onclick = function () { window.pronounce(); };
-	
-	var div = document.getElementById("dom-target");
+    
+    document.getElementById("tts").onclick = function () { window.pronounce(); };
+    
+    var div = document.getElementById("dom-target");
     var myData = div.textContent;
     document.getElementById("ToHomeB").onclick = function () { Topic.loadData(myData); };
     document.getElementById("ToHomeC").onclick = function () { Topic.loadData(myData); };
-	document.getElementById("flashimg").onclick = function () { Viewer.loadData(myData); };
-	document.getElementById("flashdef").onclick = function () { Quiz.loadData(myData); };
+    document.getElementById("flashimg").onclick = function () { Viewer.loadData(myData); };
+    document.getElementById("flashdef").onclick = function () { Quiz.loadData(myData); };
 
-	document.getElementById("Show").onclick = function () {  
+    document.getElementById("Show").onclick = function () {  
         var srceElement = document.querySelector("#srce").children[0]
         var dotsElement = document.querySelector("#dots").children[0]
         srceElement.hidden = false
@@ -574,7 +589,7 @@ window.addEventListener('load', function () {
         document.getElementById("Show").style = "DISPLAY: none;";
         document.getElementById('Right').style.right = "21%";
         document.getElementById('Wrong').style.left = "21%";
-        document.getElementById('Next').style.right = "21%";
-        document.getElementById('Back').style.left = "21%";
+        //document.getElementById('Play').style.right = "5%";
+        //document.getElementById('Back').style.left = "21%";
     }
 })

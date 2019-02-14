@@ -26,4 +26,5 @@ function dir2json($dir)
 $arr = dir2json('./english/');
 $json = json_encode($arr, JSON_PRETTY_PRINT);
 file_put_contents('./share/data/topics.json', '{"Categories":'.$json.'}');
+
 ?>
