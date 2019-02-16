@@ -40,6 +40,7 @@ function percentage(num, per) {
   return (num*100)/per;
 }
 
+
 var Topic = (function() {
     
     var render_page = function (data) {
@@ -83,8 +84,11 @@ var Topic = (function() {
         document.getElementById("headC").style = "DISPLAY: none;";
         document.getElementById("TopicLanding").style = "DISPLAY: true;";
         document.getElementById("fscreen").style = "DISPLAY: none;";
-        document.getElementById("FlashcardButtoms").style = "DISPLAY: none;";
+        document.getElementById("vscreen").style = "DISPLAY: none;";
+        document.getElementById("QuizButtons").style = "DISPLAY: none;";
         document.getElementById("ViewerButtons").style = "DISPLAY: none;";
+        document.getElementById("slidecontainer").style = "DISPLAY: none;";
+        
     }
 
     var load_data = function(file) {
@@ -110,14 +114,16 @@ var Topic = (function() {
     }
 })()
 
+
 var Viewer = (function() {
     
     document.getElementById("Next").onclick = function () { Viewer.nextCard(); };
     document.getElementById("Play").onclick = function () { Viewer.psplayer(data); };
     document.getElementById("Back").onclick = function () { Viewer.backCard(); };
     
-    document.getElementById("FlashcardButtoms").style = "DISPLAY: none;";
+    document.getElementById("QuizButtons").style = "DISPLAY: none;";
     document.getElementById("ViewerButtons").style = "DISPLAY: true;";
+    
         
     var viewer_render_page = function (data) {
         var subjectElement = document.querySelector("#nwrdC").children[0]
@@ -129,6 +135,7 @@ var Viewer = (function() {
         var items = Object.keys(data.items)
         var count = items.length
         var shaft = 0
+        
         
         viewer_render_card(first, data.items[first], count, shaft)
     }
@@ -218,36 +225,47 @@ var Viewer = (function() {
         
         document.getElementById("TopicLanding").style = "DISPLAY: none;";
         document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("FlashcardButtoms").style = "DISPLAY: none;";
+        document.getElementById("QuizButtons").style = "DISPLAY: none;";
         document.getElementById("ViewerButtons").style = "DISPLAY: true;";
         
         document.getElementById("fscreen").style = "DISPLAY: none;";
         document.getElementById("vscreen").style = "DISPLAY: true;";
+        document.getElementById("slidecontainer").style = "DISPLAY: true;";
+        
+        
+        var count_items = document.getElementById("item_slider");
+        count_items.value = 1;
+        count_items.setAttribute("min", 1);
+        count_items.setAttribute("max", count);
+
 
         trgtElement.innerHTML = trgt
         
-        grmr = grmr.replace(/<span/g, "<font")
-        grmr = grmr.replace(/<\/span>/g, "</font>")
-
-        grmrElement.innerHTML = grmr
-        
         if ((type == '1') && (imag != '0')) {
+            grmrElement.innerHTML = trgt
             trgtximg = trgt.toLowerCase()
             imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
-        } else {
+        } 
+        else if (type == '1') {
+            grmrElement.innerHTML = trgt
+        } 
+        else {
+            grmr = grmr.replace(/<span/g, "<font")
+            grmr = grmr.replace(/<\/span>/g, "</font>")
+            grmrElement.innerHTML = grmr
             imgsElement.innerHTML = '<font "size=0"></font>'
         }
         
-        var subjectElement = document.querySelector("#item").children[0]
-        subjectElement.innerHTML = shaft+1
+        var _item = document.querySelector("#item").children[0]
+        _item.innerHTML = shaft+1
         
-        var subjectElement = document.querySelector("#total").children[0]
-        subjectElement.innerHTML = count
-
+        var _total = document.querySelector("#total").children[0]
+        _total.innerHTML = count
+        
         srceElement.innerHTML = srce
         exmpElement.innerHTML = exmp
     }
-    
+
     var viewer_player = function (data) {
         
         if (play_stts == 0 ) {
@@ -270,11 +288,13 @@ var Viewer = (function() {
             myTimer = setInterval(function() {
                 stop(shaft);
                 Viewer.nextCard();
+                x = document.getElementById("item_slider");
+                x.value = parseInt(shaft);
+                
                 shaft++;
-            }, 1 * 1500);
+            }, 1 * 2500);
             
-        } else {
-            
+        } else { 
             play_stts = 0
             clearInterval(myTimer)
             document.getElementById("Play").src="/images/play.png"
@@ -296,6 +316,9 @@ var Viewer = (function() {
 
         var next = items[shaft]
         viewer_render_card(next, data.items[next], count, shaft)
+        
+        x = document.getElementById("item_slider");
+        x.value = parseInt(shaft);
         
         var imge = document.querySelector("#imgs").children[0].innerHTML
         imge.error = function () { 
@@ -319,7 +342,20 @@ var Viewer = (function() {
 
         var next = items[shaft]
         viewer_render_card(next, data.items[next], count, shaft)
+        
+        x = document.getElementById("item_slider");
+        x.value = parseInt(shaft);
     }
+    
+    var slider = document.getElementById("item_slider");
+   
+    slider.oninput = function() {
+        var shaft = document.getElementById("item");
+        var new_shaft = document.getElementById("item_slider").value;
+        
+        viewer_next_card(); // TODO
+    }
+    
     
     var load_data = function(file) {
         var xmlhttp = new XMLHttpRequest()
@@ -342,6 +378,7 @@ var Viewer = (function() {
         loadData: load_data
     }
 })()
+
 
 var Quiz = (function() {
     
@@ -447,11 +484,13 @@ var Quiz = (function() {
 
         document.getElementById("TopicLanding").style = "DISPLAY: none;";
         document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("FlashcardButtoms").style = "DISPLAY: true;";
+        document.getElementById("QuizButtons").style = "DISPLAY: true;";
         //document.getElementById("ViewerdButtons").style = "DISPLAY: none;";
         
         document.getElementById("fscreen").style = "DISPLAY: true;";
         document.getElementById("vscreen").style = "DISPLAY: none;";
+        
+        document.getElementById("slidecontainer").style = "DISPLAY: none;";
 
         trgtElement.innerHTML = trgt
         if ((type == '1') && (imag != '0')) {

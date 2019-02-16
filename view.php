@@ -197,7 +197,7 @@
                 </tr>
 
             </table>
-            <td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/back.png'></a></div></td>
+            <td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/back_grey.png'></a></div></td>
             </tr>
         </table>
     </span>
@@ -211,8 +211,8 @@
                <td>
                       <span id="nwrdB"> <font></font></span>
                       <span id="nsntB"> <font></font></span> | 
-                      <span id="score_no"> I did not know it <font color="#C01B4C"></font></span> /
-                      <span id="score_ok">I knew it <font color="green"></font></span>
+                      <span id="score_no"> I did not know it  <font color="#C01B4C"></font></span> /
+                      <span id="score_ok">I knew it  <font color="green"></font></span>
                   </td>
                 </tr>
                 <tr>
@@ -224,34 +224,39 @@
             </table>
             <td>
             </td>
-            <td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/back.png'></a></div></td>
+            <td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/back_green.png'></a></div></td>
             </tr>
         </table>
     </span>
     
     <span id="headC" style="visibility:hidden">
-        <table style="width:100%;margin:0;vertical-align:top;">
+        <table border="0" style="width:100%;margin:0;vertical-align:top;">
         <tr>
         <td>
-            <table class="viewer_info">
-            <tr>
-               <td>
+            <table border="0" class="viewer_info">
+                <tr>
+                    <td>
+                      <span style="text-align:left;"><font></font></span>
+                      <span class="slidecontainer" id="slidecontainer" style="visibility:hidden;">
+                        <input type="range" min="1" max="200" value="1" class="slider" id="item_slider">
+                        </span>
+                    </td>
+                </tr>
+                
+                <tr style="visibility:hidden;">
+                    <td>
                       <span id="nwrdC"> <font></font></span>
                       <span id="nsntC"> <font></font></span> | 
                       <span id="total"> total <font color="#1B5EC0"></font></span> /
-                      <span id="item"><font color="#464B5F"></font></span>
-                  </td>
+                      <span id="item"><font color="#464B5F">1</font></span> 
+                       
+                    </td>
                 </tr>
-                <tr>
-                  <td>
-                      <span style="text-align:left;"><font></font></span>
-                  </td>
-                </tr>
-
+</td>
             </table>
             <td>
             </td>
-            <td class="floating-box-right"><div><a href="##" id="ToHomeC"><img src='/images/back.png'></a></div></td>
+            <td class="floating-box-right"><div><a href="##" id="ToHomeC"><img src='/images/back_blue.png'></a></div></td>
             </tr>
         </table>
     </span>
@@ -328,21 +333,23 @@
             </div>
             
         </div>
+        
+       
 
-        <div id="FlashcardButtoms" class="FlashcardButtoms" style="visibility:hidden;">
+        <div id="QuizButtons" class="QuizButtons" style="visibility:hidden;">
                 <input class="btnNo" id="Wrong" type="button" value="Wrong" onclick="doFunction();" />
                 <input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Show Translation" onclick="doFunction();" />
                 <input class="btnOk" id="Right" type="button" value="Right" onclick="doFunction();" />
-
         </div>
         
-        <div id="ViewerButtons" class="ViewerButtons" style="visibility:hidden;">
-    
-                <input type="image" src="/images/play.png" class="btnPlay" id="Play" onclick="doFunction();" />
-                <input class="btnBack" id="Back" type="button" value="<" onclick="doFunction();" />
-                <input class="btnNext" id="Next" type="button" value=">" onclick="doFunction();" />
-                
-                
+        <div class="center">
+            <table border="0" id="ViewerButtons" style="text-align:center;" class="ViewerButtons" style="visibility:hidden;">
+                <tr>
+                    <td><input class="btnBack" id="Back" type="button" value="<" onclick="doFunction();" /></td> 
+                    <td><input type="image" src="/images/play.png" class="btnPlay" id="Play" onclick="doFunction();" /></td>
+                    <td><input class="btnNext" id="Next" type="button" value=">" onclick="doFunction();" /></td>
+                </tr>
+            </table>
         </div>
         
 </div>
