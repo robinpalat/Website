@@ -6,9 +6,6 @@
         <link rel="stylesheet" href="/css/view.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="/css/sweetalert.css"/>
-<!--
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
--->
 
         <script type="text/javascript"> //  Loading gif
             function onReady(callback) {
@@ -243,8 +240,8 @@
                     </td>
                 </tr>
                 
-                <tr style="visibility:hidden;">
-                    <td>
+                <tr>
+                    <td style="visibility:hidden">
                       <span id="nwrdC"> <font></font></span>
                       <span id="nsntC"> <font></font></span> | 
                       <span id="total"> total <font color="#1B5EC0"></font></span> /
@@ -252,7 +249,7 @@
                        
                     </td>
                 </tr>
-</td>
+            </td>
             </table>
             <td>
             </td>
@@ -261,7 +258,7 @@
         </table>
     </span>
 
-<br>
+    <br>
     <span id="TopicLanding">
             <div class="TestStartBtn">
                 
@@ -294,7 +291,7 @@
             </a>
             
             <div id="srce">
-                <h2 style="color:#677862;"></h2>
+                <h2 style="color:#758571;"></h2>
             </div>
             <div id="dots">
                 <h2 style="color:#677862"></h2>
@@ -321,7 +318,7 @@
             </a>
             
             <div id="v_srce">
-                <h2 style="color:#677862;"></h2>
+                <h2 style="color:#79848F;"></h2>
             </div>
 
             <div class="exmp" id="v_exmp">
@@ -334,8 +331,6 @@
             
         </div>
         
-       
-
         <div id="QuizButtons" class="QuizButtons" style="visibility:hidden;">
                 <input class="btnNo" id="Wrong" type="button" value="Wrong" onclick="doFunction();" />
                 <input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Show Translation" onclick="doFunction();" />
@@ -343,7 +338,7 @@
         </div>
         
         <div class="center">
-            <table border="0" id="ViewerButtons" style="text-align:center;" class="ViewerButtons" style="visibility:hidden;">
+            <table border="0" id="ViewerButtons" class="ViewerButtons" style="visibility:hidden;">
                 <tr>
                     <td><input class="btnBack" id="Back" type="button" value="<" onclick="doFunction();" /></td> 
                     <td><input type="image" src="/images/play.png" class="btnPlay" id="Play" onclick="doFunction();" /></td>

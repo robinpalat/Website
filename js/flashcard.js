@@ -12,7 +12,6 @@ document.head.appendChild(imported);
 //imported.src = '/js/speakClient.js';
 //document.head.appendChild(imported);
 
-
 var speechtrgt = function (trgt) {
         VoiceRSS.speech({
         key: 'b7a621583d034658bf22c3d829de5fcf',
@@ -27,14 +26,6 @@ var speechtrgt = function (trgt) {
 
 var play_stts = 0;
 var myTimer;
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function demo() {
-  await sleep(8000);
-}
 
 function percentage(num, per) {
   return (num*100)/per;
@@ -166,28 +157,28 @@ var Viewer = (function() {
         
         var chars = trgt.length;
         if ((chars >= 1) && (chars < 20)) {
-          var fs = 68; var vw = 4.75
+          var fs = 68; var vw = 4.70
         } else if ((chars >= 20) && (chars < 40)) {
-          var fs = 50; var vw = 4.55
+          var fs = 50; var vw = 4.50
         } else if ((chars >= 40) && (chars < 80)) {
-          var fs = 55; var vw = 4.25
+          var fs = 55; var vw = 4.20
         } else if ((chars >= 80) && (chars < 100)) {
-          var fs = 45; var vw = 3.75
+          var fs = 45; var vw = 3.70
         } else {
-          var fs = 35; var vw = 3.55
+          var fs = 35; var vw = 3.50
         }
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 35; var svw = 3.25
+          var sfs = 35; var svw = 3.20
         } else if ((chars >= 20) && (chars < 40)) {
           var sfs = 32; var svw = 3.00
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 28; var svw = 2.75
+          var sfs = 28; var svw = 2.70
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 25; var svw = 2.55
+          var sfs = 25; var svw = 2.50
         } else {
-          var sfs = 25; var svw = 2.25
+          var sfs = 25; var svw = 2.20
         }
         var mvw = 6; var msvw = 5
         var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
@@ -278,21 +269,31 @@ var Viewer = (function() {
             shaft = items.indexOf(trgt)
             shaft = shaft+1
 
-            var stop = function (cnt) { 
-                if (cnt == count) {
+            var stop = function (cnt) {
+                
+                if (cnt >= count) {
                     clearInterval(myTimer)
                     document.getElementById("Play").src="/images/play.png"
+                    var count_items = document.getElementById("item_slider");
+                    count_items.value = 1;
                 }
             }
             
             myTimer = setInterval(function() {
                 stop(shaft);
-                Viewer.nextCard();
-                x = document.getElementById("item_slider");
-                x.value = parseInt(shaft);
-                
+                ele = document.getElementById("item_slider");
+                if (ele.offsetParent !== null) {
+                    Viewer.nextCard();
+                    ele.value = parseInt(shaft);
+                } else {
+                    clearInterval(myTimer)
+                    document.getElementById("Play").src="/images/play.png"
+                    var count_items = document.getElementById("item_slider");
+                    count_items.value = 1;
+                }
+
                 shaft++;
-            }, 1 * 2500);
+            }, 1 * 3500);
             
         } else { 
             play_stts = 0
