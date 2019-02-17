@@ -73,8 +73,7 @@
                 <p><a href="#">Support</a></p>
                 <br>
                 <footer>
-                &copy; 2019 <a href="https://idiomind.sourceforge.io">Idiomind Project </a>
-                <small>All the code under license GPL 3.</small>
+                &copy; 2019 <a href="https://idiomind.sourceforge.io">Idiomind Project </a></small>
                 </footer>
             </div>
         </div>
