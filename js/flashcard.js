@@ -157,13 +157,13 @@ var Viewer = (function() {
         
         var chars = trgt.length;
         if ((chars >= 1) && (chars < 20)) {
-          var fs = 68; var vw = 4.70
+          var fs = 68; var vw = 4.30
         } else if ((chars >= 20) && (chars < 40)) {
-          var fs = 50; var vw = 4.50
+          var fs = 50; var vw = 4.10
         } else if ((chars >= 40) && (chars < 80)) {
-          var fs = 55; var vw = 4.20
+          var fs = 55; var vw = 3.80
         } else if ((chars >= 80) && (chars < 100)) {
-          var fs = 45; var vw = 3.70
+          var fs = 45; var vw = 3.60
         } else {
           var fs = 35; var vw = 3.50
         }
@@ -422,15 +422,15 @@ var Quiz = (function() {
         
         var chars = trgt.length;
         if ((chars >= 1) && (chars < 20)) {
-          var fs = 68; var vw = 4.75
+          var fs = 68; var vw = 4.30
         } else if ((chars >= 20) && (chars < 40)) {
-          var fs = 50; var vw = 4.55
+          var fs = 50; var vw = 4.10
         } else if ((chars >= 40) && (chars < 80)) {
-          var fs = 55; var vw = 4.25
+          var fs = 55; var vw = 3.80
         } else if ((chars >= 80) && (chars < 100)) {
-          var fs = 45; var vw = 3.75
+          var fs = 45; var vw = 3.60
         } else {
-          var fs = 35; var vw = 3.55
+          var fs = 35; var vw = 3.50
         }
         
         var chars = srce.length;

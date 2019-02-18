@@ -262,12 +262,12 @@
     <span id="TopicLanding">
             <div class="TestStartBtn">
                 
-                <input title="Pin" src="/images/dl.png" type="image" class="flashdef" id="studySet" onclick="StudySet(this);" />
+                <input title="Pin" src="/images/dl.png" type="image" class="flashdef" style="outline:none;" id="studySet" onclick="StudySet(this);" />
                                 
-                <input type="image" src="/images/fav.png" class="fav" id="FavBtn" onclick="Favesjs(this);" />
+                <input type="image" src="/images/fav.png" class="fav" style="outline:none;" id="FavBtn" onclick="Favesjs(this);" />
 
-                <input title="Studys" type="image" src="/images/lesson.png" class="flashimg" id="flashimg" onclick="doFunction();" />
-                <input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" id="flashdef" onclick="doFunction();" />
+                <input title="Studys" type="image" src="/images/lesson.png" class="flashimg" style="outline:none;" id="flashimg" onclick="doFunction();" />
+                <input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" style="outline:none;" id="flashdef" onclick="doFunction();" />
             </div>
             <br><br><br><br>
                 
@@ -340,9 +340,9 @@
         <div class="center">
             <table border="0" id="ViewerButtons" class="ViewerButtons" style="visibility:hidden;">
                 <tr>
-                    <td><input class="btnBack" id="Back" type="button" value="<" onclick="doFunction();" /></td> 
-                    <td><input type="image" src="/images/play.png" class="btnPlay" id="Play" onclick="doFunction();" /></td>
-                    <td><input class="btnNext" id="Next" type="button" value=">" onclick="doFunction();" /></td>
+                    <td><input class="btnBack" style="background:url(/images/back1.png);background-repeat:no-repeat;background-position:center;outline:none;" id="Back" type="button" onclick="doFunction();" /></td> 
+                    <td><input type="image" src="/images/play.png" class="btnPlay" style="background-position:center;outline:none;" id="Play" onclick="doFunction();" /></td>
+                    <td><input class="btnNext" style="background:url(/images/next1.png);background-repeat:no-repeat;background-position:center;outline:none;" id="Next" type="button" onclick="doFunction();" /></td>
                 </tr>
             </table>
         </div>
