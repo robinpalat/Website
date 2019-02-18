@@ -180,28 +180,29 @@ var Viewer = (function() {
         } else {
           var sfs = 25; var svw = 2.20
         }
+        
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 12; var evw = 2.00
+          var efs = 11; var evw = 2.00
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 11; var evw = 1.90
+          var efs = 10; var evw = 1.90
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 10; var evw = 1.80
+          var efs = 9; var evw = 1.80
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 10; var evw = 1.80
+          var efs = 9; var evw = 1.80
         } else {
-          var efs = 9; var evw = 1.60
+          var efs = 8; var evw = 1.60
         }
 
         var mvw = 6; var msvw = 5; var mevw = 5
         var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
         'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
-        'exmp { font-size:'+efs+';font-size:'+evw+'vw;}'+
+        'p { font-size:'+efs+';font-size:'+evw+'vw;}'+
         '.pronounce {width:90%}'+
         '@media all and (max-device-width: 320px){'+
         'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
         'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
-        'exmp { font-size:'+efs+';font-size:'+mevw+'vw;}'+
+        'p { font-size:'+efs+';font-size:'+mevw+'vw;}'+
         '.pronounce {width:95%}}',
         
         head = document.head || document.getElementsByTagName('head')[0],
@@ -464,26 +465,26 @@ var Quiz = (function() {
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 12; var evw = 2.00
+          var efs = 10; var evw = 2.00
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 11; var evw = 1.90
+          var efs = 9; var evw = 1.90
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 10; var evw = 1.80
+          var efs = 8; var evw = 1.80
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 10; var evw = 1.80
+          var efs = 8; var evw = 1.80
         } else {
-          var efs = 9; var evw = 1.60
+          var efs = 7; var evw = 1.60
         }
 
         var mvw = 6; var msvw = 5; var mevw = 5
         var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
         'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
-        'exmp { font-size:'+efs+';font-size:'+evw+'vw;}'+
+        'p { font-size:'+efs+';font-size:'+evw+'vw;}'+
         '.pronounce {width:90%}'+
         '@media all and (max-device-width: 320px){'+
         'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
         'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
-        'exmp { font-size:'+efs+';font-size:'+mevw+'vw;}'+
+        'p { font-size:'+efs+';font-size:'+mevw+'vw;}'+
         '.pronounce {width:95%}}',
         head = document.head || document.getElementsByTagName('head')[0],
         style = document.createElement('style');

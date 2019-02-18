@@ -298,7 +298,7 @@
             </div>
             
             <div class="exmp" id="exmp">
-                <font></font>
+                <p></p>
             </div>
             
         </div>
@@ -322,7 +322,7 @@
             </div>
 
             <div class="exmp" id="v_exmp">
-                <font></font>
+                <p></p>
             </div>
             
             <div id="trgt">
