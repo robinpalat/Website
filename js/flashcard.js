@@ -182,15 +182,15 @@ var Viewer = (function() {
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 22; var svw = 2.50
+          var sfs = 22; var svw = 2.80
         } else if ((chars >= 20) && (chars < 40)) {
-          var sfs = 20; var svw = 2.00
+          var sfs = 20; var svw = 2.70
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 18; var svw = 1.80
+          var sfs = 18; var svw = 2.60
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 16; var svw = 1.60
+          var sfs = 16; var svw = 2.50
         } else {
-          var sfs = 14; var svw = 1.30
+          var sfs = 14; var svw = 2.40
         }
         
         var chars = exmp.length;
@@ -476,15 +476,15 @@ var Quiz = (function() {
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 22; var svw = 2.50
+          var sfs = 22; var svw = 2.80
         } else if ((chars >= 20) && (chars < 40)) {
-          var sfs = 20; var svw = 2.00
+          var sfs = 20; var svw = 2.70
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 18; var svw = 1.80
+          var sfs = 18; var svw = 2.60
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 16; var svw = 1.60
+          var sfs = 16; var svw = 2.50
         } else {
-          var sfs = 14; var svw = 1.30
+          var sfs = 14; var svw = 2.40
         }
         
         var chars = exmp.length;
