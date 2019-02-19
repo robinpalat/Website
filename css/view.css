@@ -182,13 +182,12 @@ div {
 	}
 	
 #fscreen a:hover {
-	background-image: url(/images/listen.png);
-	background-repeat: no-repeat;
-	background-position: 100% 10%;
 	display: block;
 }
 
-
+#vscreen a:hover {
+	display: block;
+}
 /*
 #fscreen a:active {
 	position: relative;
@@ -336,29 +335,26 @@ body > button {
 }
 
 .btnShow {
-  font-size: 12px;
-  width: 98%;
-  font-size: 1.55vw;
+  font-size: 10px;
+  font-size: 1.20vw;
   text-align: center;
   color: #4F634B;
-  background: #E5F9CC;
+  background: #DCF0C4;
   width: 28%;
   height: 50px;
   border: 0px;
   cursor:hand;
   border-radius: 6px;
+  background-size:32px 32px;
 }
 
 .btnShow:hover {
-  font-size: 12px;
-  font-size: 1.55vw;
-  text-align: center;
   color: #3D8134;
-  width: 28%;
   height: 50px;
-  border: 0px solid #436C2B;
   cursor:hand;
   border-radius: 6px;
+  background-size:32px 32px;
+  
 }
 
 
@@ -595,7 +591,11 @@ body > button {
     color: blue;
 }
 
-
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+}
 /* CSS animation */
 
 @-webkit-keyframes fadeIn {

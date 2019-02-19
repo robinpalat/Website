@@ -187,9 +187,9 @@
                 </tr>
                 
                 <tr>
-                  <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span>. <a href="box.php?">Translate it into your language</a><br>
-                      It was updated on <span style="text-align:left;"id="dteu"><font></font>. </span> 
-                      <span style="text-align:left;"id="autr">Uploaded by <font ></font></span>
+                  <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span>, <a href=".<?php echo $ViewThisTopic; ?>">Download</a> to translate it into your language.<br><hr>
+                      It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
+                      <span style="text-align:left;"id="autr"> by <font ></font></span>
                   </td>
                 </tr>
 
@@ -206,8 +206,6 @@
             <table class="flascards_info">
             <tr>
                <td>
-                      <span id="nwrdB"> <font></font></span>
-                      <span id="nsntB"> <font></font></span> | 
                       <span id="score_no"> I did not know it  <font color="#C01B4C"></font></span> /
                       <span id="score_ok">I knew it  <font color="green"></font></span>
                   </td>
@@ -242,8 +240,6 @@
                 
                 <tr>
                     <td style="visibility:hidden">
-                      <span id="nwrdC"> <font></font></span>
-                      <span id="nsntC"> <font></font></span> | 
                       <span id="total"> total <font color="#1B5EC0"></font></span> /
                       <span id="item"><font color="#464B5F">1</font></span> 
                        
@@ -262,7 +258,9 @@
     <span id="TopicLanding">
             <div class="TestStartBtn">
                 
+<!--
                 <input title="Pin" src="/images/dl.png" type="image" class="flashdef" style="outline:none;" id="studySet" onclick="StudySet(this);" />
+-->
                                 
                 <input type="image" src="/images/fav.png" class="fav" style="outline:none;" id="FavBtn" onclick="Favesjs(this);" />
 
@@ -282,7 +280,7 @@
                 <p></p>
             </div>
             
-            <a href="##" id="tts" style="text-decoration:none;" onclick="doFunction();">
+            <a href="##" id="tts"  title="Click to listen" style="text-decoration:none;" onclick="doFunction();">
                 
                 <div class="trgt pronounce" id="trgt">
                     <h1 style="color:#4A4A4A"></h1>
@@ -309,7 +307,7 @@
                 <p></p>
             </div>
             
-            <a href="##" id="tts" style="text-decoration:none;" onclick="doFunction();">
+            <a href="##" id="vtts" title="Click to listen" style="text-decoration:none;" onclick="doFunction();">
 
                 <div class="grmr pronounce" id="grmr">
                     <h1 style="color:#4A4A4A"></h1>
@@ -332,9 +330,9 @@
         </div>
         
         <div id="QuizButtons" class="QuizButtons" style="visibility:hidden;">
-                <input class="btnNo" id="Wrong" type="button" value="Wrong" onclick="doFunction();" />
+                <input class="btnNo" id="Wrong" type="button" value="0" onclick="doFunction();" />
                 <input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Show Translation" onclick="doFunction();" />
-                <input class="btnOk" id="Right" type="button" value="Right" onclick="doFunction();" />
+                <input class="btnOk" id="Right" type="button" value="0" onclick="doFunction();" />
         </div>
         
         <div class="center">

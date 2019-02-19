@@ -14,12 +14,12 @@ document.head.appendChild(imported);
 
 var speechtrgt = function (trgt) {
         VoiceRSS.speech({
-        key: 'b7a621583d034658bf22c3d829de5fcf',
+        key: '48118d3dbd84495482314170e8361839',
         src: trgt,
         hl: 'en-us',
         r: 0, 
         c: 'ogg',
-        f: '44khz_16bit_stereo',
+        f: '8khz_8bit_mono',
         ssml: false
     });
 }
@@ -117,16 +117,27 @@ var Viewer = (function() {
     
         
     var viewer_render_page = function (data) {
-        var subjectElement = document.querySelector("#nwrdC").children[0]
-        subjectElement.innerHTML = 'Words ' + data.nwrd
-        var subjectElement = document.querySelector("#nsntC").children[0]
-        subjectElement.innerHTML = 'Sentences ' + data.nsnt
 
         var first = Object.keys(data.items)[0]
         var items = Object.keys(data.items)
         var count = items.length
         var shaft = 0
         
+        // images preload
+        for(var item in data.items){
+            var dataCopy = data.items[item]
+            var imag = JSON.stringify(dataCopy['imag'])
+            var type = JSON.stringify(dataCopy['type'])
+            imag = JSON.parse(imag)
+            type = JSON.parse(type)
+
+            if ((type == '1') && (imag != '0')) {
+                trgt_lowc = item.toLowerCase()
+                "/share/images/'+trgtximg+'-'+imag+'.jpg"
+                img = new Image()
+				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
+            }
+        }
         
         viewer_render_card(first, data.items[first], count, shaft)
     }
@@ -141,6 +152,7 @@ var Viewer = (function() {
             }
             arr.push(dataCopy)
         }
+        
         var srce = JSON.stringify(arr[0])
         srce = JSON.parse(srce)
         var exmp = JSON.stringify(arr[11])
@@ -183,13 +195,13 @@ var Viewer = (function() {
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 11; var evw = 2.00
+          var efs = 11; var evw = 1.90
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 10; var evw = 1.90
+          var efs = 10; var evw = 1.80
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 9; var evw = 1.80
+          var efs = 9; var evw = 1.70
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 9; var evw = 1.80
+          var efs = 9; var evw = 1.70
         } else {
           var efs = 8; var evw = 1.60
         }
@@ -404,10 +416,22 @@ var Quiz = (function() {
     document.getElementById("Right").onclick = function () { Quiz.nextCardOk(); };
 
     var Quiz_render_page = function (data) {
-        var subjectElement = document.querySelector("#nwrdB").children[0]
-        subjectElement.innerHTML = 'Words ' + data.nwrd
-        var subjectElement = document.querySelector("#nsntB").children[0]
-        subjectElement.innerHTML = 'Sentences ' + data.nsnt
+
+        // images preload
+        for(var item in data.items){
+            var dataCopy = data.items[item]
+            var imag = JSON.stringify(dataCopy['imag'])
+            var type = JSON.stringify(dataCopy['type'])
+            imag = JSON.parse(imag)
+            type = JSON.parse(type)
+
+            if ((type == '1') && (imag != '0')) {
+                trgt_lowc = item.toLowerCase()
+                "/share/images/'+trgtximg+'-'+imag+'.jpg"
+                img = new Image()
+				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
+            }
+        }
         
         var first = Object.keys(data.items)[0]
         Quiz_render_card(first, data.items[first], scoreOk, scoreNo)
@@ -465,13 +489,13 @@ var Quiz = (function() {
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 10; var evw = 2.00
+          var efs = 10; var evw = 1.90
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 9; var evw = 1.90
+          var efs = 9; var evw = 1.80
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 8; var evw = 1.80
+          var efs = 8; var evw = 1.70
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 8; var evw = 1.80
+          var efs = 8; var evw = 1.70
         } else {
           var efs = 7; var evw = 1.60
         }
@@ -550,7 +574,7 @@ var Quiz = (function() {
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
         var scoreOk = scoreOk+1
-        document.getElementById("Right").setAttribute("value", "Right "+scoreOk);
+        document.getElementById("Right").setAttribute("value", scoreOk);
        
 
         if (nextIndex == keys.length) {
@@ -569,8 +593,8 @@ var Quiz = (function() {
             }
             
             var scoreOk = 0; var scoreNo = 0; var nextIndex = 0;
-            document.getElementById("Right").setAttribute("value", "Right");
-            document.getElementById("Wrong").setAttribute("value", "Wrong");
+            document.getElementById("Right").setAttribute("value", "0");
+            document.getElementById("Wrong").setAttribute("value", "0");
         }
 
         var next = keys[nextIndex]
@@ -593,7 +617,7 @@ var Quiz = (function() {
         var current = keys.indexOf(trgt)
         var nextIndex = current+1
         var scoreNo = scoreNo+1
-        document.getElementById("Wrong").setAttribute("value", "Wrong "+scoreNo);
+        document.getElementById("Wrong").setAttribute("value", scoreNo);
         
         if (nextIndex == keys.length) {
             
@@ -613,8 +637,8 @@ var Quiz = (function() {
             }
             
             var scoreOk = 0; var scoreNo = 0; var nextIndex = 0;
-            document.getElementById("Right").setAttribute("value", "Right");
-            document.getElementById("Wrong").setAttribute("value", "Wrong");
+            document.getElementById("Right").setAttribute("value", "0");
+            document.getElementById("Wrong").setAttribute("value", "0");
         }
 
         var next = keys[nextIndex]
@@ -646,6 +670,7 @@ var Quiz = (function() {
 window.addEventListener('load', function () {
     
     document.getElementById("tts").onclick = function () { window.pronounce(); };
+    document.getElementById("vtts").onclick = function () { window.pronounce(); };
     
     var div = document.getElementById("dom-target");
     var myData = div.textContent;
