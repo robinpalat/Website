@@ -187,7 +187,7 @@
                 </tr>
                 
                 <tr>
-                  <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span>, <a href=".<?php echo $ViewThisTopic; ?>">Download</a> to translate it into your language.<br><hr>
+                  <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span>, <a href=".<?php echo $ViewThisTopic; ?>">Download</a> to translate it into your language.<br>
                       It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
                       <span style="text-align:left;"id="autr"> by <font ></font></span>
                   </td>
@@ -287,7 +287,7 @@
                 </div>
 
             </a>
-            
+       
             <div id="srce">
                 <h2 style="color:#758571;"></h2>
             </div>
