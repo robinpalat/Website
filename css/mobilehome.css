@@ -2,7 +2,7 @@
 
 body {
     font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-    background: #ECEEF1;
+    background: #E7E2E0;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -10,26 +10,24 @@ body {
     color: #3D3D3D;
 }
 
-
-.top {
+.navbar-header {
     position: relative;
     clear: both;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 15px;
+    background: #869EBF;
     color: #FFFFFF;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
     font-family: Arial;
-	-moz-box-shadow: 0 4px 10px rgba(15,8,65,0.3);
-	-webkit-box-shadow: 0 4px 10px rgba(15,8,65,0.3);
-	box-shadow: 0 4px 10px rgba(15,8,65,0.3);
-	background: #869EBF;
-    background: -moz-linear-gradient(top,  #6E6767 1%,#4F4A4A 100%);
-    background: -webkit-linear-gradient(top,  #6E6767 1%,#4F4A4A 100%);
-    background: linear-gradient(to bottom,  #6E6767 1%,#4F4A4A 100%);
+    -moz-box-shadow: 0 3px 2px rgba(63,57,97,0.3);
+    -webkit-box-shadow: 0 3px 2px rgba(63,57,97,0.3);
+    box-shadow: 0 3px 2px rgba(63,57,97,0.3);
+    background: -moz-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
+    background: -webkit-linear-gradient(top,  #6E6767 30%,#4F4A4A 90%);
+    background: linear-gradient(to bottom,  #6E6767 30%,#4F4A4A 90%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6E6767', endColorstr='#4F4A4A',GradientType=0 );
 }
-
 
 .content {
     padding: 10px 0;
@@ -44,15 +42,15 @@ body {
 }
 
 #content{
-	-moz-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-	box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 #content[role="main"]{
-	border-top: 0px;
-	margin: 0px auto 0;
-	padding: 0px 0 0 0;
+    border-top: 0px;
+    margin: 0px auto 0;
+    padding: 0px 0 0 0;
     width: 100%;
     background: #F0F2F5;
     background: -moz-linear-gradient(top, #D8E0EB 10%,#F0F2F5 50%); 
@@ -62,11 +60,11 @@ body {
 }
 
 .group:after {
-	content: ".";
-	display: block;
-	height: 0;
-	visibility: hidden;
-	clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
 }
 
 ul, ol, dl {
@@ -127,6 +125,69 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     color: #ECEEF1;
 }
 
+
+.topLinks:hover {
+    border-bottom: 8px solid rgba(255,255,255,0.6);
+}
+
+.topLinks {
+    font-weight: bold;
+}
+
+.plus {
+    background: #F0ECEB;
+    border: 10px solid #FFFFFF;
+    border-radius: 10px;
+    margin: 10px;
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.SearchDiv {
+    margin: 5px;
+    min-height:100px;
+}
+
+
+ul, ol, dl {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    font-size: 15px;
+    color: #565656;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+a img {
+    border: none;
+    vertical-align:middle;
+}
+
+img.expand { 
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+a:link {
+    color:#414958;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #4E5869;
+    text-decoration: normal;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+
 .rss {
     padding: 20px 0;
     position: relative;
@@ -160,26 +221,26 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 
 
 .langlabel{ 
-	color:#929292; text-decoration: none;font-size: 90%;font-weight: normal;
+    color:#929292; text-decoration: none;font-size: 90%;font-weight: normal;
 }
 
 .titlefield{
-	color:#515F68; text-decoration: none;font-size: 14px;font-weight: normal;
+    color:#515F68; text-decoration: none;font-size: 14px;font-weight: normal;
 }
  
 .labelfield{ 
-	color:#51A536; font-size: 12px;
+    color:#51A536; font-size: 12px;
 }
 
 .datefield{ 
-	color:gray; font-size: 70%;
+    color:gray; font-size: 70%;
 }
 
 #rssfeeds a{
-	color: #515F68;text-decoration: none;font-weight: normal;font-size: 14px%;
+    color: #515F68;text-decoration: none;font-weight: normal;font-size: 14px%;
 }
 #rssfeeds p{
-	margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 
@@ -189,16 +250,39 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 }
 
 .feed-lists {
-	font-size: 13px;
-	position: relative;
-	text-align: left;
-	float: left;
-	width: 90%;
-	padding:0px 0px 5px 0px;
-	color:"#E30000";
-	line-height:1.9em;
-	font: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    position: relative;
+    text-align: left;
+    margin-right:10px;
+    float: left;
+    width: 90%;
+    padding:0px 0px 10px 10px;
+    color:"#E30000";
+    line-height:1.6em;
+    font: Verdana, Arial, Helvetica, sans-serif;
+    vertical-align:top;
 }
+
+
+.fav-lists {
+    font-size: 13px;
+    position: relative;
+    text-align: left;
+    margin-right:10px;
+    float: left;
+    width: 90%;
+    padding:0px 0px 10px 10px;
+    color:"#E30000";
+    line-height:1.6em;
+    font: Verdana, Arial, Helvetica, sans-serif;
+    vertical-align:top;
+}
+
+.fav-lists a{
+    color:#414958;
+    text-decoration: none;
+}
+
 
 html,body,div,span,center,img,a,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
   margin:0;
@@ -217,23 +301,23 @@ nav ul{
 }
 
 a:active,a:focus{
-	position: relative;
-	top: 1px;
+    position: relative;
+    top: 1px;
 }
 
 
 * html .group {
-	height: 1%;
+    height: 1%;
 }
 
 *:first-child+html .group {
-	min-height: 1px;
+    min-height: 1px;
 }
 
 
 a.btn {
-	display:inline-block;
-	margin:0;
+    display:inline-block;
+    margin:0;
 }
 
 
@@ -243,7 +327,7 @@ a.btn {
 }
 
 .floating-box {
-	position: relative;
+    position: relative;
     float: left;
     font-size: "3";
     font-family: "verdana";
@@ -260,7 +344,6 @@ a.btn {
     width: 16;
     height: 14px;
     padding: 8px;
-    background: #806B6B;
     left: 0px;
     top: 0px;
     bottom: 0px;
@@ -268,14 +351,14 @@ a.btn {
     text-align: center;
     font-weight: bold;
     -moz-box-shadow: 0 1px 2px rgba(26,15,90,0.3);
-	-webkit-box-shadow: 0 1px 2px rgba(26,15,90,0.3);
-	box-shadow: 0 1px 2px rgba(26,15,90,0.3);
+    -webkit-box-shadow: 0 1px 2px rgba(26,15,90,0.3);
+    box-shadow: 0 1px 2px rgba(26,15,90,0.3);
 }
 
 .circle-count {
     text-shadow: 1px 1px rgba(0,0,0,0.1);
-	position: relative;
-	vertical-align: middle;
+    position: relative;
+    vertical-align: middle;
     left: -15px;
     top: -32px;
     z-index: 1000;
@@ -287,8 +370,8 @@ a.btn {
 }
 
 img.expand { 
-	width: 80px; height: 80px;
-	-webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.4));
+    width: 80px; height: 80px;
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.4));
     filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.4));
 }
 
@@ -300,11 +383,11 @@ img.expand {
 
 .sentenceweek {
     position: relative;
-	float: center;
-	text-align: left;
-	font-size: 14px;
-	margin-left:10px;
-	margin-right:10px;
+    float: center;
+    text-align: left;
+    font-size: 14px;
+    margin-left:10px;
+    margin-right:10px;
     color: #787878;
     background: #F8FBFF;
     overflow: hidden;
@@ -313,9 +396,9 @@ img.expand {
 }
 
 .sentencew-content {
-	position: relative;
-	text-align: left;
-	padding:20px 20px 20px 25px;
+    position: relative;
+    text-align: left;
+    padding:20px 20px 20px 25px;
 }
 
 

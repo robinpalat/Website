@@ -30,48 +30,49 @@
         if(mobileDevice() == true)
         header('Location: mobile.php');
     ?>
+    
     <script type="text/javascript">
-    function setCookie() {
-        var d = new Date();
-        d.setTime(d.getTime() + (30*24*60*60*1000));
-        var expires = "expires=" + d.toGMTString();
-        document.cookie="language=<?=$langdir?>; expires=" + expires + "; path=/";
-        
-    }
+        function setCookie() {
+            var d = new Date();
+            d.setTime(d.getTime() + (30*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie="language=<?=$langdir?>; expires=" + expires + "; path=/";
+            
+        }
     </script>
     
     <script type="text/javascript">
-    function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
             }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
+            return "";
+        }
+            
+        function ListFavs() {
+            var fav;
+            var faves = getCookie('Topics_fav');
+            faves = faves.split('|');
+            var fdiv = document.getElementById("favlists");
+            
+            if(faves.length > 1)
+            {
+                var div = document.getElementById('favlists');
+                div.innerHTML = "<h1 style='text-align:right'>Pinned Topics <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
+                for (fav of faves) {
+                    div.innerHTML = div.innerHTML + '<a class="box" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
+                }
             }
         }
-        return "";
-    }
-        
-    function ListFavs() {
-        var fav;
-        var faves = getCookie('Topics_fav');
-        faves = faves.split('|');
-        var fdiv = document.getElementById("favlists");
-        
-        if(faves.length > 1)
-        {
-            var div = document.getElementById('favlists');
-            div.innerHTML = "<h1 style='text-align:right'>Pinned Topics <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
-            for (fav of faves) {
-                div.innerHTML = div.innerHTML + '<a class="box" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
-            }
-        }
-    }
     </script>
    
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
@@ -82,7 +83,7 @@
             $(document).ready(function() {
                 $(".box").fancybox({
                     'width'         : '75%',
-                    'height'        : '85%',
+                    'height'        : '90%',
                     'autoScale'     : false,
                     'transitionIn'      : 'none',
                     'transitionOut'     : 'none',
@@ -173,8 +174,9 @@
         });
     });
     </script>
-</head>
     
+</head>
+
 <body onload="setCookie()">
     
     <?php
@@ -196,37 +198,26 @@
     
     <main id="content" class="group" role="main">
         <div class="main">
-
+            
+            <!-- Table header -->
             <table width="100%" height="50" border="0" align="center" class="navbar-header" style="border-spacing:4px 4px;">
-                
-<!--
-                <td vertical-align="middle" width="54px" align="left" >
-                    <img src="/images/lo.png"></img>
-                </td>
--->
                 <td vertical-align="middle" width="120px" align="left" class="langtitle">
                     <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=ucfirst($langdir)?></a>
                 </td>
-                 <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show" href="#">Plus</td>
-<!--
-                 <td style="border-radius:6px;background:#737293;color:#FFFFFF;cursor:pointer" class="topLinks" onclick="location.href='#categories'">Topics by Category</td>
-                 <td style="border-radius:6px;background:#679DA1;color:#FFFFFF;cursor:pointer" class="topLinks" id="showSearch" href="#">Search</td>
-                 <td style="border-radius:6px;background:#C3D4AE;color:#4E4E4D;cursor:pointer" class="topLinks" onclick="underc();">Under Construction</td>
--->
+                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show" href="#">Plus</td>
                 <td ></td>
                 <td ></td>
                 <td align="right">
                     <i class="fa fa-user-o" aria-hidden="true"></i> <a style="color:#FFFFFF;" class="userbutton" onclick="underc();"><?= $use ?></a>
                 </td>
             </table>
-
             <br>
             
+            <!-- plus  & searchBox -->
             <div id="plus"></div>
             <div id="searchBox"></div>
-<!--
-            sentenceweek
--->
+
+            <!-- Note -->
             <div class="sentenceweek">
                 <div class="sentencew-content"><h3 style="color:#6B6664;">Please note</h3>
                     <div class="comment more"><br></div><table id="excelDataTable" border="0"></table>
@@ -234,16 +225,17 @@
             </div>
             <br>
             
+            <!-- Feeds and favs -->
             <table width='100%'>
                 <tr>
                     <td valign="top">
-                    <div class="feed-lists">
-                        <h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest Published Topics</h1>
-                        <?php
-                        echo" ";
-                        output_rss_feed("https://idiomind.sourceforge.io/rss.php/?trgt=".$langdir, 8, true, true, 200);
-                        ?>
-                    </div>
+                        <div class="feed-lists">
+                            <h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest Published Topics</h1>
+                            <?php
+                            echo" ";
+                            output_rss_feed("https://idiomind.sourceforge.io/rss.php/?trgt=".$langdir, 8, true, true, 200);
+                            ?>
+                        </div>
                     </td>
                     <td valign="top">
                         <div class="fav-lists" id="favlists"></div>
@@ -252,6 +244,7 @@
             </table>
             <br>
             
+             <!-- Folders -->
             <div id="categories">
                 <?php
                 $files = scandir('./');

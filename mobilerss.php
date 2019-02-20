@@ -42,10 +42,10 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
                     $dir = basename($dir);
                     $name = $title;
                     $category = basename(dirname($topic_path));
-                    $linkview = '/view.php?l='.$dir.'&amp;c='.$category.'&amp;set='.$name;
+                    $linkview = '/mobileview.php?l='.$dir.'&amp;c='.$category.'&amp;set='.$name;
 echo "
 <item>
-<title>".$name."</title>
+<title>".$name."</title><br>
 <link>".$linkview."</link>
 <pubDate>".date('r' ,$date_info[9])."</pubDate>
 <description>[".$category."]</description>
@@ -60,6 +60,6 @@ echo "
 
 $trgt = htmlspecialchars($_GET["trgt"]);
 $newrss = new autorss();
-$newrss->show("Content-type:text/xml","http://idiomind.sourceforge.io/".$trgt."/", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Content shared by users - Idiomind ","http://idiomind.sourceforge.io/".$trgt."/","Latest Published","en-us","Sun, 31 May 2009 09:41:01 GMT","rss.php","Latest Published","false","./".$trgt."/");
+$newrss->show("Content-type:text/xml","http://idiomind.sourceforge.io/".$trgt."/", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Content shared by users - Idiomind ","http://idiomind.sourceforge.io/".$trgt."/","Latest Published","en-us","Sun, 31 May 2009 09:41:01 GMT","mobilerss.php","Latest Published","false","./".$trgt."/");
 
 ?>
