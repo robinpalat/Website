@@ -15,7 +15,7 @@
     <title>Idiomind's library</title>
     <link href="/css/mobilehome.css" rel="stylesheet" type="text/css" />
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox.css" media="screen" />
     <?php include 'fetchfeed.php';?>
 
     <script type="text/javascript">
@@ -54,7 +54,7 @@
             if(faves.length > 1)
             {
                 var div = document.getElementById('favlists');
-                div.innerHTML = "<h1 style='text-align:left'><i class='fa fa-thumb-tack' aria-hidden='true'></i> Pinned Topics</h1>";
+                div.innerHTML = "<h1 style='text-align:left'><i class='fa fa-thumb-tack' aria-hidden='true'></i> Pinned</h1>";
                 for (fav of faves) {
                     div.innerHTML = div.innerHTML + '<a class="box" href="/mobileview.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
                 }
@@ -62,32 +62,9 @@
         }
     </script>
    
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/fancybox/jquery.fancybox.js"></script>
 
-    <script type="text/javascript">
-        function jqueryfancybox() {
-            $(document).ready(function() {
-                $(".box").fancybox({
-                "width"         : "100%",
-                "height"        : "100%",
-                "margin"        : 15,
-                "padding"        : 10,
-                'autoScale'     : false,
-                'transitionIn'      : 'none',
-                'transitionOut'     : 'none',
-                'overlayColor'      : '#ECEEF1',
-                'overlayOpacity'    : 0,
-                'scrolling'     : 'yes',
-                'type'          : 'iframe',
-                'titlePosition': 'over'
-                });
-            });
-            
-        }
-        jqueryfancybox();
-    </script>
-    
     <script type="text/javascript">
         
     function underc(){
@@ -190,11 +167,11 @@
         <div class="main">
 
             <!-- Table header -->
-            <table width="100%" height="50" border="0" align="center" class="navbar-header" style="border-spacing:4px 4px;">
-                <td vertical-align="middle" width="120px" align="left" class="langtitle">
+            <table width="100%" height="40" border="0" align="center" class="navbar-header" style="border-spacing:4px 4px;">
+                <td vertical-align="middle" width="80px" align="left" class="langtitle">
                     <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=ucfirst($langdir)?></a>
                 </td>
-                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show" href="#">Plus</td>
+                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="30px" height="10px" class="topLinks" id="show" href="#">Plus</td>
                 <td ></td>
                 <td ></td>
                 <td align="right">
@@ -222,10 +199,10 @@
                         <div class="fav-lists" id="favlists"></div>   
                             
                         <div class="feed-lists">
-                            <h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest Published Topics</h1>
+                            <h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest published</h1>
                             <?php
                             echo" ";
-                            output_rss_feed("https://idiomind.sourceforge.io/mobilerss.php/?trgt=".$langdir, 8, true, true, 200);
+                            output_rss_feed("https://idiomind.sourceforge.io/rss.php/?trgt=".$langdir."&view=2", 6, true, true, 200);
                             ?>
                         </div>
                     </td>
@@ -249,7 +226,7 @@
                             $upcate = ucfirst($cate);
                             $catee = strtoupper($cate);
                             //title=\"".$catee."\" 
-                            echo "<a href=\"/mobilebox.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
+                            echo "<a data-fancybox data-type=\"iframe\" href=\"/mobilebox.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"btn btn-primary\" data-small-btn=\"true\" ><div class=\"floating-box\" ><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
                         }
                     }
                 }
@@ -422,36 +399,4 @@
  
 <script type="text/javascript">ListFavs();</script>
 
-
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

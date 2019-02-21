@@ -15,7 +15,7 @@
     <title>Idiomind's library</title>
     <link href="/css/home.css" rel="stylesheet" type="text/css" />
     <link href="/css/fa/css/font-awesome.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox.css" media="screen" />
     <?php include 'fetchfeed.php';?>
     
     <?php
@@ -67,36 +67,17 @@
             if(faves.length > 1)
             {
                 var div = document.getElementById('favlists');
-                div.innerHTML = "<h1 style='text-align:right'>Pinned Topics <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
+                div.innerHTML = "<h1 style='text-align:right'>Pinned <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
                 for (fav of faves) {
-                    div.innerHTML = div.innerHTML + '<a class="box" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
+                    div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
                 }
             }
         }
     </script>
    
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/fancybox/jquery.fancybox.js"></script>
 
-    <script type="text/javascript">
-        function jqueryfancybox() {
-            $(document).ready(function() {
-                $(".box").fancybox({
-                    'width'         : '75%',
-                    'height'        : '90%',
-                    'autoScale'     : false,
-                    'transitionIn'      : 'none',
-                    'transitionOut'     : 'none',
-                    'overlayColor'      : '#000',
-                    'overlayOpacity'    : 0,
-                    'scrolling'     : 'yes',
-                    'type'          : 'iframe',
-                });
-            });
-            
-        }
-        jqueryfancybox();
-    </script>
     
     <script type="text/javascript">
         
@@ -208,7 +189,7 @@
                 <td ></td>
                 <td ></td>
                 <td align="right">
-                    <i class="fa fa-user-o" aria-hidden="true"></i> <a style="color:#FFFFFF;" class="userbutton" onclick="underc();"><?= $use ?></a>
+                    <i class="fa fa-user-o" aria-hidden="true"></i><a style="color:#FFFFFF;" class="userbutton" onclick="underc();"><?= $use ?></a>
                 </td>
             </table>
             <br>
@@ -224,16 +205,16 @@
                 </div>
             </div>
             <br>
-            
+
             <!-- Feeds and favs -->
             <table width='100%'>
                 <tr>
                     <td valign="top">
                         <div class="feed-lists">
-                            <h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest Published Topics</h1>
+                            <h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest published</h1>
                             <?php
                             echo" ";
-                            output_rss_feed("https://idiomind.sourceforge.io/rss.php/?trgt=".$langdir, 8, true, true, 200);
+                            output_rss_feed("https://idiomind.sourceforge.io/rss.php/?trgt=".$langdir.'&viewp=1', 6, true, true, 200);
                             ?>
                         </div>
                     </td>
@@ -242,7 +223,6 @@
                     </td>
                 </tr>
             </table>
-            <br>
             
              <!-- Folders -->
             <div id="categories">
@@ -260,7 +240,7 @@
                             $upcate = ucfirst($cate);
                             $catee = strtoupper($cate);
                             //title=\"".$catee."\" 
-                            echo "<a href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"box\"><div class=\"floating-box\"><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
+                            echo "<a data-fancybox data-type=\"iframe\" href=\"/box.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"btn btn-primary\" data-small-btn=\"true\"><div class=\"floating-box\" ><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
                         }
                     }
                 }

@@ -2,7 +2,7 @@
 
 class autorss
 {
-    public function show($document_type,$path,$xmlversion,$encoding,$rssversion,$atomversion,$title,$homelink,$description,$language,$lastupdate,$callfile,$generator,$permalink,$dir)
+    public function show($document_type,$path,$xmlversion,$encoding,$rssversion,$atomversion,$title,$homelink,$description,$language,$lastupdate,$callfile,$generator,$permalink,$dir,$mode)
     {
         header($document_type);
      
@@ -16,6 +16,12 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
 <language>".$language."</language>
 <lastBuildDate>".$lastupdate."</lastBuildDate>
 <generator>".$generator."</generator>";
+
+        if ($mode == 1) {
+                $viewtype = 'view.php';
+        } else {
+            $viewtype = 'mobileview.php';
+        }
      
         $display = array('idmnd');
         $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
@@ -42,13 +48,14 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
                     $dir = basename($dir);
                     $name = $title;
                     $category = basename(dirname($topic_path));
-                    $linkview = '/view.php?l='.$dir.'&amp;c='.$category.'&amp;set='.$name;
+                    $category_lbl = ucfirst($category);
+                    $linkview = '/'.$viewtype.'?l='.$dir.'&amp;c='.$category.'&amp;set='.$name;
 echo "
 <item>
 <title>".$name."</title>
 <link>".$linkview."</link>
 <pubDate>".date('r' ,$date_info[9])."</pubDate>
-<description>[".$category."]</description>
+<description>in <font color=\"#626262\">".$category_lbl."</font></description>
 </item>";
      
         }
@@ -59,7 +66,9 @@ echo "
 }
 
 $trgt = htmlspecialchars($_GET["trgt"]);
+$mode = htmlspecialchars($_GET["viewp"]);
+
 $newrss = new autorss();
-$newrss->show("Content-type:text/xml","http://idiomind.sourceforge.io/".$trgt."/", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Content shared by users - Idiomind ","http://idiomind.sourceforge.io/".$trgt."/","Latest Published","en-us","Sun, 31 May 2009 09:41:01 GMT","rss.php","Latest Published","false","./".$trgt."/");
+$newrss->show("Content-type:text/xml","http://idiomind.sourceforge.io/".$trgt."/", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Content shared by users - Idiomind ","http://idiomind.sourceforge.io/".$trgt."/","Latest Published","en-us","Sun, 31 May 2009 09:41:01 GMT","rss.php","Latest Published","false","./".$trgt."/",$mode);
 
 ?>

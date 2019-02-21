@@ -292,7 +292,7 @@ nav ul{
     width: 100%;
     padding:0px 0px 25px 30px;
     color:"#E30000";
-    line-height:1.6em;
+    line-height:1.1em;
     font: Verdana, Arial, Helvetica, sans-serif;
     vertical-align:top;
 }
@@ -311,7 +311,7 @@ nav ul{
     width: 100%;
     padding:0px 0px 25px 30px;
     color:"#E30000";
-    line-height:1.6em;
+    line-height:1.2em;
     font: Verdana, Arial, Helvetica, sans-serif;
     vertical-align:top;
 }
@@ -401,4 +401,14 @@ img.expand {
 
 .more {
     position:relative;
+}
+
+
+.fancybox-slide--iframe .fancybox-content {
+	width  : 75%;
+	height : 90%;
+	max-width  : 80%;
+	max-height : 95%;
+	margin: 50;
+    background: transparent;
 }

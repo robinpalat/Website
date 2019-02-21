@@ -133,7 +133,6 @@ var Viewer = (function() {
 
             if ((type == '1') && (imag != '0')) {
                 trgt_lowc = item.toLowerCase()
-                "/share/images/'+trgtximg+'-'+imag+'.jpg"
                 img = new Image()
 				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
             }
