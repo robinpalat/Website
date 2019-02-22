@@ -35,6 +35,7 @@ function percentage(num, per) {
 var Topic = (function() {
     
     var render_page = function (data) {
+        
         var subjectElement = document.querySelector("#name").children[0]
         subjectElement.innerHTML = data.name
         var subjectElement = document.querySelector("#info").children[0]
@@ -111,11 +112,7 @@ var Viewer = (function() {
     document.getElementById("Next").onclick = function () { Viewer.nextCard(); };
     document.getElementById("Play").onclick = function () { Viewer.psplayer(data); };
     document.getElementById("Back").onclick = function () { Viewer.backCard(); };
-    
-    document.getElementById("QuizButtons").style = "DISPLAY: none;";
-    document.getElementById("ViewerButtons").style = "DISPLAY: true;";
-    
-        
+
     var viewer_render_page = function (data) {
 
         var first = Object.keys(data.items)[0]
@@ -137,6 +134,17 @@ var Viewer = (function() {
 				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
             }
         }
+        
+        document.body.style.backgroundColor = "#B1E4EE";
+        document.getElementById("headA").style = "DISPLAY: none;";
+        document.getElementById("headB").style = "DISPLAY: none;";
+        document.getElementById("headC").style = "DISPLAY: true;";
+        document.getElementById("TopicLanding").style = "DISPLAY: none;";
+        document.getElementById("fscreen").style = "DISPLAY: none;";
+        document.getElementById("vscreen").style = "DISPLAY: true;";
+        document.getElementById("slidecontainer").style = "DISPLAY: true;";
+        document.getElementById("QuizButtons").style = "DISPLAY: none;";
+        document.getElementById("ViewerButtons").style = "DISPLAY: true;";
         
         viewer_render_card(first, data.items[first], count, shaft)
     }
@@ -224,7 +232,6 @@ var Viewer = (function() {
         
         window.pronounce = function () {
             speechtrgt(trgt);
-            //speak(trgt);
         }
         
         var trgtElement = document.querySelector("#trgt").children[0]
@@ -236,27 +243,11 @@ var Viewer = (function() {
     
         srceElement.hidden = false
         dotsElement.hidden = true
-        
-        document.body.style.backgroundColor = "#B1E4EE";
-        document.getElementById("headA").style = "DISPLAY: none;";
-        document.getElementById("headB").style = "DISPLAY: none;";
-        document.getElementById("headC").style = "DISPLAY: true;";
-        
-        document.getElementById("TopicLanding").style = "DISPLAY: none;";
-        document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("QuizButtons").style = "DISPLAY: none;";
-        document.getElementById("ViewerButtons").style = "DISPLAY: true;";
-        
-        document.getElementById("fscreen").style = "DISPLAY: none;";
-        document.getElementById("vscreen").style = "DISPLAY: true;";
-        document.getElementById("slidecontainer").style = "DISPLAY: true;";
-        
-        
+
         var count_items = document.getElementById("item_slider");
         count_items.value = 1;
         count_items.setAttribute("min", 1);
         count_items.setAttribute("max", count);
-
 
         trgtElement.innerHTML = trgt
         
@@ -286,7 +277,6 @@ var Viewer = (function() {
     }
 
     var viewer_player = function (data) {
-        
         if (play_stts == 0 ) {
             play_stts = 1
             document.getElementById("Play").src="/images/stop.png"
@@ -336,7 +326,6 @@ var Viewer = (function() {
         var count = items.length
         var shaft = items.indexOf(trgt)
         shaft = shaft+1
-
         if (shaft == count) {
             var por = percentage(shaft, count);
             var por = por.toFixed();
@@ -385,7 +374,6 @@ var Viewer = (function() {
         viewer_next_card(); // TODO
     }
     
-    
     var load_data = function(file) {
         var xmlhttp = new XMLHttpRequest()
 
@@ -413,12 +401,7 @@ var Quiz = (function() {
     
     document.getElementById("Right").onclick = function () { Quiz.nextCardOk(); };
     document.getElementById("Wrong").onclick = function () { Quiz.nextCardNo(); };
-    document.getElementById("Right").setAttribute("value", "0");
-    document.getElementById("Wrong").setAttribute("value", "0");
     
-    document.getElementById("QuizButtons").style = "DISPLAY: true;";
-    document.getElementById("ViewerButtons").style = "DISPLAY: none;";
-
     var Quiz_render_page = function (data) {
 
         // images preload
@@ -428,7 +411,6 @@ var Quiz = (function() {
             var type = JSON.stringify(dataCopy['type'])
             imag = JSON.parse(imag)
             type = JSON.parse(type)
-
             if ((type == '1') && (imag != '0')) {
                 trgt_lowc = item.toLowerCase()
                 "/share/images/'+trgtximg+'-'+imag+'.jpg"
@@ -436,6 +418,20 @@ var Quiz = (function() {
 				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
             }
         }
+        
+        document.body.style.backgroundColor = "#cdeeb1";
+        document.getElementById("headA").style = "DISPLAY: none;";
+        document.getElementById("headC").style = "DISPLAY: none;";
+        document.getElementById("headB").style = "DISPLAY: true;";
+        document.getElementById("TopicLanding").style = "DISPLAY: none;";
+        document.getElementById("fscreen").style = "DISPLAY: true;";
+        document.getElementById("vscreen").style = "DISPLAY: none;";
+        document.getElementById("slidecontainer").style = "DISPLAY: none;";
+        document.getElementById("QuizButtons").style = "DISPLAY: true;";
+        document.getElementById("ViewerButtons").style = "DISPLAY: none;";
+        
+        document.getElementById("Right").setAttribute("value", "0");
+        document.getElementById("Wrong").setAttribute("value", "0");
         
         var first = Object.keys(data.items)[0]
         Quiz_render_card(first, data.items[first], scoreOk, scoreNo)
@@ -522,7 +518,6 @@ var Quiz = (function() {
         
         window.pronounce = function () {
             speechtrgt(trgt);
-            //speak(trgt);
         }
         
         var trgtElement = document.querySelector("#trgt").children[0]
@@ -539,19 +534,6 @@ var Quiz = (function() {
         srceElement.hidden = true
         dotsElement.hidden = false
         
-        document.body.style.backgroundColor = "#cdeeb1";
-        document.getElementById("headA").style = "DISPLAY: none;";
-        document.getElementById("headC").style = "DISPLAY: none;";
-        document.getElementById("headB").style = "DISPLAY: true;";
-
-        document.getElementById("TopicLanding").style = "DISPLAY: none;";
-        document.getElementById("fscreen").style = "DISPLAY: true;";
-        
-        document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("vscreen").style = "DISPLAY: none;";
-        
-        document.getElementById("slidecontainer").style = "DISPLAY: none;";
-
         trgtElement.innerHTML = trgt
         if ((type == '1') && (imag != '0')) {
             trgtximg = trgt.toLowerCase()
@@ -578,9 +560,7 @@ var Quiz = (function() {
         var scoreOk = scoreOk+1
         document.getElementById("Right").setAttribute("value", scoreOk);
        
-
         if (nextIndex == keys.length) {
-            
             var por = percentage(scoreOk, keys.length);
             var por = por.toFixed();
             
@@ -622,9 +602,7 @@ var Quiz = (function() {
         document.getElementById("Wrong").setAttribute("value", scoreNo);
         
         if (nextIndex == keys.length) {
-            
             Topic.loadData(myData);
-            
             var por = percentage(scoreOk, keys.length);
             var por = por.toFixed();
             

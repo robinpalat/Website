@@ -175,7 +175,7 @@
             <tr>
                <td>
                    <div id="name" class="topicName">
-                        <p style="font-weight:bold;font-family:Verdana;"></p>
+                        <h1 style="font-weight:bold;font-family:Verdana;font-size:20px;font-size:1.50vw;"></h1>
                     </div>
                       <span id="levl">This topic is intended for <b><font></font></b> students.</span><br>
                       <span>Contains: </span>
@@ -270,7 +270,7 @@
             <br><br><br><br>
                 
             <div class="note" id="info">
-                <p style="color:#4A4A4A"></p>
+                <p style="color:#4A4A4A;font-size:10px;font-size:1.00vw;"></p>
             </div>
     </span>
 
