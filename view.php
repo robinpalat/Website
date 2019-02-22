@@ -205,9 +205,9 @@
         <td>
             <table class="flascards_info">
             <tr>
-               <td>
-                      <span id="score_no"> I did not know it  <font color="#C01B4C"></font></span> /
-                      <span id="score_ok">I knew it  <font color="green"></font></span>
+               <td bgcolor="#DCF0C4" style="border-radius:6px;padding:8px;">
+                      <span id="score_no"> I did not know it:  <font></font></span> /
+                      <span id="score_ok">I knew it:  <font></font></span>
                   </td>
                 </tr>
                 <tr>
@@ -331,7 +331,7 @@
         
         <div id="QuizButtons" class="QuizButtons" style="visibility:hidden;">
                 <input class="btnNo" id="Wrong" type="button" value="0" onclick="doFunction();" />
-                <input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Show Translation" onclick="doFunction();" />
+                <input style="display: inline-block;" class="btnShow" id="Show" type="button" value="Show translation" onclick="doFunction();" />
                 <input class="btnOk" id="Right" type="button" value="0" onclick="doFunction();" />
         </div>
         

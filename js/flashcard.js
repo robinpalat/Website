@@ -683,8 +683,8 @@ window.addEventListener('load', function () {
         srceElement.hidden = false
         dotsElement.hidden = true
         document.getElementById("Show").style = "DISPLAY: none;";
-        document.getElementById('Right').style.right = "21%";
-        document.getElementById('Wrong').style.left = "21%";
+        document.getElementById('Right').style.right = "25%";
+        document.getElementById('Wrong').style.left = "25%";
         //document.getElementById('Play').style.right = "5%";
         //document.getElementById('Back').style.left = "21%";
     }
