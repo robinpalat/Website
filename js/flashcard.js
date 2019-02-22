@@ -181,28 +181,28 @@ var Viewer = (function() {
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 22; var svw = 2.80
+          var sfs = 21; var svw = 2.30
         } else if ((chars >= 20) && (chars < 40)) {
-          var sfs = 20; var svw = 2.70
+          var sfs = 19; var svw = 2.20
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 18; var svw = 2.60
+          var sfs = 18; var svw = 2.10
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 16; var svw = 2.50
+          var sfs = 17; var svw = 2.00
         } else {
-          var sfs = 14; var svw = 2.40
+          var sfs = 16; var svw = 2.00
         }
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 11; var evw = 1.90
+          var efs = 11; var evw = 1.70
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 10; var evw = 1.80
+          var efs = 10; var evw = 1.60
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 9; var evw = 1.70
+          var efs = 9; var evw = 1.40
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 9; var evw = 1.70
+          var efs = 9; var evw = 1.20
         } else {
-          var efs = 8; var evw = 1.60
+          var efs = 8; var evw = 1.20
         }
 
         var mvw = 6; var msvw = 5; var mevw = 5
@@ -475,28 +475,28 @@ var Quiz = (function() {
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 22; var svw = 2.80
+          var sfs = 21; var svw = 2.30
         } else if ((chars >= 20) && (chars < 40)) {
-          var sfs = 20; var svw = 2.70
+          var sfs = 19; var svw = 2.20
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 18; var svw = 2.60
+          var sfs = 18; var svw = 2.10
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 16; var svw = 2.50
+          var sfs = 17; var svw = 2.00
         } else {
-          var sfs = 14; var svw = 2.40
+          var sfs = 16; var svw = 2.00
         }
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 10; var evw = 1.90
+          var efs = 11; var evw = 1.70
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 9; var evw = 1.80
+          var efs = 10; var evw = 1.60
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 8; var evw = 1.70
+          var efs = 9; var evw = 1.40
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 8; var evw = 1.70
+          var efs = 9; var evw = 1.20
         } else {
-          var efs = 7; var evw = 1.60
+          var efs = 8; var evw = 1.20
         }
 
         var mvw = 6; var msvw = 5; var mevw = 5
@@ -664,7 +664,6 @@ var Quiz = (function() {
         loadData: load_data
     }
 })()
-
 
 window.addEventListener('load', function () {
     
