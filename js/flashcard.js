@@ -411,8 +411,13 @@ var Viewer = (function() {
 
 var Quiz = (function() {
     
-    document.getElementById("Wrong").onclick = function () { Quiz.nextCardNo(); };
     document.getElementById("Right").onclick = function () { Quiz.nextCardOk(); };
+    document.getElementById("Wrong").onclick = function () { Quiz.nextCardNo(); };
+    document.getElementById("Right").setAttribute("value", "0");
+    document.getElementById("Wrong").setAttribute("value", "0");
+    
+    document.getElementById("QuizButtons").style = "DISPLAY: true;";
+    document.getElementById("ViewerButtons").style = "DISPLAY: none;";
 
     var Quiz_render_page = function (data) {
 
@@ -541,8 +546,6 @@ var Quiz = (function() {
 
         document.getElementById("TopicLanding").style = "DISPLAY: none;";
         document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("QuizButtons").style = "DISPLAY: true;";
-        //document.getElementById("ViewerdButtons").style = "DISPLAY: none;";
         
         document.getElementById("fscreen").style = "DISPLAY: true;";
         document.getElementById("vscreen").style = "DISPLAY: none;";
