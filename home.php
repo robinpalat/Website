@@ -69,7 +69,7 @@
                 var div = document.getElementById('favlists');
                 div.innerHTML = "<h1 style='text-align:right'>Pinned <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
                 for (fav of faves) {
-                    div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/view.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
+                    div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/view.php?l=<?=$langdir?>&c=fav&set='+fav+'">'+fav+'</a><br>';
                 }
             }
         }
@@ -374,11 +374,11 @@
             return {
                 renderTopic: render_topic,
                 renderPage: render_page,
-                loadData: load_data
+                //loadData: load_data
             }
         })()
         
-        Topic.loadData(myData)
+        //Topic.loadData(myData)
         //<div id=\"name\"></div> / lessonChk
         var showChar = 100;
         var ellipsestext = "...";

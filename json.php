@@ -1,8 +1,9 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL ^ E_NOTICE);
+$lang = htmlspecialchars($_GET["lang"]);
+$uplang = ucfirst($lang);
 
+ echo './share/'.$uplang.'/topics.json';
 
 function dir2json($dir)
 {
@@ -23,8 +24,8 @@ function dir2json($dir)
 }
 
 
-$arr = dir2json('./english/');
+$arr = dir2json('./'.$lang.'/');
 $json = json_encode($arr, JSON_PRETTY_PRINT);
-file_put_contents('./share/data/topics.json', '{"Categories":'.$json.'}');
+file_put_contents('./share/'.$uplang.'/topics.json', '{"Categories":'.$json.'}');
 
 ?>
