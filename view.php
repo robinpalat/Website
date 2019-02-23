@@ -136,11 +136,12 @@
         <?php
         include_once("analyticstracking.php");
         $lang = htmlspecialchars($_GET["l"]);
+        $uplang = ucfirst($lang);
         $precatg = htmlspecialchars($_GET["c"]);
         $set = htmlspecialchars($_GET["set"]);
         //Get category of topic from remote json file (if came empty from favorites)
         if ($precatg == 'fav') {
-            $data = file_get_contents ('./share/data/topics.json');
+            $data = file_get_contents ('./share/'.$uplang.'/topics.json');
             $json = json_decode($data, true);
             foreach ($json['Categories'] as $field => $value) {
                 foreach ($value as $key => $val) {
