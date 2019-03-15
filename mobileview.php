@@ -179,8 +179,6 @@
                    <div id="name" class="topicName">
                         <font style="font-weight:bold;font-family:Verdana;"></font><br><br>
                     </div>
-                      
-                    
 
                 </span>
                 
@@ -215,12 +213,13 @@
         <td>
             <table class="flascards_info">
             <tr>
-               <td bgcolor="#DCF0C4" style="border-radius:6px;padding:5px;">
-                      <span id="score_no"> I did not know it:  <font></font></span> /
-                      <span id="score_ok">I knew it:  <font></font></span>
-                  </td>
-                </tr>
-                <tr>
+               <td>
+                    <span style="background-color:#DE939A;border-radius:6px;padding:5px;" id="score_no"> I did not know it:  <font></font></span>  &nbsp;&nbsp;
+                    <span style="background-color:#A2D07D;border-radius:6px;padding:5px;" id="score_ok">I knew it:  <font></font></span>
+                </td>
+            </tr>
+                
+            <tr>
                   <td>
                       <span style="text-align:left;"><font></font></span>
                   </td>
@@ -278,13 +277,15 @@
     </span>
 
     <br>
-    
-            <div class="note" id="info">
-                <p style="color:#4A4A4A"></p>
-            </div>
-            
-            
-            
+    <div id="div_to_info">
+        <p></p>
+    </div>
+
+    <div class="note" id="info"  style="text-align:center;float: left;position:absolute">
+        <p style="color:#4A4A4A;text-align: left;float: left;position:absolute"></p>
+
+    </div>
+               
     <div id="fscreen" >
             
             <div id="imgs">

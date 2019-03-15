@@ -52,24 +52,6 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 
 $buffer = str_replace(array("\r", "\n"), " ", $_POST['note']);

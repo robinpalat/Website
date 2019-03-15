@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/css/view.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="/css/sweetalert.css"/>
-
+        
         <script type="text/javascript"> //  Loading gif
             function onReady(callback) {
                 var intervalID = window.setInterval(checkReady, 800);
@@ -22,14 +22,14 @@
             function show(id, value) {
                 document.getElementById(id).style.display = value ? 'block' : 'none';
             }
-
+            
             onReady(function () {
                 show('page', true);
                 show('loading', false);
             });
         </script>
         
-         <script type="text/javascript"> // Image fix 
+        <script type="text/javascript"> // Image fix 
             function imgError(image) {
                 image.onerror = "";
                 image.style="display: none;";
@@ -37,9 +37,9 @@
                 s.value = "<br>";
                 return true;
             }
-         </script>
+        </script>
          
-         <script type="text/javascript"> // Get X cookie value 
+        <script type="text/javascript"> // Get X cookie value 
             function getCookie(cname) {
                 var name = cname + "=";
                 var decodedCookie = decodeURIComponent(document.cookie);
@@ -76,9 +76,9 @@
             
             
         }
-         </script>
+        </script>
          
-         <script type="text/javascript"> //  Toggle Button fav
+        <script type="text/javascript"> //  Toggle Button fav
             function Favesjs(el) {
 
                 var faves = getCookie('Topics_fav');
@@ -103,7 +103,7 @@
                     el.src='/images/unfav.png';
                 }
             }
-         </script>
+        </script>
 
         <script type="text/javascript"> //  Toggle Button study 
             function StudySet(el) {
@@ -128,7 +128,7 @@
                     el.src='/images/unpin.png';
                 }
             }
-         </script>
+        </script>
 
     </head>
     <body onload="setBtnFav()">
