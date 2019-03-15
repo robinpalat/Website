@@ -352,7 +352,7 @@
     
 </body>
     
-<script type="text/javascript" src="/js/flashcard.js"></script>
+<script type="text/javascript" src="/js/view.js"></script>
 <script>
     var div = document.getElementById("dom-target");
     var myData = div.textContent;

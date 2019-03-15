@@ -542,7 +542,7 @@ var Quiz = (function() {
             imgsElement.innerHTML = '<font "size=0"></font>'
         }
         srceElement.innerHTML = srce
-        dotsElement.innerHTML = '<img src="/images/eyelashes.svg"</img>'
+        dotsElement.innerHTML = '<img src="/images/eyelashes_mob.svg"</img>'
         exmpElement.innerHTML = exmp
         scoreNoElement.innerHTML = scoreNo
         scoreOkElement.innerHTML = scoreOk

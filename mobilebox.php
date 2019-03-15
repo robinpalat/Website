@@ -69,7 +69,7 @@
         
         $namehref=$dirArray[$index];
 
-        echo"<tr>
+        echo"<tr style=\"width:5%;height:65px;\">
             <td style=\"width:5%\"><a href=\"/mobileview.php?l=".$language."&c=".$category."&set=".$name."\"><img class='expand' src='/images/idmnd.png'></a></td>
             <td style=\"width:90%\"><a href=\"/mobileview.php?l=".$language."&c=".$category."&set=".$name."\">{$name}</a></td>
         </tr>";

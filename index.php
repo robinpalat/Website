@@ -42,7 +42,7 @@
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,bg,cs,da,de,el,en,es,et,fi,fr,hr,hu,id,it,iw,jv,ko,mk,nl,pl,pt,ru,sk,sq,sv,tr,uk,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'da,de,el,en,es,fr,hr,hu,id,it,iw,ko,nl,pl,pt,ru,tr,uk,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
         }
     </script>
 
@@ -122,7 +122,9 @@
                     It is also possible to download from sourceforge.net </p>
                     <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
                 <br><br>
-
+                <br>
+                <br>
+                <div id="google_translate_element"></div>
             </div>
             
         </div>
@@ -131,7 +133,7 @@
     </div>
     <div class="footer">
         
-         <div id="google_translate_element"></div>
+         
         <span>
             <p>
             <small>&copy; 2019 <a href="https://idiomind.sourceforge.io">Idiomind Project </a><br><br>

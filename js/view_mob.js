@@ -35,6 +35,7 @@ function percentage(num, per) {
 var Topic = (function() {
     
     var render_page = function (data) {
+        
         var subjectElement = document.querySelector("#name").children[0]
         subjectElement.innerHTML = data.name
         var subjectElement = document.querySelector("#info").children[0]
@@ -42,13 +43,17 @@ var Topic = (function() {
         var subjectElement = document.querySelector("#autr").children[0]
         subjectElement.innerHTML = data.autr
         var subjectElement = document.querySelector("#nwrd").children[0]
-        subjectElement.innerHTML =  data.nwrd + ' words,'
+        if ( data.nwrd == 1) { w = data.nwrd + ' Word' } else { w = data.nwrd + ' Words' }
+        subjectElement.innerHTML =  w
         var subjectElement = document.querySelector("#nsnt").children[0]
-        subjectElement.innerHTML = data.nsnt + ' sentences,'
+        if ( data.nsnt == 1) { s = data.nsnt + ' Sentence' } else { s = data.nsnt + ' Sentences' }
+        subjectElement.innerHTML = s
         var subjectElement = document.querySelector("#nimg").children[0]
-        subjectElement.innerHTML = data.nimg + ' images.'
+        if ( data.nimg == 1) { i = data.nimg + ' Image' } else { i = data.nimg + ' Images' }
+        subjectElement.innerHTML = i
         var subjectElement = document.querySelector("#naud").children[0]
-        subjectElement.innerHTML = data.naud + ' audio files and'
+        if ( data.naud == 1) { a = data.naud + ' Audio file' } else { a = data.naud + ' Audio files' }
+        subjectElement.innerHTML = a
         var subjectElement = document.querySelector("#dteu").children[0]
         subjectElement.innerHTML = data.dteu
         var subjectElement = document.querySelector("#slng").children[0]
@@ -111,11 +116,7 @@ var Viewer = (function() {
     document.getElementById("Next").onclick = function () { Viewer.nextCard(); };
     document.getElementById("Play").onclick = function () { Viewer.psplayer(data); };
     document.getElementById("Back").onclick = function () { Viewer.backCard(); };
-    
-    document.getElementById("QuizButtons").style = "DISPLAY: none;";
-    document.getElementById("ViewerButtons").style = "DISPLAY: true;";
-    
-        
+
     var viewer_render_page = function (data) {
 
         var first = Object.keys(data.items)[0]
@@ -133,11 +134,21 @@ var Viewer = (function() {
 
             if ((type == '1') && (imag != '0')) {
                 trgt_lowc = item.toLowerCase()
-                "/share/images/'+trgtximg+'-'+imag+'.jpg"
                 img = new Image()
 				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
             }
         }
+        
+        document.body.style.backgroundColor = "#B1E4EE";
+        document.getElementById("headA").style = "DISPLAY: none;";
+        document.getElementById("headB").style = "DISPLAY: none;";
+        document.getElementById("headC").style = "DISPLAY: true;";
+        document.getElementById("TopicLanding").style = "DISPLAY: none;";
+        document.getElementById("fscreen").style = "DISPLAY: none;";
+        document.getElementById("vscreen").style = "DISPLAY: true;";
+        document.getElementById("slidecontainer").style = "DISPLAY: true;";
+        document.getElementById("QuizButtons").style = "DISPLAY: none;";
+        document.getElementById("ViewerButtons").style = "DISPLAY: true;";
         
         viewer_render_card(first, data.items[first], count, shaft)
     }
@@ -169,52 +180,47 @@ var Viewer = (function() {
         
         var chars = trgt.length;
         if ((chars >= 1) && (chars < 20)) {
-          var fs = 68; var vw = 4.30
+          var fs = 34; var vw = 2.00
         } else if ((chars >= 20) && (chars < 40)) {
-          var fs = 50; var vw = 4.10
+          var fs = 28; var vw = 1.90
         } else if ((chars >= 40) && (chars < 80)) {
-          var fs = 55; var vw = 3.80
+          var fs = 24; var vw = 1.80
         } else if ((chars >= 80) && (chars < 100)) {
-          var fs = 45; var vw = 3.60
+          var fs = 20; var vw = 1.70
         } else {
-          var fs = 35; var vw = 3.50
+          var fs = 18; var vw = 0.60
         }
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 22; var svw = 2.80
+          var sfs = 18; var svw = 2.00
         } else if ((chars >= 20) && (chars < 40)) {
-          var sfs = 20; var svw = 2.70
+          var sfs = 16; var svw = 1.90
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 18; var svw = 2.60
+          var sfs = 14; var svw = 1.80
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 16; var svw = 2.50
+          var sfs = 12; var svw = 1.70
         } else {
-          var sfs = 14; var svw = 2.40
+          var sfs = 10; var svw = 1.60
         }
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 11; var evw = 1.90
+          var efs = 16; var evw = 1.90
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 10; var evw = 1.80
+          var efs = 14; var evw = 1.80
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 9; var evw = 1.70
+          var efs = 13; var evw = 1.60
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 9; var evw = 1.70
+          var efs = 12; var evw = 1.50
         } else {
-          var efs = 8; var evw = 1.60
+          var efs = 10; var evw = 1.30
         }
 
-        var mvw = 6; var msvw = 5; var mevw = 5
-        var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
-        'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
-        'p { font-size:'+efs+';font-size:'+evw+'vw;}'+
-        '.pronounce {width:90%}'+
-        '@media all and (max-device-width: 320px){'+
-        'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
-        'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
-        'p { font-size:'+efs+';font-size:'+mevw+'vw;}'+
+
+        var lcss = 'h1 { font-size:'+fs+';}'+
+        'h2 { font-size:'+sfs+';}'+
+        'p { font-size:'+efs+';}'+
         '.pronounce {width:95%}}',
         
         head = document.head || document.getElementsByTagName('head')[0],
@@ -225,7 +231,6 @@ var Viewer = (function() {
         
         window.pronounce = function () {
             speechtrgt(trgt);
-            //speak(trgt);
         }
         
         var trgtElement = document.querySelector("#trgt").children[0]
@@ -237,27 +242,11 @@ var Viewer = (function() {
     
         srceElement.hidden = false
         dotsElement.hidden = true
-        
-        document.body.style.backgroundColor = "#B1E4EE";
-        document.getElementById("headA").style = "DISPLAY: none;";
-        document.getElementById("headB").style = "DISPLAY: none;";
-        document.getElementById("headC").style = "DISPLAY: true;";
-        
-        document.getElementById("TopicLanding").style = "DISPLAY: none;";
-        document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("QuizButtons").style = "DISPLAY: none;";
-        document.getElementById("ViewerButtons").style = "DISPLAY: true;";
-        
-        document.getElementById("fscreen").style = "DISPLAY: none;";
-        document.getElementById("vscreen").style = "DISPLAY: true;";
-        document.getElementById("slidecontainer").style = "DISPLAY: true;";
-        
-        
+
         var count_items = document.getElementById("item_slider");
         count_items.value = 1;
         count_items.setAttribute("min", 1);
         count_items.setAttribute("max", count);
-
 
         trgtElement.innerHTML = trgt
         
@@ -287,7 +276,6 @@ var Viewer = (function() {
     }
 
     var viewer_player = function (data) {
-        
         if (play_stts == 0 ) {
             play_stts = 1
             document.getElementById("Play").src="/images/stop.png"
@@ -337,7 +325,6 @@ var Viewer = (function() {
         var count = items.length
         var shaft = items.indexOf(trgt)
         shaft = shaft+1
-
         if (shaft == count) {
             var por = percentage(shaft, count);
             var por = por.toFixed();
@@ -386,7 +373,6 @@ var Viewer = (function() {
         viewer_next_card(); // TODO
     }
     
-    
     var load_data = function(file) {
         var xmlhttp = new XMLHttpRequest()
 
@@ -412,9 +398,9 @@ var Viewer = (function() {
 
 var Quiz = (function() {
     
-    document.getElementById("Wrong").onclick = function () { Quiz.nextCardNo(); };
     document.getElementById("Right").onclick = function () { Quiz.nextCardOk(); };
-
+    document.getElementById("Wrong").onclick = function () { Quiz.nextCardNo(); };
+    
     var Quiz_render_page = function (data) {
 
         // images preload
@@ -424,7 +410,6 @@ var Quiz = (function() {
             var type = JSON.stringify(dataCopy['type'])
             imag = JSON.parse(imag)
             type = JSON.parse(type)
-
             if ((type == '1') && (imag != '0')) {
                 trgt_lowc = item.toLowerCase()
                 "/share/images/'+trgtximg+'-'+imag+'.jpg"
@@ -432,6 +417,20 @@ var Quiz = (function() {
 				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
             }
         }
+        
+        document.body.style.backgroundColor = "#cdeeb1";
+        document.getElementById("headA").style = "DISPLAY: none;";
+        document.getElementById("headC").style = "DISPLAY: none;";
+        document.getElementById("headB").style = "DISPLAY: true;";
+        document.getElementById("TopicLanding").style = "DISPLAY: none;";
+        document.getElementById("fscreen").style = "DISPLAY: true;";
+        document.getElementById("vscreen").style = "DISPLAY: none;";
+        document.getElementById("slidecontainer").style = "DISPLAY: none;";
+        document.getElementById("QuizButtons").style = "DISPLAY: true;";
+        document.getElementById("ViewerButtons").style = "DISPLAY: none;";
+        
+        document.getElementById("Right").setAttribute("value", "0");
+        document.getElementById("Wrong").setAttribute("value", "0");
         
         var first = Object.keys(data.items)[0]
         Quiz_render_card(first, data.items[first], scoreOk, scoreNo)
@@ -463,53 +462,48 @@ var Quiz = (function() {
         
         var chars = trgt.length;
         if ((chars >= 1) && (chars < 20)) {
-          var fs = 68; var vw = 4.30
+          var fs = 34; var vw = 2.00
         } else if ((chars >= 20) && (chars < 40)) {
-          var fs = 50; var vw = 4.10
+          var fs = 28; var vw = 1.90
         } else if ((chars >= 40) && (chars < 80)) {
-          var fs = 55; var vw = 3.80
+          var fs = 24; var vw = 1.80
         } else if ((chars >= 80) && (chars < 100)) {
-          var fs = 45; var vw = 3.60
+          var fs = 20; var vw = 1.70
         } else {
-          var fs = 35; var vw = 3.50
+          var fs = 18; var vw = 0.60
         }
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 22; var svw = 2.80
+          var sfs = 18; var svw = 2.00
         } else if ((chars >= 20) && (chars < 40)) {
-          var sfs = 20; var svw = 2.70
+          var sfs = 16; var svw = 1.90
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 18; var svw = 2.60
+          var sfs = 14; var svw = 1.80
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 16; var svw = 2.50
+          var sfs = 12; var svw = 1.70
         } else {
-          var sfs = 14; var svw = 2.40
+          var sfs = 10; var svw = 1.60
         }
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 10; var evw = 1.90
+          var efs = 16; var evw = 1.90
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 9; var evw = 1.80
+          var efs = 14; var evw = 1.80
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 8; var evw = 1.70
+          var efs = 13; var evw = 1.60
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 8; var evw = 1.70
+          var efs = 12; var evw = 1.50
         } else {
-          var efs = 7; var evw = 1.60
+          var efs = 10; var evw = 1.30
         }
 
-        var mvw = 6; var msvw = 5; var mevw = 5
-        var lcss = 'h1 { font-size:'+fs+';font-size:'+vw+'vw;} '+
-        'h2 { font-size:'+sfs+';font-size:'+svw+'vw;}'+
-        'p { font-size:'+efs+';font-size:'+evw+'vw;}'+
-        '.pronounce {width:90%}'+
-        '@media all and (max-device-width: 320px){'+
-        'h1 { font-size:'+fs+';font-size:'+mvw+'vw;}'+
-        'h2 { font-size:'+sfs+';font-size:'+msvw+'vw;}'+
-        'p { font-size:'+efs+';font-size:'+mevw+'vw;}'+
+        var lcss = 'h1 { font-size:'+fs+';}'+
+        'h2 { font-size:'+sfs+';}'+
+        'p { font-size:'+efs+';}'+
         '.pronounce {width:95%}}',
+        
         head = document.head || document.getElementsByTagName('head')[0],
         style = document.createElement('style');
         style.type = 'text/css';
@@ -518,7 +512,6 @@ var Quiz = (function() {
         
         window.pronounce = function () {
             speechtrgt(trgt);
-            //speak(trgt);
         }
         
         var trgtElement = document.querySelector("#trgt").children[0]
@@ -529,27 +522,12 @@ var Quiz = (function() {
         var scoreOkElement = document.querySelector("#score_ok").children[0]
         var scoreNoElement = document.querySelector("#score_no").children[0]
         document.getElementById("Show").style = "DISPLAY: true;";
-        document.getElementById('Right').style.right = "5%";
-        document.getElementById('Wrong').style.left = "5%";
+        document.getElementById('Right').style.right = "5px";
+        document.getElementById('Wrong').style.left = "5px";
         
         srceElement.hidden = true
         dotsElement.hidden = false
         
-        document.body.style.backgroundColor = "#cdeeb1";
-        document.getElementById("headA").style = "DISPLAY: none;";
-        document.getElementById("headC").style = "DISPLAY: none;";
-        document.getElementById("headB").style = "DISPLAY: true;";
-
-        document.getElementById("TopicLanding").style = "DISPLAY: none;";
-        document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("QuizButtons").style = "DISPLAY: true;";
-        //document.getElementById("ViewerdButtons").style = "DISPLAY: none;";
-        
-        document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("vscreen").style = "DISPLAY: none;";
-        
-        document.getElementById("slidecontainer").style = "DISPLAY: none;";
-
         trgtElement.innerHTML = trgt
         if ((type == '1') && (imag != '0')) {
             trgtximg = trgt.toLowerCase()
@@ -558,7 +536,7 @@ var Quiz = (function() {
             imgsElement.innerHTML = '<font "size=0"></font>'
         }
         srceElement.innerHTML = srce
-        dotsElement.innerHTML = '<img src="/images/eyelashes.svg"</img>'
+        dotsElement.innerHTML = '<img src="/images/eyelashes_mob.svg"</img>'
         exmpElement.innerHTML = exmp
         scoreNoElement.innerHTML = scoreNo
         scoreOkElement.innerHTML = scoreOk
@@ -576,9 +554,7 @@ var Quiz = (function() {
         var scoreOk = scoreOk+1
         document.getElementById("Right").setAttribute("value", scoreOk);
        
-
         if (nextIndex == keys.length) {
-            
             var por = percentage(scoreOk, keys.length);
             var por = por.toFixed();
             
@@ -620,9 +596,7 @@ var Quiz = (function() {
         document.getElementById("Wrong").setAttribute("value", scoreNo);
         
         if (nextIndex == keys.length) {
-            
             Topic.loadData(myData);
-            
             var por = percentage(scoreOk, keys.length);
             var por = por.toFixed();
             
@@ -666,7 +640,6 @@ var Quiz = (function() {
     }
 })()
 
-
 window.addEventListener('load', function () {
     
     document.getElementById("tts").onclick = function () { window.pronounce(); };
@@ -685,8 +658,8 @@ window.addEventListener('load', function () {
         srceElement.hidden = false
         dotsElement.hidden = true
         document.getElementById("Show").style = "DISPLAY: none;";
-        document.getElementById('Right').style.right = "21%";
-        document.getElementById('Wrong').style.left = "21%";
+        document.getElementById('Right').style.right = "15%";
+        document.getElementById('Wrong').style.left = "15%";
         //document.getElementById('Play').style.right = "5%";
         //document.getElementById('Back').style.left = "21%";
     }

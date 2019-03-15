@@ -170,46 +170,54 @@
  <div id="page">
  
     <span id="headA">
-        <table style="width:100%;margin:0;vertical-align:top;">
+        <table border="0" style="width:100%;margin:0;vertical-align:top;">
         <tr>
         <td>
-            <table class="topic_info">
+            <table border="0" class="topic_info">
             <tr>
                <td>
                    <div id="name" class="topicName">
-                        <p style="font-weight:bold;font-family:Verdana;"></p>
+                        <font style="font-weight:bold;font-family:Verdana;"></font><br><br>
                     </div>
-                      <span id="levl">This topic is intended for <b><font></font></b> students.</span><br>
-                      <span>Contains: </span>
-                      <span id="nwrd"><font></font></span>
-                      <span id="nsnt"><font></font></span>
-                      <span id="naud"><font></font></span>
-                      <span id="nimg"><font></font></span>
+                      
+                    
+
+                </span>
+                
+                <span id="levl">This material is aimed for <b><font></font></b> students.</span><br>
+
+                      <span><b>Notes:</b></span>
+                      <span style="text-align:left" id="nwrd"><font></font></span> and 
+                      <span style="text-align:left" id="nsnt"><font></font></span><br>
+                      <span><b>Media:</b></span>
+                      <span style="text-align:left" id="naud"><font></font></span> and
+                      <span style="text-align:left" id="nimg"><font></font></span>
                   </td>
                 </tr>
                 
                 <tr>
-                  <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span>, <a href=".<?php echo $ViewThisTopic; ?>">Download</a> to translate it into your language.<br>
-                      It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
-                      <span style="text-align:left;"id="autr"> by <font ></font></span>
-                  </td>
-                </tr>
+                <td><b>Translations:</b> <span style="text-align:left;"id="slng"><font ></font></span><br>
+                    It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
+                    <span style="text-align:left;"id="autr"> by <font ></font></span><br><br>
+
+                </td>
+            </tr>
 
             </table>
-            <td class="floating-box-right"><div><a href="mobilebox.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/back_grey.png'></a></div></td>
+            <td class="floating-box-right"><div><a href="mobilebox.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/backgrey.png'></a></div></td>
             </tr>
         </table>
     </span>
 
     <span id="headB" style="visibility:hidden">
-        <table style="width:100%;margin:0;vertical-align:top;">
+        <table border="0" style="width:100%;margin:0;vertical-align:top;">
         <tr>
         <td>
             <table class="flascards_info">
             <tr>
-               <td>
-                      <span id="score_no"> I did not know it  <font color="#C01B4C"></font></span> /
-                      <span id="score_ok">I knew it  <font color="green"></font></span>
+               <td bgcolor="#DCF0C4" style="border-radius:6px;padding:5px;">
+                      <span id="score_no"> I did not know it:  <font></font></span> /
+                      <span id="score_ok">I knew it:  <font></font></span>
                   </td>
                 </tr>
                 <tr>
@@ -221,11 +229,24 @@
             </table>
             <td>
             </td>
-            <td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/back_green.png'></a></div></td>
+            <td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/back.png'></a></div></td>
             </tr>
         </table>
     </span>
+    <span id="TopicLanding">
+        <div class="TestStartBtn" >
+                
+<!--
+                <input title="Pin" src="/images/dl.png" type="image" class="flashdef" style="outline:none;" id="studySet" onclick="StudySet(this);" />
+-->
+                                
+                <input type="image" src="/images/fav.png" class="fav" style="outline:none;" id="FavBtn" onclick="Favesjs(this);" />
+
+                <input title="Studys" type="image" src="/images/lesson.png" class="flashimg" style="outline:none;" id="flashimg" onclick="doFunction();" />
+                <input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" style="outline:none;" id="flashdef" onclick="doFunction();" />
+        </div>
     
+    </span>
     <span id="headC" style="visibility:hidden">
         <table border="0" style="width:100%;margin:0;vertical-align:top;">
         <tr>
@@ -251,32 +272,20 @@
             </table>
             <td>
             </td>
-            <td class="floating-box-right"><div><a href="##" id="ToHomeC"><img src='/images/back_blue.png'></a></div></td>
+            <td class="floating-box-right"><div><a href="##" id="ToHomeC"><img src='/images/back.png'></a></div></td>
             </tr>
         </table>
     </span>
 
     <br>
-    <span id="TopicLanding">
-            <div class="TestStartBtn">
-                
-<!--
-                <input title="Pin" src="/images/dl.png" type="image" class="flashdef" style="outline:none;" id="studySet" onclick="StudySet(this);" />
--->
-                                
-                <input type="image" src="/images/fav.png" class="fav" style="outline:none;" id="FavBtn" onclick="Favesjs(this);" />
-
-                <input title="Studys" type="image" src="/images/lesson.png" class="flashimg" style="outline:none;" id="flashimg" onclick="doFunction();" />
-                <input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" style="outline:none;" id="flashdef" onclick="doFunction();" />
-            </div>
-            <br><br><br><br>
-                
+    
             <div class="note" id="info">
                 <p style="color:#4A4A4A"></p>
             </div>
-    </span>
-
-    <div id="fscreen">
+            
+            
+            
+    <div id="fscreen" >
             
             <div id="imgs">
                 <p></p>
@@ -284,13 +293,13 @@
             
             <a href="##" id="tts"  title="Click to listen" style="text-decoration:none;" onclick="doFunction();">
                 
-                <div class="trgt pronounce" id="trgt">
+                <div class="trgt pronounce" id="trgt" style="font-weight: bold;">
                     <h1 style="color:#4A4A4A"></h1>
                 </div>
 
             </a>
        
-            <div id="srce">
+            <div id="srce" style="font-weight:normal;">
                 <h2 style="color:#758571;"></h2>
             </div>
             <div id="dots">
@@ -303,21 +312,21 @@
             
         </div>
 
-        <div id="vscreen">
+        <div id="vscreen" >
             
-            <div id="v_imgs">
+            <div id="v_imgs" background="green">
                 <p></p>
             </div>
             
             <a href="##" id="vtts" title="Click to listen" style="text-decoration:none;" onclick="doFunction();">
 
-                <div class="grmr pronounce" id="grmr">
+                <div class="grmr pronounce" id="grmr" style="font-weight: bold;">
                     <h1 style="color:#4A4A4A"></h1>
                 </div>
                 
             </a>
             
-            <div id="v_srce">
+            <div id="v_srce" style="font-weight:normal;">
                 <h2 style="color:#79848F;"></h2>
             </div>
 
@@ -353,7 +362,7 @@
     
 </body>
     
-<script type="text/javascript" src="/js/flashcard.js"></script>
+<script type="text/javascript" src="/js/view_mob.js"></script>
 <script>
     var div = document.getElementById("dom-target");
     var myData = div.textContent;
