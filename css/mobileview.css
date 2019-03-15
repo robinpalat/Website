@@ -101,6 +101,10 @@ div {
     font-size: 14px;
 }
 
+#info {
+
+}
+
 #dots {
     margin: 0 auto;
     width: 80%;
@@ -300,20 +304,20 @@ a.cursor {cursor:hand;}
 
 #Wrong {
     position: fixed;
-    bottom: 5px;
+    bottom: 10px;
     left: 5px; 
 }
 
 #Show {
     position: fixed;
-    bottom: 5px;
+    bottom: 10px;
     right: 36%;
     left: 36%;
 }
 
 #Right {
     position: fixed;
-    bottom: 5px;
+    bottom: 10px;
     right: 5px;
 }
 
@@ -345,9 +349,10 @@ body > button {
   cursor:hand;
   border-radius: 6px;
   background-size:32px 32px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.btnShow:hover {
+.btnShow:active {
   color: #3D8134;
 }
 
@@ -363,9 +368,10 @@ body > button {
   border: 0px solid #436C2B;
   border-radius: 8px;
   transition: all 0.2s ease 0s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.btnOk:hover {
+.btnOk:active {
   color: #E6E6FA;
   background: #66A42F;
   transition: all 0.4s ease 0s;
@@ -383,9 +389,10 @@ body > button {
   border-radius: 8px;
   border: 0px solid #436C2B;
   transition: all 0.2s ease 0s;
+box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.btnNo:hover {
+.btnNo:active {
   color: #E6E6FA;
   background: #C55171;
   transition: all 0.4s ease 0s;
@@ -404,7 +411,7 @@ body > button {
   transition: all 0.2s ease 0s;
 }
 
-.btnNext:hover {
+.btnNext:active {
   color: #E6E6FA;
   background: #98ccfd;
   transition: all 0.4s ease 0s;
@@ -417,7 +424,7 @@ body > button {
   opacity: 1;
 }
 
-.btnPlay:hover {
+.btnPlay:active {
   vertical-align: top;
   border-radius: 6px;
   opacity: 0.7;
@@ -434,9 +441,10 @@ body > button {
   border: 0px solid #436C2B;
   border-radius: 8px;
   transition: all 0.2s ease 0s;
+  
 }
 
-.btnBack:hover {
+.btnBack:active {
   color: #E6E6FA;
   background: #98ccfd;
   font-weight: bold;
@@ -462,7 +470,7 @@ body > button {
   transition: opacity .2s;
 }
 
-.slider:hover {
+.slider:active {
   opacity: o.7;
 }
 

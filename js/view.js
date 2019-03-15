@@ -38,7 +38,7 @@ var Topic = (function() {
         
         var subjectElement = document.querySelector("#name").children[0]
         subjectElement.innerHTML = data.name
-        var subjectElement = document.querySelector("#info").children[0]
+        var subjectElement = document.querySelector("#info_note").children[0]
         subjectElement.innerHTML = data.info
         var subjectElement = document.querySelector("#autr").children[0]
         subjectElement.innerHTML = data.autr
@@ -542,7 +542,7 @@ var Quiz = (function() {
             imgsElement.innerHTML = '<font "size=0"></font>'
         }
         srceElement.innerHTML = srce
-        dotsElement.innerHTML = '<img src="/images/eyelashes_mob.svg"</img>'
+        dotsElement.innerHTML = '<img src="/images/eyelashes.svg"</img>'
         exmpElement.innerHTML = exmp
         scoreNoElement.innerHTML = scoreNo
         scoreOkElement.innerHTML = scoreOk

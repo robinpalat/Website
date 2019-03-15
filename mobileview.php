@@ -182,7 +182,7 @@
 
                 </span>
                 
-                <span id="levl">This material is aimed for <b><font></font></b> students.</span><br>
+                <span id="levl">This material is aimed for <b><font></font></b> students.</span><br><br>
 
                       <span><b>Notes:</b></span>
                       <span style="text-align:left" id="nwrd"><font></font></span> and 
@@ -214,8 +214,8 @@
             <table class="flascards_info">
             <tr>
                <td>
-                    <span style="background-color:#DE939A;border-radius:6px;padding:5px;" id="score_no"> I did not know it:  <font></font></span>  &nbsp;&nbsp;
-                    <span style="background-color:#A2D07D;border-radius:6px;padding:5px;" id="score_ok">I knew it:  <font></font></span>
+                    <span style="background-color:#DE939A;border-radius:6px;padding:5px;box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);" id="score_no"> I did not know it:  <font></font></span>  &nbsp;&nbsp;
+                    <span style="background-color:#A2D07D;border-radius:6px;padding:5px;box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);" id="score_ok">I knew it:  <font></font></span>
                 </td>
             </tr>
                 
@@ -244,6 +244,17 @@
                 <input title="Studys" type="image" src="/images/lesson.png" class="flashimg" style="outline:none;" id="flashimg" onclick="doFunction();" />
                 <input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" style="outline:none;" id="flashdef" onclick="doFunction();" />
         </div>
+        
+            <div id="div_to_info">
+                <p></p>
+            </div>
+        
+            <div class="note" id="info_note">
+                <p style="color:#4A4A4A;font-size:10px;font-size:1.00vw;"></p>
+            </div>
+        
+        
+        
     
     </span>
     <span id="headC" style="visibility:hidden">
@@ -277,15 +288,9 @@
     </span>
 
     <br>
-    <div id="div_to_info">
-        <p></p>
-    </div>
 
-    <div class="note" id="info"  style="text-align:center;float: left;position:absolute">
-        <p style="color:#4A4A4A;text-align: left;float: left;position:absolute"></p>
 
-    </div>
-               
+       
     <div id="fscreen" >
             
             <div id="imgs">

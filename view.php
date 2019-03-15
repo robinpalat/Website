@@ -174,17 +174,17 @@
         <td>
             <table class="topic_info">
             <tr>
-               <td>
+                <td>
                    <div id="name" class="topicName">
                         <h1 style="font-weight:bold;font-family:Verdana;font-size:20px;font-size:1.50vw;"></h1>
                     </div>
-                      <span id="levl">This topic is intended for <b><font></font></b> students.</span><br>
-                      <span>Contains: </span>
-                      <span id="nwrd"><font></font></span>
-                      <span id="nsnt"><font></font></span>
-                      <span id="naud"><font></font></span>
-                      <span id="nimg"><font></font></span>
-                  </td>
+                        <span id="levl">This topic is intended for <b><font></font></b> students.</span><br>
+                        <span>Contains: </span>
+                        <span id="nwrd"><font></font></span>
+                        <span id="nsnt"><font></font></span>
+                        <span id="naud"><font></font></span>
+                        <span id="nimg"><font></font></span>
+                    </td>
                 </tr>
                 
                 <tr>
@@ -205,12 +205,12 @@
         <tr>
         <td>
             <table class="flascards_info">
-            <tr>
-               <td bgcolor="#DCF0C4" style="border-radius:6px;padding:8px;">
-                      <span id="score_no"> I did not know it:  <font></font></span> /
-                      <span id="score_ok">I knew it:  <font></font></span>
-                  </td>
-                </tr>
+                <tr>
+               <td>
+                    <span style="background-color:#DE939A;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_no"> I did not know it:  <font></font></span>  &nbsp;&nbsp;
+                    <span style="background-color:#A2D07D;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_ok">I knew it:  <font></font></span>
+                </td>
+            </tr>
                 <tr>
                   <td>
                       <span style="text-align:left;"><font></font></span>
@@ -270,7 +270,7 @@
             </div>
             <br><br><br><br>
                 
-            <div class="note" id="info">
+            <div class="note" id="info_note">
                 <p style="color:#4A4A4A;font-size:10px;font-size:1.00vw;"></p>
             </div>
     </span>

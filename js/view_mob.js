@@ -37,10 +37,10 @@ var Topic = (function() {
         
         var subjectElement = document.querySelector("#name").children[0]
         subjectElement.innerHTML = data.name
-        var subjectElement = document.querySelector("#info").children[0]
+        var subjectElement = document.querySelector("#info_note").children[0]
         
         var _info = data.info;
-        var _info = _info.replace('width=\"560\" height=\"315\"', 'width=\"260\" height=\"115\"')
+        _info = _info.replace('width=\"560\" height=\"315\"', 'width=\"260\" height=\"115\"')
         
         if ( _info ) {
             var subjectElement = document.querySelector("#div_to_info").children[0]
@@ -87,7 +87,7 @@ var Topic = (function() {
         document.getElementById("headB").style = "DISPLAY: none;";
         document.getElementById("headC").style = "DISPLAY: none;";
         document.getElementById("TopicLanding").style = "DISPLAY: true;";
-        document.getElementById("info").style = "DISPLAY: true;";
+        document.getElementById("info_note").style = "DISPLAY: true;";
         document.getElementById("fscreen").style = "DISPLAY: none;";
         document.getElementById("vscreen").style = "DISPLAY: none;";
         document.getElementById("QuizButtons").style = "DISPLAY: none;";
@@ -153,7 +153,7 @@ var Viewer = (function() {
         document.getElementById("headB").style = "DISPLAY: none;";
         document.getElementById("headC").style = "DISPLAY: true;";
         document.getElementById("TopicLanding").style = "DISPLAY: none;";
-        document.getElementById("info").style = "DISPLAY: none;";
+        document.getElementById("info_note").style = "DISPLAY: none;";
         document.getElementById("fscreen").style = "DISPLAY: none;";
         document.getElementById("vscreen").style = "DISPLAY: true;";
         document.getElementById("slidecontainer").style = "DISPLAY: true;";
@@ -433,7 +433,7 @@ var Quiz = (function() {
         document.getElementById("headC").style = "DISPLAY: none;";
         document.getElementById("headB").style = "DISPLAY: true;";
         document.getElementById("TopicLanding").style = "DISPLAY: none;";
-        document.getElementById("info").style = "DISPLAY: none;";
+        document.getElementById("info_note").style = "DISPLAY: none;";
         document.getElementById("fscreen").style = "DISPLAY: true;";
         document.getElementById("vscreen").style = "DISPLAY: none;";
         document.getElementById("slidecontainer").style = "DISPLAY: none;";
