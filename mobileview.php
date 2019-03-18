@@ -5,7 +5,7 @@
         <meta name="description" content="Flashcards">
         <link rel="stylesheet" href="/css/mobileview.css">
         <link rel="stylesheet" href="/css/fa/css/font-awesome.css">
-        <link rel="image_src" href="http://idiomind.net/images/zwlogo.png" / ><!--formatted-->
+        <link rel="image_src" href="/images/logo.png" / ><!--formatted-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="/css/sweetalert.css">
         <script type="text/javascript"> //  Loading gif
@@ -140,7 +140,7 @@
         $uplang = ucfirst($lang);
         $precatg = htmlspecialchars($_GET["c"]);
         $set = htmlspecialchars($_GET["set"]);
-        //Get category of topic from remote json file (if came empty from favorites)
+        //Get topic's category from remote json file (favorites)
         if ($precatg == 'fav') {
             $data = file_get_contents ('./share/'.$uplang.'/topics.json');
             $json = json_decode($data, true);
@@ -233,14 +233,8 @@
         </table>
     </span>
     <span id="TopicLanding">
-        <div class="TestStartBtn" >
-                
-<!--
-                <input title="Pin" src="/images/dl.png" type="image" class="flashdef" style="outline:none;" id="studySet" onclick="StudySet(this);" />
--->
-                                
+        <div class="TestStartBtn" >           
                 <input type="image" src="/images/fav.png" class="fav" style="outline:none;" id="FavBtn" onclick="Favesjs(this);" />
-
                 <input title="Studys" type="image" src="/images/lesson.png" class="flashimg" style="outline:none;" id="flashimg" onclick="doFunction();" />
                 <input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" style="outline:none;" id="flashdef" onclick="doFunction();" />
         </div>
@@ -250,12 +244,9 @@
             </div>
         
             <div class="note" id="info_note">
-                <p style="color:#4A4A4A;font-size:10px;font-size:1.00vw;"></p>
+                <p style="color:#4A4A4A;"></p>
             </div>
-        
-        
-        
-    
+
     </span>
     <span id="headC" style="visibility:hidden">
         <table border="0" style="width:100%;margin:0;vertical-align:top;">

@@ -56,7 +56,7 @@
                 var div = document.getElementById('favlists');
                 div.innerHTML = "<h1 style='text-align:left'><i class='fa fa-thumb-tack' aria-hidden='true'></i> Pinned</h1>";
                 for (fav of faves) {
-                    div.innerHTML = div.innerHTML + '<a class="box" href="/mobileview.php?l=english&c=fav&set='+fav+'">'+fav+'</a><br>';
+                    div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/mobileview.php?l=<?=$langdir?>&c=fav&set='+fav+'">'+fav+'</a><br><br>';
                 }
             }
         }

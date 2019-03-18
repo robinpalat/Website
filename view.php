@@ -176,7 +176,7 @@
                    <div id="name" class="topicName">
                         <h1 style="font-weight:bold;font-family:Verdana;font-size:20px;font-size:1.50vw;"></h1>
                     </div>
-                        <span id="levl">This topic is intended for <b><font></font></b> students.</span><br>
+                        <span id="levl">This topic is aimed for <b><font></font></b> students.</span><br>
                         <span>Contains: </span>
                         <span id="nwrd"><font></font></span>
                         <span id="nsnt"><font></font></span>
@@ -273,7 +273,7 @@
             <br><br><br><br>
                 
             <div class="note" id="info_note">
-                <p style="color:#4A4A4A;font-size:10px;font-size:1.00vw;"></p>
+                <p style="color:#4A4A4A;"></p>
             </div>
     </span>
 

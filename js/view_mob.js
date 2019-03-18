@@ -42,12 +42,13 @@ var Topic = (function() {
         var _info = data.info;
         _info = _info.replace('width=\"560\" height=\"315\"', 'width=\"260\" height=\"115\"')
         
-        if ( _info ) {
+        subjectElement.innerHTML = _info
+        
+        if ( _info != " " ) {
             var subjectElement = document.querySelector("#div_to_info").children[0]
             subjectElement.innerHTML = '<hr>'
         }
 
-        subjectElement.innerHTML = _info
         var subjectElement = document.querySelector("#autr").children[0]
         subjectElement.innerHTML = data.autr
         var subjectElement = document.querySelector("#nwrd").children[0]
