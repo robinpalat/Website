@@ -73,8 +73,6 @@
             //var lessonChk = getCookie('topic_study');
             //if(lessonChk !== tpc) { el.src='/images/pin.png'; }
             //else { el.src='/images/unpin.png'; }
-            
-            
         }
         </script>
          
@@ -207,8 +205,8 @@
             <table class="flascards_info">
                 <tr>
                <td>
-                    <span style="background-color:#DE939A;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_no"> I did not know it:  <font></font></span>  &nbsp;&nbsp;
-                    <span style="background-color:#A2D07D;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_ok">I knew it:  <font></font></span>
+                    <span style="background-color:#D47D85;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_no"> I did not know it:  <font></font></span>  &nbsp;&nbsp;
+                    <span style="background-color:#86C754;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_ok">I knew it:  <font></font></span>
                 </td>
             </tr>
                 <tr>

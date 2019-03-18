@@ -116,6 +116,7 @@ div {
     font-family: 'verdana', 'roboto'; 
     border-collapse: collapse;
 	font-family: "verdana";
+    margin: 2 0 0 5;
 }
 
 .topic_info a {
@@ -174,7 +175,7 @@ div {
 .TestStartBtn {
 	   text-align: left;
 	   vertical-align:top;
-       margin: 0 0 0 0;
+        margin: 0 0 0 5;
 	}
 	
 .pronounce {

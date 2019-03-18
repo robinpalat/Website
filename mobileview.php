@@ -177,27 +177,27 @@
             <tr>
                <td>
                    <div id="name" class="topicName">
-                        <font style="font-weight:bold;font-family:Verdana;"></font><br><br>
+                        <font style="font-weight:bold;font-family:Verdana;"></font><br>
                     </div>
+                    <br>
+                        </span>
+                        <span id="levl">This material is aimed for <b><font></font></b> students.</span><br>
+                        <div style="text-align:left;padding-top:4"><b>Contains:</b></div>
+                        <span style="text-align:left" id="nwrd"><font></font></span> and 
+                        <span style="text-align:left" id="nsnt"><font></font></span><br>
+                        <div style="text-align:left" id="naud"><font></font></div>
+                        <div style="text-align:left" id="nimg"><font></font></div>
+                        <div style="text-align:left;padding-top:4"><b>Translations:</b></div>
+                        <div style="text-align:left" id="slng"><font></font></div>
+                 
+                        <div style="text-align:left;padding-top:4;">It was uploaded on <span style="text-align:left;"id="dteu"><font></font><span style="text-align:left;"id="autr"> by <font ></font></span></div>
 
-                </span>
-                
-                <span id="levl">This material is aimed for <b><font></font></b> students.</span><br><br>
-
-                      <span><b>Notes:</b></span>
-                      <span style="text-align:left" id="nwrd"><font></font></span> and 
-                      <span style="text-align:left" id="nsnt"><font></font></span><br>
-                      <span><b>Media:</b></span>
-                      <span style="text-align:left" id="naud"><font></font></span> and
-                      <span style="text-align:left" id="nimg"><font></font></span>
-                  </td>
+                    </td>
                 </tr>
                 
                 <tr>
-                <td><b>Translations:</b> <span style="text-align:left;"id="slng"><font ></font></span><br>
-                    It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
-                    <span style="text-align:left;"id="autr"> by <font ></font></span><br><br>
-
+                <td>
+                  <br>
                 </td>
             </tr>
 
