@@ -352,11 +352,11 @@
     },
 
     // Clicked on the slide
-    clickSlide: "close",
+    clickSlide: false,
 
     // Clicked on the background (backdrop) element;
     // if you have not changed the layout, then most likely you need to use `clickSlide` option
-    clickOutside: "close",
+    clickOutside: false,
 
     // Same as previous two, but for double click
     dblclickContent: false,
@@ -373,7 +373,7 @@
         return current.type === "image" ? "toggleControls" : false;
       },
       clickSlide: function(current, event) {
-        return current.type === "image" ? "toggleControls" : "close";
+        return current.type === "image" ? "toggleControls" : false;
       },
       dblclickContent: function(current, event) {
         return current.type === "image" ? "zoom" : false;
@@ -2755,6 +2755,12 @@
       var done = function() {
         self.cleanUp(e);
       };
+      
+      
+      $(document).ready(function() { // MOD
+        ListFavs();
+      });
+
 
       if (self.isClosing) {
         return false;
@@ -4950,7 +4956,7 @@
           "</button>"
       },
       fullScreen: {
-        autoStart: false
+        autoStart: true
       }
     });
 

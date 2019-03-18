@@ -173,37 +173,35 @@
         <table border="0" style="width:100%;margin:0;vertical-align:top;">
             <tr>
             <td>
-                <table border="0" class="topic_info">
+                <table class="topic_info">
                     <tr>
                         <td>
-                            <div id="name" class="topicName">
-                                <font style="font-weight:bold;font-family:Verdana;"></font><br>
+                           <div id="name" class="topicName">
+                                <font style="font-weight:bold;font-family:Verdana;"></font>
                             </div>
-                            <br>
-                                
-                                <span id="levl">This material is aimed for <b><font></font></b> students.</span><br>
-                                <div style="text-align:left;padding-top:4"><b>Contains:</b></div>
-                                <span style="text-align:left" id="nwrd"><font></font></span> and 
-                                <span style="text-align:left" id="nsnt"><font></font></span><br>
-                                <div style="text-align:left" id="naud"><font></font></div>
-                                <div style="text-align:left" id="nimg"><font></font></div>
-                                <div style="text-align:left;padding-top:4"><b>Translations:</b></div>
-                                <div style="text-align:left" id="slng"><font></font></div>
-                                <div style="text-align:left;padding-top:4;">It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span>
-                                <span style="text-align:left;"id="autr"> by <font ></font></span></div>
-                            </td>
-                        </tr>
-                        <tr>
-                        <td>
-                            <br>
+                            <br> <br>
+                            <span id="levl">This topic is aimed for <b><font></font></b> students.</span><br>
+                            <span>Contains: </span>
+                            <span id="nwrd"><font></font></span>
+                            <span id="nsnt"><font></font></span>
+                            <span id="naud"><font></font></span>
+                            <span id="nimg"><font></font></span>
                         </td>
                     </tr>
+                    <tr>
+                      <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span> <br>
+                          It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
+                          <span style="text-align:left;"id="autr"> by <font ></font>.
+                          </span>
+                      </td>
+                    </tr>
                 </table>
+                
                 <td class="floating-box-right"><div><a href="mobilebox.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/backgrey.png'></a></div></td>
                 </tr>
         </table>
     </span>
-
+<br> 
     <span id="headB" style="visibility:hidden">
         <table border="0" style="width:100%;margin:0;vertical-align:top;">
         <tr>

@@ -188,7 +188,7 @@
                       <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span> <br>
                           It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
                           <span style="text-align:left;"id="autr"> by <font ></font>.
-                          - <a href=".<?php echo $ViewThisTopic; ?>">Download</a> 
+                           <b><a href=".<?php echo $ViewThisTopic; ?>">Download</a></b>
                           </span>
                       </td>
                     </tr>

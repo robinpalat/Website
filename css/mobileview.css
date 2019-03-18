@@ -37,7 +37,7 @@ div {
 
 
 .topicName{ 
-	font-size: 18px;
+	font-size: 19px;
 	font-weight: 40; 
 	text-align: left;
 	width: 100%;
@@ -104,9 +104,8 @@ div {
 .topic_info {
     font-size: 12px;
     color: #575757;
-    font-family: 'verdana', 'roboto'; 
+    font-family: 'arial', 'roboto'; 
     border-collapse: collapse;
-	font-family: "verdana";
     margin: 2 0 0 2;
 }
 
@@ -306,20 +305,20 @@ a.cursor {cursor:hand;}
 
 #Wrong {
     position: fixed;
-    bottom: 10px;
+    bottom: 12px;
     left: 5px; 
 }
 
 #Show {
     position: fixed;
-    bottom: 10px;
+    bottom: 12px;
     right: 36%;
     left: 36%;
 }
 
 #Right {
     position: fixed;
-    bottom: 10px;
+    bottom: 12px;
     right: 5px;
 }
 
@@ -344,7 +343,7 @@ body > button {
   font-size: 10px;
   text-align: center;
   color: #4F634B;
-  background: #DCF0C4;
+  background: #F4FFE6;
   width: 28%;
   height: 50px;
   border: 0px;

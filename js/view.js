@@ -43,13 +43,17 @@ var Topic = (function() {
         var subjectElement = document.querySelector("#autr").children[0]
         subjectElement.innerHTML = data.autr
         var subjectElement = document.querySelector("#nwrd").children[0]
-        subjectElement.innerHTML =  data.nwrd + ' words,'
+        if ( data.nwrd == 1) { w = data.nwrd + ' Word,' } else { w = data.nwrd + ' Words,' }
+        subjectElement.innerHTML =  w
         var subjectElement = document.querySelector("#nsnt").children[0]
-        subjectElement.innerHTML = data.nsnt + ' sentences,'
+        if ( data.nsnt == 1) { s = data.nsnt + ' Sentence,' } else { s = data.nsnt + ' Sentences,' }
+        subjectElement.innerHTML = s
         var subjectElement = document.querySelector("#nimg").children[0]
-        subjectElement.innerHTML = data.nimg + ' images.'
+        if ( data.nimg == 1) { i = data.nimg + ' Image.' } else { i = data.nimg + ' Images.' }
+        subjectElement.innerHTML = i
         var subjectElement = document.querySelector("#naud").children[0]
-        subjectElement.innerHTML = data.naud + ' audio files and'
+        if ( data.naud == 1) { a = data.naud + ' Audio file and' } else { a = data.naud + ' Audio files and' }
+        subjectElement.innerHTML = a
         var subjectElement = document.querySelector("#dteu").children[0]
         subjectElement.innerHTML = data.dteu
         var subjectElement = document.querySelector("#slng").children[0]

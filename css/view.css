@@ -111,9 +111,8 @@ div {
 .topic_info {
     font-size: 13px;
     color: #575757;
-    font-family: 'verdana', 'roboto'; 
+    font-family: 'arial', 'roboto'; 
     border-collapse: collapse;
-	font-family: "verdana";
     margin: 8 0 0 15;
 }
 
