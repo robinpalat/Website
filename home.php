@@ -69,7 +69,7 @@
                 var div = document.getElementById('favlists');
                 div.innerHTML = "<h1 style='text-align:right'>Pinned <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
                 for (fav of faves) {
-                    div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/view.php?l=<?=$langdir?>&c=fav&set='+fav+'">'+fav+'</a><br>';
+                    div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/view.php?l=<?=$langdir?>&c=fav&set='+fav+'">'+fav+'</a><br><br>';
                 }
             }
         }
@@ -78,7 +78,6 @@
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/fancybox/jquery.fancybox.js"></script>
 
-    
     <script type="text/javascript">
         
     function underc(){
@@ -259,7 +258,7 @@
   
 </body>
 
- <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function() {
         
             function getCookie(cname) {
@@ -382,8 +381,8 @@
         //<div id=\"name\"></div> / lessonChk
         var showChar = 100;
         var ellipsestext = "...";
-        var moretext = "more";
-        var lesstext = ""; // less
+        var moretext = " More";
+        var lesstext = " Less"; // less
         $('.more').each(function() {
             var content = "This web site is a work in progress, still with holes and place holders. Not all sections are complete - many have not even been started yet. Not all links work.  If you've arrived on this site, feel free to enjoy what's here, and check back for further additions if you wish, knowing it will take some time before the site is finished."
             

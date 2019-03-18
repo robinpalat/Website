@@ -168,61 +168,56 @@
  
     <span id="headA">
         <table style="width:100%;margin:0;vertical-align:top;">
-        <tr>
-        <td>
-            <table class="topic_info">
             <tr>
                 <td>
-                   <div id="name" class="topicName">
-                        <h1 style="font-weight:bold;font-family:Verdana;font-size:20px;font-size:1.50vw;"></h1>
-                    </div>
-                        <span id="levl">This topic is aimed for <b><font></font></b> students.</span><br>
-                        <span>Contains: </span>
-                        <span id="nwrd"><font></font></span>
-                        <span id="nsnt"><font></font></span>
-                        <span id="naud"><font></font></span>
-                        <span id="nimg"><font></font></span>
-                    </td>
-                </tr>
-                
-                <tr>
-                  <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span> <br>
-                      It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
-                      <span style="text-align:left;"id="autr"> by <font ></font>.    
-                      
-                      - <a href=".<?php echo $ViewThisTopic; ?>">Download</a> 
-                      
-                      </span>
-                  </td>
-                </tr>
-
-            </table>
-            <td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/back_grey.png'></a></div></td>
+                <table class="topic_info">
+                    <tr>
+                        <td>
+                           <div id="name" class="topicName">
+                                <h1 style="font-weight:bold;font-family:Verdana;font-size:20px;font-size:1.50vw;"></h1>
+                            </div>
+                            <span id="levl">This topic is aimed for <b><font></font></b> students.</span><br>
+                            <span>Contains: </span>
+                            <span id="nwrd"><font></font></span>
+                            <span id="nsnt"><font></font></span>
+                            <span id="naud"><font></font></span>
+                            <span id="nimg"><font></font></span>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>Translations: <span style="text-align:left;"id="slng"><font ></font></span> <br>
+                          It was uploaded on <span style="text-align:left;"id="dteu"><font></font></span> 
+                          <span style="text-align:left;"id="autr"> by <font ></font>.
+                          - <a href=".<?php echo $ViewThisTopic; ?>">Download</a> 
+                          </span>
+                      </td>
+                    </tr>
+                </table>
+                <td class="floating-box-right"><div><a href="box.php?lang=<?=$lang?>&category=<?=$backcatg?>" return false;><img title='Go back to "<?=$backcatg?>"' src='/images/back_grey.png'></a></div></td>
             </tr>
         </table>
     </span>
 
     <span id="headB" style="visibility:hidden">
         <table style="width:100%;margin:0;vertical-align:top;">
-        <tr>
-        <td>
-            <table class="flascards_info">
-                <tr>
-               <td>
-                    <span style="background-color:#D47D85;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_no"> I did not know it:  <font></font></span>  &nbsp;&nbsp;
-                    <span style="background-color:#86C754;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_ok">I knew it:  <font></font></span>
+            <tr>
+                <td>
+                <table class="flascards_info">
+                    <tr>
+                        <td>
+                        <span style="background-color:#D47D85;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_no"> I did not know it:  <font></font></span>  &nbsp;&nbsp;
+                        <span style="background-color:#86C754;border-radius:4px;padding:5px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);" id="score_ok">I knew it:  <font></font></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="text-align:left;"><font></font></span>
+                        </td>
+                    </tr>
+                </table>
+                <td>
                 </td>
-            </tr>
-                <tr>
-                  <td>
-                      <span style="text-align:left;"><font></font></span>
-                  </td>
-                </tr>
-
-            </table>
-            <td>
-            </td>
-            <td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/back_green.png'></a></div></td>
+                <td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/back_green.png'></a></div></td>
             </tr>
         </table>
     </span>
@@ -234,21 +229,19 @@
             <table border="0" class="viewer_info">
                 <tr>
                     <td>
-                      <span style="text-align:left;"><font></font></span>
-                      <span class="slidecontainer" id="slidecontainer" style="visibility:hidden;">
+                        <span style="text-align:left;"><font></font></span>
+                        <span class="slidecontainer" id="slidecontainer" style="visibility:hidden;">
                         <input type="range" min="1" max="200" value="1" class="slider" id="item_slider">
                         </span>
                     </td>
                 </tr>
-                
                 <tr>
                     <td style="visibility:hidden">
-                      <span id="total"> total <font color="#1B5EC0"></font></span> /
-                      <span id="item"><font color="#464B5F">1</font></span> 
-                       
+                        <span id="total"> total <font color="#1B5EC0"></font></span> /
+                        <span id="item"><font color="#464B5F">1</font></span> 
                     </td>
                 </tr>
-            </td>
+                </td>
             </table>
             <td>
             </td>
@@ -266,12 +259,10 @@
 -->
                                 
                 <input type="image" src="/images/fav.png" class="fav" style="outline:none;" id="FavBtn" onclick="Favesjs(this);" />
-
                 <input title="Studys" type="image" src="/images/lesson.png" class="flashimg" style="outline:none;" id="flashimg" onclick="doFunction();" />
                 <input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" style="outline:none;" id="flashdef" onclick="doFunction();" />
             </div>
             <br><br><br><br>
-                
             <div class="note" id="info_note">
                 <p style="color:#4A4A4A;"></p>
             </div>
@@ -288,7 +279,6 @@
                 <div class="trgt pronounce" id="trgt">
                     <h1 style="color:#4A4A4A"></h1>
                 </div>
-
             </a>
        
             <div id="srce">

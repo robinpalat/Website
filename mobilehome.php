@@ -175,7 +175,7 @@
                 <td ></td>
                 <td ></td>
                 <td align="right">
-                    <i class="fa fa-user-o" aria-hidden="true"></i> <a style="color:#FFFFFF;" class="userbutton" onclick="underc();"><?= $use ?></a>
+                    <i class="fa fa-user-o" aria-hidden="true"></i><a style="color:#FFFFFF;" class="userbutton" onclick="underc();"><?= $use ?></a>
                 </td>
             </table>
             <br>
@@ -197,7 +197,6 @@
                 <tr>
                     <td valign="top">
                         <div class="fav-lists" id="favlists"></div>   
-                            
                         <div class="feed-lists">
                             <h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest published</h1>
                             <?php
@@ -226,7 +225,7 @@
                             $upcate = ucfirst($cate);
                             $catee = strtoupper($cate);
                             //title=\"".$catee."\" 
-                            echo "<a data-fancybox data-type=\"iframe\" href=\"/mobilebox.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"btn btn-primary\" data-small-btn=\"true\" ><div class=\"floating-box\" ><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
+                            echo "<a data-fancybox data-type=\"iframe\" href=\"/mobilebox.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"btn btn-primary\" data-small-btn=\"true\"><div class=\"floating-box\" ><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
                         }
                     }
                 }
@@ -363,12 +362,12 @@
             }
         })()
         
-        Topic.loadData(myData)
+        //Topic.loadData(myData)
         //<div id=\"name\"></div> / lessonChk
         var showChar = 100;
         var ellipsestext = "...";
-        var moretext = "more";
-        var lesstext = ""; // less
+        var moretext = " More";
+        var lesstext = " Less"; // less
         $('.more').each(function() {
             var content = "This web site is a work in progress, still with holes and place holders. Not all sections are complete - many have not even been started yet. Not all links work.  If you've arrived on this site, feel free to enjoy what's here, and check back for further additions if you wish, knowing it will take some time before the site is finished."
             
