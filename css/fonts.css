@@ -300,6 +300,32 @@ p.form_table_error_p {
 	line-height: 24px;
 }
 
+tag {
+margin-left: 2px;
+	margin-right: 2px;
+    
+}
+
+t {
+	font-weight: normal;
+	text-decoration: none;
+    font-family: Verdana;
+    font-size: 9px;
+	color: #404040;
+    margin:0 ! important;
+    vertical-align:center;
+    padding-left: 2px;
+	padding-right: 2px;
+}
+
+pages {
+	font-weight: normal;
+    font-family: Georgia, serif;
+    font-size: 14px;
+	color: #404040;
+}
+
+
 textarea {
 	padding: 0;
 	padding-top: 1px;

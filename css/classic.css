@@ -56,50 +56,50 @@ div.empty_navigation_subcategory_bar {
 	padding-top:18px;
 }
 
-
 div.content {
-
 	background: #f3f3f3;
-
 	width: 690px;
-  margin-top: 10px;
-  margin-bottom: 25px;
-  margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    margin-left: 0px;
 	padding:15px;
 	float:left;
 	text-align:left;
 }
 
 div.right_bar {
-
 	text-align:left;
-
 	width: 265px;
 	float:right;
-
 	font-family: Georgia, serif;
 	font-size: 16px;
 	font-weight: normal;
 	line-height: 18px;
 }
+hr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+
+
 
 div.box {
 	padding:10px;
-
 	background: #f3f3f3;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
 	position: relative;
 }
 
 div.space_box {
 	padding:10px;
-
 	background: #fff;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
 	position: relative;
 }
 
@@ -112,6 +112,7 @@ div.footer {
 	position: relative;
 	width: 1000px;
 }
+
 
 img.figure {
   background: #d0d0d0;

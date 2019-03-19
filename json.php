@@ -3,7 +3,7 @@
 $lang = htmlspecialchars($_GET["lang"]);
 $uplang = ucfirst($lang);
 
- echo './share/'.$uplang.'/topics.json';
+ echo '/share/'.$uplang.'/topics.json';
 
 function dir2json($dir)
 {
