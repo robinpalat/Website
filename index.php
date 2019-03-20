@@ -84,7 +84,7 @@
                 </p>
                 <br>
                 <h2>
-                    Here are some features it has
+                    Here are some features
                 </h2>
                 
                 <p>
