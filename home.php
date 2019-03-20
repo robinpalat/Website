@@ -199,7 +199,10 @@
 
             <!-- Note -->
             <div class="sentenceweek">
-                <div class="sentencew-content"><h3 style="color:#6B6664;">Please note</h3>
+                <div class="sentencew-content">
+<!--
+                    <h3 style="color:#6B6664;">Please note</h3>
+-->
                     <div class="comment more"><br></div><table id="excelDataTable" border="0"></table>
                 </div>
             </div>
@@ -384,7 +387,7 @@
         var moretext = " More";
         var lesstext = " Less"; // less
         $('.more').each(function() {
-            var content = "This web site is a work in progress, still with holes and place holders. Not all sections are complete - many have not even been started yet. Not all links work.  If you've arrived on this site, feel free to enjoy what's here, and check back for further additions if you wish, knowing it will take some time before the site is finished."
+            var content = "Please note: this web site is a work in progress. Not all sections are complete - many have not even been started yet. Not all links work.  If you've arrived on this site, feel free to enjoy what's here, and check back for further additions if you wish, knowing it will take some time before the site is finished."
             
             if(content.length > showChar) {
                 var c = content.substr(0, showChar);
