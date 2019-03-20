@@ -16,7 +16,7 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
 <language>".$language."</language>
 <lastBuildDate>".$lastupdate."</lastBuildDate>
 <generator>".$generator."</generator>";
-     
+
         $display = array('txt');
         $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
         $data = array();
@@ -34,20 +34,30 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
         foreach ($data as $key => $value) {
            //$time = date('Y-m-d', $value['time']);
 
-            $topic_path = $value[filename];
+            $msg_path = $value[filename];
             clearstatcache() ;
-                    $date_info = lstat($topic_path);
-                    $pre_name = basename($topic_path);
+                    $date_info = lstat($msg_path);
+                    $pre_name = basename($msg_path);
                     $title = substr($pre_name, 0, strpos($pre_name, '.txt'));
                     $dir = basename($dir);
                     $name = $title;
-                    $linkview = $topic_path;
+                    $category = basename(dirname($msg_path));
+                    $category_lbl = ucfirst($category);
+                    $linkview = $msg_path;
+                    
+                    $fp = fopen($msg_path, "r");
+                    $content = fread($fp, filesize($msg_path));
+                    fclose($fp);
+                    
+                    
+                    
+                    
 echo "
 <item>
 <title>".$name."</title>
 <link>".$linkview."</link>
 <pubDate>".date('r' ,$date_info[9])."</pubDate>
-<description>[""]</description>
+<description> <font color=\"#626262\">".$content."</font></description>
 </item>";
      
         }
@@ -57,22 +67,8 @@ echo "
     }
 }
 
+
 $newrss = new autorss();
-$newrss->show("Content-type:text/xml","/doc/feedback", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Content shared by users - Idiomind ","/doc/feedback","Latest Published","en-us","Sun, 31 May 2009 09:41:01 GMT","rss.php","Feedback Messages","false","/doc/feedback");
+$newrss->show("Content-type:text/xml","/doc/feedback/", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Feedback - Idiomind ","/doc/feedback/","Latest Published","en-us","Sun, 31 May 2009 09:41:01 GMT","index.php","Latest Messages","false","./",$mode);
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
