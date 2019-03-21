@@ -60,7 +60,8 @@
             
         function ListFavs() {
             var fav;
-            var faves = getCookie('Topics_fav');
+            var lang = "<?php echo $langdir ?>";
+            var faves = getCookie(lang.charAt(0)+'PINS');
             faves = faves.split('|');
             var fdiv = document.getElementById("favlists");
             
@@ -168,10 +169,10 @@
           $use = $_COOKIE['iuser'];
           $use =  ucfirst($use);
     }
-    if(!isset($_COOKIE['Topics_fav'])) {
+    if(!isset($_COOKIE[$langdir[0].'PINS'])) {
         $favs = "";
     } else {
-          $favs = $_COOKIE['Topics_fav'];
+          $favs = $_COOKIE[$langdir[0].'PINS'];
           $favs =  ucfirst($favs);
     }
     ?>

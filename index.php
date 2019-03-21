@@ -68,9 +68,9 @@
             <div class="navigation_bar" align="left">
                 <a class="current_category" href="index.php" onfocus="this.blur();">Introduction</a>
                 <a class="category" href="help.html" onfocus="this.blur();">Getting started</a>
-                <a class="category" href="contact.html" onfocus="this.blur();">Contact</a>
                 <a class="category" href="library.html" onfocus="this.blur();">Library</a>
                 <a class="category" href="/news?page=1" onfocus="this.blur();">News</a>
+                <a class="category" href="contact.html" onfocus="this.blur();">Contact</a>
             </div>
         </div>
         
@@ -80,11 +80,11 @@
             <div class="content">
 
                 <p>
-                    Language learners are constantly finding new words and phrases. This program can help you learn by save and practice words and phrases you discover every day.
+                    Language learners are constantly finding new words and phrases; Idiomind can help you learn by save and practice words and phrases you discover every day.
                 </p>
                 <br>
                 <h2>
-                    Here are some features
+                    Features
                 </h2>
                 
                 <p>
@@ -121,10 +121,12 @@
                 <p>
                     It is also possible to download from sourceforge.net </p>
                     <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
-                <br><br>
                 <br>
                 <br>
+                <br>
+<!--
                 <div id="google_translate_element"></div>
+-->
             </div>
             
         </div>

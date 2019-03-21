@@ -35,7 +35,7 @@
                 <h1>Idiomind</h1>
                 <p>Idiomind is a small program based in Bash scripts to learn foreign languages</p>
                 <p>
-                    Language learners are constantly finding new words and phrases. This program can help you learn by save and practice words and phrases you discover every day.
+                    Language learners are constantly finding new words and phrases; Idiomind can help you learn by save and practice words and phrases you discover every day.
                 </p>
             
                 <h2>

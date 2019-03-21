@@ -8,6 +8,9 @@
         <link rel="image_src" href="/images/logo.png" / ><!--formatted-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="/css/sweetalert.css">
+        
+        <?php $lang = htmlspecialchars($_GET["l"]); ?>
+        
         <script type="text/javascript"> //  Loading gif
             function onReady(callback) {
                 var intervalID = window.setInterval(checkReady, 1000);
@@ -38,9 +41,9 @@
                 s.value = "<br>";
                 return true;
             }
-         </script>
+        </script>
          
-         <script type="text/javascript"> // Get X cookie value 
+        <script type="text/javascript"> // Get X cookie value 
             function getCookie(cname) {
                 var name = cname + "=";
                 var decodedCookie = decodeURIComponent(document.cookie);
@@ -56,33 +59,36 @@
                 }
                 return "";
             }
-         </script>
+        </script>
          
         <script type="text/javascript"> //  Buttons fav & lesson at loading
-        function setBtnFav() {
-            var div = document.getElementById("data-name");
-            var tpc = div.textContent;
-            tpc = tpc.replace(/(^[ \t]*\n)/gm, '').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-            /* Favorite */
-            var el = document.getElementById("FavBtn")
-            var faves = getCookie('Topics_fav');
-            var bol = faves.includes(tpc);
-            if(bol == false) { el.src='/images/fav.png'; }
-            else { el.src='/images/unfav.png'; }
-            /* Lesson */
-            //var el = document.getElementById("studySet")
-            //var lessonChk = getCookie('topic_study');
-            //if(lessonChk !== tpc) { el.src='/images/pin.png'; }
-            //else { el.src='/images/unpin.png'; }
-            
-            
-        }
-         </script>
+            function setBtnFav() {
+                var lang = "<?php echo $lang ?>";
+                var cookie_name = lang.charAt(0)+'PINS';
+                var div = document.getElementById("data-name");
+                var tpc = div.textContent;
+                tpc = tpc.replace(/(^[ \t]*\n)/gm, '').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+                /* Favorite */
+                var el = document.getElementById("FavBtn")
+                var faves = getCookie(cookie_name);
+                var bol = faves.includes(tpc);
+                if(bol == false) { el.src='/images/fav.png'; }
+                else { el.src='/images/unfav.png'; }
+                /* Lesson */
+                //var el = document.getElementById("studySet")
+                //var lessonChk = getCookie('topic_study');
+                //if(lessonChk !== tpc) { el.src='/images/pin.png'; }
+                //else { el.src='/images/unpin.png'; }
+                
+                
+            }
+        </script>
          
-         <script type="text/javascript"> //  Toggle Button fav
+        <script type="text/javascript"> //  Toggle Button fav
             function Favesjs(el) {
-
-                var faves = getCookie('Topics_fav');
+                var lang = "<?php echo $lang ?>";
+                var cookie_name = lang.charAt(0)+'PINS';
+                var faves = getCookie(cookie_name);
                 var bol = faves.includes(data.name);
         
                 if(bol == true)
@@ -91,7 +97,7 @@
                     var expiration_date = new Date();
                     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
                     var expires = "expires=" + expiration_date.toGMTString();
-                    document.cookie="Topics_fav="+SetFavs_value+"; expires=" + expires + "; path=/";
+                    document.cookie=cookie_name+"="+SetFavs_value+"; expires=" + expires + "; path=/";
                     el.src='/images/fav.png';
                 }
                 else
@@ -100,15 +106,14 @@
                     var expiration_date = new Date();
                     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
                     var expires = "expires=" + expiration_date.toGMTString();
-                    document.cookie="Topics_fav="+SetFavs_value+"; expires=" + expires + "; path=/";
+                    document.cookie=cookie_name+"="+SetFavs_value+"; expires=" + expires + "; path=/";
                     el.src='/images/unfav.png';
                 }
             }
-         </script>
+        </script>
 
         <script type="text/javascript"> //  Toggle Button study 
             function StudySet(el) {
-
                 var lessonChk = getCookie('topic_study');
         
                 if(data.name == lessonChk)

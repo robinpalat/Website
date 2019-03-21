@@ -27,9 +27,9 @@
             <div class="navigation_bar" align="left">
                 <a class="category" href="index.php" onfocus="this.blur();">Introduction</a>
                 <a class="category" href="help.html" onfocus="this.blur();">Getting started</a>
-                <a class="current_category" href="contact.html" onfocus="this.blur();">Contact</a>
                 <a class="category" href="library.html" onfocus="this.blur();">Library</a>
                 <a class="category" href="/news?page=1" onfocus="this.blur();">News</a>
+                <a class="current_category" href="contact.html" onfocus="this.blur();">Contact</a>
             </div>
         </div>
 

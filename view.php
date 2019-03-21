@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="/css/sweetalert.css"/>
         
+        <?php $lang = htmlspecialchars($_GET["l"]); ?>
+        
         <script type="text/javascript"> //  Loading gif
             function onReady(callback) {
                 var intervalID = window.setInterval(checkReady, 800);
@@ -59,12 +61,14 @@
          
         <script type="text/javascript"> //  Buttons fav & lesson at loading
         function setBtnFav() {
+            var lang = "<?php echo $lang ?>";
+            var cookie_name = lang.charAt(0)+'PINS';
             var div = document.getElementById("data-name");
             var tpc = div.textContent;
             tpc = tpc.replace(/(^[ \t]*\n)/gm, '').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
             /* Favorite */
             var el = document.getElementById("FavBtn")
-            var faves = getCookie('Topics_fav');
+            var faves = getCookie(cookie_name);
             var bol = faves.includes(tpc);
             if(bol == false) { el.src='/images/fav.png'; }
             else { el.src='/images/unfav.png'; }
@@ -78,8 +82,9 @@
          
         <script type="text/javascript"> //  Toggle Button fav
             function Favesjs(el) {
-
-                var faves = getCookie('Topics_fav');
+                var lang = "<?php echo $lang ?>";
+                var cookie_name = lang.charAt(0)+'PINS';
+                var faves = getCookie(cookie_name);
                 var bol = faves.includes(data.name);
         
                 if(bol == true)
@@ -88,7 +93,7 @@
                     var expiration_date = new Date();
                     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
                     var expires = "expires=" + expiration_date.toGMTString();
-                    document.cookie="Topics_fav="+SetFavs_value+"; expires=" + expires + "; path=/";
+                    document.cookie=cookie_name+"="+SetFavs_value+"; expires=" + expires + "; path=/";
                     el.src='/images/fav.png';
                 }
                 else
@@ -97,7 +102,7 @@
                     var expiration_date = new Date();
                     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
                     var expires = "expires=" + expiration_date.toGMTString();
-                    document.cookie="Topics_fav="+SetFavs_value+"; expires=" + expires + "; path=/";
+                    document.cookie=cookie_name+"="+SetFavs_value+"; expires=" + expires + "; path=/";
                     el.src='/images/unfav.png';
                 }
             }
@@ -105,7 +110,6 @@
 
         <script type="text/javascript"> //  Toggle Button study 
             function StudySet(el) {
-
                 var lessonChk = getCookie('topic_study');
         
                 if(data.name == lessonChk)
@@ -132,30 +136,30 @@
     <body onload="setBtnFav()">
         <div id="audio"></div>
         <?php
-        include_once("analyticstracking.php");
-        $lang = htmlspecialchars($_GET["l"]);
-        $uplang = ucfirst($lang);
-        $precatg = htmlspecialchars($_GET["c"]);
-        $set = htmlspecialchars($_GET["set"]);
-        //Get category of topic from remote json file (if came empty from favorites)
-        if ($precatg == 'fav') {
-            $data = file_get_contents ('./share/'.$uplang.'/topics.json');
-            $json = json_decode($data, true);
-            foreach ($json['Categories'] as $field => $value) {
-                foreach ($value as $key => $val) {
-                        if( strpos( $val, $set ) !== false ) {
-                            $catg = $field;
-                            $backcatg = 'fav';
+            include_once("analyticstracking.php");
+            $lang = htmlspecialchars($_GET["l"]);
+            $uplang = ucfirst($lang);
+            $precatg = htmlspecialchars($_GET["c"]);
+            $set = htmlspecialchars($_GET["set"]);
+            //Get category of topic from remote json file (if came empty from favorites)
+            if ($precatg == 'fav') {
+                $data = file_get_contents ('./share/'.$uplang.'/topics.json');
+                $json = json_decode($data, true);
+                foreach ($json['Categories'] as $field => $value) {
+                    foreach ($value as $key => $val) {
+                            if( strpos( $val, $set ) !== false ) {
+                                $catg = $field;
+                                $backcatg = 'fav';
+                            }
                         }
-                    }
+                }
+                   
+            } else {
+                $catg = $precatg;
+                $backcatg = $precatg;
             }
-               
-        } else {
-            $catg = $precatg;
-            $backcatg = $precatg;
-        }
-        
-        $ViewThisTopic = "/".$lang."/".$catg."/".$set.".idmnd";
+            
+            $ViewThisTopic = "/".$lang."/".$catg."/".$set.".idmnd";
         ?>
          <div id="data-name" style="display:none;">
             <?php print $set ?>
