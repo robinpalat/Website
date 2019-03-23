@@ -204,28 +204,28 @@ var Viewer = (function() {
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 18; var svw = 2.00
+          var sfs = 24; var svw = 2.40
         } else if ((chars >= 20) && (chars < 40)) {
-          var sfs = 16; var svw = 1.90
+          var sfs = 20; var svw = 2.20
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 14; var svw = 1.80
+          var sfs = 18; var svw = 2.00
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 12; var svw = 1.70
+          var sfs = 15; var svw = 1.90
         } else {
-          var sfs = 10; var svw = 1.60
+          var sfs = 13; var svw = 1.80
         }
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 16; var evw = 1.90
+          var efs = 16; var evw = 2.10
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 14; var evw = 1.80
+          var efs = 15; var evw = 2.00
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 13; var evw = 1.60
+          var efs = 14; var evw = 1.90
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 12; var evw = 1.50
+          var efs = 13; var evw = 1.80
         } else {
-          var efs = 10; var evw = 1.30
+          var efs = 12; var evw = 1.60
         }
 
 
@@ -487,28 +487,28 @@ var Quiz = (function() {
         
         var chars = srce.length;
         if ((chars >= 1) && (chars < 20)) {
-          var sfs = 18; var svw = 2.00
+          var sfs = 24; var svw = 2.40
         } else if ((chars >= 20) && (chars < 40)) {
-          var sfs = 16; var svw = 1.90
+          var sfs = 20; var svw = 2.20
         } else if ((chars >= 40) && (chars < 80)) {
-          var sfs = 14; var svw = 1.80
+          var sfs = 18; var svw = 2.00
         } else if ((chars >= 80) && (chars < 100)) {
-          var sfs = 12; var svw = 1.70
+          var sfs = 15; var svw = 1.90
         } else {
-          var sfs = 10; var svw = 1.60
+          var sfs = 13; var svw = 1.80
         }
         
         var chars = exmp.length;
         if ((chars >= 1) && (chars < 20)) {
-          var efs = 16; var evw = 1.90
+          var efs = 16; var evw = 2.10
         } else if ((chars >= 20) && (chars < 40)) {
-          var efs = 14; var evw = 1.80
+          var efs = 15; var evw = 2.00
         } else if ((chars >= 40) && (chars < 80)) {
-          var efs = 13; var evw = 1.60
+          var efs = 14; var evw = 1.90
         } else if ((chars >= 80) && (chars < 100)) {
-          var efs = 12; var evw = 1.50
+          var efs = 13; var evw = 1.80
         } else {
-          var efs = 10; var evw = 1.30
+          var efs = 12; var evw = 1.60
         }
 
         var lcss = 'h1 { font-size:'+fs+';}'+

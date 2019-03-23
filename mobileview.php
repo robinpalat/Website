@@ -184,7 +184,7 @@
                            <div id="name" class="topicName">
                                 <font style="font-weight:bold;font-family:Verdana;"></font>
                             </div>
-                            <br> <br>
+                            <br> 
                             <span id="levl">This topic is aimed for <b><font></font></b> students.</span><br>
                             <span>Contains: </span>
                             <span id="nwrd"><font></font></span>
@@ -206,8 +206,9 @@
                 </tr>
         </table>
     </span>
-<br> 
+
     <span id="headB" style="visibility:hidden">
+    
         <table border="0" style="width:100%;margin:0;vertical-align:top;">
         <tr>
         <td>
@@ -231,7 +232,8 @@
         </table>
     </span>
     <span id="TopicLanding">
-        <div class="TestStartBtn" >           
+        <div class="TestStartBtn" >
+                <br>
                 <input type="image" src="/images/fav.png" class="fav" style="outline:none;" id="FavBtn" onclick="Favesjs(this);" />
                 <input title="Studys" type="image" src="/images/lesson.png" class="flashimg" style="outline:none;" id="flashimg" onclick="doFunction();" />
                 <input title="Flascards" type="image" src="/images/flashc1.png" class="flashdef" style="outline:none;" id="flashdef" onclick="doFunction();" />
@@ -262,7 +264,6 @@
                                 <span id="item"><font color="#464B5F">1</font></span> 
                             </td>
                         </tr>
-                    </td>
                 </table>
                 <td>
                 </td>
@@ -298,14 +299,14 @@
 
     <div id="vscreen" >
             
-        <div id="v_imgs" background="green">
+        <div id="v_imgs">
             <p></p>
         </div>
-            <a href="##" id="vtts" title="Click to listen" style="text-decoration:none;" onclick="doFunction();">
+        <a href="##" id="vtts" title="Click to listen" style="text-decoration:none;" onclick="doFunction();">
 
-                <div class="grmr pronounce" id="grmr" style="font-weight: bold;">
-                <h1 style="color:#4A4A4A"></h1>
-            </div>
+        <div class="grmr pronounce" id="grmr" style="font-weight: bold;">
+            <h1 style="color:#4A4A4A;text-align:center;"></h1>
+        </div>
                 
         </a>
             
