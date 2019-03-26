@@ -139,7 +139,7 @@ var Viewer = (function() {
             }
         }
         
-        document.body.style.backgroundColor = "#B1E4EE";
+        document.body.style.backgroundColor = "#F0ECEB";
         document.getElementById("headA").style = "DISPLAY: none;";
         document.getElementById("headB").style = "DISPLAY: none;";
         document.getElementById("headC").style = "DISPLAY: true;";

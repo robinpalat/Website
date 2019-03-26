@@ -229,7 +229,7 @@
                             $upcate = ucfirst($cate);
                             $catee = strtoupper($cate);
                             //title=\"".$catee."\" 
-                            echo "<a data-fancybox data-type=\"iframe\" href=\"/mobilebox.php?lang=".$langdir."&category=".$cate." \"target=\"_new\" class=\"btn btn-primary\" data-small-btn=\"true\"><div class=\"floating-box\" ><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
+                            echo "<a href=\"/mobilebox.php?lang=".$langdir."&category=".$cate." \"target=\"_new\"><div class=\"floating-box\" ><img class=\"expand\" src=\"/images/".$cate.".png\" /><span class=\"circle-count\">".$filecount." <font size=1>topics</font></span></div></a>";
                         }
                     }
                 }

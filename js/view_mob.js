@@ -85,16 +85,10 @@ var Topic = (function() {
     var render_topic = function (trgt, dat) {
         document.body.style.backgroundColor = "#F0ECEB";
         document.getElementById("headA").style = "DISPLAY: true;";
-        document.getElementById("headB").style = "DISPLAY: none;";
-        document.getElementById("headC").style = "DISPLAY: none;";
         document.getElementById("TopicLanding").style = "DISPLAY: true;";
         document.getElementById("info_note").style = "DISPLAY: true;";
-        document.getElementById("fscreen").style = "DISPLAY: none;";
-        document.getElementById("vscreen").style = "DISPLAY: none;";
-        document.getElementById("QuizButtons").style = "DISPLAY: none;";
-        document.getElementById("ViewerButtons").style = "DISPLAY: none;";
-        document.getElementById("slidecontainer").style = "DISPLAY: none;";
-        
+        document.getElementById("Studyscrn").style = "DISPLAY: none;";
+        document.getElementById("Flashscrn").style = "DISPLAY: none;";
     }
 
     var load_data = function(file) {
@@ -149,18 +143,13 @@ var Viewer = (function() {
             }
         }
         
-        document.body.style.backgroundColor = "#B1E4EE";
+        document.body.style.backgroundColor = "#F0ECEB";
         document.getElementById("headA").style = "DISPLAY: none;";
-        document.getElementById("headB").style = "DISPLAY: none;";
-        document.getElementById("headC").style = "DISPLAY: true;";
         document.getElementById("TopicLanding").style = "DISPLAY: none;";
         document.getElementById("info_note").style = "DISPLAY: none;";
-        document.getElementById("fscreen").style = "DISPLAY: none;";
-        document.getElementById("vscreen").style = "DISPLAY: true;";
-        document.getElementById("slidecontainer").style = "DISPLAY: true;";
-        document.getElementById("QuizButtons").style = "DISPLAY: none;";
-        document.getElementById("ViewerButtons").style = "DISPLAY: true;";
-
+        document.getElementById("Studyscrn").style = "DISPLAY: true;";
+        document.getElementById("Flashscrn").style = "DISPLAY: none;";
+        
         viewer_render_card(first, data.items[first], count, shaft)
     }
     
@@ -244,7 +233,7 @@ var Viewer = (function() {
             speechtrgt(trgt);
         }
         
-        var trgtElement = document.querySelector("#trgt").children[0]
+        var trgtElement = document.querySelector("#v_trgt").children[0]
         var grmrElement = document.querySelector("#grmr").children[0]
         var srceElement = document.querySelector("#v_srce").children[0]
         var imgsElement = document.querySelector("#v_imgs").children[0]
@@ -264,7 +253,7 @@ var Viewer = (function() {
         if ((type == '1') && (imag != '0')) {
             grmrElement.innerHTML = trgt
             trgtximg = trgt.toLowerCase()
-            imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
+            imgsElement.innerHTML = '<img class="imag" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
         } 
         else if (type == '1') {
             grmrElement.innerHTML = trgt
@@ -291,7 +280,7 @@ var Viewer = (function() {
             play_stts = 1
             document.getElementById("Play").src="/images/stop.png"
 
-            trgt = document.querySelector("#trgt").children[0].innerHTML
+            trgt = document.querySelector("#v_trgt").children[0].innerHTML
             items = Object.keys(data.items)
             count = items.length
             shaft = items.indexOf(trgt)
@@ -331,7 +320,7 @@ var Viewer = (function() {
     }
     
     var viewer_next_card = function () {
-        var trgt = document.querySelector("#trgt").children[0].innerHTML
+        var trgt = document.querySelector("#v_trgt").children[0].innerHTML
         var items = Object.keys(data.items)
         var count = items.length
         var shaft = items.indexOf(trgt)
@@ -355,7 +344,7 @@ var Viewer = (function() {
     }
     
     var viewer_back_card = function () {
-        var trgt = document.querySelector("#trgt").children[0].innerHTML
+        var trgt = document.querySelector("#v_trgt").children[0].innerHTML
         var items = Object.keys(data.items)
         var count = items.length
         var shaft = items.indexOf(trgt)
@@ -412,6 +401,19 @@ var Quiz = (function() {
     document.getElementById("Right").onclick = function () { Quiz.nextCardOk(); };
     document.getElementById("Wrong").onclick = function () { Quiz.nextCardNo(); };
     
+    document.getElementById("Show").onclick = function () {  
+        var srceElement = document.querySelector("#srce").children[0]
+        var dotsElement = document.querySelector("#dots").children[0]
+        srceElement.hidden = false
+        dotsElement.hidden = true
+        document.getElementById("Show").style = "DISPLAY: none;";
+        document.getElementById('Right').style.right = "18%";
+        document.getElementById('Wrong').style.left = "18%";
+        //document.getElementById('Play').style.right = "5%";
+        //document.getElementById('Back').style.left = "21%";
+    }
+    
+    
     var Quiz_render_page = function (data) {
 
         // images preload
@@ -429,17 +431,15 @@ var Quiz = (function() {
             }
         }
         
+        document.getElementById("tts").onclick = function () { window.pronounce(); };
+        document.getElementById("vtts").onclick = function () { window.pronounce(); };
+
         document.body.style.backgroundColor = "#cdeeb1";
         document.getElementById("headA").style = "DISPLAY: none;";
-        document.getElementById("headC").style = "DISPLAY: none;";
-        document.getElementById("headB").style = "DISPLAY: true;";
         document.getElementById("TopicLanding").style = "DISPLAY: none;";
         document.getElementById("info_note").style = "DISPLAY: none;";
-        document.getElementById("fscreen").style = "DISPLAY: true;";
-        document.getElementById("vscreen").style = "DISPLAY: none;";
-        document.getElementById("slidecontainer").style = "DISPLAY: none;";
-        document.getElementById("QuizButtons").style = "DISPLAY: true;";
-        document.getElementById("ViewerButtons").style = "DISPLAY: none;";
+        document.getElementById("Studyscrn").style = "DISPLAY: none;";
+        document.getElementById("Flashscrn").style = "DISPLAY: true;";
         
         document.getElementById("Right").setAttribute("value", "0");
         document.getElementById("Wrong").setAttribute("value", "0");
@@ -534,8 +534,8 @@ var Quiz = (function() {
         var scoreOkElement = document.querySelector("#score_ok").children[0]
         var scoreNoElement = document.querySelector("#score_no").children[0]
         document.getElementById("Show").style = "DISPLAY: true;";
-        document.getElementById('Right').style.right = "5px";
-        document.getElementById('Wrong').style.left = "5px";
+        document.getElementById('Right').style.right = "12px";
+        document.getElementById('Wrong').style.left = "12px";
         
         srceElement.hidden = true
         dotsElement.hidden = false
@@ -543,7 +543,7 @@ var Quiz = (function() {
         trgtElement.innerHTML = trgt
         if ((type == '1') && (imag != '0')) {
             trgtximg = trgt.toLowerCase()
-            imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
+            imgsElement.innerHTML = '<img class="imag" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
         } else {
             imgsElement.innerHTML = '<font "size=0"></font>'
         }
@@ -652,27 +652,14 @@ var Quiz = (function() {
     }
 })()
 
-window.addEventListener('load', function () {
-    
-    document.getElementById("tts").onclick = function () { window.pronounce(); };
-    document.getElementById("vtts").onclick = function () { window.pronounce(); };
-    
-    var div = document.getElementById("dom-target");
-    var myData = div.textContent;
-    document.getElementById("ToHomeB").onclick = function () { Topic.loadData(myData); };
-    document.getElementById("ToHomeC").onclick = function () { Topic.loadData(myData); };
-    document.getElementById("flashimg").onclick = function () { Viewer.loadData(myData); };
-    document.getElementById("flashdef").onclick = function () { Quiz.loadData(myData); };
+//window.addEventListener('load', function () {
 
-    document.getElementById("Show").onclick = function () {  
-        var srceElement = document.querySelector("#srce").children[0]
-        var dotsElement = document.querySelector("#dots").children[0]
-        srceElement.hidden = false
-        dotsElement.hidden = true
-        document.getElementById("Show").style = "DISPLAY: none;";
-        document.getElementById('Right').style.right = "15%";
-        document.getElementById('Wrong').style.left = "15%";
-        //document.getElementById('Play').style.right = "5%";
-        //document.getElementById('Back').style.left = "21%";
-    }
-})
+    //var div = document.getElementById("dom-target");
+    //var myData = div.textContent;
+    //document.getElementById("ToHomeB").onclick = function () { Topic.loadData(myData); };
+    //document.getElementById("ToHomeC").onclick = function () { Topic.loadData(myData); };
+    //document.getElementById("flashimg").onclick = function () { Viewer.loadData(myData); };
+    //document.getElementById("flashdef").onclick = function () { Quiz.loadData(myData); };
+
+
+//})

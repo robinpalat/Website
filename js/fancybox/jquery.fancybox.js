@@ -2759,6 +2759,9 @@
       
       $(document).ready(function() { // MOD
         ListFavs();
+        var div = document.getElementById("dom-target");
+        var myData = div.textContent;
+        Topic.loadData(myData);
       });
 
 
@@ -3480,7 +3483,7 @@
         show_title: 1,
         show_byline: 1,
         show_portrait: 0,
-        fullscreen: 1
+        fullscreen: 1 // FULLSCRENN CONF.
       },
       paramPlace: 3,
       type: "iframe",
@@ -4956,7 +4959,7 @@
           "</button>"
       },
       fullScreen: {
-        autoStart: true
+        autoStart: true // FULLSCREN CONF.
       }
     });
 
