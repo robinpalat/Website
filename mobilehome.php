@@ -172,7 +172,7 @@
                 <td vertical-align="middle" width="80px" align="left" class="langtitle">
                     <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=ucfirst($langdir)?></a>
                 </td>
-                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="30px" height="10px" class="topLinks" id="show" href="#">Plus</td>
+                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="30px" height="10px" class="topLinks" id="show___" onclick="underc();" href="#">Plus</td>
                 <td ></td>
                 <td ></td>
                 <td align="right">
