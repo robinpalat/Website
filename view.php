@@ -221,7 +221,7 @@
                 </table>
                 <td>
                 </td>
-                <td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/back_green.png'></a></div></td>
+                <td class="floating-box-right"><div><a href="##" id="ToHomeB"><img src='/images/close.png'></a></div></td>
             </tr>
         </table>
     </span>
@@ -249,7 +249,7 @@
             </table>
             <td>
             </td>
-            <td class="floating-box-right"><div><a href="##" id="ToHomeC"><img src='/images/back_blue.png'></a></div></td>
+            <td class="floating-box-right"><div><a href="##" id="ToHomeC"><img src='/images/close.png'></a></div></td>
             </tr>
         </table>
     </span>
