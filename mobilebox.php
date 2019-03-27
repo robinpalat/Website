@@ -6,7 +6,7 @@
    <title>Topics</title>
 
    <link rel="stylesheet" href="/css/mobilebox.css">
-   <script src="/js/sorttablee.js"></script>
+
 </head>
 
 <body>

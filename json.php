@@ -1,9 +1,13 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $lang = htmlspecialchars($_GET["lang"]);
 $uplang = ucfirst($lang);
 
- echo '/share/'.$uplang.'/topics.json';
+echo '/share/'.$uplang.'/topics.json';
 
 function dir2json($dir)
 {

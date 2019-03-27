@@ -63,15 +63,15 @@
             var lang = "<?php echo $langdir ?>";
             var faves = getCookie(lang.charAt(0)+'PINS');
             faves = faves.split('|');
-            var fdiv = document.getElementById("favlists");
-            
-            if(faves.length > 1)
-            {
-                var div = document.getElementById('favlists');
+            var div = document.getElementById('favlists');
+            if(faves.length > 1) {
                 div.innerHTML = "<h1 style='text-align:right'>Pinned <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
                 for (fav of faves) {
                     div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/view.php?l=<?=$langdir?>&c=fav&set='+fav+'">'+fav+'</a><br><br>';
                 }
+            }
+            else {
+                div.innerHTML = "";
             }
         }
     </script>
@@ -185,7 +185,7 @@
                 <td vertical-align="middle" width="120px" align="left" class="langtitle">
                     <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=ucfirst($langdir)?></a>
                 </td>
-                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show____" onclick="underc();" href="#">Plus</td>
+                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show" href="#">Plus</td>
                 <td ></td>
                 <td ></td>
                 <td align="right">

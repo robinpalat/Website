@@ -2759,6 +2759,7 @@
       
       $(document).ready(function() { // MOD
         ListFavs();
+        
       });
 
 

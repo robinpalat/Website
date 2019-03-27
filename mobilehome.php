@@ -44,23 +44,24 @@
             }
             return "";
         }
-            
+
         function ListFavs() {
             var fav;
             var lang = "<?php echo $langdir ?>";
             var faves = getCookie(lang.charAt(0)+'PINS');
             faves = faves.split('|');
-            var fdiv = document.getElementById("favlists");
-            
-            if(faves.length > 1)
-            {
-                var div = document.getElementById('favlists');
+            var div = document.getElementById('favlists');
+            if(faves.length > 1) {
                 div.innerHTML = "<h1 style='text-align:left'><i class='fa fa-thumb-tack' aria-hidden='true'></i> Pinned</h1>";
                 for (fav of faves) {
                     div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/mobileview.php?l=<?=$langdir?>&c=fav&set='+fav+'">'+fav+'</a><br><br>';
                 }
             }
+            else {
+                div.innerHTML = "";
+            }
         }
+
     </script>
    
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
