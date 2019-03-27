@@ -119,7 +119,7 @@
                 </p>
              <br>
                 <p>
-                    It is also possible to download from sourceforge.net </p>
+                    The above method is the recommended, it is also possible to download from sourceforge.net </p>
                     <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
                 <br>
                 <br>
