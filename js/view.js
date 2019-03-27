@@ -128,14 +128,14 @@ var Viewer = (function() {
         for(var item in data.items){
             var dataCopy = data.items[item]
             var imag = JSON.stringify(dataCopy['imag'])
+            var imgr = JSON.stringify(dataCopy['imgr'])
             var type = JSON.stringify(dataCopy['type'])
             imag = JSON.parse(imag)
+            imgr = JSON.parse(imgr)
             type = JSON.parse(type)
-
             if ((type == '1') && (imag != '0')) {
-                trgt_lowc = item.toLowerCase()
                 img = new Image()
-				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
+				img.src = '/share/images/'+imgr+'-'+imag+'.jpg'
             }
         }
         
@@ -413,14 +413,14 @@ var Quiz = (function() {
         for(var item in data.items){
             var dataCopy = data.items[item]
             var imag = JSON.stringify(dataCopy['imag'])
+            var imgr = JSON.stringify(dataCopy['imgr'])
             var type = JSON.stringify(dataCopy['type'])
             imag = JSON.parse(imag)
+            imgr = JSON.parse(imgr)
             type = JSON.parse(type)
             if ((type == '1') && (imag != '0')) {
-                trgt_lowc = item.toLowerCase()
-                "/share/images/'+trgtximg+'-'+imag+'.jpg"
                 img = new Image()
-				img.src = '/share/images/'+trgt_lowc+'-'+imag+'.jpg'
+				img.src = '/share/images/'+imgr+'-'+imag+'.jpg'
             }
         }
         
