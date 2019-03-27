@@ -172,7 +172,9 @@ var Viewer = (function() {
         grmr = JSON.parse(grmr)
         var imag = JSON.stringify(arr[19])
         imag = JSON.parse(imag)
-        var type = JSON.stringify(arr[22])
+        var imgr = JSON.stringify(arr[20])
+        imgr = JSON.parse(imgr)
+        var type = JSON.stringify(arr[23])
         type = JSON.parse(type)
         var itle = trgt.toLowerCase();
         var exmp = exmp.replace(itle, "<b>"+itle+"</b>")
@@ -257,8 +259,7 @@ var Viewer = (function() {
         
         if ((type == '1') && (imag != '0')) {
             grmrElement.innerHTML = trgt
-            trgtximg = trgt.toLowerCase()
-            imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
+            imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+imgr+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
         } 
         else if (type == '1') {
             grmrElement.innerHTML = trgt
@@ -459,7 +460,9 @@ var Quiz = (function() {
         grmr = JSON.parse(grmr)
         var imag = JSON.stringify(arr[19])
         imag = JSON.parse(imag)
-        var type = JSON.stringify(arr[22])
+        var imgr = JSON.stringify(arr[20])
+        imgr = JSON.parse(imgr)
+        var type = JSON.stringify(arr[23])
         type = JSON.parse(type)
         var itle = trgt.toLowerCase();
         var exmp = exmp.replace(itle, "<b>"+itle+"</b>")
@@ -540,8 +543,7 @@ var Quiz = (function() {
         
         trgtElement.innerHTML = trgt
         if ((type == '1') && (imag != '0')) {
-            trgtximg = trgt.toLowerCase()
-            imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+trgtximg+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
+            imgsElement.innerHTML = '<img class="WordImage" src="/share/images/'+imgr+'-'+imag+'.jpg" onerror="imgError(this);"</img>'
         } else {
             imgsElement.innerHTML = '<font "size=0"></font>'
         }
