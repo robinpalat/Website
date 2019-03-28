@@ -65,7 +65,7 @@
             faves = faves.split('|');
             var div = document.getElementById('favlists');
             if(faves.length > 1) {
-                div.innerHTML = "<h1 style='text-align:right'>Pinned <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1>";
+                div.innerHTML = "<br><h1 style='text-align:right'>Pinned <i class='fa fa-thumb-tack' aria-hidden='true'></i></h1><br>";
                 for (fav of faves) {
                     div.innerHTML = div.innerHTML + '<a data-fancybox data-type="iframe" class="btn btn-primary"  data-small-btn="true" href="/view.php?l=<?=$langdir?>&c=fav&set='+fav+'">'+fav+'</a><br><br>';
                 }
@@ -214,7 +214,7 @@
                 <tr>
                     <td valign="top">
                         <div class="feed-lists">
-                            <h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest published</h1>
+                            <br><h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest published</h1><br>
                             <?php
                             echo" ";
                             output_rss_feed("https://idiomind.sourceforge.io/rss.php/?trgt=".$langdir.'&viewp=1', 6, true, true, 200);
