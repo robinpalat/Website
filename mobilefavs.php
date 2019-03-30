@@ -5,7 +5,7 @@
    <link rel="shortcut icon" href="/favicon.ico">
    <title>Topics</title>
 
-   <link rel="stylesheet" href="/css/box.css">
+   <link rel="stylesheet" href="/css/mobilebox.css">
 
 </head>
 
@@ -33,8 +33,8 @@
             foreach($favs as $fav) {
                     if($fav!="|" AND $fav!=""){
                          echo"<tr id=\"box\">
-                    <td style=\"width:5%\"><a  href=\"/view.php?l=".$language."&c=fav&set=".$fav."\"><img class='expand' src='/images/idmnd.png'></a></td>
-                    <td style=\"width:90%\"><a href=\"/view.php?l=".$language."&c=fav&set=".$fav."\">{$fav}</a></td>
+                    <td style=\"width:5%\"><a  href=\"/mobileview.php?l=".$language."&c=fav&set=".$fav."\"><img class='expand' src='/images/idmnd.png'></a></td>
+                    <td style=\"width:90%\"><a href=\"/mobileview.php?l=".$language."&c=fav&set=".$fav."\">{$fav}</a></td>
                 </tr>";
                 }
             }

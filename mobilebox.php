@@ -25,6 +25,9 @@
     $category = htmlspecialchars($_GET["category"]);
     $place = "/".$language."/".$category."/";
     
+    if($category == 'fav')
+		header('Location: mobilefavs.php?lang='.$language);
+    
     // Checks to see if veiwing hidden files is enabled
     if($_SERVER['QUERY_STRING']=="hidden")
     {$hide="";
