@@ -5,7 +5,7 @@
     <title>Idiomind</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="learn english free, learn english, learn english online, learn english grammar, learn english vocabulary, free English lessons, basic english, english vocabulary, english dictation, business english, english as a second language, english as a foreign language, english spelling, english grammar, english dictation, ESL, EFL, pronunciation, grammar, vocabulary, tests, lessons, quiz, quizzes, resources, lesson, vocabulary, questions, answers"/>
-    <meta name="description" content="A little utility for taking notes aimed to help you learn foreign vocabulary"/>
+    <meta name="description" content="Idiomind is a program based in Bash scripts to learn foreign languages"/>
     
     <link rel="stylesheet" type="text/css" href="/css/classic.css">
     <link rel="stylesheet" type="text/css" href="/css/fonts.css">
