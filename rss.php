@@ -29,7 +29,7 @@ echo "<?xml version='".$xmlversion."' encoding='".$encoding."'?>
         foreach($files as $file) {
             $time = DateTime::createFromFormat('U', filemtime($file->getPathname()));
             // no need to explode the time, just make it a datetime object
-            if(in_array($file->getExtension(), $display) && $time > new DateTime('2015-01-01')) { // is PHP and is greater than jan 15 2014
+            if(in_array($file->getExtension(), $display) && $time > new DateTime('2019-01-01')) { // is PHP and is greater than jan 15 2014
                 $data[] = array('filename' => $file->getPathname(), 'time' => $time->getTimestamp()); // push inside
             }
         }
@@ -69,6 +69,6 @@ $trgt = htmlspecialchars($_GET["trgt"]);
 $mode = htmlspecialchars($_GET["viewp"]);
 
 $newrss = new autorss();
-$newrss->show("Content-type:text/xml","http://idiomind.sourceforge.io/".$trgt."/", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Content shared by users - Idiomind ","http://idiomind.sourceforge.io/".$trgt."/","Latest Published","en-us","Sun, 31 May 2009 09:41:01 GMT","rss.php","Latest Published","false","./".$trgt."/",$mode);
+$newrss->show("Content-type:text/xml","http://idiomind.sourceforge.io/".$trgt."/", "1.0","utf-8","2.0","http://www.w3.org/2005/Atom","Content shared by users - Idiomind ","http://idiomind.sourceforge.io/".$trgt."/","Latest Published","en-us","Sun, 31 May 2022 09:41:01 GMT","rss.php","Latest Published","false","./".$trgt."/",$mode);
 
 ?>

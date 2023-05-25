@@ -155,11 +155,11 @@
         });
     });
     </script>
-    
 </head>
 
+
 <body onload="setCookie()">
-    
+
     <?php
     include_once("analyticstracking.php");
     if(!isset($_COOKIE['iuser'])) {
@@ -185,7 +185,7 @@
                 <td vertical-align="middle" width="120px" align="left" class="langtitle">
                     <a style="color:#FFFFFF" href="/<?=$langdir?>"><?=ucfirst($langdir)?></a>
                 </td>
-                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show" href="#">Plus</td>
+                <td style="border-radius:8px;background:transparent;color:#FF9F4A;cursor:pointer;" width="40px" height="10px" class="topLinks" id="show_fix" onclick="underc();">Plus</td>
                 <td ></td>
                 <td ></td>
                 <td align="right">
@@ -217,7 +217,7 @@
                             <br><h1><i class="fa fa-bolt" aria-hidden="true"></i> Latest published</h1><br>
                             <?php
                             echo" ";
-                            output_rss_feed("https://idiomind.sourceforge.io/rss.php/?trgt=".$langdir.'&viewp=1', 6, true, true, 200);
+                            output_rss_feed("https://idiomind.sourceforge.io/rss.php/?trgt=".$langdir.'&viewp=2', 6, true, true, 200);
                             ?>
                         </div>
                     </td>
@@ -255,11 +255,10 @@
     
     <footer class="footer">
         <br>
-        <div> &copy 2015-2019 <a href="https://idiomind.sourceforge.io">idiomind</a> Project | <a href="http://idiomind.sourceforge.io/contact.html">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
+        <div> &copy 2015-2022 <a href="https://idiomind.sourceforge.io">idiomind</a> Project | <a href="http://idiomind.sourceforge.io/contact.html">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
         </div>
         <br>
     </footer>
-  
 </body>
 
 <script type="text/javascript">

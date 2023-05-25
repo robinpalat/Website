@@ -5,7 +5,7 @@
     <title>Idiomind</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="learn english free, learn english, learn english online, learn english grammar, learn english vocabulary, free English lessons, basic english, english vocabulary, english dictation, business english, english as a second language, english as a foreign language, english spelling, english grammar, english dictation, ESL, EFL, pronunciation, grammar, vocabulary, tests, lessons, quiz, quizzes, resources, lesson, vocabulary, questions, answers"/>
-    <meta name="description" content="Idiomind is a program based in Bash scripts to learn foreign languages"/>
+    <meta name="description" content="Idiomind is a valuable tool for language learners seeking to enhance their language skills."/>
     
     <link rel="stylesheet" type="text/css" href="/css/classic.css">
     <link rel="stylesheet" type="text/css" href="/css/fonts.css">
@@ -59,7 +59,7 @@
             <img class="wrapped_logo" src="/images/logo.png" height="58px" align="left">
             <h1>Idiomind</h1>
             <p>
-            Idiomind can help you learn a new language
+            Idiomind is a valuable tool for language learners seeking to enhance their language skills.
             </p>
             
         </div>
@@ -81,7 +81,7 @@
             <div class="content">
 
                 <p>
-                    Language learners are constantly finding new words and phrases.<br>Idiomind can help you learn by save and practice words and phrases you discover every day.
+                    Language learners are always in search of new words and phrases. Idiomind can assist you in your language learning journey by allowing you to save and practice the words and phrases you come across every day.
                 </p>
                 <br>
                 <h2>
@@ -91,12 +91,12 @@
                 <p>
                     <ul>
                     <li>Take notes on the go</li>
-                    <li>Words and phrases Pronunciation</li>
-                    <li>Automatic Translation via Google Translate</li>
+                    <li>Words and phrases pronunciation</li>
+                    <li>Automatic translation using Google Translate</li>
                     <li>Practices</li>
-                    <li>Tracking reviews in order to assimilate what you learn</li>
-                    <li>Setting up to 10 languages to learn</li>
-                    <li>Interface languages: English, Spanish, Portuguese, French, Italian</li>
+                    <li>Track your progress through reviews to reinforce your learning</li>
+                    <li>Customize up to 10 languages to learn</li>
+                    <li>User-friendly interface available in English, Spanish, Portuguese, French, and Italian</li>
                     </ul>
                 </p>
 				<br>
@@ -105,7 +105,8 @@
                     
                 </h2>
                 
-                <p>Taking note of words and sentences from a PDF document:<br><br>
+                <p>Usage Example: Taking note of words and sentences from a PDF document<br>
+                Here is an example of how to take notes on words and sentences from a PDF document using Idiomind:</p><br><br>
                     <iframe width="285" height="160" src="https://www.youtube.com/embed/HFvcQjlVHcA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </p>
                
@@ -114,14 +115,14 @@
                     Install / Download
                 </h2>
                 
-                <p>It can be installed through the terminal using the commands:<br></p>
+                <p>You can install Idiomind through the terminal using the following commands:<br></p>
                 <p><code>add-apt-repository ppa:robinpalat/idiomind<br>
                 apt-get update<br>
                 apt-get install idiomind</code>
                 </p>
              <br>
                 <p>
-                    It is also possible to download from sourceforge.net,<br>but the above method is the recommended one. </p>
+                    Alternatively, you can download it from sourceforge.net.<br>However, the recommended method is to use the above commands for installation. </p>
                     <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
                 <br>
                 <br>
@@ -139,7 +140,7 @@
          
         <span>
             <p>
-            <small>&copy; 2019 <a href="https://idiomind.sourceforge.io">Idiomind Project </a><br><br>
+            <small>&copy; 2022 <a href="https://idiomind.sourceforge.io">Idiomind Project </a><br><br>
 
             
 
