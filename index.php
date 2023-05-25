@@ -56,10 +56,10 @@
     <div class="wrapper">
         
         <div class="logo_bar">
-            <img class="wrapped_logo" src="/images/logo_trans.png" height="58px" align="left">
+            <img class="wrapped_logo" src="/images/logo.png" height="58px" align="left">
             <h1>Idiomind</h1>
             <p>
-            Idiomind is a program based in Bash scripts to learn foreign languages
+            Idiomind can help you learn a new language
             </p>
             
         </div>
@@ -71,6 +71,7 @@
                 <a class="category" href="library.html" onfocus="this.blur();">Library</a>
                 <a class="category" href="/news?page=1" onfocus="this.blur();">News</a>
                 <a class="category" href="contact.html" onfocus="this.blur();">Contact</a>
+                <a class="category" href="donate.html" onfocus="this.blur();">Donate</a>
             </div>
         </div>
         
@@ -80,7 +81,7 @@
             <div class="content">
 
                 <p>
-                    Language learners are constantly finding new words and phrases; Idiomind can help you learn by save and practice words and phrases you discover every day.
+                    Language learners are constantly finding new words and phrases.<br>Idiomind can help you learn by save and practice words and phrases you discover every day.
                 </p>
                 <br>
                 <h2>
@@ -98,12 +99,13 @@
                     <li>Interface languages: English, Spanish, Portuguese, French, Italian</li>
                     </ul>
                 </p>
-
-                <h3>
-                    Taking note of words and sentences from a PDF document:
-                </h3>
+				<br>
+                <h2>
+					Usage Example
+                    
+                </h2>
                 
-                <p>
+                <p>Taking note of words and sentences from a PDF document:<br><br>
                     <iframe width="285" height="160" src="https://www.youtube.com/embed/HFvcQjlVHcA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </p>
                

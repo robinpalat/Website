@@ -37,7 +37,7 @@
                 <p>
                     Language learners are constantly finding new words and phrases; Idiomind can help you learn by save and practice words and phrases you discover every day.
                 </p>
-            
+            <br>
                 <h2>
                     Features
                 </h2>
@@ -52,9 +52,13 @@
                     <li>Interface languages: English, Spanish, Portuguese, French, Italian</li>
                     </ul>
                 </p>
+                  <br>          
+                <h2>
+                    Usage example
+                </h2>
                 <p>Taking note of words and sentences from a PDF document:</p>
                 <iframe width="285" height="160" src="https://www.youtube.com/embed/HFvcQjlVHcA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-                <br><br>
+                <br><br><br> 
                 <h2>Install / Download</h2>
                 <p>It can be installed through the terminal using the commands:<br></p>
                 <p>
@@ -65,7 +69,7 @@
                 </p>
                 <p>It is also possible to download from sourceforge.net, but the above method is the recommended one.</p>
                 <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
-                <br><br>
+                <br><br><br> 
                 <h2>Support or contact</h2><br>
                 <p><a href="/helpm.html">Getting started with idiomind</a></p><br>
                 <p><a href="/librarym.html">Topic Library</a></p><br>
