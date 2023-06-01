@@ -57,10 +57,10 @@
         
         <div class="logo_bar">
             <img class="wrapped_logo" src="/images/logo.png" height="58px" align="left">
-            <h1>Idiomind</h1>
-            <p>
-            Idiomind is a valuable tool for language learners seeking to enhance their language skills.
-            </p>
+                <h1><a href="/index.php">Idiomind</a></h1>
+                <p>Idiomind is a valuable tool for language learners seeking to enhance their language skills</p>
+          
+                <div style="text-align: right;font-size: 1.0em;"><a href="/donate.html">Donate</a></div>
             
         </div>
         
@@ -71,7 +71,7 @@
                 <a class="category" href="library.html" onfocus="this.blur();">Library</a>
                 <a class="category" href="/news?page=1" onfocus="this.blur();">News</a>
                 <a class="category" href="contact.html" onfocus="this.blur();">Contact</a>
-                <a class="category" href="donate.html" onfocus="this.blur();">Donate</a>
+
             </div>
         </div>
         

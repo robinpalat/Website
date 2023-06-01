@@ -5,7 +5,7 @@
     <title>Idiomind</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="learn english free, learn english, learn english online, learn english grammar, learn english vocabulary, free English lessons, basic english, english vocabulary, english dictation, business english, english as a second language, english as a foreign language, english spelling, english grammar, english dictation, ESL, EFL, pronunciation, grammar, vocabulary, tests, lessons, quiz, quizzes, resources, lesson, vocabulary, questions, answers"/>
-    <meta name="description" content="Idiomind is a program based in Bash scripts to learn foreign languages"/>
+    <meta name="description" content="Idiomind is a valuable tool for language learners seeking to enhance their language skills."/>
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
@@ -32,48 +32,62 @@
     <div class="container">
         <div class="row">
             <div class="span6">
-                <h1>Idiomind</h1>
-                <p>Idiomind is a small program based in Bash scripts to learn foreign languages</p>
-                <p>
-                    Language learners are constantly finding new words and phrases; Idiomind can help you learn by save and practice words and phrases you discover every day.
+                <h1><a href="/mobile.php">Idiomind</a></h1>
+                <p>Idiomind is a valuable tool for language learners seeking to enhance their language skills.</p>
+                <p><a href="/donatem.html">Donate</a></p><br>
+                 <p>
+                    Language learners are always in search of new words and phrases. Idiomind can assist you in your language learning journey by allowing you to save and practice the words and phrases you come across every day.
                 </p>
-            <br>
-                <h2>
+                <br>
+                <h3>
                     Features
-                </h2>
+                </h3>
+                
                 <p>
                     <ul>
                     <li>Take notes on the go</li>
-                    <li>Words and phrases Pronunciation</li>
-                    <li>Automatic Translation via Google Translate</li>
+                    <li>Words and phrases pronunciation</li>
+                    <li>Automatic translation using Google Translate</li>
                     <li>Practices</li>
-                    <li>Tracking reviews in order to assimilate what you learn</li>
-                    <li>Setting up to 10 languages to learn</li>
-                    <li>Interface languages: English, Spanish, Portuguese, French, Italian</li>
+                    <li>Track your progress through reviews to reinforce your learning</li>
+                    <li>Customize up to 10 languages to learn</li>
+                    <li>User-friendly interface available in English, Spanish, Portuguese, French, and Italian</li>
                     </ul>
                 </p>
-                  <br>          
-                <h2>
-                    Usage example
-                </h2>
-                <p>Taking note of words and sentences from a PDF document:</p>
-                <iframe width="285" height="160" src="https://www.youtube.com/embed/HFvcQjlVHcA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-                <br><br><br> 
-                <h2>Install / Download</h2>
-                <p>It can be installed through the terminal using the commands:<br></p>
-                <p>
-                <code>add-apt-repository ppa:robinpalat/idiomind<br>
+				<br>
+                <h3>
+					Usage Example
+                    
+                </h3>
+                
+                <p>Usage Example: Taking note of words and sentences from a PDF document<br>
+                Here is an example of how to take notes on words and sentences from a PDF document using Idiomind:</p><br><br>
+                    <iframe width="285" height="160" src="https://www.youtube.com/embed/HFvcQjlVHcA?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                </p>
+               
+                <br>
+                <h3>
+                    Install / Download
+                </h3>
+                
+                <p>You can install Idiomind through the terminal using the following commands:<br></p>
+                <p><code>add-apt-repository ppa:robinpalat/idiomind<br>
                 apt-get update<br>
                 apt-get install idiomind</code>
-                <br>
                 </p>
-                <p>It is also possible to download from sourceforge.net, but the above method is the recommended one.</p>
-                <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
+             <br>
+                <p>
+                    Alternatively, you can download it from sourceforge.net.<br>However, the recommended method is to use the above commands for installation. </p>
+                    <a href="https://sourceforge.net/projects/idiomind/files/latest/download"><img alt="Download Idiomind" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
+       
                 <br><br><br> 
-                <h2>Support or contact</h2><br>
+                <h3>Support or contact</h3><br>
                 <p><a href="/helpm.html">Getting started with idiomind</a></p><br>
                 <p><a href="/librarym.html">Topic Library</a></p><br>
                 <p><a href="/contactm.html">Send a message</a></p><br>
+
+
+
 <!--
                 <p><a href="#">Support</a></p><br>
 -->
