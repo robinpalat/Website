@@ -34,7 +34,7 @@
             <div class="span6">
                 <h1><a href="/mobile.php">Idiomind</a></h1>
                 <p>Idiomind is a valuable tool for language learners seeking to enhance their language skills.</p>
-                <p><a href="/donatem.html">Donate</a></p><br>
+                <div style="text-align: right;font-size: 1.0em;"><a href="/donatem.html">Donate</a></div><br><br>
                  <p>
                     Language learners are always in search of new words and phrases. Idiomind can assist you in your language learning journey by allowing you to save and practice the words and phrases you come across every day.
                 </p>
