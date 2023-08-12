@@ -4,7 +4,7 @@ h1 {
 	text-decoration: none;
 	font-size: 26px;
 	text-align: left;
-	color: #748cff;
+	color: #8F6FC7;
 	margin: 2px;
 }
 
@@ -15,7 +15,7 @@ h2 {
 	text-decoration: none;
 	font-size: 19px;
 	text-align: left;
-	color: #748cff;
+	color: #8F6FC7;
 	margin-top: 10px;
 	margin-left: 2px;
 	margin-right: 2px;
@@ -28,7 +28,7 @@ h3 {
 	text-decoration: none;
 	font-size: 15px;
 	text-align: left;
-	color: #748cff;
+	color: #8F6FC7;
 	margin-top: 20px;
 	margin-left: 2px;
 	margin-right: 2px;
@@ -75,7 +75,7 @@ ul li {
 }
 
 a {
-	color: #748cff;
+	color: #8F6FC7;
 	text-decoration: none;
 }
 
@@ -106,7 +106,7 @@ a.category:visited
 
 a.category:active
 {
-	color: #748cff;
+	color: #8F6FC7;
 	font-family: Verdana;
 	font-weight: normal;
 	text-decoration: none;
@@ -114,7 +114,7 @@ a.category:active
 
 a.category:hover
 {
-	color: #748cff;
+	color: #8F6FC7;
 	padding-left:15px;
 	padding-right:30px;
 	font-family: Verdana;
@@ -124,7 +124,7 @@ a.category:hover
 
 a.current_category:link
 {
-	color: #9de37d;
+	color: #8F6FC7;
 	font-family: Verdana;
 	font-weight: normal;
 	text-decoration: none;
@@ -137,7 +137,7 @@ a.current_category:link
 
 a.current_category:visited
 {
-	color: #9de37d;
+	color: #8F6FC7;
 	font-family: Verdana;
 	font-weight: normal;
 	text-decoration: none;
@@ -145,7 +145,7 @@ a.current_category:visited
 
 a.current_category:active
 {
-	color: #9de37d;
+	color: #8A62B8;
 	font-family: Verdana;
 	font-weight: normal;
 	text-decoration: none;
@@ -153,7 +153,7 @@ a.current_category:active
 
 a.current_category:hover
 {
-	color: #9de37d;
+	color: #8F6FC7;
 	padding-left:15px;
 	padding-right:30px;
 	font-family: Verdana;
@@ -163,7 +163,7 @@ a.current_category:hover
 
 a.subcategory:link
 {
-	color: #748cff;
+	color: #8F6FC7;
 	font-family: Verdana;
 	font-weight: normal;
 	text-decoration: none;
@@ -173,7 +173,7 @@ a.subcategory:link
 }
 a.subcategory:visited
 {
-	color: #748cff;
+	color: #8F6FC7;
 	font-family: Verdana;
 	font-weight: normal;
 	text-decoration: none;
@@ -198,7 +198,7 @@ a.subcategory:hover
 
 a.current_subcategory:link
 {
-	color: #9de37d;
+	color: #8F6FC7;
 	font-family: Verdana;
 	font-weight: normal;
 	text-decoration: none;
@@ -320,7 +320,7 @@ t {
 
 pages {
 	font-weight: normal;
-    font-family: Georgia, serif;
+    font-family: Verdana, Georgia, serif;
     font-size: 14px;
 	color: #404040;
 }

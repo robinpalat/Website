@@ -58,9 +58,9 @@
         <div class="logo_bar">
             <img class="wrapped_logo" src="/images/logo.png" height="58px" align="left">
                 <h1><a href="/index.php">Idiomind</a></h1>
-                <p>Idiomind is a valuable tool for language learners seeking to enhance their language skills</p>
+                <p>Idiomind is a tool for language learners seeking to enhance their language skills</p>
           
-                <div style="text-align: right;font-size: 1.0em;"><a href="/donate.html">Donate</a></div>
+                <div style="opacity: 0.60; font-weight: bold; font-family: system-ui; text-align: right;font-size: 0.9em;"><a href="/donate.html">Donate</a></div>
             
         </div>
         
@@ -140,7 +140,7 @@
          
         <span>
             <p>
-            <small>&copy; 2022 <a href="https://idiomind.sourceforge.io">Idiomind Project </a><br><br>
+            <small>&copy; 2023 <a href="https://idiomind.sourceforge.io">Idiomind Project </a><br><br>
 
             
 

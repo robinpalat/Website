@@ -255,7 +255,7 @@
     
     <footer class="footer">
         <br>
-        <div> &copy 2015-2022 <a href="https://idiomind.sourceforge.io">idiomind</a> Project | <a href="http://idiomind.sourceforge.io/contact.html">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
+        <div> &copy 2015-2023 <a href="https://idiomind.sourceforge.io">idiomind</a> Project | <a href="http://idiomind.sourceforge.io/contact.html">Contact</a> | <a href="../privacypolicy.htm">Privacy</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">All the content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a>.
         </div>
         <br>
     </footer>
